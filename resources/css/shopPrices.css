@@ -1,0 +1,95 @@
+/*shopPrices.css*/
+.CmAvalOnPage {width:17px; height:20px;}
+
+/*product_img*/
+.ProductBrand{padding: 5px;display: grid;justify-items: center;align-items: center;grid-template-columns: 1fr 1fr; width:auto;  height:160px; }
+
+/*----to cart----*/
+.PriceBlock{/*padding:25px;*/ margin-top:35px;/* background-color:#ffffff; border-radius:4px; display:flex; flex-direction:column; box-shadow: 2px 2px 5px 1px #bdbdbd;*/}
+
+/*askprice*/
+.cmNoInStock {padding: 5px;margin-bottom: 10px;text-align: center;font-size: 14px;font-weight: bold;color: #808080;display: flex;justify-content: space-between;align-items: center;border-width: 1px;border-style: solid;border-radius: 3px;}
+.CmColorFi {fill: #0083ca !important;}
+.CmColorBr {border-color: #0083ca !important;}
+
+/*infoBlock*/
+.InfoBlock{display: grid;grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;grid-template-rows: 1fr;grid-column-gap: 2%;grid-row-gap: 1%;justify-items: stretch;align-items: stretch;border-bottom:1px solid #cdcdcd;padding:10px 0px 5px 0px;}
+.iteminfo{font-size:18px;color: #0c1c84;}
+.itemapplicability{font-size:18px;color: #0c1c84;}
+.itemanalogs{font-size:18px;color: #0c1c84;}
+.itemrate{color:#0065D9;font-size:18px;font-weight: 500;}
+/*infoBlock*/
+
+/*sku*/
+.BrandArticleWrapper{box-sizing:content-box;display:block;float:none;line-height:normal;position:static;z-index:auto}
+.BrandArticleBlock{display: flex; align-items: center;flex-wrap: wrap;padding-bottom:10px;}
+.BrandBlock {font-size:12px;font-weight:bold;height:32px;padding:0px 8px;color:#FFFFFF!important;background-color:#3e3e3e;line-height:19px;transition:all 0.3s;display:flex;justify-content:space-between;align-items:center;}
+.ArticleBlock {color:#909090;padding:2px 6px;line-height:26px;}
+/*sku-finish*/
+
+/*more prices block*/
+.MP_addtocart-full {display: block;height: 36px;/*padding: 0 20px;*/width:36px;margin-bottom: 10px;background: #0c1c84;color:#fff;border: none;border-radius: 2px;font-weight: 500;transition: background-color .15s,color .15s;}
+.MP_addtocart-full:hover {background: #333;color:#fff;}
+.AddtoCartButtAdd{
+	background:#808080;
+	border-width:1px;
+	border-style:solid;
+	color:#ffffff;
+	text-shadow:1px 1px 1px #4c4c4c;
+	border:1px solid #CDCDCD;
+	box-shadow:1px 1px 3px 0px rgb(191, 191, 191), inset rgba(255,255,255,0.2) 8px  8px 10px -3px, inset rgba(0,0,0,0.3) -8px -8px 10px -3px;
+	cursor:pointer; transition:all 0.1s; border-radius:4px; padding:3px 4px 1px 4px !important; line-height:9px;}
+.AddtoCartButtAdd:active{box-shadow: inset rgba(255,255,255,0.2) -8px  -8px 10px -3px, inset rgba(0,0,0,0.3) 8px 8px 10px -3px;}
+.AddtoCartButtAdd:active{}
+/*more prices block end*/
+
+/* ARTICLE kinde names */
+.artkind_trade{color:#0065D9;font-size: 14px;font-weight: 500;}
+.artkind_original{color:#DE4A00;font-size: 14px;font-weight: 500;}
+.artkind_analog{color:#278A00;font-size: 14px;font-weight: 500;}
+.artkind_barcode{color:#A400D1;font-size: 14px;font-weight: 500;}
+
+/* superseded */
+.superseded {color: #a92828;font-size: 14px;font-weight: 500;}
+
+/*++subsections++*/
+.filter_small_img{min-height:170px;box-sizing: border-box;background-color: #fff;box-shadow: 0 1px 3px rgba(0,0,0,.09);border: none;border-radius: 0;padding:15px 30px;overflow:hidden;position:relative}
+.filter_small_img .title{font-weight:700;font-size:17px;color:#444;font-family:'ProximaNova-Semibold';padding-right:250px}
+.filter_small_img img{position:absolute;right:30px;top:0;max-width:250px;max-height:100%;height:auto;width:auto}
+.filter_small_img ul{list-style: none}
+.filter_small_img ul.blue_links{width:660px;overflow:hidden;margin-top:25px;border-bottom:1px solid #e2e1de;padding-bottom:25px}
+.filter_small_img ul.blue_links li{padding-right:10px;line-height:29px;width:210px;float:left}
+.filter_small_img ul.blue_links li a{font-size:15px;font-family:'ProximaNova-Semibold';color:#0066d4;width:100%}
+.filter_small_img ul.blue_links li a span{text-decoration:underline}
+.filter_small_img ul.blue_links li a span:hover{text-decoration:none}
+.filter_small_img ul.simple_links{overflow:hidden;margin-top:30px;padding-bottom:30px;padding-right:260px}
+.filter_small_img ul.simple_links li{line-height:27px;width:200px;float:left;padding-right:10px;word-break:break-all;box-sizing:border-box;height:55px;font-family: Roboto,"sans-serif"}
+.filter_small_img ul.simple_links li:nth-child(3n){padding-right:0}
+.filter_small_img ul.simple_links li a,
+.filter_small_img ul.simple_links li span.link{line-height:13px;font-size:13px;color:#000;width:100%;text-decoration:none;display:inline-block;height:55px}
+.filter_small_img ul.simple_links li a img,
+.filter_small_img ul.simple_links li span.link img{display:inline-block;height:100%;width:auto;vertical-align:middle;float:left;position:inherit;margin-right:5px}
+.filter_small_img ul.simple_links li a span,
+.filter_small_img ul.simple_links li span.link>span{color:#000;font-size:14px;vertical-align:middle;display:table-cell;height:55px;word-break:break-word}
+.filter_small_img ul.blue_links li a{text-decoration:none;display:flex;align-items:center;height:55px}
+.filter_small_img ul.blue_links li a img{display:inline-block;height:100%;width:auto;vertical-align:middle;float:left;position:inherit}
+.filter_small_img ul.blue_links li a span{font-size:14px;vertical-align:middle;word-break:break-word;word-wrap:break-word;line-height:19px}
+.filter_small_img ul.simple_links li.cat_grey span{font-size:14px;font-family:'ProximaNova-Light'}
+
+/*modal for app + analogs*/
+.table-detail__head{padding: 11px;color: #8c8c8c;font-weight: 400;font-size: 11px;text-align: left;vertical-align: middle;background-color: #e5e5e5;border: 1px solid #e5e5e5;}
+.table-detail__row{font-size: 11px;border-collapse: collapse;}
+
+/*back to top button*/
+#totopbutton {display: none;position: fixed;bottom: 20px;right: 30px;z-index: 99;font-size: 18px;border: none;outline: none;  background-color:#0c1c84;color: white;cursor: pointer;padding-top: 8px;padding-right: 12px;padding-bottom: 8px;padding-left: 12px;border-radius: 4px;}
+#totopbutton:hover {background-color: #555;}
+
+/*sections page auto description start*/
+#garage{margin-top:20px;margin-bottom:20px}
+#garage table{width:100%}
+#garage table tr{border-bottom:1px dotted #c3c3c3}
+#garage table td{padding:6px 2px 2px;vertical-align:bottom;line-height:14px}
+#garage table td:first-child{color:#3597b8;width:50%}
+#garage table td:last-child{text-align:right}
+.img-auto{min-width:270px; min-height:200px!important;background-position:center center!important; background-repeat:no-repeat!important;}
+.garage-title{font-size:20px;font-weight:700;margin-bottom:15px}

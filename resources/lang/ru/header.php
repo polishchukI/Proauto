@@ -1,0 +1,43 @@
+<?php
+
+return [
+
+	'apptitle' => 'ProAuto-Service | Интернет магазин запчстей для иномарок | Горловка',
+	'slogan' => 'Автозапчасти для автомобилей, грузовиков и мотоциклов',
+	'enterkeyword' => 'Каталожный номер. Пр. 7700274177',
+	'callus' => 'Позвоните',
+	'shoppingcart' => 'Корзина',
+	'basketempty' => 'Корзина пуста',
+    'returns' => 'Возвраты',
+    'aboutus' => 'О нас',
+	'contactus' => 'Связь с нами',
+    'currency' => 'Валюта',
+    'catalog' => 'Каталог',
+    'lampscatalog' => 'Каталог ламп',
+    'tyrescatalog' => 'Каталог шин',
+    'rimscatalog' => 'Каталог дисков',
+    'oilscatalog' => 'Каталог масел',
+    'toolscatalog' => 'Каталог инструментов',
+    'articles' => 'Статьи',
+    'brands' => 'Бренды',
+    'services' => 'Услуги',
+    'lprice' => 'Прайс на работы',
+    'language' => 'Язык',
+	'contacts' => 'Контакты',
+	'trackorder' => 'Отследить заказ',
+    'aboutus' => 'О нас',
+    'hello' => 'Привет',
+    'login' => 'Войдите',
+    'emailaddress' => 'Адрес E-mail',
+    'password' => 'Пароль',
+    'forgot' => 'Забыли?',
+    'createanaccount' => 'Зарегестрироваться',
+    'myaccount' => 'Учетная запись',
+    'logintoyouraccount' => 'Войдите в учетную запись',
+	
+	'euro' => 'Euro',
+	'dollar' => 'Dollar',
+	'ruble' => 'Ruble',
+	'hryvnia' => 'Hryvnia',
+
+];

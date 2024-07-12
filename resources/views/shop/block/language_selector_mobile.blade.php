@@ -1,0 +1,4 @@
+<!--li data-mobile-menu-item><a type="button" class="" href="" data-mobile-menu-trigger><div class="mobile-menu__links-image"><img src="/images/languages/en.png" alt="English"></div>English</a></li-->
+<li data-mobile-menu-item><a type="button" class="" href="" data-mobile-menu-trigger><div class="mobile-menu__links-image"><img src="/images/languages/ru.png" alt="Russian"></div>Russian</a></li>
+<!--li data-mobile-menu-item><a type="button" class="" href="" data-mobile-menu-trigger><div class="mobile-menu__links-image"><img src="/images/languages/uk.png" alt="Ukrainian"></div>Ukrainian</a>
+</li-->

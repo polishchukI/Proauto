@@ -1,0 +1,108 @@
+/*shopLamps.css*/
+.car-lamp-container{margin-top:20px;}
+.car-promo{background:#fff;height:735px;margin:10px;position:relative;width:1140px;/*border:4px solid #8d8d8d; border-radius:20px;*/}
+.car-promo1{background:url(/images/lamps/car_1.png) no-repeat}
+.car-promo2{background:url(/images/lamps/car_2.png) no-repeat}
+.cp-list{list-style:none;vertical-align:top}
+.cp-item{white-space:nowrap}
+.car-promo1 .cp-it1{left:0px;position:absolute;top:28px}
+.car-promo1 .cp-it2{left:634px;position:absolute;top:0px}
+.car-promo1 .cp-it3{left:830px;position:absolute;top:150px}
+.car-promo1 .cp-it4{left:830px;position:absolute;top:301px}
+.car-promo1 .cp-it5{left:830px;position:absolute;top:545px}
+.car-promo1 .cp-it6{left:380px;position:absolute;top:560px}
+.car-promo1 .cp-it7{left:0px;position:absolute;top:560px}
+.car-promo1 .cp-it8{left:0px;position:absolute;top:150px}
+.car-promo2 .cp-it1{left:0px;position:absolute;top:20px}
+.car-promo2 .cp-it2{left:830px;position:absolute;top:20px}
+.car-promo2 .cp-it3{left:732px;position:absolute;top:595px}
+.car-promo2 .cp-it4{left:380px;position:absolute;top:595px}
+.car-promo2 .cp-it5{left:0px;position:absolute;top:595px}
+.car-promo2 .cp-it6{left:0px;position:absolute;top:451px}
+.car-promo2 .cp-it7{left:0px;position:absolute;top:310px}
+.car-promo2 .cp-it8{left:0px;position:absolute;top:165px}
+.cp-title{padding:0 0 5px 0}
+.cp-title span{background-color:#8d8d8d;border-radius:5px;color:#fff;display:inline-block;font-size:14px;font-weight:700;line-height:18px;padding:3px 12px;vertical-align:top}
+.cp-pic-group{display:inline-block;margin:0 -45px 0 0;padding:0 5px 0 0;vertical-align:top}
+.cp-lamps{margin-top:5px;margin-left:5px;display:inline-block;list-style:none;vertical-align:top}/*my margins*/
+.panel-default .cp-lamps{margin:0;padding:10px 0;width:100%}
+.cp-lamps .cpl-item{display:inline-block;margin:0 -3px 0 0;padding:0 3px;text-align:center;vertical-align:top}
+.panel-default .cp-lamps .cpl-item{margin-top:10px;margin-bottom:10px}
+.cp-lamps .cpl-item a{display:inline-block;text-decoration:none;vertical-align:top}
+.cp-lamps .cpl-item a span{display:block;margin:0 auto}
+.cp-lamps .cpl-item a .cpl-pic{height:50px;overflow:hidden;position:relative}
+.cp-lamps .cpl-item a:hover .cpl-pic{background-position:0 bottom !important}
+.cp-lamps .cpl-item a .cpl-title{color:#5d4b4b;font-size:14px;line-height:18px;padding:4px 0 0 0;text-decoration:underline;text-transform:uppercase}
+.cp-lamps .cpl-item a:hover .cpl-title{text-decoration:none}
+.bs-r2 .cpl-pic{background:url(/images/lamps/bs-r2.png) no-repeat;width:32px}
+.bs-h4 .cpl-pic{background:url(/images/lamps/bs-h4.png) no-repeat;width:30px}
+.bs-h1 .cpl-pic{background:url(/images/lamps/bs-h1.png) no-repeat;width:23px}
+.bs-h4-2 .cpl-pic{background:url(/images/lamps/bs-h4-2.png) no-repeat;width:31px}
+.bs-h7 .cpl-pic{background:url(/images/lamps/bs-h7.png) no-repeat;width:29px}
+.bs-h9 .cpl-pic{background:url(/images/lamps/bs-h9.png) no-repeat;width:31px}
+.bs-hb3 .cpl-pic{background:url(/images/lamps/bs-hb3.png) no-repeat;width:34px}
+.ds-hb4 .cpl-pic{background:url(/images/lamps/ds-hb4.png) no-repeat;width:31px}
+.ds-d1s .cpl-pic{background:url(/images/lamps/ds-d1s.png) no-repeat;width:30px}
+.ds-d2s .cpl-pic{background:url(/images/lamps/ds-d2s.png) no-repeat;width:23px}
+.ds-d3s .cpl-pic{background:url(/images/lamps/ds-d3s.png) no-repeat;width:33px}
+.ds-d3r .cpl-pic{background:url(/images/lamps/ds-d3r.png) no-repeat;width:31px}
+.ds-d4s .cpl-pic{background:url(/images/lamps/ds-d4s.png) no-repeat;width:21px}
+.ds-d4r .cpl-pic{background:url(/images/lamps/ds-d4r.png) no-repeat;width:21px}
+.ob-c5w .cpl-pic{background:url(/images/lamps/ob-c5w.png) no-repeat;width:16px}
+.ob-r5w .cpl-pic{background:url(/images/lamps/ob-r5w.png) no-repeat;width:23px}
+.ob-w3w .cpl-pic{background:url(/images/lamps/ob-w3w.png) no-repeat;width:21px}
+.ob-w5w .cpl-pic{background:url(/images/lamps/ob-w5w.png) no-repeat;width:25px}
+.lpp-bax .cpl-pic{background:url(/images/lamps/lpp-bax.png) no-repeat;width:28px}
+.lpp-t5 .cpl-pic{background:url(/images/lamps/lpp-t5.png) no-repeat;width:15px}
+.lpp-w3w .cpl-pic{background:url(/images/lamps/lpp-w3w.png) no-repeat;width:21px}
+.lpp-w5w .cpl-pic{background:url(/images/lamps/lpp-w5w.png) no-repeat;width:25px}
+.bup-h21w .cpl-pic{background:url(/images/lamps/bup-h21w.png) no-repeat;width:14px}
+.bup-w3w .cpl-pic{background:url(/images/lamps/bup-w3w.png) no-repeat;width:21px}
+.bup-w5w .cpl-pic{background:url(/images/lamps/bup-w5w.png) no-repeat;width:25px}
+.bup-wy5w .cpl-pic{background:url(/images/lamps/bup-wy5w.png) no-repeat;width:21px}
+.ptf-h1 .cpl-pic{background:url(/images/lamps/ptf-h1.png) no-repeat;width:23px}
+.ptf-h2 .cpl-pic{background:url(/images/lamps/ptf-h2.png) no-repeat;width:33px}
+.ptf-h3 .cpl-pic{background:url(/images/lamps/ptf-h3.png) no-repeat;width:36px}
+.ptf-h7 .cpl-pic{background:url(/images/lamps/ptf-h7.png) no-repeat;width:29px}
+.ptf-h8 .cpl-pic{background:url(/images/lamps/ptf-h8.png) no-repeat;width:31px}
+.ptf-h11 .cpl-pic{background:url(/images/lamps/ptf-h11.png) no-repeat;width:32px}
+.ptf-hb3 .cpl-pic{background:url(/images/lamps/ptf-hb3.png) no-repeat;width:34px}
+.ptf-hb4 .cpl-pic{background:url(/images/lamps/ptf-hb4.png) no-repeat;width:31px}
+.upa-h21w .cpl-pic{background:url(/images/lamps/upa-h21w.png) no-repeat;width:14px}
+.upa-p21w .cpl-pic{background:url(/images/lamps/upa-p21w.png) no-repeat;width:27px}
+.upa-py21w .cpl-pic{background:url(/images/lamps/upa-py21w.png) no-repeat;width:26px}
+.pgo-h5w .cpl-pic{background:url(/images/lamps/pgo-h5w.png) no-repeat;width:17px}
+.pgo-h6w .cpl-pic{background:url(/images/lamps/pgo-h6w.png) no-repeat;width:20px}
+.pgo-r5w .cpl-pic{background:url(/images/lamps/pgo-r5w.png) no-repeat;width:23px}
+.pgo-t4w .cpl-pic{background:url(/images/lamps/pgo-t4w.png) no-repeat;width:21px}
+.pgo-w5w .cpl-pic{background:url(/images/lamps/pgo-w5w.png) no-repeat;width:25px}
+.ssc-w3w .cpl-pic{background:url(/images/lamps/ssc-w3w.png) no-repeat;width:21px}
+.ssc-w5w .cpl-pic{background:url(/images/lamps/ssc-w5w.png) no-repeat;width:25px}
+.ssc-w16w .cpl-pic{background:url(/images/lamps/ssc-w16w.png) no-repeat;width:22px}
+.vo-c5w .cpl-pic{background:url(/images/lamps/vo-c5w.png) no-repeat;width:16px}
+.vo-fest10w .cpl-pic{background:url(/images/lamps/vo-fest10w.png) no-repeat;width:14px}
+.vo-h5w .cpl-pic{background:url(/images/lamps/vo-h5w.png) no-repeat;width:17px}
+.vo-w5w .cpl-pic{background:url(/images/lamps/vo-w5w.png) no-repeat;width:25px}
+.zgo-h6w .cpl-pic{background:url(/images/lamps/zgo-h6w.png) no-repeat;width:20px}
+.zgo-r5w .cpl-pic{background:url(/images/lamps/zgo-r5w.png) no-repeat;width:23px}
+.zgo-r10w .cpl-pic{background:url(/images/lamps/zgo-r10w.png) no-repeat;width:25px}
+.zgo-t4w .cpl-pic{background:url(/images/lamps/zgo-t4w.png) no-repeat;width:21px}
+.zpo-h21w .cpl-pic{background:url(/images/lamps/zpo-h21w.png) no-repeat;width:14px}
+.zpo-p21w .cpl-pic{background:url(/images/lamps/zpo-p21w.png) no-repeat;width:27px}
+.ss-p21w .cpl-pic{background:url(/images/lamps/ss-p21w.png) no-repeat;width:27px}
+.ss-p214w .cpl-pic{background:url(/images/lamps/ss-p214w.png) no-repeat;width:26px}
+.ss-p215w .cpl-pic{background:url(/images/lamps/ss-p215w.png) no-repeat;width:28px}
+.ss-w21w .cpl-pic{background:url(/images/lamps/ss-w21w.png) no-repeat;width:24px}
+.ss-w215w .cpl-pic{background:url(/images/lamps/ss-w215w.png) no-repeat;width:26px}
+.pzn-c5w .cpl-pic{background:url(/images/lamps/pzn-c5w.png) no-repeat;width:16px}
+.pzn-r5w .cpl-pic{background:url(/images/lamps/pzn-r5w.png) no-repeat;width:23px}
+.pzn-r10w .cpl-pic{background:url(/images/lamps/pzn-r10w.png) no-repeat;width:25px}
+.pzn-w5w .cpl-pic{background:url(/images/lamps/pzn-w5w.png) no-repeat;width:25px}
+.pb-c5w .cpl-pic{background:url(/images/lamps/pb-c5w.png) no-repeat;width:16px}
+.pb-fest10w .cpl-pic{background:url(/images/lamps/pb-fest10w.png) no-repeat;width:14px}
+.pb-r5w .cpl-pic{background:url(/images/lamps/pb-r5w.png) no-repeat;width:23px}
+.fzh-h21w .cpl-pic{background:url(/images/lamps/fzh-h21w.png) no-repeat;width:14px}
+.fzh-p21w .cpl-pic{background:url(/images/lamps/fzh-p21w.png) no-repeat;width:27px}
+.fzh-w16w .cpl-pic{background:url(/images/lamps/fzh-w16w.png) no-repeat;width:22px}
+.fzh-w21w .cpl-pic{background:url(/images/lamps/fzh-w21w.png) no-repeat;width:24px}
+.bs-h15 .cpl-pic{background:url(/images/lamps/bs-h15.png) no-repeat;width:24px}

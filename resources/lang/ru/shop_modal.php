@@ -1,0 +1,72 @@
+<?php
+
+return [
+
+	// addproduct
+	'noanalogs' => 'Информация отсутствует',
+	'create_manual' => 'Созание номенклатуры',
+	'create_from_search' => 'Добавление из внешних источников',
+	'article' => 'Номер по каталогу',
+	'brand' => 'Бренд',
+    'product_name' => 'Наименование',
+	'side' => 'Направление замены',
+	'addcross' => 'Добавить замену',
+	'analogs' => 'Аналоги',
+	'add_phone' => 'Добавить телефон',
+	'edit_phone' => 'Редактировать телефон',
+	'add_product' => 'Добавление продукта',
+	'add_single_product' => 'Добавление продукта',
+	'edit_product' => 'Изменение продукта',
+	'stock' => 'Наличие',
+	'quantity' => 'Количество',
+	'baseprice' => 'Исходная цена',
+	'properties' => 'Характеристики',
+	'seefulldetails' => 'Перейти на страницу товара',
+	'reviews_on' => 'на основании',
+	'reviews' => 'отзыва(ов)',
+	'price' => 'Цена',
+	'add' => 'Добавить',
+	'close' => 'Закрыть',
+	'update' => 'Обновить',
+	'delete' => 'Удалить',
+	'phone' => 'Телефон',
+	'comment' => 'Комментарий',
+	'product_category' => 'Категория номенклатуры',
+	'product_group' => 'Группа номенклатуры',
+	'product_info' => 'Информация',
+	
+	'analogsfor' => 'Аналоги запчасти',
+	'country' => 'Страна',
+	'state' => 'Область',
+	'city' => 'Город',
+	'settlement' => 'settlement',
+	'street' => 'Улица',
+	'address' => 'Дом',
+	'housing' => 'housing',
+	'apartment' => 'Квартира',
+	'default' => 'По-умолчанию',
+	'renew' => 'Замена префикса телефонов',
+	'oldprefix' => 'Старый префикс',
+	'newprefix' => 'Новый префикс',
+	'create' => 'Сохранить',
+	'create_and_to_cart' => 'Сохранить. Добавить',
+	
+	'askprice' => 'Запрос цены',
+	
+	'active' => 'Активен',
+	'provider' => 'Поставщик',
+	'manufacturer' => 'Производитель',
+	'main_by_group' => 'Основной по группе',
+	'main_by_brand' => 'Основной по производителю',
+	'price_date' => 'Дата',
+	'available' => 'Наличие',
+	'provider_days' => 'Поставка',
+	'income_price' => 'Цена(вход)',
+	'search_part_contact' => 'Представьтесь пожалуйста',
+	'message' => 'Текст сообщения',
+	'send' => 'Отправить',
+
+	
+
+
+];
