@@ -872,7 +872,7 @@ class AdminCartController extends Controller
 	public static function admincart_add_product(Request $request)
 	{
 		$edit = "false";
-		$product_id						= $request->product_id;
+		$product_id							= $request->product_id;
 		$admincart_id						= $request->admincart_id;
 
 		$admincart							= AdminCart::where('id', $admincart_id)->first();		

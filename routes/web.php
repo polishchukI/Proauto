@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Auth::routes();
+// Auth::routes();
 $domain       = env('APP_DOMAIN', 'proauto.shop');
 $admin_domain = env('APP_ADMIN_DOMAIN', 'inventory.proauto.shop');
 
@@ -11,8 +11,14 @@ Route::domain($admin_domain)->group(function ()
 {
 	Route::get('/',																												'Inventory\HomeController@index')->name('home')->middleware('auth');
 	Route::get('/phpinfo',																										'Inventory\HomeController@phpinfo')->name('phpinfo')->middleware('auth');
+
+	Route::get('/login',																										['as' => 'admin.login',	'uses' => 'Auth\LoginController@ShowLoginPage']);
+	Route::post('login',																										['as' => 'login.send', 'uses' => 'Auth\LoginController@login']);
+	 
 	Route::group(['middleware' => 'auth'], function ()
 	{
+		Route::post('logout',																									['as' => 'admin.logout','uses' => 'Auth\LoginController@logout']);
+  
 		Route::get('profile',																									['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
 		Route::post('changeTheme',																								['as' => 'change.theme', 'uses' => 'ProfileController@changeTheme']);
 		Route::match(['put', 'patch'], 'profile',																				['as' => 'profile.update', 'uses' => 'ProfileController@update']);

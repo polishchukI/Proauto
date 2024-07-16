@@ -17,7 +17,7 @@
                     <td scope="col" class="article">{{ $item->product->article }}</td>
                     <td scope="col" class="brand">{{ $item->product->brand }}</td>
                     <td scope="col" class="name">{{ $item->product->name }}</td>
-                    <td scope="col" class="stock">{{ number_format($item->stock ?? 0, 2)}}</td>
+                    <td scope="col" class="stock">{{ number_format($item->product->stocks()->sum('quantity') ?? 0, 2) }}</td>
                     <td scope="col" class="quantity">{{ number_format($item->quantity ?? 0, 2) }}</td>
                     <td scope="col" class="price">{{ number_format($item->price ?? 0, 2) }}</td>
                     <td scope="col" class="total_amount">{{ number_format($item->total_amount ?? 0, 2) }}</td>

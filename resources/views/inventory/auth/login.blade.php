@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 	<div class="col-lg-4 col-md-6 ml-auto mr-auto">
-		<form class="form" method="post" action="{{ route('login') }}">
+		<form class="form" method="post" action="{{ route('admin.login') }}">
 			@csrf
 			<div class="card card-login card-white">
 				<div class="card-header">
@@ -32,7 +32,7 @@
 				</div>
 				<div class="card-footer">
 					<div class="pull-left">
-						<a class="btn btn-primary btn-link" href="{{ route('password.request') }}">{{ __('inventory.forgot_your_password') }}</a>
+						<a class="btn btn-primary btn-link" href="{{-- route('password.request') --}}">{{ __('inventory.forgot_your_password') }}</a>
 					</div>
 					<div class="pull-right">
 						<button type="submit" href="" class="btn btn-primary btn-simple btn-sm">{{ __('inventory.log_in') }}</button>

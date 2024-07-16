@@ -15,8 +15,74 @@
                     <p>{{ __('inventory.dashboard') }}</p>
                 </a>
             </li>
-            <!--admincarts-->
+            <!--documents-->
             <li>
+                <a data-toggle="collapse" href="#documents" {{ $section == 'documents' ? 'aria-expanded=true' : '' }}>
+                    <i class="fas fa-folder-open"></i>
+                    <span class="nav-link-text">{{ __('inventory.documents') }}</span>
+                    <b class="caret mt-1"></b>
+                </a>
+                <div class="collapse {{ $section == 'documents' ? 'show' : '' }}" id="documents">
+                    <ul class="nav pl-4">
+                        <li @if ($pageSlug == 'admincarts_fullist') class="active " @endif>
+                            <a href="{{ route('admincarts.index') }}">
+                                <i class="fas fa-shopping-cart"></i>
+                                <p>{{ __('inventory.admincarts') }}</p>
+                            </a>
+                        </li>
+                        <li @if ($pageSlug == 'receipts') class="active " @endif>
+                            <a href="{{ route('receipts.index') }}">
+                                <i class="fas fa-receipt"></i>
+                                <p>{{ __('inventory.receipts') }}</p>
+                            </a>
+                        </li>
+                        <li @if ($pageSlug == 'to_provider_orders') class="active " @endif>
+                            <a href="{{ route('to_provider_orders.index') }}">
+                                <i class="fas fa-file-upload"></i>
+                                <p>{{ __('inventory.to_provider_orders') }}</p>
+                            </a>
+                        </li>
+                        <li @if ($pageSlug == 'returns_to_provider') class="active " @endif>
+                            <a href="{{ route('returns_to_provider.index')  }}">
+                                <i class="fas fa-redo"></i>
+                                <p>{{ __('inventory.returns_to_provider') }}</p>
+                            </a>
+                        </li>                                    
+                        <li @if ($pageSlug == 'sales') class="active " @endif>
+                            <a href="{{ route('sales.index')  }}">
+                                <i class="fas fa-file-invoice"></i>
+                                <p>{{ __('inventory.sales') }}</p>
+                            </a>
+                        </li>
+                        <li @if ($pageSlug == 'client_orders') class="active " @endif>
+                            <a href="{{ route('client_orders.index')  }}">
+                                <i class="fas fa-file-download"></i>
+                                <p>{{ __('inventory.client_orders') }}</p>
+                            </a>
+                        </li>
+                        <li @if ($pageSlug == 'online_client_orders') class="active " @endif>
+                            <a href="{{ route('online_client_orders.index')  }}">
+                                <i class="fas fa-file-word"></i>
+                                <p>{{ __('inventory.online_client_orders') }}</p>
+                            </a>
+                        </li>
+						<li @if ($pageSlug == 'repair_orders') class="active " @endif>
+                            <a href="{{ route('repair_orders.index') }}">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                                <p>{{ __('inventory.repair_orders') }}</p>
+                            </a>
+                        </li>
+                        <li @if ($pageSlug == 'returns_from_the_client') class="active " @endif>
+                            <a href="{{ route('returns_from_the_client.index')  }}">
+                                <i class="fas fa-undo"></i>
+                                <p>{{ __('inventory.returns_from_the_client') }}</p>
+                            </a>
+                        </li>
+					</ul>
+                </div>
+            </li>
+            <!--admincarts-->
+            {{-- <li>
                 <a data-toggle="collapse" href="#admincarts" {{ $section == 'admincarts' ? 'aria-expanded=true' : '' }}>
                     <i class="fas fa-shopping-cart"></i>
                     <span class="nav-link-text">{{ __('inventory.admincarts') }}</span>
@@ -38,7 +104,7 @@
                         </li>
                     </ul>
                 </div>
-            </li>
+            </li> --}}
             <!--salary_management-->
             <li>
                 <a data-toggle="collapse" href="#blog" {{ $section == 'blog' ? 'aria-expanded=true' : '' }}>
@@ -253,74 +319,7 @@
                     </ul>
                 </div>
             </li>
-			<!--documents-->
-            <li>
-                <a data-toggle="collapse" href="#documents" {{ $section == 'documents' ? 'aria-expanded=true' : '' }}>
-                    <i class="fas fa-folder-open"></i>
-                    <span class="nav-link-text">{{ __('inventory.documents') }}</span>
-                    <b class="caret mt-1"></b>
-                </a>
-                <div class="collapse {{ $section == 'documents' ? 'show' : '' }}" id="documents">
-                    <ul class="nav pl-4">
-                        <li @if ($pageSlug == 'receipts') class="active " @endif>
-                            <a href="{{ route('receipts.index') }}">
-                                <i class="fas fa-receipt"></i>
-                                <p>{{ __('inventory.receipts') }}</p>
-                            </a>
-                        </li>
-                        <li @if ($pageSlug == 'to_provider_orders') class="active " @endif>
-                            <a href="{{ route('to_provider_orders.index') }}">
-                                <i class="fas fa-file-upload"></i>
-                                <p>{{ __('inventory.to_provider_orders') }}</p>
-                            </a>
-                        </li>
-                        <li @if ($pageSlug == 'returns_to_provider') class="active " @endif>
-                            <a href="{{ route('returns_to_provider.index')  }}">
-                                <i class="fas fa-redo"></i>
-                                <p>{{ __('inventory.returns_to_provider') }}</p>
-                            </a>
-                        </li>                                    
-                        <li @if ($pageSlug == 'sales') class="active " @endif>
-                            <a href="{{ route('sales.index')  }}">
-                                <i class="fas fa-file-invoice"></i>
-                                <p>{{ __('inventory.sales') }}</p>
-                            </a>
-                        </li>
-                        <li @if ($pageSlug == 'client_orders') class="active " @endif>
-                            <a href="{{ route('client_orders.index')  }}">
-                                <i class="fas fa-file-download"></i>
-                                <p>{{ __('inventory.client_orders') }}</p>
-                            </a>
-                        </li>
-                        <li @if ($pageSlug == 'online_client_orders') class="active " @endif>
-                            <a href="{{ route('online_client_orders.index')  }}">
-                                <i class="fas fa-file-word"></i>
-                                <p>{{ __('inventory.online_client_orders') }}</p>
-                            </a>
-                        </li>
-						<li @if ($pageSlug == 'repair_orders') class="active " @endif>
-                            <a href="{{ route('repair_orders.index') }}">
-                                <i class="fas fa-file-invoice-dollar"></i>
-                                <p>{{ __('inventory.repair_orders') }}</p>
-                            </a>
-                        </li>
-                        <li @if ($pageSlug == 'returns_from_the_client') class="active " @endif>
-                            <a href="{{ route('returns_from_the_client.index')  }}">
-                                <i class="fas fa-undo"></i>
-                                <p>{{ __('inventory.returns_from_the_client') }}</p>
-                            </a>
-                        </li>
-
-						<li @if ($pageSlug == 'order_statuses') class="active " @endif>
-                            <a href="{{ route('order_statuses.index') }}">
-                                <i class="fas fa-tag"></i>
-                                <p>{{ __('inventory.orderstatuses') }}</p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <!--services-->
+			<!--services-->
             <li>
                 <a data-toggle="collapse" href="#services" {{ $section == 'services' ? 'aria-expanded=true' : '' }}>
                     <i class="fas fa-folder-open"></i>
@@ -359,7 +358,6 @@
                 </a>
                 <div class="collapse {{ $section == 'contragents' ? 'show' : '' }}" id="contragents">
                     <ul class="nav pl-4">
-
                         <!-- contragents multilevel -->
                         <li @if ($pageSlug == 'clients') class="active " @endif>
                             <a data-toggle="collapse" aria-expanded="false" href="#multicollapseClients" class="collapsed">

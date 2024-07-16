@@ -345,7 +345,7 @@ class ReceiptController extends Controller
 		//request data
 		$product_id						= $request->product_id;
 		$receipt_id						= $request->receipt_id;
-		$to_provider_order_id						= $request->to_provider_order_id;
+		$to_provider_order_id			= $request->to_provider_order_id;
 		$price							= floatval($request->price);//????
 		$quantity						= $request->quantity;
 

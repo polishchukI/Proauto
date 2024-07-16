@@ -60,7 +60,7 @@
                                 <td>{{ $client->sales->count() }}</td>
                                 <td>{{ $client->transactions->sum('amount') }}</td>
 								<td>
-									{{ ($client->sales->count()>0) ? date('d-m-y', strtotime($client->sales->reverse()->first()->finalized_at)) :  __('inventory.no_sales') }}
+									{{ $client->sales->reverse()->first()->finalized_at ??  __('inventory.no_sales') }}
 								</td>
                                 <td>
 									@if (!$client->notified_at)
