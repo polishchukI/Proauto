@@ -16,10 +16,19 @@ use App\Http\Controllers\FunctionsController as Functions;
 
 class BrandsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $brands = Brand::all();
-
+        $keyword = $request->get('search');
+        if (!empty($keyword))
+		{
+            $brands = Brand::where('brand', 'LIKE', "%$keyword%")
+				->orwhere('bkey', 'LIKE', "%$keyword%")
+				->paginate(25);
+        }
+		else
+		{
+            $brands = Brand::paginate(25);
+        }
         return view('inventory.brands.index', compact('brands'));
     }
 
@@ -40,10 +49,10 @@ class BrandsController extends Controller
         
         if(!$brand_check)
 		{
-            $requestData['bkey'] = $bkey;
-            $requestData['brand'] = Str::upper($request->brand);
-            $requestData['slug'] = Str::slug($request->brand);
-            $requestData['logo'] = Str::slug($request->brand);
+            $requestData['bkey']        = $bkey;
+            $requestData['brand']       = Str::upper($request->brand);
+            $requestData['slug']        = Str::slug($request->brand);
+            $requestData['logo']        = Str::slug($request->brand);
             
             $brand->create($requestData);
             
@@ -64,10 +73,10 @@ class BrandsController extends Controller
     {
         $requestData = $request->all();
         
-        $requestData['brand'] = Str::upper($request->brand);
-        $requestData['bkey'] = Functions::SingleKey($request->brand,true);
-		$requestData['slug'] = Str::slug($request->brand);
-		$requestData['logo'] = Str::slug($request->brand);
+        $requestData['brand']           = Str::upper($request->brand);
+        $requestData['bkey']            = Functions::SingleKey($request->brand,true);
+		$requestData['slug']            = Str::slug($request->brand);
+		$requestData['logo']            = Str::slug($request->brand);
         
         $brand->update($requestData);
 
@@ -90,14 +99,14 @@ class BrandsController extends Controller
 	{
 		if($request->hasFile('upload'))
 		{
-			$originName = $request->file('upload')->getClientOriginalName();
-			$fileName = pathinfo($originName, PATHINFO_FILENAME);
-			$extension = $request->file('upload')->getClientOriginalExtension();
-			$fileName = $fileName.'-'.time().'.'.$extension;
+			$originName                 = $request->file('upload')->getClientOriginalName();
+			$fileName                   = pathinfo($originName, PATHINFO_FILENAME);
+			$extension                  = $request->file('upload')->getClientOriginalExtension();
+			$fileName                   = $fileName.'-'.time().'.'.$extension;
 			$request->file('upload')->move(public_path('images/brandtextimg'), $fileName);
-			$CKEditorFuncNum = $request->input('CKEditorFuncNum');
-			$url = asset('images/brandtextimg/'.$fileName);
-			$response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url')</script>";
+			$CKEditorFuncNum            = $request->input('CKEditorFuncNum');
+			$url                        = asset('images/brandtextimg/'.$fileName);
+			$response                   = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url')</script>";
 			echo $response;
 		}
 	}
@@ -108,9 +117,9 @@ class BrandsController extends Controller
 		$brands = Brand::all();
         foreach($brands as $brand)
         {
-            $brand_id = $brand->id;
-            $bkey = Functions::SingleKey($brand['brand']);
-            $slug = Str::slug($brand['brand']);
+            $brand_id           = $brand->id;
+            $bkey               = Functions::SingleKey($brand['brand']);
+            $slug               = Str::slug($brand['brand']);
             Brand::where('id', $brand_id)->update(['bkey' => $bkey, 'slug' => $slug]);
         }
 		return back();

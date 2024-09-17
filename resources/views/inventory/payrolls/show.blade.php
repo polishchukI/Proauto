@@ -60,7 +60,7 @@
                             <div class="col-1"></div>
                             <!--index-->
                             <div class="col-1">
-                                <a class="btn btn-simple btn-sm" href="{{ route('payrolls.index') }}" data-toggle="tooltip" title="Back to list"><i class="fas fa-arrow-left"></i></a>
+                                <a class="btn btn-simple btn-sm btn-back" href="{{ route('payrolls.index') }}" data-toggle="tooltip" title="Back to list"><i class="fas fa-arrow-left"></i></a>
                             </div>
                         </div>
                     </div>
@@ -70,18 +70,9 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-3">{{ __('inventory.user') }}</div>
-                                <div class="col-md-9">{{ $payroll->user->name }}</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3">{{ __('inventory.employees') }} / {{ __('inventory.salary') }}</div>
-                                <div class="col-md-9">{{ $payroll->employees->count() }} / {{ $payroll->employees->sum('salary') }}</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3">{{ __('inventory.total_cost') }}</div>
-                                <div class="col-md-9">{{ $payroll->employees->sum('salary') }} ({{ $payroll->currency }})</div>
-                            </div>
+                            <div class="row text-info"><div class="col-md-3">{{ __('inventory.user') }}</div><div class="col-md-9">{{ $payroll->user->name }}</div></div>
+                            <div class="row text-info"><div class="col-md-3">{{ __('inventory.employees') }} / {{ __('inventory.salary') }}</div><div class="col-md-9">{{ $payroll->employees->count() }} / {{ $payroll->employees->sum('salary') }}</div></div>
+                            <div class="row text-info"><div class="col-md-3">{{ __('inventory.total_cost') }}</div><div class="col-md-9">{{ $payroll->employees->sum('salary') }} ({{ $payroll->currency }})</div></div>
                         </div>
                         <div class="col-md-6">
                             @if($payroll->reference_type == "to_provider_order")
@@ -114,10 +105,10 @@
                     <div class="col-6">
                         <div class="row text-right">
                             <div class="col-1">
-                                <a class="btn btn-simple btn-sm @if ($payroll->finalized_at) disabled @endif" href="{{ route('payrolls.employees.clear', $payroll) }}" data-toggle="tooltip" title="{{ __('inventory.clear_table') }}"><i class="fas fa-times"></i></a>
+                                <a class="btn btn-simple btn-sm btn-selector @if ($payroll->finalized_at) disabled @endif" href="{{ route('payrolls.employees.selector', $payroll) }}" data-toggle="tooltip" title="{{ __('inventory.employee_selector') }}"><i class="fas fa-list-ul"></i></a>
                             </div>
                             <div class="col-1">
-                                <a class="btn btn-simple btn-sm @if ($payroll->finalized_at) disabled @endif" href="{{ route('payrolls.employees.selector', $payroll) }}" data-toggle="tooltip" title="Product selector"><i class="fas fa-list-ul"></i></a>
+                                <a class="btn btn-simple btn-sm btn-delete @if ($payroll->finalized_at) disabled @endif" href="{{ route('payrolls.employees.clear', $payroll) }}" data-toggle="tooltip" title="{{ __('inventory.clear_table') }}"><i class="fas fa-times"></i></a>
                             </div>
                         </div>
                     </div>

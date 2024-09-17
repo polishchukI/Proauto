@@ -1,87 +1,109 @@
-@extends('inventory.layouts.app', ['page' => 'New Expence', 'pageSlug' => 'returns_to_provider', 'section' => 'inventory', 'search' => 'returns_to_provider'])
+@extends('inventory.layouts.app', ['page' => __('inventory.new_transaction'), 'pageSlug' => 'returns_to_provider', 'section' => 'inventory', 'search' => 'returns_to_provider'])
 @section('content')
     
-        <div class="row">
-            <div class="col-xl-12 order-xl-1">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="row align-items-center">
-                            <div class="col-8">
-                                <h3 class="mb-0">New Transaction</h3>
-                            </div>
-                            <div class="col-4 text-right">
-                                <a href="{{ route('returns_to_provider.show', $return_to_provider) }}" class="btn btn-sm btn-simple">Volver a la venta</a>
-                            </div>
-                        </div>
+<div class="row">
+    <div class="col-xl-12 order-xl-1">
+        <div class="card">
+            <div class="card-header">
+                <div class="row align-items-center">
+                    <div class="col-8">
+                        <h3 class="mb-0">{{ __('inventory.new_transaction') }}</h3>
                     </div>
-                    <div class="card-body">
-                        <form method="post" action="{{ route('returns_to_provider.transaction.store', $return_to_provider) }}" autocomplete="off">
-                            @csrf
-                            <input type="hidden" name="return_to_provider_id" value="{{ $return_to_provider->id }}">
-                            <input type="hidden" name="provider_id" value="{{ $return_to_provider->provider_id }}">
-                            <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-
-                            <h6 class="heading-small text-muted mb-4">Transaction Information</h6>
-                            <div class="pl-lg-4">
-                                <div class="form-group{{ $errors->has('type') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-method">Transaction Type</label>
-									<select name="type" id="input-method" class="form-control form-control-alternative{{ $errors->has('type') ? ' is-invalid' : '' }}" required>
-										@if(isset($return_to_provider->id))
-										<option value="expense" selected>Возврат оплаты покупателю</option>
-										@else
-                                        @foreach (['income' => 'Оплата от покупателя', 'expense' => 'Возврат оплаты покупателю'] as $type => $title)
-                                            @if($type == old('type'))
-                                                <option value="{{$type}}" selected>{{ $title }}</option>
-                                            @else
-                                                <option value="{{$type}}">{{ $title }}</option>
-                                            @endif
-                                        @endforeach
-										@endif
-									</select>
-                                    @include('inventory.alerts.feedback', ['field' => 'payment_method_id'])
-                                </div>
-                                <div class="form-group{{ $errors->has('payment_method_id') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-method">{{ __('inventory.method') }}</label>
-                                    <select name="payment_method_id" id="input-method" class="form-select form-control-alternative{{ $errors->has('payment_method_id') ? ' is-invalid' : '' }}" required>
-                                        @foreach ($payment_methods as $payment_method)
-                                            @if($payment_method['id'] == old('payment_method_id'))
-                                                <option value="{{$payment_method['id']}}" selected>{{$payment_method['name']}}</option>
-                                            @else
-                                                <option value="{{$payment_method['id']}}">{{$payment_method['name']}}</option>
-                                            @endif
-                                        @endforeach
-                                    </select>
-                                    @include('inventory.alerts.feedback', ['field' => 'payment_method_id'])
-                                </div>
-
-                                <div class="form-group{{ $errors->has('amount') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-amount">Amount</label>
-									@if($return_to_provider->id)
-									<input type="number" step=".01" name="amount" id="input-amount" class="form-control form-control-alternative" placeholder="Amount" value="{{ $return_to_provider->total_amount }}" required>
-                                    @else
-                                    <input type="number" step=".01" name="amount" id="input-amount" class="form-control form-control-alternative" placeholder="Amount" value="{{ old('amount') }}" required>
-									@endif
-                                    @include('inventory.alerts.feedback', ['field' => 'amount'])
-
-                                </div>
-
-                                <div class="form-group{{ $errors->has('reference') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-reference">Reference</label>
-									@if($return_to_provider->id)
-                                    <input type="text" name="reference" id="input-reference" class="form-control form-control-alternative{{ $errors->has('reference') ? ' is-invalid' : '' }}" placeholder="Reference" value="Return From The provider № {{ $return_to_provider->id }}">
-									@else
-                                    <input type="text" name="reference" id="input-reference" class="form-control form-control-alternative{{ $errors->has('reference') ? ' is-invalid' : '' }}" placeholder="Reference" value="{{ old('reference') }}">
-								    @endif
-                                    @include('inventory.alerts.feedback', ['field' => 'reference'])
-                                </div>
-
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-sm btn-simple btn-success">{{ __('inventory.save') }}</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    <div class="col-4 text-right"><a href="{{ route('returns_to_provider.show', $return_to_provider) }}" class="btn btn-sm btn-simple btn-back"><i class="fas fa-arrow-left"></i></a></div>
                 </div>
             </div>
+            <div class="card-body">
+                <form method="post" action="{{ route('returns_to_provider.transaction.store', $return_to_provider) }}" autocomplete="off">
+                    @csrf
+                    <input type="hidden" name="return_to_provider_id" value="{{ $return_to_provider->id }}">
+                    <input type="hidden" name="provider_id" value="{{ $return_to_provider->provider_id }}">
+                    <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+                    <h6 class="heading-small text-muted mb-4">{{__('inventory.transaction_information')}}</h6>
+                    <div class="pl-lg-4">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-amount">{{__('inventory.provider')}}</label>
+                                    <div class="row mt-2">
+                                        <div class="col-12"><span class="text-info">{{ $return_to_provider->provider->name }}</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-amount">{{__('inventory.settlements')}}</label>
+                                    <div class="row mt-2">
+                                        @if($return_to_provider->provider->settlements->sum('total_amount') > 0)
+                                        <div class="col-9"><span class="text-success">{{ __('inventory.balance_positive') }}</span></div><div class="col-3"><span class="text-success">{{ $return_to_provider->provider->settlements->sum('total_amount') }}</span></div>
+                                        @elseif($return_to_provider->provider->settlements->sum('total_amount') < 0)
+                                        <div class="col-9"><span class="text-danger">{{ __('inventory.balance_negative') }}</span></div><div class="col-3"><span class="text-danger">{{ $return_to_provider->provider->settlements->sum('total_amount') }}</span></div>
+                                        @else
+                                        <div class="col-12"><span class="text-info">{{ __('inventory.balance_no_debt') }}</span></div>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
+                        <div class="form-group{{ $errors->has('type') ? ' has-danger' : '' }}">
+                            <label class="form-control-label" for="input-method">{{__('inventory.transaction_type')}}</label>
+                            <select name="type" id="input-method" class="form-control form-control-alternative{{ $errors->has('type') ? ' is-invalid' : '' }}" required>
+                                @if(isset($return_to_provider->id))
+                                <option value="income" selected>Возврат оплаты от поставщика</option>
+                                @else
+                                @foreach (['income' => 'Возврат оплаты от поставщика', 'expense' => 'Оплата поставщику'] as $type => $title)
+                                    @if($type == old('type'))
+                                        <option value="{{$type}}" selected>{{ $title }}</option>
+                                    @else
+                                        <option value="{{$type}}">{{ $title }}</option>
+                                    @endif
+                                @endforeach
+                                @endif
+                            </select>
+                            @include('inventory.alerts.feedback', ['field' => 'payment_method_id'])
+                        </div>
+                        <div class="form-group{{ $errors->has('payment_method_id') ? ' has-danger' : '' }}">
+                            <label class="form-control-label" for="input-method">{{ __('inventory.method') }}</label>
+                            <select name="payment_method_id" id="input-method" class="form-select form-control-alternative{{ $errors->has('payment_method_id') ? ' is-invalid' : '' }}" required>
+                                @foreach ($payment_methods as $payment_method)
+                                    @if($payment_method['id'] == old('payment_method_id'))
+                                        <option value="{{$payment_method['id']}}" selected>{{$payment_method['name']}}</option>
+                                    @else
+                                        <option value="{{$payment_method['id']}}">{{$payment_method['name']}}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                            @include('inventory.alerts.feedback', ['field' => 'payment_method_id'])
+                        </div>
+
+                        <div class="form-group{{ $errors->has('amount') ? ' has-danger' : '' }}">
+                            <label class="form-control-label" for="input-amount">{{__('inventory.total_amount')}}</label>
+                            @if($return_to_provider->id)
+                            <input type="number" step=".01" name="amount" id="input-amount" class="form-control form-control-alternative" value="{{ $return_to_provider->total_amount }}" required>
+                            @else
+                            <input type="number" step=".01" name="amount" id="input-amount" class="form-control form-control-alternative" value="{{ old('amount') }}" required>
+                            @endif
+                            @include('inventory.alerts.feedback', ['field' => 'amount'])
+                        </div>
+                        <div class="row">
+                            <div class="col-9">
+                                <div class="form-group{{ $errors->has('reference') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-reference">{{__('inventory.reference_doc')}}</label>
+                                    @if($return_to_provider->id)
+                                    <input type="text" name="reference" id="input-reference" class="form-control form-control-alternative{{ $errors->has('reference') ? ' is-invalid' : '' }}" value="Возврат товаров поставщику № {{ $return_to_provider->id }}">
+                                    @else
+                                    <input type="text" name="reference" id="input-reference" class="form-control form-control-alternative{{ $errors->has('reference') ? ' is-invalid' : '' }}" value="{{ old('reference') }}">
+                                    @endif
+                                    @include('inventory.alerts.feedback', ['field' => 'reference'])
+                                </div>
+                            </div>
+                            <div class="col-3 mt-4">
+                                <button type="submit" class="btn btn-sm btn-simple btn-success">{{ __('inventory.save') }}</button>
+                            </div>
+                        </div>
+                    </form>
+            </div>
         </div>
+    </div>
+</div>
 @endsection

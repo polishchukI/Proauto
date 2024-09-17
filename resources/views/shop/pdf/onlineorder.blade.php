@@ -87,19 +87,19 @@
 					<table class="table">
 						<tbody>
 							<tr>
-								<td style="width: 50%;"><b>{{ __('online_invoice.organization_name') }}</b> {{ config('inventory_settings.name') }}<br /></td>
+								<td style="width: 50%;"><b>{{ __('online_invoice.organisation_name') }}</b> {{$order["organisation_name"]}}<br /></td>
 								<td style="width: 50%;"><b>{{ __('online_invoice.client') }}</b> {{ $order["lastname"] }}  {{ $order["firstname"] }}<br /></td>
 							</tr>
 							<tr>
-								<td style="width: 50%;"><b>{{ __('online_invoice.phone') }}</b> {{ config('inventory_settings.phone') }}<br /></td>
+								<td style="width: 50%;"><b>{{ __('online_invoice.phone') }}</b> {{$order["organisation_phone"]}}<br /></td>
 								<td style="width: 50%;"><b>{{ __('online_invoice.orderdate') }}</b> {{date('j F, Y', strtotime($order["created_at"]))}}<br /></td>
 							</tr>
 							<tr>
-								<td style="width: 50%;"><b>{{ __('online_invoice.phone') }}</b> {{ config('inventory_settings.phone2') }}<br /></td>
+								<td style="width: 50%;"><b>{{ __('online_invoice.phone') }}</b> {{$order["organisation_phone2"]}}<br /></td>
 								<td style="width: 50%;"><b>{{ __('online_invoice.currency') }}</b> {{$order["currency"]}}<br /></td>
 							</tr>
 							<tr>
-								<td style="width: 50%;"><b>{{ __('online_invoice.email') }}</b> {{ config('inventory_settings.email') }}<br /></td>
+								<td style="width: 50%;"><b>{{ __('online_invoice.email') }}</b> {{$order["organisation_email"]}}<br /></td>
 								<td style="width: 50%;"><b>{{ __('online_invoice.orderid') }}</b> № {{$order["id"]}}<br /></td>
 							</tr>
 						</tbody>

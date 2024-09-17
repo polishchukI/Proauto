@@ -21,15 +21,15 @@ class BlogTagsController extends Controller
 
         if (!empty($keyword))
 		{
-            $tags = Tag::where('name', 'LIKE', "%$keyword%")
+            $blog_tags = Tag::where('name', 'LIKE', "%$keyword%")
                 ->paginate($perPage);
         }
 		else
 		{
-            $tags = Tag::paginate($perPage);
+            $blog_tags = Tag::paginate($perPage);
         }
 
-        return view('inventory.blog_tags.index', compact('tags'));
+        return view('inventory.blog_tags.index', compact('blog_tags'));
     }
 	public function create()
     {

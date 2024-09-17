@@ -2,9 +2,9 @@
 
 return [
 	
-    'organization_name' => 'Заказ покупателя',
-    'organization_phone' => 'Контактный телефон',
-    'organization_email' => 'e-mail',
+    'organisation_name' => 'Заказ покупателя',
+    'organisation_phone' => 'Контактный телефон',
+    'organisation_email' => 'e-mail',
     'client_order' => 'Заказ покупателя',
     'client' => 'Заказчик',
     'client_orderdate' => 'Дата заказа',

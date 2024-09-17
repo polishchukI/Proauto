@@ -3,7 +3,7 @@
 @else
 <form id="admincart-form-product_create_store" method="POST" action="{{ route('admincarts.product.create.store') }}" style="width:100%;">
 @endif
-<div class="addproduct modal-dialog" role="document">
+<div class="addproduct modal-dialog modal-lg" role="document">
 	<div class="modal-content">
 		<div class="modal-header">
 			@if($from_search == "true")
@@ -17,36 +17,39 @@
 		</div>
 		<div class="modal-body">
 			@csrf
-			<div class="form-group">
-				<input type="hidden" id="admincart_id" name="admincart_id" value="{{ $admincart_id }}">
-				@if(isset($brand))
-				<div class="form-group{{ $errors->has('brand') ? ' has-danger' : '' }}">
-					<label class="form-control-label text-success" for="input-brand">{{ __('modal.brand') }}</label>
-					<input type="text" name="brand" id="input-brand" class="form-control form-control-alternative{{ $errors->has('brand') ? ' is-invalid' : '' }}" value="{{ $brand }}">
-					@include('inventory.alerts.feedback', ['field' => 'brand'])
+			<input type="hidden" id="admincart_id" name="admincart_id" value="{{ $admincart_id }}">				
+			<div class="row">
+				<div class="col-6">
+					@if(isset($brand))
+					<div class="form-group{{ $errors->has('brand') ? ' has-danger' : '' }}">
+						<label class="form-control-label text-success" for="input-brand">{{ __('modal.brand') }}</label>
+						<input type="text" name="brand" id="input-brand" class="form-control form-control-alternative{{ $errors->has('brand') ? ' is-invalid' : '' }}" value="{{ $brand }}">
+						@include('inventory.alerts.feedback', ['field' => 'brand'])
+					</div>
+					@else
+					<div class="form-group{{ $errors->has('brand') ? ' has-danger' : '' }}">
+						<label class="form-control-label text-success" for="input-brand">{{ __('modal.product_brand') }}</label>
+						<select name="brand" id="input-brand" class="form-select form-control-alternative{{ $errors->has('brand') ? ' is-invalid' : '' }}">
+							@foreach ($brands as $brand)
+							<option value="{{$brand['brand']}}">{{$brand['brand']}}</option>
+							@endforeach
+						</select>
+						@include('inventory.alerts.feedback', ['field' => 'brand'])
+					</div>
+					@endif
 				</div>
-				@else
-				<div class="form-group{{ $errors->has('brand') ? ' has-danger' : '' }}">
-					<label class="form-control-label text-success" for="input-brand">{{ __('modal.product_brand') }}</label>
-					<select name="brand" id="input-brand" class="form-select form-control-alternative{{ $errors->has('brand') ? ' is-invalid' : '' }}">
-						@foreach ($brands as $brand)
-						<option value="{{$brand['brand']}}">{{$brand['brand']}}</option>
-						@endforeach
-					</select>
-					@include('inventory.alerts.feedback', ['field' => 'brand'])
-				</div>
-
-				@endif				
-				<div class="form-group{{ $errors->has('article') ? ' has-danger' : '' }}">
-					<label class="form-control-label text-success" for="input-article">{{ __('modal.article') }}</label>
-					<input type="text" name="article" id="input-article" class="form-control form-control-alternative{{ $errors->has('article') ? ' is-invalid' : '' }}"
+				<div class="col-6">
+					<div class="form-group{{ $errors->has('article') ? ' has-danger' : '' }}">
+						<label class="form-control-label text-success" for="input-article">{{ __('modal.article') }}</label>
+						<input type="text" name="article" id="input-article" class="form-control form-control-alternative{{ $errors->has('article') ? ' is-invalid' : '' }}"
 						@if(isset($article))
-							value="{{ $article }}"
+						value="{{ $article }}"
 						@else
-							placeholder="{{ __('modal.article') }}" 
+						placeholder="{{ __('modal.article') }}"
 						@endif>
-					@include('inventory.alerts.feedback', ['field' => 'article'])
-				</div>	
+						@include('inventory.alerts.feedback', ['field' => 'article'])
+					</div>
+				</div>
 			</div>
 			<div class="form-group{{ $errors->has('product_name') ? ' has-danger' : '' }}">
 				<label class="form-control-label text-success" for="input-product_name">{{ __('modal.product_name') }}</label>
@@ -58,41 +61,56 @@
 					@endif>
 				@include('inventory.alerts.feedback', ['field' => 'product_name'])
 			</div>
-
-			<div class="form-group{{ $errors->has('category') ? ' has-danger' : '' }}">
-				<label class="form-control-label text-success" for="input-category">{{ __('modal.product_category') }}</label>
-				<select name="category" id="input-category" class="form-select form-control-alternative{{ $errors->has('category') ? ' is-invalid' : '' }}">
-					<option value="">{{ __('modal.not_specified') }}</option>
-					@foreach ($categories as $category)
-					<option value="{{$category['id']}}">{{$category['id']}} - {{$category['name']}}</option>
-					@endforeach
-				</select>
-				@include('inventory.alerts.feedback', ['field' => 'category'])
+			<!-- <comment> -->
+			<div class="form-group{{ $errors->has('product_description') ? ' has-danger' : '' }}">
+				<label class="form-control-label text-success" for="input-product_description">{{ __('modal.product_description') }}</label>
+				<input type="text" name="product_description" id="input-product_description" class="form-control form-control-alternative{{ $errors->has('product_description') ? ' is-invalid' : '' }}"
+					@if(isset($product_description))
+					value="{{ $product_description }}"
+					@else
+					placeholder="{{ __('modal.product_description') }}" 
+					@endif>
+				@include('inventory.alerts.feedback', ['field' => 'product_description'])
 			</div>
-			<div class="form-group{{ $errors->has('group') ? ' has-danger' : '' }}">
-				<label class="form-control-label text-success" for="input-group">{{ __('modal.product_group') }}</label>
-				<select name="group" id="input-group" class="form-select form-control-alternative{{ $errors->has('group') ? ' is-invalid' : '' }}">
-					<option value="">{{ __('modal.not_specified') }}</option>
-					@foreach ($groups as $group)
-					<option value="{{$group['id']}}">{{$group['id']}} - {{$group['name']}}</option>
-					@endforeach
-				</select>
-				@include('inventory.alerts.feedback', ['field' => 'group'])
-			</div>
+			<!-- <comment> -->
 			<div class="row">
-					<div class="col-6">
-						<div class="form-group">
-							<label for="quantity" class="col-form-label">{{ __('modal.quantity') }}:</label>
-							<input type="number" class="form-control" id="quantity" name="quantity" value="1">
-						</div>
-					</div>
-					<div class="col-6">
-						<div class="form-group">
-							<label for="price" class="col-form-label">{{ __('modal.price') }}:</label>
-							<input type="number" class="form-control" id="price" name="price">
-						</div>
+				<div class="col-6">
+					<div class="form-group{{ $errors->has('category') ? ' has-danger' : '' }}">
+						<label class="form-control-label text-success" for="input-category">{{ __('modal.product_category') }}</label>
+						<select name="category" id="input-category" class="form-select form-control-alternative{{ $errors->has('category') ? ' is-invalid' : '' }}">
+							@foreach ($categories as $category)
+							<option value="{{$category['id']}}">{{$category['id']}} - {{$category['name']}}</option>
+							@endforeach
+						</select>
+						@include('inventory.alerts.feedback', ['field' => 'category'])
 					</div>
 				</div>
+				<div class="col-6">
+					<div class="form-group{{ $errors->has('group') ? ' has-danger' : '' }}">
+						<label class="form-control-label text-success" for="input-group">{{ __('modal.product_group') }}</label>
+						<select name="group" id="input-group" class="form-select form-control-alternative{{ $errors->has('group') ? ' is-invalid' : '' }}">
+							@foreach ($groups as $group)
+							<option value="{{$group['id']}}">{{$group['id']}} - {{$group['name']}}</option>
+							@endforeach
+						</select>
+						@include('inventory.alerts.feedback', ['field' => 'group'])
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6">
+					<div class="form-group">
+						<label for="quantity" class="col-form-label">{{ __('modal.quantity') }}:</label>
+						<input type="number" class="form-control" id="quantity" name="quantity" value="1">
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="form-group">
+						<label for="price" class="col-form-label">{{ __('modal.price') }}:</label>
+						<input type="number" class="form-control" id="price" name="price">
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="modal-footer">
 		@if($from_search == "true")

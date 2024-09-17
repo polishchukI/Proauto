@@ -15,6 +15,8 @@
 	@include('shop.block.arrivals')
 	<div class="block-space block-space--layout--divider-nl"></div>
 	@include('shop.block.seo')
+	<div class="block-space block-space--layout--divider-nl"></div>
+	@include('shop.block.banners')
 	<div class="block-space block-space--layout--divider-nl d-xl-block d-none"></div>
 	@include('shop.block.columns')
 	

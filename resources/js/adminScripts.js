@@ -200,6 +200,59 @@ $(document).on("click", "#receipt-product-delete", function()
     })
 })
 
+function receipt_comment(receipt_id)
+{
+	const modal = $('#modaledit');
+	$.ajax({
+		url: '/receipt_comment',
+		type: 'POST',
+		data: {receipt_id:receipt_id},
+		headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+		success:function(data)
+		{
+			modal.html(data);
+			modal.find('.modaledit__close').on('click', function()
+			{
+				modal.modal('hide');
+			});
+			modal.modal('show');
+		}
+	});
+};
+
+$(document).on("click", "#receipt-comment-update", function()
+{
+	$('#receipt-form-comment-update').ajaxSubmit({
+		url: '/receipt_comment_update',
+		type: 'post',
+		dataType: 'json',
+		success: response => {
+			if (response.status == 1)
+			{
+				$('#receiptComment').html('');
+				$('#receiptComment').append(`${response.comment}`);
+			}
+			$('#modaledit').modal('hide')
+		}
+	});
+});
+
+$(document).on("click", "#receipt-comment-delete", function()
+{
+	$('#receipt-form-comment-update').ajaxSubmit({
+		url: '/receipt_comment_delete',
+		type: 'DELETE',
+		dataType: 'json',
+		success: response => {
+			if (response.status == 1)
+			{
+				$('#receiptComment').html('');
+			}
+			$('#modaledit').modal('hide')
+		}
+	});
+});
+
 $(document).on("click", "#receipts-create-new-provider-store", function()
 {
 	$('#form-receipt_create_new_provider_store').ajaxSubmit({
@@ -236,6 +289,7 @@ $(document).on("click", "#sale-single-product-add", function()
 							<td scope="row">${response.info.name}</td>
 							<td scope="row" class="text-center stock">${parseFloat(response.info.stock).toFixed(2)}</td>
 							<td scope="row" class="text-center quantity">${parseFloat(response.info.quantity).toFixed(2)}</td>
+							<td scope="row" class="text-center price_in">${parseFloat(response.info.price_in).toFixed(2)}</td>
 							<td scope="row" class="text-center price">${parseFloat(response.info.price).toFixed(2)}</td>
 							<td scope="row" class="text-center total">${parseFloat(response.info.total).toFixed(2)}</td>
 							<td scope="row" class="text-center discount">${parseFloat(response.info.discount).toFixed(2)}</td>
@@ -293,6 +347,7 @@ $(document).on("click", "#sale-product-add", function()
 							<td scope="row">${response.info.name}</td>
 							<td scope="row" class="text-center stock">${parseFloat(response.info.stock).toFixed(2)}</td>
 							<td scope="row" class="text-center quantity">${parseFloat(response.info.quantity).toFixed(2)}</td>
+							<td scope="row" class="text-center price_in">${parseFloat(response.info.price_in).toFixed(2)}</td>
 							<td scope="row" class="text-center price">${parseFloat(response.info.price).toFixed(2)}</td>
 							<td scope="row" class="text-center total">${parseFloat(response.info.total).toFixed(2)}</td>
 							<td scope="row" class="text-center discount">${parseFloat(response.info.discount).toFixed(2)}</td>
@@ -347,6 +402,7 @@ $(document).on("click", "#sale-product-update", function()
 			if (response.status == 1) {
                 const tr = $(`#selectedProductsTable tbody #sale_selected_product-${response.info.product_id}`)
                 tr.find('.quantity').html(parseFloat(response.info.quantity).toFixed(2))
+                tr.find('.price_in').html(parseFloat(response.info.price_in).toFixed(2))
                 tr.find('.price').html(parseFloat(response.info.price).toFixed(2))
                 tr.find('.total').html(parseFloat(response.info.total).toFixed(2))
                 tr.find('.discount').html(parseFloat(response.info.discount).toFixed(2))
@@ -406,6 +462,7 @@ $('[name="sale_discount"]').on("change", function(e)
 						<td scope="row" class="name">${item.name}</td>
 						<td scope="row" class="text-center stock">${parseFloat(item.stock).toFixed(2)}</td>
 						<td scope="row" class="text-center quantity">${parseFloat(item.quantity).toFixed(2)}</td>
+						<td scope="row" class="text-center price_in">${parseFloat(item.price_in).toFixed(2)}</td>
 						<td scope="row" class="text-center price">${parseFloat(item.price).toFixed(2)}</td>
 						<td scope="row" class="text-center total">${parseFloat(item.total).toFixed(2)}</td>
 						<td scope="row" class="text-center discount">${parseFloat(item.discount).toFixed(2)}</td>
@@ -421,6 +478,59 @@ $('[name="sale_discount"]').on("change", function(e)
 			}
 		}
 
+	});
+});
+
+function sale_comment(sale_id)
+{
+	const modal = $('#modaledit');
+	$.ajax({
+		url: '/sale_comment',
+		type: 'POST',
+		data: {sale_id:sale_id},
+		headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+		success:function(data)
+		{
+			modal.html(data);
+			modal.find('.modaledit__close').on('click', function()
+			{
+				modal.modal('hide');
+			});
+			modal.modal('show');
+		}
+	});
+};
+
+$(document).on("click", "#sale-comment-update", function()
+{
+	$('#sale-form-comment-update').ajaxSubmit({
+		url: '/sale_comment_update',
+		type: 'post',
+		dataType: 'json',
+		success: response => {
+			if (response.status == 1)
+			{
+				$('#saleComment').html('');
+				$('#saleComment').append(`${response.comment}`);
+			}
+			$('#modaledit').modal('hide')
+		}
+	});
+});
+
+$(document).on("click", "#sale-comment-delete", function()
+{
+	$('#sale-form-comment-update').ajaxSubmit({
+		url: '/sale_comment_delete',
+		type: 'DELETE',
+		dataType: 'json',
+		success: response => {
+			if (response.status == 1)
+			{
+				$('#saleComment').html('');
+			}
+			$('#modaledit').modal('hide')
+		}
 	});
 });
 
@@ -1516,7 +1626,7 @@ $(document).on("click", "#product-cross-add", function()
 				let tbody = ''
 				response.info.forEach(item => {
 					tbody += 
-						`<tr id="selected_cross-${item.id}" class="pointer" OnClick="product_editcross('${item.id}','${item.uid}')">
+						`<tr id="selected_cross-${item.id}" class="pointer" ondblclick="product_editcross('${item.id}','${item.uid}')">
 							<td scope="row" class="article">${item.article}</td>
 							<td scope="row" class="brand">${item.brand}</td>
 							<td scope="row" class="name">${item.name != null ? item.name : ''}</td>
@@ -1564,7 +1674,7 @@ $(document).on("click", "#product-cross-update", function()
 				let tbody = ''
 				response.info.forEach(item => {
 					tbody += 
-						`<tr id="selected_cross-${item.id}" class="pointer" OnClick="product_editcross('${item.id}','${item.uid}')">
+						`<tr id="selected_cross-${item.id}" class="pointer" ondblclick="product_editcross('${item.id}','${item.uid}')">
 							<td scope="row" class="article">${item.article}</td>
 							<td scope="row" class="brand">${item.brand}</td>
 							<td scope="row" class="name">${item.name != null ? item.name : ''}</td>
@@ -1591,7 +1701,7 @@ $(document).on("click", "#product-cross-delete", function()
 				let tbody = ''
 				response.info.forEach(item => {
 					tbody += 
-						`<tr id="selected_cross-${item.id}" class="pointer" OnClick="product_editcross('${item.id}','${item.uid}')">
+						`<tr id="selected_cross-${item.id}" class="pointer" ondblclick="product_editcross('${item.id}','${item.uid}')">
 							<td scope="row" class="article">${item.article}</td>
 							<td scope="row" class="brand">${item.brand}</td>
 							<td scope="row" class="name">${item.name != null ? item.name : ''}</td>
@@ -2858,6 +2968,7 @@ $(document).on("click", "#admincart-single-product-add", function()
 					<td scope="row">${response.info.name}</td>
 					<td scope="row" class="text-center stock">${parseFloat(response.info.stock).toFixed(2)}</td>
 					<td scope="row" class="text-center quantity">${parseFloat(response.info.quantity).toFixed(2)}</td>
+					<td scope="row" class="text-center price_in">${parseFloat(response.info.price_in).toFixed(2)}</td>
 					<td scope="row" class="text-center price">${parseFloat(response.info.price).toFixed(2)}</td>
 					<td scope="row" class="text-center total_amount">${parseFloat(response.info.total_amount).toFixed(2)}</td>
 					</tr>
@@ -2910,6 +3021,7 @@ $(document).on("click", "#admincart-product-add", function()
 							<td scope="row">${response.info.name}</td>
 							<td scope="row" class="text-center stock">${parseFloat(response.info.stock).toFixed(2)}</td>
 							<td scope="row" class="text-center quantity">${parseFloat(response.info.quantity).toFixed(2)}</td>
+							<td scope="row" class="text-center price_in">${parseFloat(response.info.price_in).toFixed(2)}</td>
 							<td scope="row" class="text-center price">${parseFloat(response.info.price).toFixed(2)}</td>
 							<td scope="row" class="text-center total_amount">${parseFloat(response.info.total_amount).toFixed(2)}</td>
 						</tr>
@@ -2963,6 +3075,7 @@ $(document).on("click", "#admincart-product-update", function()
 			if (response.status == 1) {
                 const tr = $(`#selectedProductsTable tbody #admincart_selected_product-${response.info.product_id}`)
                 tr.find('.quantity').html(parseFloat(response.info.quantity).toFixed(2))
+                tr.find('.price_in').html(parseFloat(response.info.price_in).toFixed(2))
                 tr.find('.price').html(parseFloat(response.info.price).toFixed(2))
                 tr.find('.total_amount').html(parseFloat(response.info.total_amount).toFixed(2))
 
@@ -3003,6 +3116,12 @@ $(document).on("click", "#admincart-product-delete", function()
 function admincart_search()
 {
 	var admincart_id = jQuery('#admincart_id').val();
+
+	var catalog_search = document.getElementById("catalog_search").checked;//catalog_search
+	var prices_search = document.getElementById("prices_search").checked;
+	var oem_search = document.getElementById("oem_search").checked;//oem_search
+	var ws_search = document.getElementById("ws_search").checked;//ws_search
+
 	var admincart_product_search_input = jQuery('#admincart_product_search_input').val();
 	
 	if(admincart_product_search_input != '')
@@ -3012,7 +3131,14 @@ function admincart_search()
 			$.ajax({
 				url: '/admincart_search',
 				type: 'POST',
-				data: {admincart_id:admincart_id,admincart_product_search_input:admincart_product_search_input},
+				data: {
+					admincart_id:admincart_id,
+					catalog_search:catalog_search,
+					ws_search:ws_search,
+					oem_search:oem_search,
+					admincart_product_search_input:admincart_product_search_input,
+					prices_search:prices_search
+					},
 				dataType: 'json',
 				headers: {'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')},
 				beforeSend: function ()
@@ -3162,6 +3288,7 @@ $(document).on("click", "#admincart-product-create-from-search-add", function()
 						<td scope="row">${response.info.name}</td>
 						<td scope="row" class="text-center stock">${parseFloat(response.info.stock).toFixed(2)}</td>
 						<td scope="row" class="text-center quantity">${parseFloat(response.info.quantity).toFixed(2)}</td>
+						<td scope="row" class="text-center price_in">${parseFloat(response.info.price_in).toFixed(2)}</td>
 						<td scope="row" class="text-center price">${parseFloat(response.info.price).toFixed(2)}</td>
 						<td scope="row" class="text-center total_amount">${parseFloat(response.info.total_amount).toFixed(2)}</td>
 					</tr>
@@ -3208,6 +3335,7 @@ $(document).on("click", "#admincart-product-create-manual-add", function()
 						<td scope="row">${response.info.name}</td>
 						<td scope="row" class="text-center stock">${parseFloat(response.info.stock).toFixed(2)}</td>
 						<td scope="row" class="text-center quantity">${parseFloat(response.info.quantity).toFixed(2)}</td>
+						<td scope="row" class="text-center price_in">${parseFloat(response.info.price_in).toFixed(2)}</td>
 						<td scope="row" class="text-center price">${parseFloat(response.info.price).toFixed(2)}</td>
 						<td scope="row" class="text-center total_amount">${parseFloat(response.info.total_amount).toFixed(2)}</td>
 					</tr>
@@ -3222,6 +3350,427 @@ $(document).on("click", "#admincart-product-create-manual-add", function()
 		}
 	});
 });
+
+/////////////////////////////////////**client_order_correction**////////////////////////////////////////////////
+$(document).on("click", "#client_order_correction-single-product-add", function()
+{
+	var id = $('[name="productLive"]').val();
+	if (checkId(id)) {
+		$('#client_order_correction-form-single-product-add').ajaxSubmit({
+			url: '/client_order_correction_add_single_product_store',
+			type: 'PUT',
+			dataType: 'json',
+			success: response => {
+				if (response.status == 1) {
+					$('#selectedProductsTable tbody').append(`
+						<tr id="client_order_correction_selected_product-${response.info.product_id}" class="pointer" ondblclick="client_order_correction_edit_product('${response.info.client_order_correction_id}','${response.info.product_id}');">
+							<td scope="row">${response.info.article}</td>
+							<td scope="row">${response.info.brand}</td>
+							<td scope="row">${response.info.name}</td>
+							<td scope="row" class="text-center stock">${parseFloat(response.info.stock).toFixed(2)}</td>
+							<td scope="row" class="text-center quantity">${parseFloat(response.info.quantity).toFixed(2)}</td>
+							<td scope="row" class="text-center price">${parseFloat(response.info.price).toFixed(2)}</td>
+							<td scope="row" class="text-center total">${parseFloat(response.info.total).toFixed(2)}</td>
+							<td scope="row" class="text-center discount">${parseFloat(response.info.discount).toFixed(2)}</td>
+							<td scope="row" class="text-center total_amount">${parseFloat(response.info.total_amount).toFixed(2)}</td>
+						</tr>
+					`)
+					//header
+					$('[name="docDiscountSum"]').html(parseFloat(response.docHeaderValues.docDiscountSum).toFixed(2))
+					$('[name="docDiscountedTotal"]').html(parseFloat(response.docHeaderValues.docDiscountedTotal).toFixed(2))
+					$('[name="docCount"]').html(parseFloat(response.docHeaderValues.docCount).toFixed(2))
+					$('[name="docQuantity"]').html(parseFloat(response.docHeaderValues.docQuantity).toFixed(2))
+
+					
+				}
+			}
+		});
+	}
+	$('#singleProduct').modal('hide')
+});
+
+function client_order_correction_add_product(client_order_correction_id, product_id)
+{
+	const modal = $('#modaledit');
+	$.ajax({
+		url: '/client_order_correction_add_product',
+		type: 'POST',
+		data: {client_order_correction_id:client_order_correction_id,product_id:product_id},
+		headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+		success:function(data)
+		{
+			modal.html(data);
+			modal.find('.modaledit__close').on('click', function()
+			{
+				modal.modal('hide');
+			});
+			modal.modal('show');
+		}
+	});
+};
+
+$(document).on("click", "#client_order_correction-product-add", function()
+{
+	var id = $('[name="product_id"]').val();
+	if (checkId(id)) {
+		$('#client_order_correction-form-product-add').ajaxSubmit({
+			url: '/client_order_correction_add_product_store',
+			type: 'PUT',
+			dataType: 'json',
+			success: response => {
+				if (response.status == 1) {
+					$('#selectedProductsTable tbody').append(`
+						<tr id="client_order_correction_selected_product-${response.info.product_id}" class="pointer" ondblclick="client_order_correction_edit_product('${response.info.client_order_correction_id}','${response.info.product_id}');">
+							<td scope="row">${response.info.article}</td>
+							<td scope="row">${response.info.brand}</td>
+							<td scope="row">${response.info.name}</td>
+							<td scope="row" class="text-center stock">${parseFloat(response.info.stock).toFixed(2)}</td>
+							<td scope="row" class="text-center quantity">${parseFloat(response.info.quantity).toFixed(2)}</td>
+							<td scope="row" class="text-center price">${parseFloat(response.info.price).toFixed(2)}</td>
+							<td scope="row" class="text-center total">${parseFloat(response.info.total).toFixed(2)}</td>
+							<td scope="row" class="text-center discount">${parseFloat(response.info.discount).toFixed(2)}</td>
+							<td scope="row" class="text-center total_amount">${parseFloat(response.info.total_amount).toFixed(2)}</td>
+						</tr>
+					`)
+					//header
+					$('[name="docDiscountSum"]').html(parseFloat(response.docHeaderValues.docDiscountSum).toFixed(2))
+					$('[name="docDiscountedTotal"]').html(parseFloat(response.docHeaderValues.docDiscountedTotal).toFixed(2))
+					$('[name="docCount"]').html(parseFloat(response.docHeaderValues.docCount).toFixed(2))
+					$('[name="docQuantity"]').html(parseFloat(response.docHeaderValues.docQuantity).toFixed(2))					
+				}
+			}
+		});
+	}
+	$('#modaledit').modal('hide')
+});
+
+function client_order_correction_edit_product(client_order_correction_id,product_id)
+{
+	const modal = $('#modaledit');
+	
+	var is_finalized = jQuery('#is_finalized').val();
+	
+	if(!is_finalized)
+	{
+		$.ajax({
+			url: '/client_order_correction_edit_product',
+			type: 'POST',
+			data: {client_order_correction_id:client_order_correction_id,product_id:product_id},
+			headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+			success:function(data)
+			{
+				modal.html(data);
+				modal.find('.modaledit__close').on('click', function()
+				{
+					modal.modal('hide');
+				});
+				modal.modal('show');
+			}
+		});
+	};
+};
+
+$(document).on("click", "#client_order_correction-product-update", function()
+{
+	$('#client_order_correction-form-product-update').ajaxSubmit({
+		url: '/client_order_correction_update_product_store',
+		type: 'POST',
+		dataType: 'json',
+		success: response => {
+			if (response.status == 1) {
+                const tr = $(`#selectedProductsTable tbody #client_order_correction_selected_product-${response.info.product_id}`)
+                tr.find('.quantity').html(parseFloat(response.info.quantity).toFixed(2))
+                tr.find('.price').html(parseFloat(response.info.price).toFixed(2))
+                tr.find('.total').html(parseFloat(response.info.total).toFixed(2))
+                tr.find('.discount').html(parseFloat(response.info.discount).toFixed(2))
+                tr.find('.total_amount').html(parseFloat(response.info.total_amount).toFixed(2))
+				//header
+				$('[name="docDiscountSum"]').html(parseFloat(response.docHeaderValues.docDiscountSum).toFixed(2))
+				$('[name="docDiscountedTotal"]').html(parseFloat(response.docHeaderValues.docDiscountedTotal).toFixed(2))
+				$('[name="docCount"]').html(parseFloat(response.docHeaderValues.docCount).toFixed(2))
+				$('[name="docQuantity"]').html(parseFloat(response.docHeaderValues.docQuantity).toFixed(2))
+
+                $('#modaledit').modal('hide')
+                $('#selectedProductsTable div').append(`<div id="add-client_order_correction_selected_product-status" class="d-inline px-4 py-1 border rounded alert-${response.message[1]} text-center" role="alert">${response.message[0]}</div>`)
+
+            }
+        }
+	});
+});
+
+$(document).on("click", "#client_order_correction-product-delete", function()
+{
+    $('#client_order_correction-form-product-update').ajaxSubmit({
+		url: '/client_order_correction_delete_product',
+		type: 'DELETE',
+		dataType: 'json',
+        success: response => {
+            if (response.status == 1) {
+                $(`#selectedProductsTable tbody #client_order_correction_selected_product-${response.info.product_id}`).remove()
+				//header
+				$('[name="docDiscountSum"]').html(parseFloat(response.docHeaderValues.docDiscountSum).toFixed(2))
+				$('[name="docDiscountedTotal"]').html(parseFloat(response.docHeaderValues.docDiscountedTotal).toFixed(2))
+				$('[name="docCount"]').html(parseFloat(response.docHeaderValues.docCount).toFixed(2))
+				$('[name="docQuantity"]').html(parseFloat(response.docHeaderValues.docQuantity).toFixed(2))
+
+                $('#modaledit').modal('hide')
+            }
+		}
+    })
+})
+
+$('[name="client_order_correction_discount"]').on("change", function(e)
+{
+	$.ajax({
+		url: '/client_order_corrections_change_discount',
+		type: 'POST',
+		dataType: 'json',
+		data: { discount: $('[name="client_order_correction_discount"]').val(), client_order_correction: $('[name="client_order_correction"]').val()},
+		
+		success: response => {
+		if (response.status == 1) {
+			$('#selectedProductsTable tbody').html('')
+			let tbody = ''
+			response.info.forEach(item => {
+				tbody += 
+				`<tr id="client_order_correction_selected_product-${item.product_id}" class="pointer" ondblclick="client_order_correction_edit_product('${item.client_order_correction_id}','${item.product_id}');">
+						<td scope="row" class="article">${item.article}</td>
+						<td scope="row" class="brand">${item.brand}</td>
+						<td scope="row" class="name">${item.name}</td>
+						<td scope="row" class="text-center stock">${parseFloat(item.stock).toFixed(2)}</td>
+						<td scope="row" class="text-center quantity">${parseFloat(item.quantity).toFixed(2)}</td>
+						<td scope="row" class="text-center price">${parseFloat(item.price).toFixed(2)}</td>
+						<td scope="row" class="text-center total">${parseFloat(item.total).toFixed(2)}</td>
+						<td scope="row" class="text-center discount">${parseFloat(item.discount).toFixed(2)}</td>
+						<td scope="row" class="text-center total_amount">${parseFloat(item.total_amount).toFixed(2)}</td>
+					</tr>`
+			})
+			$('#selectedProductsTable tbody').html(tbody)
+
+				$('[name="docDiscountSum"]').html(parseFloat(response.docHeaderValues.docDiscountSum).toFixed(2))
+				$('[name="docDiscountedTotal"]').html(parseFloat(response.docHeaderValues.docDiscountedTotal).toFixed(2))
+				$('[name="docCount"]').html(parseFloat(response.docHeaderValues.docCount).toFixed(2))
+				$('[name="docQuantity"]').html(parseFloat(response.docHeaderValues.docQuantity).toFixed(2))
+			}
+		}
+
+	});
+});
+
+/////////////////////////////////////**warehouse_write_offs**////////////////////////////////////////////////
+$(document).on("click", "#warehouse_write_off-single-product-add", function()
+{
+	var id = $('[name="productLive"]').val();
+	if (checkId(id)) {
+		$('#warehouse_write_off-form-single-product-add').ajaxSubmit({
+			url: '/warehouse_write_off_add_single_product_store',
+			type: 'PUT',
+			dataType: 'json',
+			success: response => {
+				if (response.status == 1) {
+					$('#selectedProductsTable tbody').append(`
+						<tr id="warehouse_write_off_selected_product-${response.info.product_id}" class="pointer" ondblclick="warehouse_write_off_edit_product('${response.info.warehouse_write_off_id}','${response.info.product_id}');">
+							<td scope="row">${response.info.article}</td>
+							<td scope="row">${response.info.brand}</td>
+							<td scope="row">${response.info.name}</td>
+							<td scope="row" class="text-center stock">${parseFloat(response.info.stock).toFixed(2)}</td>
+							<td scope="row" class="text-center quantity">${parseFloat(response.info.quantity).toFixed(2)}</td>
+							<td scope="row" class="text-center price">${parseFloat(response.info.price).toFixed(2)}</td>
+							<td scope="row" class="text-center total_amount">${parseFloat(response.info.total_amount).toFixed(2)}</td>
+						</tr>
+					`)
+					//header
+					$('[name="docTotal"]').html(parseFloat(response.docHeaderValues.docTotal).toFixed(2))
+					$('[name="docCount"]').html(parseFloat(response.docHeaderValues.docCount).toFixed(2))
+					$('[name="docQuantity"]').html(parseFloat(response.docHeaderValues.docQuantity).toFixed(2))
+					
+					
+				}
+			}
+		});
+	}
+	$('#singleProduct').modal('hide')
+});
+
+function warehouse_write_off_add_product(warehouse_write_off_id, product_id)
+{
+	const modal = $('#modaledit');
+	$.ajax({
+		url: '/warehouse_write_off_add_product',
+		type: 'POST',
+		data: {warehouse_write_off_id:warehouse_write_off_id,product_id:product_id},
+		headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+		success:function(data)
+		{
+			modal.html(data);
+			modal.find('.modaledit__close').on('click', function()
+			{
+				modal.modal('hide');
+			});
+			modal.modal('show');
+		}
+	});
+};
+       
+$(document).on("click", "#warehouse_write_off-product-add", function()
+{
+	var id = $('[name="product_id"]').val();
+	if (checkId(id)) {
+		$('#warehouse_write_off-form-product-add').ajaxSubmit({
+			url: '/warehouse_write_off_add_product_store',
+			type: 'PUT',
+			dataType: 'json',
+			success: response => {
+				if (response.status == 1) {
+					$('#selectedProductsTable tbody').append(`
+						<tr id="warehouse_write_off_selected_product-${response.info.product_id}" class="pointer" ondblclick="warehouse_write_off_edit_product('${response.info.warehouse_write_off_id}','${response.info.product_id}');">
+							<td scope="row">${response.info.article}</td>
+							<td scope="row">${response.info.brand}</td>
+							<td scope="row">${response.info.name}</td>
+							<td scope="row" class="text-center stock">${parseFloat(response.info.stock).toFixed(2)}</td>
+							<td scope="row" class="text-center quantity">${parseFloat(response.info.quantity).toFixed(2)}</td>
+							<td scope="row" class="text-center price">${parseFloat(response.info.price).toFixed(2)}</td>
+							<td scope="row" class="text-center total_amount">${parseFloat(response.info.total_amount).toFixed(2)}</td>
+						</tr>
+					`)
+
+					//header
+					$('[name="docTotal"]').html(parseFloat(response.docHeaderValues.docTotal).toFixed(2))
+					$('[name="docCount"]').html(parseFloat(response.docHeaderValues.docCount).toFixed(2))
+					$('[name="docQuantity"]').html(parseFloat(response.docHeaderValues.docQuantity).toFixed(2))
+				}
+			}
+		});
+	}
+	$('#modaledit').modal('hide')
+});
+
+function warehouse_write_off_edit_product(warehouse_write_off_id,product_id)
+{
+	const modal = $('#modaledit');
+	
+	var is_finalized = jQuery('#is_finalized').val();
+	
+	if(!is_finalized)
+	{
+		$.ajax({
+			url: '/warehouse_write_off_edit_product',
+			type: 'POST',
+			data: {warehouse_write_off_id:warehouse_write_off_id,product_id:product_id},
+			headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+			success:function(data)
+			{
+				modal.html(data);
+				modal.find('.modaledit__close').on('click', function()
+				{
+					modal.modal('hide');
+				});
+				modal.modal('show');
+			}
+		});
+	};
+};
+
+$(document).on("click", "#warehouse_write_off-product-update", function()
+{
+	$('#warehouse_write_off-form-product-update').ajaxSubmit({
+		url: '/warehouse_write_off_update_product_store',
+		type: 'POST',
+		dataType: 'json',
+		success: response => {
+			if (response.status == 1) {
+                const tr = $(`#selectedProductsTable tbody #warehouse_write_off_selected_product-${response.info.product_id}`)
+                tr.find('.quantity').html(parseFloat(response.info.quantity).toFixed(2))
+                tr.find('.price').html(parseFloat(response.info.price).toFixed(2))
+                tr.find('.total_amount').html(parseFloat(response.info.total_amount).toFixed(2))
+				
+				//header
+				$('[name="docTotal"]').html(parseFloat(response.docHeaderValues.docTotal).toFixed(2))
+				$('[name="docCount"]').html(parseFloat(response.docHeaderValues.docCount).toFixed(2))
+				$('[name="docQuantity"]').html(parseFloat(response.docHeaderValues.docQuantity).toFixed(2))
+
+				$('#modaledit').modal('hide')
+
+                $('#selectedProductsTable div').append(`<div id="add-warehouse_write_off_selected_product-status" class="d-inline px-4 py-1 border rounded alert-${response.message[1]} text-center" role="alert">${response.message[0]}</div>`)
+            }
+        }
+	});
+});
+
+$(document).on("click", "#warehouse_write_off-product-delete", function()
+{
+    $('#warehouse_write_off-form-product-update').ajaxSubmit({
+		url: '/warehouse_write_off_delete_product',
+		type: 'DELETE',
+		dataType: 'json',
+        success: response => {
+            if (response.status == 1) {
+                $(`#selectedProductsTable tbody #warehouse_write_off_selected_product-${response.info.product_id}`).remove()
+				
+				//header
+				$('[name="docTotal"]').html(parseFloat(response.docHeaderValues.docTotal).toFixed(2))
+				$('[name="docCount"]').html(parseFloat(response.docHeaderValues.docCount).toFixed(2))
+				$('[name="docQuantity"]').html(parseFloat(response.docHeaderValues.docQuantity).toFixed(2))
+
+				$('#modaledit').modal('hide')
+            }
+		}
+    })
+})
+
+function warehouse_write_off_comment(warehouse_write_off_id)
+{
+	const modal = $('#modaledit');
+	$.ajax({
+		url: '/warehouse_write_off_comment',
+		type: 'POST',
+		data: {warehouse_write_off_id:warehouse_write_off_id},
+		headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+		success:function(data)
+		{
+			modal.html(data);
+			modal.find('.modaledit__close').on('click', function()
+			{
+				modal.modal('hide');
+			});
+			modal.modal('show');
+		}
+	});
+};
+
+$(document).on("click", "#warehouse_write_off-comment-update", function()
+{
+	$('#warehouse_write_off-form-comment-update').ajaxSubmit({
+		url: '/warehouse_write_off_comment_update',
+		type: 'post',
+		dataType: 'json',
+		success: response => {
+			if (response.status == 1)
+			{
+				$('#warehouse_write_offComment').html('');
+				$('#warehouse_write_offComment').append(`${response.comment}`);
+			}
+			$('#modaledit').modal('hide')
+		}
+	});
+});
+
+$(document).on("click", "#warehouse_write_off-comment-delete", function()
+{
+	$('#warehouse_write_off-form-comment-update').ajaxSubmit({
+		url: '/warehouse_write_off_comment_delete',
+		type: 'DELETE',
+		dataType: 'json',
+		success: response => {
+			if (response.status == 1)
+			{
+				$('#warehouse_write_offComment').html('');
+			}
+			$('#modaledit').modal('hide')
+		}
+	});
+});
+
 /////////////////////////////////////**alerts**////////////////////////////////////////////////
 
 setTimeout(() => $('#alert-error').remove(), 30000)

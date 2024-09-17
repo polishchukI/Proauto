@@ -63,7 +63,7 @@ class OnlineClientOrdersController extends Controller
     {
         $online_client_order->delete();
 
-        return redirect()->route('online_client_orders.index')->withStatus('The Online Client Order record has been successfully deleted.');
+        return redirect()->route('online_client_orders.index')->withStatus('Документ "OnLine заказ покупателя" успешно удален');
     }
 
 	public function clear_products_table(OnlineOrder $online_client_order)
@@ -82,7 +82,7 @@ class OnlineClientOrdersController extends Controller
 		$online_client_order->finalized_at = null;
         $online_client_order->save();
 
-        return back()->withStatus('The Online client order has been successfully unfinalized.');
+        return back()->withStatus('Отмена проведения документа "OnLine заказ покупателя" успешна');
 	}
     
     //print_online_client_order
@@ -191,7 +191,7 @@ class OnlineClientOrdersController extends Controller
 		if (count($productsToTest) !== 0)
 		{
 			$productsList = implode("; ", $productsToTest);
-			return redirect()->back()->with('error', 'Товар: << ' . $productsList .' >> отсутствует в системе! Обновите номенклатуру и продолжите заказ!');		
+			return redirect()->back()->with('error', 'Товар: << ' . $productsList .' >> отсутствует в номенклатуре! Обновите и продолжите заказ!');		
 		}
 
 		$requestData['user_id']					= auth()->user()->id;
@@ -225,7 +225,7 @@ class OnlineClientOrdersController extends Controller
 			}
 		}
         
-        return redirect()->route('client_orders.show', ['client_order' => $client_order->id])->withStatus('ClientOrder registered successfully, you can start registering products and transactions.');
+        return redirect()->route('client_orders.show', ['client_order' => $client_order->id])->withStatus('Документ "OnLine Заказ покупателя" успешно зарегистрирован');
 	}
 
 	public static function docHeaderValues(OnlineOrder $online_client_order)

@@ -21,6 +21,6 @@ class ProductGroup extends Model
     
     public function products()
 	{
-        return $this->hasMany('App\Models\Product\Product','id','product_groups_id');
+        return $this->hasMany('App\Models\Product\Product','product_group_id','id');
     }
 }

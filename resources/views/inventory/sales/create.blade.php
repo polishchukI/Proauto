@@ -17,8 +17,8 @@
 			</div>
 			<div class="card-body">
 			<form method="post" action="{{ route('sales.store') }}" autocomplete="off">
-				<input type="hidden" name="user_id" value="{{ Auth::id() }}">
 				@csrf
+				<input type="hidden" name="user_id" value="{{ Auth::id() }}">
 				<h6 class="heading-small text-muted mb-4">{{ __('inventory.client_information') }}</h6>
 					@if(isset($client_order))
 					<div class="row" hidden>
@@ -88,6 +88,15 @@
 						<div class="text-center">
 							<button type="submit" class="btn btn-success btn-simple btn-sm mt-4">{{ __('inventory.save') }}</button>
 						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-9">
+						<div class="form-group{{ $errors->has('comment') ? ' has-danger' : '' }}">
+							<label class="form-control-label text-success" for="input-comment">{{ __('inventory.comment') }}</label>
+							<input type="text" name="comment" id="input-comment" class="form-control form-control-alternative{{ $errors->has('comment') ? ' is-invalid' : '' }}" placeholder="{{ __('inventory.comment') }}" autofocus>
+							@include('inventory.alerts.feedback', ['field' => 'comment'])
+						</div>						
 					</div>
 				</div>
 			</form>

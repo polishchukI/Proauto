@@ -101,11 +101,10 @@ class ProductGroupsController extends Controller
         return $result;
     }
 
-    public function show(Request $request, ProductGroup $group)
+    public function show(Request $request, ProductGroup $product_group)
     {
-        return view('inventory.product_groups.show', [
-            'group' => $group,
-            'products' => Product::where('product_group_id', $group->id)->paginate(25)
-        ]);
+        return view('inventory.product_groups.show', compact('product_group'));
     }
+
+
 }

@@ -107,7 +107,8 @@ class HomeController extends Controller
 		{
             foreach($request as $product)
 			{
-				$quanity        = AddProductController::get_product_stocks($product['product_id']);
+				// $quanity        = AddProductController::get_product_stocks($product['product_id']);
+				$quanity        = AddProductController::get_product_stocks($product['product_id'], auth()->user()->default_warehouse_id);
 				$price          = AddProductController::get_product_price($product['product_id'], 'in', $currency);
 				if($quanity > 0)
 				{

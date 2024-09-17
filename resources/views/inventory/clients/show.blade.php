@@ -3,11 +3,11 @@
 @section('content')
 @include('inventory.alerts.error')
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-12">
             <div class="card">
 				<div class="card-header">
 					<div class="row">
-						<div class="col-8"><h4 class="card-title">{{ __('inventory.client_information') }}</h4></div>
+						<div class="col-8"><h6 class="heading-small text-muted mb-4">{{__('inventory.client_information')}}</h6></div>
 						<div class="col-4 text-right">
 							<a href="{{ route('clients.edit', $client) }}" class="btn btn-sm btn-simple btn-selector" data-toggle="tooltip" data-placement="bottom" title="{{ __('inventory.edit') }}">
 								<i class="fas fa-edit"></i>
@@ -78,149 +78,15 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-				<div class="card-header">
-					<div class="row">
-						<div class="col-8"><h4 class="card-title">{{ __('inventory.phones') }}</h4></div>
-						<div class="col-4 text-right"></div>
-					</div>
-				</div>
-                <div class="card-body">
-					<table class="table tablesorter " id="">
-						<thead class=" text-primary">
-
-						<tr>
-								<th>{{__('inventory.phone')}}</th>
-								<th><i class="fab fa-telegram"></i></th>
-								<th><i class="fab fa-viber"></i></th>
-								<th><i class="fab fa-whatsapp"></i></th>
-								<th><i class="far fa-check-square"></i></th>
-								<th>{{__('inventory.comment')}}</th>
-							</tr>
-						</thead>
-						<tbody>
-							@foreach($client->phones as $phone)
-							<tr>
-								<td>{{ $phone->phone }}</td>
-								<td>
-									@if (!$phone->telegram)
-										<span class="text-danger"><i class="far fa-minus-square"></i></span>
-									@else
-										<span class="text-success"><i class="far fa-check-square"></i></span>
-									@endif
-								</td>
-								<td>
-									@if (!$phone->viber)
-										<span class="text-danger"><i class="far fa-minus-square"></i></span>
-									@else
-										<span class="text-success"><i class="far fa-check-square"></i></span>
-									@endif
-								</td>
-								<td>
-									@if (!$phone->whatsapp)
-										<span class="text-danger"><i class="far fa-minus-square"></i></span>
-									@else
-										<span class="text-success"><i class="far fa-check-square"></i></span>
-									@endif
-								</td>
-								<td>
-									@if (!$phone->default)
-										<span class="text-danger"><i class="far fa-minus-square"></i></span>
-									@else
-										<span class="text-success"><i class="far fa-check-square"></i></span>
-									@endif
-								</td>
-								<td>{{ $phone->comment }}</td>
-							</tr>
-						@endforeach
-						</tbody>
-					</table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-				<div class="card-header">
-					<div class="row">
-						<div class="col-8"><h4 class="card-title">{{ __('inventory.autos') }}</h4></div>
-						<div class="col-4 text-right"></div>
-					</div>
-				</div>
-                <div class="card-body">
-					<table class="table">
-						<thead>
-							<tr>
-								<th>{{ __('inventory.group') }}</th>
-								<th>{{ __('inventory.model') }}</th>
-								<th>{{ __('inventory.auto') }}</th>
-								<th>{{ __('inventory.car_body') }}</th>
-								<th>{{ __('inventory.color') }}</th>
-								<th>{{ __('inventory.plate') }}</th>
-								<th>{{ __('inventory.engine') }}</th>
-								<th>{{ __('inventory.engine_capacity') }}</th>
-								<th>{{ __('inventory.fuel') }}</th>
-								<th>{{ __('inventory.year') }}</th>
-								<th></th>
-								<th></th>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody>
-						@foreach($client->automobiles as $auto)
-								<tr>
-									<td>{{ $auto->group }}</td>
-									<td>{{ $auto->model_id }}</td>
-									<td>
-										<b>{{ $auto->name }}</b>
-										</br>{{ $auto->vin }}
-									</td>
-									<td>{{ $auto->body }}</td>
-									<td>{{ $auto->color }}</td>
-									<td>{{ $auto->plate }}</td>
-									<td>{{ $auto->engine }}</td>
-									<td>{{ $auto->ccm }}</td>
-									<td>{{ $auto->fuel }}</td>
-									<td>{{ $auto->year }}</td>
-									<td class="td-actions">
-										<a href="{{ route('client_autos.show', $auto->id) }}" class="btn btn-sm btn-simple btn-service-parts"><i class='fa fa-cogs'></i></a>
-									</td>
-									<td>
-										<form method="post" action="{{ route('admincarts.store') }}">
-											@csrf
-											<input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-											<input type="hidden" name="client_id" value="{{ $client->id }}">
-											<input type="hidden" name="client_auto_id" value="{{ $auto->id }}">
-											<input type="hidden" name="warehouse_id" value="{{ auth()->user()->default_warehouse_id }}">
-											<input type="hidden" name="currency" value="{{ auth()->user()->default_currency }}">
-											<button type="submit" class="btn btn-simple btn-sm btn-selector"><i class="fas fa-cart-plus"></i></button>
-										</form>
-									</td>
-									<td class="td-actions">
-										<a href="{{ route('client_autos.edit', $auto->id) }}" class="btn btn-sm btn-simple btn-selector" data-toggle="tooltip" data-placement="bottom" title="{{ __('inventory.edit') }}">
-											<i class="fas fa-edit"></i>
-										</a>
-									</td>
-								</tr>
-							@endforeach
-						</tbody>
-					</table>
-                </div>
-            </div>
-        </div>
-    </div>
-
 	<div class="row">
-		<div class="col-md-12">
-			<div class="card">
-				<div class="card-body">
+		<div class="col-12">
+			<div class="card" style="height:560px;position:relative;">
+                <div class="card-body" style="max-height:100%;overflow:auto;">
 					<!-- Nav tabs -->
 					<ul class="nav nav-pills nav-pills-primary nav-pills-icons">
-						<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#latest_sales">{{ __('inventory.sales') }}</a></li>
+						<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#contact_information">{{ __('inventory.contact_information') }}</a></li>
+						<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#autos">{{ __('inventory.autos') }}</a></li>
+						<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#latest_sales">{{ __('inventory.sales') }}</a></li>
 						<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#latest_returns_from_the_client">{{ __('inventory.returns_from_the_client') }}</a></li>
 						<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#client_carts">{{ __('inventory.admincarts') }}</a></li>
 						<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#client_orders">{{ __('inventory.client_orders') }}</a></li>
@@ -229,8 +95,155 @@
 					</ul>
 					<!-- Tab panes -->
 					<div class="tab-content">
+						<!-- <contact_information> -->
+						<div class="tab-pane active" id="contact_information">
+							<div class="row">
+								<div class="col-md-6 col-sm-12">
+									<table class="table">
+										<thead class=" text-primary">
+											<tr>
+												<th>{{__('inventory.phone')}}</th>
+												<th><i class="fab fa-telegram"></i></th>
+												<th><i class="fab fa-viber"></i></th>
+												<th><i class="fab fa-whatsapp"></i></th>
+												<th><i class="far fa-check-square"></i></th>
+												<th>{{__('inventory.comment')}}</th>
+											</tr>
+										</thead>
+										<tbody>
+											@foreach($client->phones as $phone)
+											<tr>
+												@if(strlen($phone->phone) == 12)
+												<td>{{ substr($phone->phone, 0, 2).' ('.substr($phone->phone, 2, 3).') '.substr($phone->phone, 5, 3).' '.substr($phone->phone, 8, 2).' '.substr($phone->phone, 10, 2) }}</td>								
+												@elseif(strlen($phone->phone) == 13)								
+												<td>{{ substr($phone->phone, 0, 3).' ('.substr($phone->phone, 3, 3).') '.substr($phone->phone, 6, 3).' '.substr($phone->phone, 9, 2).' '.substr($phone->phone, 11, 2) }}</td>
+												@endif
+												<td>
+													@if (!$phone->telegram)
+														<span class="text-danger"><i class="far fa-minus-square"></i></span>
+													@else
+														<span class="text-success"><i class="far fa-check-square"></i></span>
+													@endif
+												</td>
+												<td>
+													@if (!$phone->viber)
+														<span class="text-danger"><i class="far fa-minus-square"></i></span>
+													@else
+														<span class="text-success"><i class="far fa-check-square"></i></span>
+													@endif
+												</td>
+												<td>
+													@if (!$phone->whatsapp)
+														<span class="text-danger"><i class="far fa-minus-square"></i></span>
+													@else
+														<span class="text-success"><i class="far fa-check-square"></i></span>
+													@endif
+												</td>
+												<td>
+													@if (!$phone->default)
+														<span class="text-danger"><i class="far fa-minus-square"></i></span>
+													@else
+														<span class="text-success"><i class="far fa-check-square"></i></span>
+													@endif
+												</td>
+												<td>{{ $phone->comment }}</td>
+											</tr>
+										@endforeach
+										</tbody>
+									</table>
+								</div>
+								<div class="col-md-6 col-sm-12">
+									<table class="table">
+										<thead>
+											<tr>
+												<th></th>
+												<th>{{ __('inventory.zipcode') }}</th>
+												<th>{{ __('inventory.country') }}</th>
+												<th>{{ __('inventory.state') }}</th>
+												<th>{{ __('inventory.city') }}</th>
+												<th>{{ __('inventory.street') }}</th>
+												<th>{{ __('inventory.address') }}</th>
+												<th>{{ __('inventory.comment') }}</th>
+											</tr>
+										</thead>
+										<tbody>
+										@foreach($client->addresses as $address)
+											<tr>
+												<td scope="row" class="default">@if($address->default == 1)<i class="far fa-check-square text-success"></i>@endif</td>
+												<td scope="row" class="zipcode">{{ $address->zipcode }}</td>
+												<td scope="row" class="country">{{ $address->country }}</td>
+												<td scope="row" class="state">{{ $address->state }}</td>
+												<td scope="row" class="city">{{ $address->city }}</td>
+												<td scope="row" class="street">{{ $address->street }}</td>
+												<td scope="row" class="address">{{ $address->address }} / {{ $address->apartment }} </td>
+												<td scope="row" class="comment">{{ $address->comment }}</td>
+											</tr>
+										@endforeach
+										</tbody>
+									</table>								
+								</div>
+							</div>
+						</div>
+						<!-- <autos> -->
+						<div class="tab-pane fade" id="autos">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>{{ __('inventory.group') }}</th>
+										<th>{{ __('inventory.model') }}</th>
+										<th>{{ __('inventory.auto') }}</th>
+										<th>{{ __('inventory.car_body') }}</th>
+										<th>{{ __('inventory.color') }}</th>
+										<th>{{ __('inventory.plate') }}</th>
+										<th>{{ __('inventory.engine') }}</th>
+										<th>{{ __('inventory.engine_capacity') }}</th>
+										<th>{{ __('inventory.fuel') }}</th>
+										<th>{{ __('inventory.year') }}</th>
+										<th></th>
+										<th></th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+								@foreach($client->automobiles as $auto)
+										<tr>
+											<td>{{ $auto->group }}</td>
+											<td>{{ $auto->model_id }}</td>
+											<td>
+												<b>{{ $auto->name }}</b>
+												</br>{{ $auto->vin }}
+											</td>
+											<td>{{ $auto->body }}</td>
+											<td>{{ $auto->color }}</td>
+											<td>{{ $auto->plate }}</td>
+											<td>{{ $auto->engine }}</td>
+											<td>{{ $auto->ccm }}</td>
+											<td>{{ $auto->fuel }}</td>
+											<td>{{ $auto->year }}</td>
+											<td class="td-actions"><a href="{{ route('client_autos.show', $auto->id) }}" class="btn btn-sm btn-simple btn-service-parts"><i class='fa fa-cogs'></i></a></td>
+											<td>
+												<form method="post" action="{{ route('admincarts.store') }}">
+													@csrf
+													<input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+													<input type="hidden" name="client_id" value="{{ $client->id }}">
+													<input type="hidden" name="client_auto_id" value="{{ $auto->id }}">
+													<input type="hidden" name="warehouse_id" value="{{ auth()->user()->default_warehouse_id }}">
+													<input type="hidden" name="currency" value="{{ auth()->user()->default_currency }}">
+													<button type="submit" class="btn btn-simple btn-sm btn-selector"><i class="fas fa-cart-plus"></i></button>
+												</form>
+											</td>
+											<td class="td-actions">
+												<a href="{{ route('client_autos.edit', $auto->id) }}" class="btn btn-sm btn-simple btn-selector" data-toggle="tooltip" data-placement="bottom" title="{{ __('inventory.edit') }}">
+													<i class="fas fa-edit"></i>
+												</a>
+											</td>
+										</tr>
+									@endforeach
+								</tbody>
+							</table>						
+						</div>
 						<!-- <latest_sales> -->
-						<div class="tab-pane active" id="latest_sales">
+						<div class="tab-pane" id="latest_sales">
 							<div class="row">
 							<div class="col-10"></div>
 								<div class="col-2 text-right">
@@ -240,7 +253,7 @@
 										<input type="hidden" name="client_id" value="{{ $client->id }}">
 										<input type="hidden" name="warehouse_id" value="{{ auth()->user()->default_warehouse_id }}">
 										<input type="hidden" name="currency" value="{{ auth()->user()->default_currency }}">
-										<button type="submit" class="btn btn-simple btn-sm btn-sale"><i class="fas fa-plus"></i></button>
+										<button type="submit" class="btn btn-simple btn-sm btn-sale"><i class="fas fa-file-invoice"></i></button>
 									</form>
 								</div>
 							</div>
@@ -269,7 +282,7 @@
 										</tr>
 									@endforeach
 								</tbody>
-								<tfoot>
+								{{-- <tfoot>
 									<tr>
 										<td></td>
 										<td></td>
@@ -277,7 +290,7 @@
 										<td></td>
 										<td>{{ number_format($client->sales->sum('total_amount'),2) }}</td>
 									</tr>
-								</tfoot>
+								</tfoot> --}}
 							</table>
 						</div>
 						<!-- <latest_returns_from_the_client> -->
@@ -481,13 +494,36 @@
 									</tr>
 								</tfoot>
 							</table>
-						</div>
+						</div>					
 					</div>
 					<!-- Tabs content -->
 				</div>
 			</div>
 		</div>
 	</div>
+
+	{{-- <div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body">
+					<!-- Nav tabs -->
+					<ul class="nav nav-pills nav-pills-primary nav-pills-icons">
+						<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#latest_sales">{{ __('inventory.sales') }}</a></li>
+						<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#latest_returns_from_the_client">{{ __('inventory.returns_from_the_client') }}</a></li>
+						<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#client_carts">{{ __('inventory.admincarts') }}</a></li>
+						<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#client_orders">{{ __('inventory.client_orders') }}</a></li>
+						<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#online_client_orders">{{ __('inventory.online_client_orders') }}</a></li>
+						<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#latest_transactions">{{ __('inventory.transactions') }}</a></li>
+					</ul>
+					<!-- Tab panes -->
+					<div class="tab-content">
+						
+					</div>
+					<!-- Tabs content -->
+				</div>
+			</div>
+		</div>
+	</div> --}}
 @endsection
 
 @push('js')

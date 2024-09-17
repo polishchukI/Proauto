@@ -19,11 +19,9 @@
                     </div>
                     <div class="col-6">
                         <div class="row text-right">
-                            <!--thumb-->
-                            <div class="col-1"></div>
                             <!--finalize-->
                             <div class="col-1">                                
-                                <button type="button" class="btn btn-simple btn-sm @if($return_to_provider->finalized_at) disabled @endif" onclick="confirm('ATTENTION: At the end of this Return from the provider you will not be able to load more products in it.') ? window.location.replace('{{ route('returns_to_provider.finalize', $return_to_provider) }}') : ''">
+                                <button type="button" class="btn btn-success btn-sm btn-simple @if($return_to_provider->finalized_at) disabled @endif" onclick="confirm('ATTENTION: At the end of this Return from the provider you will not be able to load more products in it.') ? window.location.replace('{{ route('returns_to_provider.finalize', $return_to_provider) }}') : ''">
                                     <i class="fas fa-handshake"></i>
                                 </button>
                             </div>
@@ -31,7 +29,7 @@
                             <div class="col-1">
                                 <form action="{{ route('returns_to_provider.pay', $return_to_provider) }}" method="get" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-simple btn-sm btn-pay @if(($return_to_provider->total_amount + $return_to_provider->transactions->sum('amount')) == 0) disabled @endif" data-toggle="tooltip" title="{{ __('inventory.pay') }}"><i class="fas fa-dollar-sign"></i></button>
+                                    <button type="submit" class="btn btn-simple btn-sm btn-pay @if(($return_to_provider->total_amount - $return_to_provider->transactions->sum('amount')) == 0) disabled @endif" data-toggle="tooltip" title="{{ __('inventory.pay') }}"><i class="fas fa-dollar-sign"></i></button>
                                 </form>
                             </div>
                             <!--print-->
@@ -46,9 +44,17 @@
                                 <form action="{{ route('returns_to_provider.destroy', ['return_to_provider' => $return_to_provider]) }}" method="post" class="d-inline">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="btn btn-simple btn-sm btn-delete @if($return_to_provider->products->count() != 0) disabled @endif" data-toggle="tooltip" title="{{ __('inventory.delete') }}"><i class="fas fa-times"></i></button>
+                                    <button type="submit" class="btn btn-simple btn-sm btn-delete @if($return_to_provider->products->count() != 0) disabled @endif" data-toggle="tooltip" title="{{ __('inventory.delete_document') }}"><i class="fas fa-times"></i></button>
                                 </form>
                             </div>
+                            <!--thumb-->
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
                             <!--index-->
                             <div class="col-1">
                                 <a class="btn btn-simple btn-sm" href="{{ route('returns_to_provider.index') }}" data-toggle="tooltip" title="Back to list"><i class="fas fa-arrow-left"></i></a>
@@ -62,24 +68,33 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="row">
+                            <div class="row text-info">
                                 <div class="col-md-3">{{ __('inventory.warehouse') }}</div><div class="col-md-9">{{ $return_to_provider->warehouse->name }}</div>
                             </div>
-                            <div class="row">
+                            <div class="row text-info">
                                 <div class="col-md-3">{{ __('inventory.user') }}</div><div class="col-md-9">{{ $return_to_provider->user->name }}</div>
                             </div>
-                            <div class="row">
+                            <div class="row text-info">
                                 <div class="col-md-3">{{ __('inventory.provider') }}</div><div class="col-md-9"><a href="{{ route('providers.show', $return_to_provider->provider) }}">{{ $return_to_provider->provider->name }}</a></div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            @if($return_to_provider->reference_type == "sale")
+                            <div class="row">
+                                @if($return_to_provider->provider->settlements->sum('total_amount') > 0)
+                                <div class="col-9"><span class="text-success">{{ __('inventory.balance_positive') }}</span></div><div class="col-3"><span class="text-success">{{ $return_to_provider->provider->settlements->sum('total_amount') }}</span></div>
+                                @elseif($return_to_provider->provider->settlements->sum('total_amount') < 0)
+                                <div class="col-9"><span class="text-danger">{{ __('inventory.balance_negative') }}</span></div><div class="col-3"><span class="text-danger">{{ $return_to_provider->provider->settlements->sum('total_amount') }}</span></div>
+                                @else
+                                <div class="col-12"><span class="text-info">{{ __('inventory.balance_no_debt') }}</span></div>
+                                @endif
+                            </div>
+                            @if($return_to_provider->reference_type == "receipt")
                             <div class="row text-success">
                                 <div class="col-md-3">{{ __('inventory.reference_doc') }}</div>
                                 <div class="col-md-9">
-                                    <a href="{{ route('sales.show', $return_to_provider->reference_id) }}">
+                                    <a href="{{ route('receipts.show', $return_to_provider->reference_id) }}">
                                         <i class="fas fa-shopping-cart"></i>
-                                        {{ __('inventory.sale') }} №{{ $return_to_provider->reference_id }} {{ __('inventory.from_date') }} {{ date('d-m-y', strtotime($return_to_provider->created_at)) }}
+                                        {{ __('inventory.receipt') }} №{{ $return_to_provider->reference_id }} {{ __('inventory.from_date') }} {{ date('d-m-y', strtotime($return_to_provider->created_at)) }}
                                     </a>
                                 </div>
                             </div>
@@ -138,27 +153,13 @@
                         <tbody>
                         @foreach ($return_to_provider->products as $item)
                             <tr id="return_to_provider_selected_product-{{ $item->product_id }}" class="pointer" ondblclick="return_to_provider_edit_product('{{$return_to_provider->id}}','{{ $item->product_id }}');">
-                                <td scope="col" class="article">
-                                    {{ $item->product->article }}
-                                </td>
-                                <td scope="col" class="brand">
-                                    {{ $item->product->brand }}
-                                </td>
-                                <td scope="col" class="name">
-                                    {{ $item->product->name }}
-                                </td>
-                                <td scope="col" class="text-center stock">
-                                    {{ $item->product->stocks()->sum('quantity') ?? 0}}
-                                </td>
-                                <td scope="col" class="text-center quantity">
-                                    {{ $item->quantity }}
-                                </td>
-                                <td scope="col" class="text-center price">
-                                    {{ $item->price }}
-                                </td>
-                                <td scope="col" class="text-center total_amount">
-                                    {{ $item->total_amount }}
-                                </td>
+                                <td scope="col" class="article">{{ $item->product->article }}</td>
+                                <td scope="col" class="brand">{{ $item->product->brand }}</td>
+                                <td scope="col" class="name">{{ $item->product->name }}</td>
+                                <td scope="col" class="text-center stock">{{ $item->product->stocks()->sum('quantity') ?? 0}}</td>
+                                <td scope="col" class="text-center quantity">{{ $item->quantity }}</td>
+                                <td scope="col" class="text-center price">{{ $item->price }}</td>
+                                <td scope="col" class="text-center total_amount">{{ $item->total_amount }}</td>
                             </tr>
                             @endforeach
                         </tbody>

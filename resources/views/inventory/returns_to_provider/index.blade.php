@@ -4,13 +4,11 @@
 @include('inventory.alerts.success')
     <div class="row">
         <div class="col-12">
-            <div class="card ">
+            <div class="card">
                 <div class="card-header">
                     <div class="row">
-                        <div class="col-8">
-                            <h4 class="card-title">{{ __('inventory.returns_to_provider') }}</h4>
-                        </div>
-                        <div class="col-4 text-right"></div>
+                        <div class="col-8">{{ $returns_to_provider->links() }}</div>
+                        <div class="col-4 text-right">{{-- <a href="{{ route('returns_to_provider.create') }}" class="btn btn-sm btn-simple btn-success"><i class="fas fa-plus"></i></a> --}}</div>
                     </div>
                 </div>
                 <div class="card-body">
@@ -46,16 +44,16 @@
                                         <td>{{ $return_to_provider->total_amount }} /{{ $return_to_provider->currency }}/</td>
                                         <!-- <payments> -->
                                         <td>
-                                            @if ($return_to_provider->finalized_at)
-                                            @if(($return_to_provider->total_amount + $return_to_provider->transactions->sum('amount'))==0)
-                                            <span class="text-success"><i class="fas fa-dollar-sign" aria-hidden="true"></i></span>
+                                        @if ($return_to_provider->finalized_at)
+                                            @if(($return_to_provider->total_amount - $return_to_provider->transactions->sum('amount')) == 0)
+                                                <span class="text-success"><i class="fas fa-dollar-sign" aria-hidden="true"></i></span>
                                             @else
-                                            <a href="{{ route('returns_to_provider.pay', $return_to_provider) }}" data-toggle="tooltip" class="btn btn-simple btn-sm btn-pay" data-placement="bottom" title="{{$return_to_provider->total_amount + $return_to_provider->transactions->sum('amount')}}" target="_blank">
+                                            <a href="{{ route('returns_to_provider.pay', $return_to_provider) }}" data-toggle="tooltip" class="btn btn-simple bnt-sm btn-pay" data-placement="bottom" title="{{$return_to_provider->total_amount + $return_to_provider->transactions->sum('amount')}}" target="_blank">
                                                 <span class="text-danger"><i class="fas fa-dollar-sign" aria-hidden="true"></i></span>
                                             </a>
                                             @endif
                                             @else
-                                            <span>{{-- $return_to_provider->total_amount + $return_to_provider->transactions->sum('amount') --}}</span>
+                                                <span>{{-- $receipt->total_amount + $receipt->transactions->sum('amount') --}}</span>
                                             @endif
                                         </td>
                                         <!-- <payments> -->

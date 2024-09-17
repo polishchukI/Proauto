@@ -44,7 +44,7 @@
                             <div class="col-1">
                                 <form action="{{ route('receipts.return_to_provider', $receipt) }}" method="get" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-simple btn-sm" data-toggle="tooltip" title="{{ __('inventory.print') }}"><i class="fas fa-redo"></i></button>
+                                    <button type="submit" class="btn btn-simple btn-sm" data-toggle="tooltip" title="{{ __('inventory.return_to_provider') }}"><i class="fas fa-redo"></i></button>
                                 </form>
                             </div>
                             <!--unfinalize-->
@@ -117,9 +117,9 @@
                         <div class="col-6">
                             <div class="row">
                                 @if($receipt->provider->settlements->sum('total_amount') > 0)
-                                <div class="col-3"><span class="text-success">{{ __('inventory.balance_positive') }}</span></div><div class="col-9"><span class="text-success">{{ $receipt->provider->settlements->sum('total_amount') }}</span></div>
+                                <div class="col-9"><span class="text-success">{{ __('inventory.balance_positive') }}</span></div><div class="col-3"><span class="text-success">{{ $receipt->provider->settlements->sum('total_amount') }}</span></div>
                                 @elseif($receipt->provider->settlements->sum('total_amount') < 0)
-                                <div class="col-3"><span class="text-danger">{{ __('inventory.balance_negative') }}</span></div><div class="col-9"><span class="text-danger">{{ $receipt->provider->settlements->sum('total_amount') }}</span></div>
+                                <div class="col-9"><span class="text-danger">{{ __('inventory.balance_negative') }}</span></div><div class="col-3"><span class="text-danger">{{ $receipt->provider->settlements->sum('total_amount') }}</span></div>
                                 @else
                                 <div class="col-12"><span class="text-info">{{ __('inventory.balance_no_debt') }}</span></div>
                                 @endif
@@ -182,8 +182,8 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="row">
-                            <div class="col-3"><b>{{ __('inventory.comment') }}</b></div>
-                            <div class="col-9">{{ $receipt->comment }}</div>
+                        <div class="col-3"><a OnClick="receipt_comment('{{$receipt->id}}')">{{ __('inventory.comment') }}</a></div>
+                            <div class="col-9" id="receiptComment">{{ $receipt->comment }}</div>
                         </div>
                         <div class="row">
                         @if($receipt->provider->comment)

@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Inventory;
 
+use DB;
 use Carbon\Carbon;
-
-// \Debugbar::disable();//disable debugbar
 
 use Illuminate\Support\Str;
 
 use App\Models\Brand\Brand;
 
 use App\Models\Inventory\Provider;
+use App\Models\Inventory\ProviderPrice;
 use App\Models\Inventory\Warehouse;
 use App\Models\Inventory\Currency;
 
@@ -187,6 +187,9 @@ class ProductController extends Controller
 		}
 		$product_price_groups = ProductPriceGroup::all();
 
+		$product->price_in		= AddProductController::get_product_price($product->id, 'in', auth()->user()->default_currency);
+		$product->price_out		= AddProductController::get_product_price($product->id, 'out', auth()->user()->default_currency);
+
         return view('inventory.products.edit', compact('brands','product','groups','product_price_groups','categories', 'crosses'));
     }
 
@@ -201,6 +204,32 @@ class ProductController extends Controller
 		$product->update($requestData);
 
 		return redirect()->route('products.show', ['product' => $product])->withStatus('Product updated successfully.');
+    }
+
+	public function image_upload(Request $request)
+	{
+		$validation = Validator::make($request->all(), [
+			'select_file' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+		]);
+		if($validation->passes())
+		{
+			$image = $request->file('select_file');
+			$new_name = rand() . '.' . $image->getClientOriginalExtension();
+			$image->move(public_path('images'), $new_name);
+			return response()->json([
+				'message'   => 'Image Upload Successfully',
+				'uploaded_image' => '<img src="/images/'.$new_name.'" class="img-thumbnail" width="300" />',
+				'class_name'  => 'alert-success'
+			]);
+		}
+		else
+		{
+			return response()->json([
+				'message'   => $validation->errors()->all(),
+				'uploaded_image' => '',
+				'class_name'  => 'alert-danger'
+			]);
+		}
     }
 
     public function destroy(Product $product)
@@ -282,6 +311,40 @@ class ProductController extends Controller
 		}
 		return response()->json($data);
     }
+
+	public function products_filter_by_search_with_crosses(Request $request)
+    {
+		$data							= [];
+		$search							= $request->search;
+		$product_crosses_uids			= ProductCross::select('uid')->where('akey', '=', $request->search)->get();//getting crosses group by product
+		
+		if($product_crosses_uids)
+		{
+			foreach($product_crosses_uids as $item)
+			{
+				$product_crosses		= ProductCross::select('products.id','products.article','products.brand','products.name','products.description')
+												->join('products', 'products.pkey', '=', 'product_crosses.pkey')
+												->where('uid', '=', $item->uid)->get();
+				if($product_crosses)
+				{
+					foreach($product_crosses as $item)
+					{
+						$data[]			= ['article'	=> $item['article'],
+										'id'			=> $item['id'],
+										'brand'			=> $item['brand'],
+										'name'			=> $item['name'],
+										'price'			=> AddProductController::get_product_price($item['id'], 'out', auth()->user()->default_currency),
+										'stock'			=> AddProductController::get_product_stocks($item['id'], auth()->user()->default_warehouse_id),
+										'description'	=> $item['description']
+						];
+					}
+				}
+			}
+		}
+
+		return response()->json($data);
+    }
+	
 	/////////////////////////////////////////////////////////////////////////// ** min stock ** ///////////////////////////////////////////////////////////////////////////
 	public static function product_add_min_stock(Request $request)
 	{
@@ -345,6 +408,92 @@ class ProductController extends Controller
 		$warehouses			= Warehouse::where('active','=','1')->get();
 
 		return view('inventory.products.min_stock', compact('product_id','warehouse_id','warehouses','min_stock_id','quantity','edit'));
+	}
+	
+	public static function get_product_info(Request $request)
+	{
+		$product_id							= $request->product_id;
+
+		$product_crosses_array				= [];
+		$product_stocks_array				= [];
+		$product_prices_array				= [];
+
+		$product							= Product::find($product_id)->toArray();
+
+		/////////////crosses
+		$product_pkey						= $product['pkey'];
+		$product_crosses_uid				= ProductCross::where('pkey', '=', $product['pkey'])->first();//getting crosses group by product
+		if($product_crosses_uid)
+		{
+			$product_crosses_uid	= $product_crosses_uid->uid;
+			$product_crosses		= ProductCross::select('products.id','products.article','products.brand','products.name','products.description')
+											->join('products', 'products.pkey', '=', 'product_crosses.pkey')
+											->where('uid', '=', $product_crosses_uid)->get();
+											if($product_crosses)
+											{
+												foreach($product_crosses as $item)
+												{
+													$product_crosses_array[] = ['article'		=> $item['article'],
+																				'brand'			=> $item['brand'],
+																				'name'			=> $item['name'],
+																				'price'			=> AddProductController::get_product_price($item['id'], 'out', auth()->user()->default_currency),
+																				'stock'			=> AddProductController::get_product_stocks($item['id'], auth()->user()->default_warehouse_id),
+																				'description'	=> $item['description'],
+
+
+													];
+												}
+												// $product_crosses_array = $product_crosses->toArray();
+											}
+		}
+		
+		$product_prices_array = 
+		[
+			['price_type' => 'Розничная цена',				'price' => AddProductController::get_product_price($product_id, 'out', auth()->user()->default_currency),				'currency' => auth()->user()->default_currency],
+			['price_type' => 'Розничная цена -5%',			'price' => 0.95*(AddProductController::get_product_price($product_id, 'out', auth()->user()->default_currency)),		'currency' => auth()->user()->default_currency],
+			['price_type' => 'Розничная цена -10%',			'price' => 0.90*(AddProductController::get_product_price($product_id, 'out', auth()->user()->default_currency)),		'currency' => auth()->user()->default_currency],
+			['price_type' => 'Закупочная цена',				'price' => AddProductController::get_product_price($product_id, 'in', auth()->user()->default_currency),				'currency' => auth()->user()->default_currency],
+		];
+		
+		//product_stocks
+		$product_stocks_array = [];
+		$warehouses = Warehouse::select('id','name')->get();
+
+		foreach($warehouses as $warehouse)
+		{
+			$product_stocks_array[] = [
+				'warehouse_id'				=> $warehouse['id'],
+				'warehouse_name'			=> $warehouse['name'],
+				'warehouse_stock'			=> ProductStock::where('product_id', '=', $product_id)->where('warehouse_id', '=', $warehouse['id'])->sum('quantity')
+			];
+		}
+
+		//providers_pricces
+		$providers_prices_array = [];
+		$providers_prices = ProviderPrice::select('provider_prices.provider','provider_prices.date','provider_prices.type as provider_price_type','provider_prices.stock','provider_prices.date',
+						'provider_prices.src as price_in', 'provider_prices.price as price_out','provider_prices.currency','provider_prices.day','provider_prices.available')
+						->where('pkey', '=', $product['pkey'])->orderBy('date','DESC')->take(10)->get();
+		if($providers_prices)
+		{
+			$providers_prices_array = $providers_prices->toArray();
+			// "provider" => "Автото"
+			// "date" => "2024-06-26"
+			// "provider_price_type" => "in"
+			// "stock" => "Москва::25.06.2024"
+			// "price_in" => 586.0
+			// "price_out" => 825.0
+			// "currency" => "RUB"
+			// "day" => 3
+			// "available" => 2
+		}
+
+
+		return response()->json([
+			'product_crosses'		=> $product_crosses_array,
+			'product_stocks'		=> $product_stocks_array,
+			'product_prices'		=> $product_prices_array,
+			'providers_prices'		=> $providers_prices_array,
+		]);
 	}
 
 	public static function product_update_min_stock(Request $request, ProductMinimalStocks $min_stocks)
@@ -455,7 +604,7 @@ class ProductController extends Controller
 			foreach($q as $product)
 			{				
 				$abn					= Product::select('article', 'brand', 'name')->where('id','=',$product['product_id'])->first()->toArray();
-				$quantity				= intval(AddProductController::get_product_stocks($product['product_id']));
+				$quantity				= intval(AddProductController::get_product_stocks($product['product_id'], auth()->user()->default_warehouse_id));
 				$min_stock_q			= ProductMinimalStocks::where('product_id', '=', $product['product_id'])->where('warehouse_id', '=', $warehouse)->pluck('quantity')->first();
 				$min_stock				= intval($min_stock_q) ?? intval(0);
 				$price					= AddProductController::get_product_price($product['product_id'], 'in', $currency);
@@ -548,7 +697,8 @@ class ProductController extends Controller
 		$new_cross['main_by_group']			= ($request->main_by_group == 1) ? 1 : 0;
 		$new_cross['main_by_brand']			= ($request->main_by_brand == 1) ? 1 : 0;
 
-		$product						= Product::findorfail($request->product_id);//find product		
+		$product						= Product::findorfail($request->product_id);//find product
+		
 		$product_uid_request			= ProductCross::where('pkey','=',$product->pkey)->first();//getting crosses group by product
 		$cross_uid_request				= ProductCross::where('pkey','=',$new_cross['pkey'])->first();//getting crosses group by cross product
 		
@@ -575,7 +725,7 @@ class ProductController extends Controller
 										'brand'					=> $cross_item['brand'],
 										'bkey'					=> $cross_item['bkey'],
 										'pkey'					=> $cross_item['pkey'],
-										'name'					=> $cross_item['name'] ?? $product->name,
+										'name'					=> $cross_item['name'] ?? $product->group->name,
 										'main_by_brand'			=> $cross_item['main_by_brand'],
 										'main_by_group'			=> $cross_item['main_by_group']
 									]);
@@ -602,8 +752,7 @@ class ProductController extends Controller
 						'brand'					=> $new_cross['brand'],
 						'bkey'					=> $new_cross['bkey'],
 						'pkey'					=> $new_cross['pkey'],
-						// 'name'					=> $new_cross['name'],
-						'name'					=> $cross_item['name'] ?? $product->name,
+						'name'					=> $cross_item['name'] ?? $product->group->name,
 						'main_by_brand'			=> $new_cross['main_by_brand'],
 						'main_by_group'			=> $new_cross['main_by_group']
 					]);
@@ -630,8 +779,7 @@ class ProductController extends Controller
 									'brand'					=> $cross_item['brand'],
 									'bkey'					=> $cross_item['bkey'],
 									'pkey'					=> $cross_item['pkey'],
-									// 'name'					=> $cross_item['name'],
-									'name'					=> $cross_item['name'] ?? $product->name,
+									'name'					=> $cross_item['name'] ?? $product->group->name,
 									'main_by_brand'			=> $cross_item['main_by_brand'],
 									'main_by_group'			=> $cross_item['main_by_group']
 								]);
@@ -668,7 +816,7 @@ class ProductController extends Controller
 									'brand'					=> $product->brand,
 									'bkey'					=> $product->bkey,
 									'pkey'					=> $product->pkey,
-									'name'					=> $product->name,
+									'name'					=> $product->group->name,
 									'main_by_brand'			=> $product->main_by_brand,
 									'main_by_group'			=> $product->main_by_group
 								]);
@@ -680,7 +828,7 @@ class ProductController extends Controller
 									'bkey'					=> $new_cross['bkey'],
 									'pkey'					=> $new_cross['pkey'],
 									// 'name'					=> $new_cross['name'],
-									'name'					=> $new_cross['name'] ?? $product->name,
+									'name'					=> $new_cross['name'] ?? $product->group->name,
 									'main_by_brand'			=> $new_cross['main_by_brand'],
 									'main_by_group'			=> $new_cross['main_by_group']
 								]);

@@ -26,6 +26,7 @@ use App\Models\Inventory\Currency;
 use App\Models\Inventory\Warehouse;
 use App\Models\Inventory\Transaction;
 use App\Models\Inventory\PaymentMethod;
+use App\Models\Inventory\InventorySetting;
 
 use App\Models\OrderControl\ProductClientOrderControl;
 use App\Models\Product\ProductAdminCart;
@@ -38,11 +39,27 @@ use App\Http\Controllers\Inventory\AddProductController;
 
 class SaleController extends Controller
 {
-	public function index()
+	public function index(Request $request)
     {
-        $sales = Sale::paginate(25);
+		$keyword = $request->get('search');
+        if (!empty($keyword))
+		{
+            $sales = Sale::select('sales.*')
+					->join('clients', 'clients.id', '=', 'sales.client_id')
+					->where('sales.id', 'LIKE', "%$keyword%")
+					->orwhere('sales.comment', 'LIKE', "%$keyword%")
+					->orwhere('sales.barcode', 'LIKE', "%$keyword%")
+					->orwhere('sales.id', 'LIKE', "%$keyword%")
+					->orwhere('clients.name', 'LIKE', "%$keyword%")
+					->paginate(25)
+					->withQueryString();
+        }
+		else
+		{
+			$sales = Sale::paginate(25);
+        }
 
-        return view('inventory.sales.index', compact('sales'));
+		return view('inventory.sales.index', compact('sales'));
     }
 
 	public function create()
@@ -75,7 +92,7 @@ class SaleController extends Controller
 
 			if($existent->count())
 			{
-				return back()->withError('There is already an unfinished sale belonging to this customer. <a href="'.route('sales.show', $existent->first()).'">Click here to go to it</a>');
+				return back()->withError('Существует не проведеный документ "Расходная накладная" для данного покупателя. <a href="'.route('sales.show', $existent->first()).'">Нажмите для перехода</a>');
 			}
 		}
 
@@ -109,7 +126,7 @@ class SaleController extends Controller
 			}
 		}
         
-        return redirect()->route('sales.show', ['sale' => $sale->id])->withStatus('Sale registered successfully, you can start registering products and transactions.');
+        return redirect()->route('sales.show', ['sale' => $sale->id])->withStatus('Документ "Расходная накладная" успешно зарегистрирован');
     }
 	
     public function show(Sale $sale)
@@ -130,7 +147,7 @@ class SaleController extends Controller
 		SoldProduct::where('sale_id','=',$sale->id)->delete();
         $sale->delete();
 
-        return redirect()->route('sales.index')->withStatus('The sale record has been successfully deleted.');
+        return redirect()->route('sales.index')->withStatus('Документ "Расходная накладная" удален');
     }
 
     public function finalize(Sale $sale)
@@ -182,7 +199,7 @@ class SaleController extends Controller
 		{
 			$product_to_sale_batches			= [];//партии по product_id
 			$product_to_sale_id					= $product_to_sale->product_id;//получаем product_id для каждой строки товара
-			$batches_request					= ProductStock::select('batch')->where('product_id','=',$product_to_sale_id)->get();//получаем партии для товара
+			$batches_request					= ProductStock::select('batch')->where('product_id','=',$product_to_sale_id)->distinct()->get();//получаем РАЗЛИЧНЫЕ!!! партии для товара
 
 			if($batches_request)
 			{
@@ -232,8 +249,7 @@ class SaleController extends Controller
 									'currency_out'				=> $product_to_sale->currency,
 									'price_out'					=> $product_to_sale->price,
 									'discount_out'				=> $product_to_sale->price * $product_sales['quantity'] * $sale->discount/100,
-									'total_out'					=> $product_to_sale->price * $product_sales['quantity'] * (1 - $sale->discount/100),//списывается количество из партии, цена со скидкой
-									
+									'total_out'					=> $product_to_sale->price * $product_sales['quantity'] * (1 - $sale->discount/100),//списывается количество из партии, цена со скидкой									
 									'finalized_at'				=> $finalized_at,
 									'doc_type'					=> "sale",
 									'doc_id'					=> $sale->id,
@@ -255,8 +271,7 @@ class SaleController extends Controller
 									'currency_out'				=> $product_to_sale->currency,
 									'price_out'					=> $product_to_sale->price,
 									'discount_out'				=> $product_to_sale->price * $product_to_sale->quantity * $sale->discount/100,
-									'total_out'					=> $product_to_sale->price * $product_to_sale->quantity * (1 - $sale->discount/100),//списывается количество из документа
-									
+									'total_out'					=> $product_to_sale->price * $product_to_sale->quantity * (1 - $sale->discount/100),//списывается количество из документа									
 									'finalized_at'				=> $finalized_at,
 									'doc_type'					=> "sale",
 									'doc_id'					=> $sale->id,
@@ -324,7 +339,7 @@ class SaleController extends Controller
         $sale->finalized_at			= $finalized_at;
         $sale->save();
 
-        return back()->withStatus('The sale has been successfully completed.');
+        return back()->withStatus('Документ "Расходная накладная" проведен');
     }
 
 	//product selector
@@ -406,10 +421,11 @@ class SaleController extends Controller
 		
 		$product						= Product::findOrFail($product_id);
 		$warehouse_id					= $sale->warehouse_id;
-		$stock							= AddProductController::get_product_stocks($product_id);
+		$stock							= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 		$currency						= $sale->currency;
 
 		$price							= ($price !=0) ? $price : AddProductController::get_product_price($product_id, 'out', $currency);
+		$price_in						= AddProductController::get_product_price($product_id, 'in', $currency);
 		$total							= $price * $quantity;
 		$discount						= $total * ($sale->discount/100);
 		$total_amount					= $total - $discount;
@@ -447,6 +463,7 @@ class SaleController extends Controller
 				'total'				=> $total,
 				'stock'				=> $stock,
 				'price'				=> $price,
+				'price_in'			=> $price_in,
 				'total_amount'		=> $total_amount,
 				'created_at'		=> $created_at,
 
@@ -486,10 +503,11 @@ class SaleController extends Controller
 		
 		$product						= Product::findOrFail($product_id);
 		$warehouse_id					= $sale->warehouse_id;
-		$stock							= AddProductController::get_product_stocks($product_id);
+		$stock							= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 		$currency						= $sale->currency;
 
 		$price							= ($price !=0) ? $price : AddProductController::get_product_price($product_id, 'out', $currency);
+		$price_in						= AddProductController::get_product_price($product_id, 'in', $currency);
 		$total							= $price * $quantity;
 		$discount						= $total * ($sale->discount/100);
 		$total_amount					= $total - $discount;
@@ -525,6 +543,7 @@ class SaleController extends Controller
 				'quantity'			=> $quantity,
 				'stock'				=> $stock,
 				'price'				=> $price,
+				'price_in'			=> $price_in,
 				'total'				=> $total,
 				'discount'			=> $discount,//+-
 				'total_amount'		=> $total_amount,
@@ -562,6 +581,7 @@ class SaleController extends Controller
 		$quantity						= $request->quantity;
 
 		$sale							= Sale::findOrFail($sale_id);
+		$price_in						= AddProductController::get_product_price($product_id, 'in', $sale->currency);
 		$item							= SoldProduct::where('sale_id','=',$sale_id)->where('product_id','=',$product_id)->get()->first();
 
 		if ($item)
@@ -596,12 +616,13 @@ class SaleController extends Controller
                             'message' => ['Обновлен', 'success'],
                             'docHeaderValues' => $docHeaderValues,
                             'info'    => [
-                                    'product_id'    => $product_id,
-									'price'			=> $new_price,
-									'quantity'		=> $new_quantity,
-									'total'			=> $new_total,
-									'discount'		=> $new_discount,
-									'total_amount'	=> $new_total_amount,
+                                    'product_id'		=> $product_id,
+									'price'				=> $new_price,
+									'price_in'			=> $price_in,
+									'quantity'			=> $new_quantity,
+									'total'				=> $new_total,
+									'discount'			=> $new_discount,
+									'total_amount'		=> $new_total_amount,
                             ],
                         ]);
                     }
@@ -616,7 +637,8 @@ class SaleController extends Controller
 	public function clear_products_table(Sale $sale, SoldProduct $soldproduct)
     {
 		SoldProduct::where('sale_id','=',$sale->id)->delete();
-		return back()->withStatus('Products table cleared.');
+		
+		return back()->withStatus('Таблица товаров документа "Расходная накладная" очищена');
     }
 	
 	public function sale_delete_product(Request $request)
@@ -695,7 +717,7 @@ class SaleController extends Controller
 								'user_id'			=> $sale->user_id,
 								'created_at'		=> Carbon::now()]);
 
-        return redirect()->route('sales.show', compact('sale'))->withStatus('Successfully registered transaction.');
+        return redirect()->route('sales.show', compact('sale'))->withStatus('Документ "Оплата" зарегистрирован');
     }
 
     public function edittransaction(Sale $sale, Transaction $transaction)
@@ -723,14 +745,14 @@ class SaleController extends Controller
         }
         $transaction->update($request->all());
 
-        return redirect()->route('sales.show', compact('sale'))->withStatus('Successfully modified transaction.');
+        return redirect()->route('sales.show', compact('sale'))->withStatus('Документ "Оплата" обновлен');
     }
 
     public function destroytransaction(Sale $sale, Transaction $transaction)
     {
         $transaction->delete();
 
-        return back()->withStatus('Transaction deleted successfully.');
+        return back()->withStatus('Документ "Оплата" удален');
     }
 
     public function print_sale(Sale $sale)
@@ -753,6 +775,13 @@ class SaleController extends Controller
         $sale["discountValue"]			= $products->sum('discount');
 		$sale["tax"]					= 0;
 		$sale["total_amount"]			= $sale["subtotal"] - $sale["discountValue"] + $sale["tax"];
+
+		$inventorySettings = InventorySetting::where('id','=', '1')->first()->toArray();
+		foreach ($inventorySettings as $key=>$value)
+		{
+			if ($key === 'id') { continue; }
+			$sale[$key] = $value;
+		}
 		
 		$generator = new BarcodeGeneratorHTML();
         $barcode = $generator->getBarcode((string)$sale->barcode, $generator::TYPE_CODE_128, 1, 25);
@@ -786,7 +815,7 @@ class SaleController extends Controller
 
 			if($existent->count())
 			{
-				return back()->withError('There is already an unfinished sale belonging to this customer. <a href="'.route('returns_from_the_client.show', $existent->first()).'">Click here to go to it</a>');
+				return back()->withError('Существует не проведеный документ "Возврат покупателя" для данного клиента. <a href="'.route('returns_from_the_client.show', $existent->first()).'">Нажмите для перехода</a>');
 			}
 		}
 		
@@ -820,7 +849,7 @@ class SaleController extends Controller
 			}
 		}
 		
-		return redirect()->route('returns_from_the_client.show', $return_from_the_client)->withStatus('Successfully registered Return from the client.');
+		return redirect()->route('returns_from_the_client.show', $return_from_the_client)->withStatus('Документ "Возврат покупателя" зарегистрирован');
     }
 
 	//client ordered products
@@ -867,7 +896,7 @@ class SaleController extends Controller
 		$sale							= Sale::findOrFail($sale_id);
 		$product						= Product::findOrFail($product_id);
 		$warehouse_id					= $sale->warehouse_id;
-		$stock							= AddProductController::get_product_stocks($product_id);
+		$stock							= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 		$currency						= $sale->currency;
 		$price							= AddProductController::get_product_price($product_id, 'out', $currency);
 		$total_amount					= $price * $orderInfo->quantity;
@@ -945,7 +974,8 @@ class SaleController extends Controller
 		{
 			foreach($saleProductsTable as $product)
 			{
-				$product->stock = AddProductController::get_product_stocks($product->product_id, $sale->warehouse_id);
+				$product->stock				= AddProductController::get_product_stocks($product->product_id, $sale->warehouse_id);
+				$product->price_in			= AddProductController::get_product_price($product->product_id, 'in', $sale->currency);
 			}
 			$saleProducts = $saleProductsTable->toArray();
 		}
@@ -958,6 +988,55 @@ class SaleController extends Controller
 			]);
 	}
 	
+	//sale_add_edit_comment
+	public static function sale_comment(Request $request)
+	{
+		$sale_id						= $request->sale_id;
+		$comment							= Sale::where('id', $sale_id)->first()->comment;
+	
+		return view('inventory.sales.comment', compact('sale_id','comment'));
+	}
+	
+	public static function sale_comment_update(Request $request)
+	{
+		$comment		= $request->comment;
+		$sale		= Sale::findOrFail($request->get('sale_id'));
+
+		$sale->update([
+			'comment' => $comment,
+		]);
+		
+		if ($sale)
+		{
+			$comment	= Sale::where('id', $sale->id)->first()->comment;
+
+			return response()->json([
+				'status' 				=> 1 , 
+				'message'				=> ['Изменен', 'success'],
+				'comment'				=> $comment,
+			]);
+		}
+	}
+
+	public static function sale_comment_delete(Request $request)
+	{
+		$sale		= Sale::findOrFail($request->get('sale_id'));
+
+		$sale->update([
+			'comment' => '',
+		]);
+		
+		if ($sale)
+		{
+			$comment	= Sale::where('id', $sale->id)->first()->comment;
+
+			return response()->json([
+				'status' 				=> 1 , 
+				'message'				=> ['Удалено', 'success'],
+			]);
+		}
+	}
+
 	public static function docHeaderValues(Sale $sale)
 	{
 		$docHeaderValues = [];

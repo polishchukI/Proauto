@@ -29,10 +29,11 @@ class ReportsController extends Controller
 	//отчет шел в изначальной версии
 	public function sales_stats_report()
 	{
-		$warehouse_id = 1;
-		$currency = "RUB";
-		$categories = ProductCategory::all();
-		$products = Product::all();
+		$warehouse			= $request->warehouse ?? auth()->user()->default_warehouse_id;
+		$currency			= $request->currency ?? auth()->user()->default_currency;
+		$categories			= ProductCategory::all();
+		$products			= Product::all();
+
 		$soldproductsbystock = SoldProduct::selectRaw('product_id, max(created_at), sum(quantity) as total_qty, sum(total_amount) as incomes, avg(price) as avg_price')
 								->whereYear('created_at', Carbon::now()->year)
 								->groupBy('product_id')
@@ -49,15 +50,20 @@ class ReportsController extends Controller
 	//KPI Report
     public function kpi_stats()
     {
-		return view('inventory.reports.kpi_stats');
+		$warehouses = Warehouse::all();
+        $currencies = Currency::where('active','=','1')->get();
+		
+		return view('inventory.reports.kpi_stats', compact('warehouses','currencies'));
 	}
 	
 	public function kpi_stats_show(Request $request)
     {
-		$warehouse_id	= 1;
-		$currency		= "RUB";
 		$count			= 0;
 		$data			= [];
+
+		$warehouse		= $request->warehouse ?? auth()->user()->default_warehouse_id;
+		$currency		= $request->currency ?? auth()->user()->default_currency;
+
 		$date_from		= $request->date_from ?? Carbon::now()->startOfMonth();
 		$date_to		= $request->date_to ?? Carbon::now()->endOfMonth();
 		
@@ -93,7 +99,7 @@ class ReportsController extends Controller
 			$productStocksTotal = 0;
 			foreach($q as $product)
 			{
-				$quanity = AddProductController::get_product_stocks($product['product_id']);
+				$quanity = AddProductController::get_product_stocks($product['product_id'], $warehouse);
 				$price = AddProductController::get_product_price($product['product_id'], 'in', $currency);
 				if($quanity > 0)
 				{
@@ -134,7 +140,11 @@ class ReportsController extends Controller
 				
 		//Коэффициент выполненных заказов
 		$count++;
-		$ordersEfficiency = round((100*($salesForPeriod/$clientorders)),2);
+		$ordersEfficiency = 0;
+		if($clientorders != 0)
+		{
+			$ordersEfficiency = round((100*($salesForPeriod/$clientorders)),2);
+		}
 		$data[] = ['count' => $count, 'kpi_name' => 'Коэффициент выполненных заказов (%)', 'kpi_value' => $ordersEfficiency];
 		
 		//Коэффициент конверсии корзины администратора
@@ -159,8 +169,8 @@ class ReportsController extends Controller
 
 	public function sales_by_clients_show(Request $request)
     {
-		$warehouse		= $request->warehouse ?? 1;
-		$currency		= $request->currency ?? "RUB";
+		$warehouse		= $request->warehouse ?? auth()->user()->default_warehouse_id;
+		$currency		= $request->currency ?? auth()->user()->default_currency;
 		
 		$data = [];
 	
@@ -230,8 +240,8 @@ class ReportsController extends Controller
 
 	public function sales_by_clients_print(Request $request)
     {
-		$warehouse		= $request->warehouse ?? 1;
-		$currency		= $request->currency ?? "RUB";
+		$warehouse		= $request->warehouse ?? auth()->user()->default_warehouse_id;
+		$currency		= $request->currency ?? auth()->user()->default_currency;
 		
 		$data = [];
 		$count				= 0;
@@ -322,8 +332,8 @@ class ReportsController extends Controller
 
 	public function product_stocks_report_print(Request $request)
     {
-		$warehouse		= $request->warehouse ?? 1;
-		$currency		= $request->currency ?? "RUB";
+		$warehouse		= $request->warehouse ?? auth()->user()->default_warehouse_id;
+		$currency		= $request->currency ?? auth()->user()->default_currency;
 		
 		$count				= 0;
 		$stocks_total		= 0;
@@ -347,7 +357,7 @@ class ReportsController extends Controller
 			foreach($q as $product)
 			{				
 				$abn = Product::select('article','brand','name')->where('id','=',$product['product_id'])->first()->toArray();
-				$quanity = AddProductController::get_product_stocks($product['product_id']);
+				$quanity = AddProductController::get_product_stocks($product['product_id'], auth()->user()->default_warehouse_id);
 				$price = AddProductController::get_product_price($product['product_id'], 'in', $currency);
 				if($quanity > 0)
 				{
@@ -411,7 +421,7 @@ class ReportsController extends Controller
 			foreach($q as $product)
 			{				
 				$abn = Product::select('article','brand','name')->where('id','=',$product['product_id'])->first()->toArray();
-				$quanity = AddProductController::get_product_stocks($product['product_id']);
+				$quanity = AddProductController::get_product_stocks($product['product_id'], auth()->user()->default_warehouse_id);
 				$price = AddProductController::get_product_price($product['product_id'], 'in', $currency);
 				if($quanity > 0)
 				{
@@ -447,9 +457,11 @@ class ReportsController extends Controller
 
     public function settlements_show(Request $request)
     {
-		$warehouse_id		= 1;
 		$count				= 0;
 		$product_stocks		= [];
+		$warehouse			= $request->warehouse ?? auth()->user()->default_warehouse_id;
+		$currency			= $request->currency ?? auth()->user()->default_currency;
+
 
 		$q = ProductStock::select('product_id')->distinct()->get()->toArray();
 		if($q)
@@ -476,12 +488,13 @@ class ReportsController extends Controller
 	
 	public function sales_by_categories_show(Request $request)
     {
-		$warehouse = $request->warehouse ?? 1;
-		$currency = "RUB";
-		$count = 0;
-		$data = [];
-		$date_from = $request->date_from ?? Carbon::now()->startOfMonth();
-		$date_to = $request->date_to ?? Carbon::now()->endOfMonth();
+		$count			= 0;
+		$data			= [];
+		$warehouse		= $request->warehouse ?? auth()->user()->default_warehouse_id;
+		$currency		= $request->currency ?? auth()->user()->default_currency;
+
+		$date_from		= $request->date_from ?? Carbon::now()->startOfMonth();
+		$date_to		= $request->date_to ?? Carbon::now()->endOfMonth();
 
 		$SoldProductGroups = SoldProduct::select('product_groups.id','product_groups.name')
 					->where('sold_products.warehouse_id','=',$warehouse)
@@ -532,11 +545,12 @@ class ReportsController extends Controller
 	
 	public function sales_by_products_show(Request $request)
     {
-		$warehouse = $request->warehouse ?? 1;
-		$count = 0;
-		$data = [];
-		$date_from = $request->date_from ?? Carbon::now()->startOfMonth();
-		$date_to = $request->date_to ?? Carbon::now()->endOfMonth();
+		$count			= 0;
+		$data			= [];
+		$warehouse		= $request->warehouse ?? auth()->user()->default_warehouse_id;
+		$currency		= $request->currency ?? auth()->user()->default_currency;
+		$date_from		= $request->date_from ?? Carbon::now()->startOfMonth();
+		$date_to		= $request->date_to ?? Carbon::now()->endOfMonth();
 
 		$SoldProducts = SoldProduct::select('products.id','products.article','products.brand','products.name')
 					->where('sold_products.warehouse_id','=',$warehouse)
@@ -593,18 +607,16 @@ class ReportsController extends Controller
 	
 	public function profit_by_sales_show(Request $request)
     {
-		$warehouse		= $request->warehouse ?? 1;
-		$currency		= $request->currency ?? "RUB";
-		
-		$data = [];
+		$data					= [];
 		$count					= 0;
 		$bought_total			= 0;
 		$sold_total				= 0;
 		$quantity_total			= 0;
 		$profit_total			= 0;
-
-		$date_from = $request->date_from ?? Carbon::now()->startOfMonth();
-		$date_to = $request->date_to ?? Carbon::now()->endOfMonth();
+		$warehouse				= $request->warehouse ?? auth()->user()->default_warehouse_id;
+		$currency				= $request->currency ?? auth()->user()->default_currency;
+		$date_from				= $request->date_from ?? Carbon::now()->startOfMonth();
+		$date_to				= $request->date_to ?? Carbon::now()->endOfMonth();
 
 		$SoldProducts = ProductStock::select('products.id','products.article','products.brand','products.name')
 					->where('product_stocks.warehouse_id','=',$warehouse)
@@ -678,16 +690,15 @@ class ReportsController extends Controller
     }
 
 	public function profit_by_sales_print(Request $request)
-    {
-		$warehouse		= $request->warehouse ?? 1;
-		$currency		= $request->currency ?? "RUB";
-		
-		$data = [];
-		$count				= 0;
-		$bought_total		= 0;
-		$sold_total			= 0;
-		$quantity_total		= 0;
-		$profit				= 0;
+    {		
+		$data					= [];
+		$count					= 0;
+		$bought_total			= 0;
+		$sold_total				= 0;
+		$quantity_total			= 0;
+		$profit					= 0;
+		$warehouse				= $request->warehouse ?? auth()->user()->default_warehouse_id;
+		$currency				= $request->currency ?? auth()->user()->default_currency;
 
 		$product_sales = [];
 		$product_sales_header						= [];		

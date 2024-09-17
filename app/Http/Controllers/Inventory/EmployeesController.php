@@ -37,7 +37,7 @@ class EmployeesController extends Controller
         
 		$employee = $employee->create($requestData);
         
-		return redirect()->route('employees.show', $employee)->withStatus('Payroll registered successfully, you can start adding the employees belonging to it.');
+		return redirect()->route('employees.show', $employee)->withStatus('Новый сотрудник успешно зарегистрирован');
     }
     
     public function show(Employee $employee)
@@ -59,7 +59,7 @@ class EmployeesController extends Controller
         
 		$employee = $employee->update($requestData);
 
-        return redirect()->route('employees.index')->withStatus('Successfully modified customer.');
+        return redirect()->route('employees.index')->withStatus('Данные сотрудника успешно обновлены');
     }
     
     public function fire(Employee $employee)
@@ -69,10 +69,10 @@ class EmployeesController extends Controller
 		$employee->fired_at = $fired_at;
         $employee->save();
         
-        return back()->withStatus('Receipt successfully completed.');
+        return back()->withStatus('Сотруднику присвоен статус "Уволен"');
     }
     
-    //////////////////////////////////////////////////////////////////// ** service Live Search ** ////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////// ** employee Live Search ** ////////////////////////////////////////////////////////////////////
 	public static function workerLiveSearch(Request $request)
 	{
         $search = strip_tags($request->workerLive);        

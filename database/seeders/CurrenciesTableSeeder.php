@@ -1,24 +1,78 @@
 <?php
 
-use App\Models\Inventory\Currency;
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 
 class CurrenciesTableSeeder extends Seeder
 {
+
     /**
-     * Run the database seeds.
+     * Auto generated seed file
      *
      * @return void
-	 *'US Dollar','USD','$','1!0.00','1',1,'2020-02-03 08:15:02','2020-05-18 14:00:00',NULL
-	 *'Euro','EUR','€','1!0.00','0.921044',1,'2020-02-03 08:15:02','2020-05-18 14:00:00',NULL
-	 *'Russian Ruble','RUB','P','1!0.00','72.7565',1,'2020-02-03 08:15:02','2020-05-18 14:00:00',NULL
-	 *'Ukraine, Hryvnia','UAH','₴','1!0.00','26.572922',1,'2020-02-03 08:15:02','2020-05-18 14:00:00',NULL
      */
     public function run()
     {
-        Currency::create(['name' => 'US Dollar','code' => 'USD','symbol' => '$','format' => '1!0.00','exchange_rate' => '1','active' => '1','created_at' => now(),'updated_at' => now()]);
-        Currency::create(['name' => 'Euro','code' => 'EUR','symbol' => '€','format' => '1!0.00','exchange_rate' => '0.921044','active' => '1','created_at' => now(),'updated_at' => now()]);
-        Currency::create(['name' => 'Russian Ruble','code' => 'RUB','symbol' => 'P','format' => '1!0.00','exchange_rate' => '72.7565','active' => '1','created_at' => now(),'updated_at' => now()]);
-        Currency::create(['name' => 'Ukraine, Hryvnia','code' => 'UAH','symbol' => '₴','format' => '1!0.00','exchange_rate' => '26.572922','active' => '1','created_at' => now(),'updated_at' => now()]);
+        
+
+        \DB::table('currencies')->delete();
+        
+        \DB::table('currencies')->insert(array (
+            
+            array (
+                'id' => 1,
+                'name' => 'Российский рубль',
+                'code' => 'RUB',
+                'symbol' => '₽',
+                'format' => '1 0,00 ₽',
+                'exchange_rate' => '98.00',
+                'active' => 1,
+                'created_at' => '2023-07-07 09:58:15',
+                'updated_at' => '2023-12-23 17:42:51',
+                'deleted_at' => NULL,
+            ),
+            
+            array (
+                'id' => 2,
+                'name' => 'Euro',
+                'code' => 'EUR',
+                'symbol' => '€',
+                'format' => '1.0,00 €',
+                'exchange_rate' => '1.11',
+                'active' => 1,
+                'created_at' => '2023-07-07 09:58:15',
+                'updated_at' => '2023-11-17 18:35:34',
+                'deleted_at' => NULL,
+            ),
+            
+            array (
+                'id' => 3,
+                'name' => 'US Dollar',
+                'code' => 'USD',
+                'symbol' => '$',
+                'format' => '$1,0.00',
+                'exchange_rate' => '1.00',
+                'active' => 1,
+                'created_at' => '2023-07-07 09:58:15',
+                'updated_at' => '2023-11-17 18:35:34',
+                'deleted_at' => NULL,
+            ),
+            
+            array (
+                'id' => 4,
+                'name' => 'Україньська гривня',
+                'code' => 'UAH',
+                'symbol' => '₴',
+                'format' => '1 0,00₴',
+                'exchange_rate' => '35.00',
+                'active' => 0,
+                'created_at' => '2023-07-07 09:58:15',
+                'updated_at' => '2023-11-17 18:35:34',
+                'deleted_at' => NULL,
+            ),
+        ));
+        
+        
     }
 }

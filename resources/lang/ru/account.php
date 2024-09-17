@@ -67,6 +67,7 @@ return [
 	//////////////////
     'lastname' => 'Фамилия',
     'firstname' => 'Имя',
+    'secondname' => 'Отчество',
     'avatarupload' => 'Аватар',
     'telegramnotifications' => 'Оповещения Telegram',
     'newsletter' => 'Рассылка',

@@ -101,7 +101,7 @@
 						<div class="col-10">
 							<div class="form-group{{ $errors->has('comment') ? ' has-danger' : '' }}">
 								<label class="form-control-label text-success" for="input-comment">{{ __('inventory.comment') }}</label>
-								<input type="text" name="comment" id="input-comment" class="form-control form-control-alternative{{ $errors->has('comment') ? ' is-invalid' : '' }}" placeholder="{{ __('inventory.provider_doc') }}" autofocus>
+								<input type="text" name="comment" id="input-comment" class="form-control form-control-alternative{{ $errors->has('comment') ? ' is-invalid' : '' }}" placeholder="{{ __('inventory.comment') }}" autofocus>
 								@include('inventory.alerts.feedback', ['field' => 'comment'])
 							</div>						
 						</div>
@@ -156,7 +156,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="createNewProviderLabel">{{ __('modal.new_provider') }}</h5>
+					<h5 class="modal-title" id="createNewProviderLabel">{{ __('inventory.new_provider') }}</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 						<i class="fas fa-times"></i>
 					</button>
@@ -164,13 +164,13 @@
 				<div class="modal-body">
 				@csrf
 					<div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-						<label class="form-control-label" for="input-name">Name</label>
-						<input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Name" value="{{ old('name') }}" required autofocus>
+						<label class="form-control-label" for="input-name">{{ __('inventory.provider_name') }}</label>
+						<input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('inventory.provider_name') }}" required autofocus>
 						@include('inventory.alerts.feedback', ['field' => 'name'])
 					</div>
 
 					<div class="form-group{{ $errors->has('hasprice') ? ' has-danger' : '' }}">
-						<label class="form-control-label" for="input-hasprice">Has price</label>
+						<label class="form-control-label" for="input-hasprice">{{ __('inventory.price_type') }}</label>
 						<select name="hasprice" id="input-hasprice" class="form-control form-control-alternative{{ $errors->has('hasprice') ? ' is-invalid' : '' }}" required>
 							@foreach (['None', 'Price', 'Webservice'] as $hasprice)
 								<option value="{{$hasprice}}">{{$hasprice}}</option>
@@ -180,14 +180,13 @@
 					</div>
 
 					<div class="form-group{{ $errors->has('provider_code') ? ' has-danger' : '' }}">
-						<div><label for="provider_code" class="control-label">Код поставщика: </label></div>
-						<div><input class="form-control" required="required" name="provider_code" type="text" placeholder="Код поставщика" value="{{ old('provider_code') }}"></div>
-						<div><span class="tiptext">Любое название (Eng.)</span></div>
+						<div><label for="provider_code" class="control-label">{{ __('inventory.provider_code') }}</label></div>
+						<div><input class="form-control" required="required" name="provider_code" type="text" placeholder="{{ __('inventory.provider_code') }}"></div>
 						@include('inventory.alerts.feedback', ['field' => 'provider_code'])
 					</div>
 
 					<div class="form-group{{ $errors->has('spares_provider') ? ' has-danger' : '' }}">
-						<label class="form-control-label" for="input-spares_provider">Запчасти</label>
+						<label class="form-control-label" for="input-spares_provider">{{ __('inventory.provider_spares_provider') }}</label>
 						<select name="spares_provider" id="input-spares_provider" class="form-control form-control-alternative{{ $errors->has('spares_provider') ? ' is-invalid' : '' }}" required>
 							@foreach (['0'=>'No', '1'=>'Yes'] as $key=>$value)
 							<option value="{{$key}}">{{$value}}</option>
@@ -195,7 +194,7 @@
 						</select>
 					</div>
 					<div class="form-group{{ $errors->has('services_provider') ? ' has-danger' : '' }}">
-						<label class="form-control-label" for="input-services_provider">Услуги</label>
+						<label class="form-control-label" for="input-services_provider">{{ __('inventory.provider_services_provider') }}</label>
 						<select name="services_provider" id="input-services_provider" class="form-control form-control-alternative{{ $errors->has('services_provider') ? ' is-invalid' : '' }}" required>
 							@foreach (['0'=>'No', '1'=>'Yes'] as $key=>$value)
 							<option value="{{$key}}">{{$value}}</option>
@@ -204,8 +203,8 @@
 					</div>
 
 					<div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">
-						<label class="form-control-label" for="input-description">Description</label>
-						<input type="text" name="description" id="input-description" class="form-control form-control-alternative{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="Description" value="{{ old('description') }}">
+						<label class="form-control-label" for="input-description">{{ __('inventory.description') }}</label>
+						<input type="text" name="description" id="input-description" class="form-control form-control-alternative{{ $errors->has('description') ? ' is-invalid' : '' }}">
 						@include('inventory.alerts.feedback', ['field' => 'description'])
 					</div>
 					

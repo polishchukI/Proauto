@@ -33,23 +33,23 @@ class TransferController extends Controller
         $transfer = $transfer->create($request->all());
 
         $transaction->create([
-            "type" => "expense",
-            "title" => "TransferID: ".$transfer->id,
-            "transfer_id" => $transfer->id,
-            "payment_method_id" => $transfer->sender_method_id,
-            "amount" => ((float) abs($transfer->sended_amount) * (-1)),
-            "user_id" => Auth::id(),
-            "reference" => $transfer->reference
+            "type"					=> "expense",
+            "title"					=> "TransferID: ".$transfer->id,
+            "transfer_id"			=> $transfer->id,
+            "payment_method_id"		=> $transfer->sender_method_id,
+            "amount"				=> ((float) abs($transfer->sended_amount) * (-1)),
+            "user_id"				=> Auth::id(),
+            "reference"				=> $transfer->reference
         ]);
 
         $transaction->create([
-            "type" => "income",
-            "title" => "TransferID: ".$transfer->id,
-            "transfer_id" => $transfer->id,
-            "payment_method_id" => $transfer->receiver_method_id,
-            "amount" => abs($transfer->received_amount),
-            "user_id" => Auth::id(),
-            "reference" => $transfer->reference
+            "type"					=> "income",
+            "title"					=> "TransferID: ".$transfer->id,
+            "transfer_id"			=> $transfer->id,
+            "payment_method_id"		=> $transfer->receiver_method_id,
+            "amount"				=> abs($transfer->received_amount),
+            "user_id"				=> Auth::id(),
+            "reference"				=> $transfer->reference
         ]);
 
         return redirect()

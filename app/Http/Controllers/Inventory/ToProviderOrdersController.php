@@ -20,6 +20,7 @@ use App\Models\Product\ProductStock;
 use App\Models\Product\ProductGroup;
 use App\Models\Product\ProductClientOrder;
 use App\Models\Product\ProductClientToProviderOrder;
+use App\Models\Inventory\InventorySetting;
 
 use App\Models\Inventory\ToProviderOrder;
 use App\Models\Inventory\PaymentMethod;
@@ -68,7 +69,7 @@ class ToProviderOrdersController extends Controller
 			$existent = ToProviderOrder::where('provider_id', $request->get('provider_id'))->where('finalized_at', null)->get();
 			if($existent->count())
 			{
-				return back()->withError('There is already an unfinished <To provider order> belonging to this client. <a href="'.route('to_provider_orders.show', $existent->first()).'">Click here to go to it</a>');
+				return back()->withError('Существует не проведеный документ "Заказ поставщику" для данного поставщика. <a href="'.route('to_provider_orders.show', $existent->first()).'">Нажмите для перехода</a>');
 			}
 		}
 		
@@ -106,7 +107,7 @@ class ToProviderOrdersController extends Controller
 			}
 		}
 
-        return redirect()->route('to_provider_orders.show', ['to_provider_order' => $to_provider_order->id])->withStatus('To provider order registered successfully, you can start registering products and transactions.');
+        return redirect()->route('to_provider_orders.show', ['to_provider_order' => $to_provider_order->id])->withStatus('Документ "Заказ поставщику" зарегистрирован');
     }
 	
 	public function show(ToProviderOrder $to_provider_order)
@@ -125,7 +126,7 @@ class ToProviderOrdersController extends Controller
 		ProductToProviderOrder::where('to_provider_order_id','=',$to_provider_order->id)->delete();
         $to_provider_order->delete();
 
-        return redirect()->route('to_provider_orders.index')->withStatus('The <To provider order> record has been successfully deleted.');
+        return redirect()->route('to_provider_orders.index')->withStatus('Документ "Заказ поставщику" удален');
     }
 
     public function unfinalize(ToProviderOrder $to_provider_order)
@@ -133,7 +134,7 @@ class ToProviderOrdersController extends Controller
 		$to_provider_order->finalized_at = null;
         $to_provider_order->save();
 
-        return back()->withStatus('The <To provider order> has been successfully unfinalized.');
+        return back()->withStatus('Отменено проведение документа "Заказ поставщику"');
 	}
 
     public function finalize(ToProviderOrder $to_provider_order)
@@ -171,7 +172,7 @@ class ToProviderOrdersController extends Controller
 		$to_provider_order->finalized_at = Carbon::now()->toDateTimeString();
         $to_provider_order->save();
 
-        return back()->withStatus('To provider order has been successfully completed.');
+        return back()->withStatus('Документ "Заказ поставщику" проведен');
     }
 	
 	public static function to_provider_order_add_single_product_store(Request $request)
@@ -187,7 +188,7 @@ class ToProviderOrdersController extends Controller
 		$to_provider_order				= ToProviderOrder::findOrFail($to_provider_order_id);
 		$product						= Product::findOrFail($product_id);
 		$warehouse_id					= $to_provider_order->warehouse_id;
-		$stock							= AddProductController::get_product_stocks($product_id);
+		$stock							= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 		$currency						= $to_provider_order->currency;
 		$price							= ($price !=0) ? $price : AddProductController::get_product_price($product_id, 'in', $currency);
 		$total_amount					= $price * $quantity;
@@ -277,7 +278,7 @@ class ToProviderOrdersController extends Controller
 		$to_provider_order				= ToProviderOrder::findOrFail($to_provider_order_id);
 		$product						= Product::findOrFail($product_id);
 		$warehouse_id					= $to_provider_order->warehouse_id;
-		$stock							= AddProductController::get_product_stocks($product_id);
+		$stock							= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 		$currency						= $to_provider_order->currency;
 		$price							= ($price !=0) ? $price : AddProductController::get_product_price($product_id, 'in', $currency);
 		$total_amount					= $price * $quantity;
@@ -444,11 +445,11 @@ class ToProviderOrdersController extends Controller
         switch($request->all()['type'])
         {
             case 'income':
-                $request->merge(['title' => 'Payment Received from ToProviderOrder id: ' . $request->get('to_provider_order_id')]);
+                $request->merge(['title' => 'Оплата по документу "Заказ поставщику" № ' . $request->get('to_provider_order_id')]);
                 break;
 
             case 'expense':
-                $request->merge(['title' => 'Возврат оплаты по заказу поставщику №: ' . $request->all('to_provider_order_id')]);
+                $request->merge(['title' => 'Возврат оплаты по документу "Заказ поставщику" № ' . $request->all('to_provider_order_id')]);
 
                 if($request->get('amount') > 0) {
                     $request->merge(['amount' => (float) $request->get('amount') * (-1) ]);
@@ -464,7 +465,7 @@ class ToProviderOrdersController extends Controller
 
         return redirect()
             ->route('to_provider_orders.show', compact('to_provider_order'))
-            ->withStatus('Successfully registered transaction.');
+            ->withStatus('Документ "Оплата" создан');
     }
 
     public function edittransaction(ToProviderOrder $to_provider_order, Transaction $transaction)
@@ -479,11 +480,11 @@ class ToProviderOrdersController extends Controller
         switch($request->get('type'))
 		{
             case 'income':
-                $request->merge(['title' => 'Payment Received from ToProviderOrder id: '. $request->get('to_provider_order_id')]);
+                $request->merge(['title' => 'Оплата по документу "Заказ поставщику" № '. $request->get('to_provider_order_id')]);
                 break;
 
             case 'expense':
-                $request->merge(['title' => 'ToProviderOrder Return Payment id: '. $request->get('to_provider_order_id')]);
+                $request->merge(['title' => 'Возврат оплаты по документу "Заказ поставщику" № '. $request->get('to_provider_order_id')]);
 
                 if($request->get('amount') > 0) {
                     $request->merge(['amount' => (float) $request->get('amount') * (-1)]);
@@ -494,14 +495,15 @@ class ToProviderOrdersController extends Controller
 
         return redirect()
             ->route('to_provider_orders.show', compact('to_provider_order'))
-            ->withStatus('Successfully modified transaction.');
+            ->withStatus('Документ "Оплата" обновлен');
     }
 
     public function destroytransaction(ToProviderOrder $to_provider_order, Transaction $transaction)
     {
         $transaction->delete();
 
-        return back()->withStatus('Transaction deleted successfully.');
+        return back()
+            ->withStatus('Документ "Оплата" удален');
     }
 
 	public function to_provider_order_receipt(Request $request, ToProviderOrder $to_provider_order)
@@ -528,6 +530,13 @@ class ToProviderOrdersController extends Controller
 				$to_provider_order["subtotal"] = $products->sum('total');
 				$to_provider_order["tax"] = 0;
 				$to_provider_order["total_amount"] = $to_provider_order["subtotal"]+$to_provider_order["tax"];
+				
+				$inventorySettings = InventorySetting::where('id','=', '1')->first()->toArray();
+				foreach ($inventorySettings as $key=>$value)
+				{
+					if ($key === 'id') { continue; }
+					$to_provider_order[$key] = $value;
+				}
 		
 		$provider =  Provider::where('id','=', $to_provider_order->provider_id)->first()->toArray();
 		
@@ -550,7 +559,7 @@ class ToProviderOrdersController extends Controller
         {
             $treejs .= '{';
                 $treejs .= '"dbid":"' . $group->id . '",';
-                $treejs .= '"text":"' . $group->name . '[' . $group->id . ']",';
+                $treejs .= '"text":"' . $group->name . ' [' . $group->id . ']",';
                 $treejs .= '"children":';
                 
             $treejs .= $this->getTreeJS($group->id, $treejs);
@@ -620,7 +629,7 @@ class ToProviderOrdersController extends Controller
 		$to_provider_order				= ToProviderOrder::findOrFail($to_provider_order_id);
 		$product						= Product::findOrFail($product_id);
 		$warehouse_id					= $to_provider_order->warehouse_id;
-		$stock							= AddProductController::get_product_stocks($product_id);
+		$stock							= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 		$currency						= $to_provider_order->currency;
 		$price							= AddProductController::get_product_price($product_id, 'in', $currency);
 		$total_amount					= $price * $orderInfo->quantity;
@@ -741,7 +750,7 @@ class ToProviderOrdersController extends Controller
 													]);
 		}
 		//Client orders control finish
-		return redirect()->route('to_provider_orders.show', ['to_provider_order' => $to_provider_order->id])->withStatus('Client To provider order distribution was completed!');
+		return redirect()->route('to_provider_orders.show', ['to_provider_order' => $to_provider_order->id])->withStatus('Распределение "Заказов покупателя" завершено');
     }
 
 	public function cancel_selection_client_ordered_products(ToProviderOrder $to_provider_order)
@@ -751,7 +760,7 @@ class ToProviderOrdersController extends Controller
 		ProductToProviderOrder::where('to_provider_order_id','=',$to_provider_order_id)->delete();
 		ProductClientToProviderOrder::where('to_provider_order_id','=',$to_provider_order_id)->delete();
 
-		return redirect()->route('to_provider_orders.show', ['to_provider_order' => $to_provider_order->id])->withError('Client To provider order distribution was canceled!');
+		return redirect()->route('to_provider_orders.show', ['to_provider_order' => $to_provider_order->id])->withError('Распределение "Заказов покупателя" отменено!');
     }
 
 	public static function docHeaderValues(ToProviderOrder $to_provider_order)

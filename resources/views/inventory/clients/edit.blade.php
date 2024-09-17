@@ -7,7 +7,7 @@
 			<div class="card-header">
 				<div class="row align-items-center">
 					<div class="col-8">
-						<h3 class="mb-0">{{ __('inventory.edit_client') }}</h3>
+					<h6 class="heading-small text-muted mb-4">{{__('inventory.client_information')}}</h6>
 					</div>
 					<div class="col-4 text-right">
 						<a href="{{ route('clients.index') }}" class="btn btn-sm btn-simple btn-back"><i class="fas fa-arrow-left"></i></a>
@@ -17,8 +17,7 @@
 			<div class="card-body">
 				<form method="post" action="{{ route('clients.update', $client) }}" autocomplete="off">
 					@csrf
-					@method('put')
-					<h6 class="heading-small text-muted mb-4">{{__('inventory.client_information')}}</h6>
+					@method('put')					
 					<div class="pl-lg-4">
 						<div class="row">
 							<div class="col-3">
@@ -124,7 +123,12 @@
 						<tbody>
 						@foreach($client->phones as $phone)
 							<tr id="client_selected_phone-{{ $phone->id }}" class="pointer" OnClick="client_editphone('{{$client->id}}','{{$phone->id}}')">
-								<td scope="row" class="phone">{{ $phone->phone }}</td>
+								@if(strlen($phone->phone) == 12)
+								<td scope="row" class="phone">{{ substr($phone->phone, 0, 2).' ('.substr($phone->phone, 2, 3).') '.substr($phone->phone, 5, 3).' '.substr($phone->phone, 8, 2).' '.substr($phone->phone, 10, 2) }}</td>								
+								@elseif(strlen($phone->phone) == 13)								
+								<td scope="row" class="phone">{{ substr($phone->phone, 0, 3).' ('.substr($phone->phone, 3, 3).') '.substr($phone->phone, 6, 3).' '.substr($phone->phone, 9, 2).' '.substr($phone->phone, 11, 2) }}</td>
+								@endif
+								<!-- <td scope="row" class="phone">{{ $phone->phone }}</td> -->
 								<td scope="row" class="telegram">@if($phone->telegram == 1)<i class="far fa-check-square text-success"></i>@endif</td>
 								<td scope="row" class="viber">@if($phone->viber == 1)<i class="far fa-check-square text-success"></i>@endif</td>
 								<td scope="row" class="whatsapp">@if($phone->whatsapp == 1)<i class="far fa-check-square text-success"></i>@endif</td>
@@ -278,7 +282,7 @@
 				</div>
 				<div class='row'>
 					<div class='col-12'>
-						<button type="button" class="btn btn-sm btn-simple btn-success" OnClick="client_addauto('{{$client->id}}')">Add auto</button>
+						<button type="button" class="btn btn-sm btn-simple btn-success" OnClick="client_addauto('{{$client->id}}')">{{ __('inventory.add') }}</button>
 					</div>
 				</div>
 			</div>

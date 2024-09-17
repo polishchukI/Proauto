@@ -4,19 +4,19 @@
 			<span class="filters-button__icon">
 				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M7,14v-2h9v2H7z M14,7h2v2h-2V7z M12.5,6C12.8,6,13,6.2,13,6.5v3c0,0.3-0.2,0.5-0.5,0.5h-2C10.2,10,10,9.8,10,9.5v-3C10,6.2,10.2,6,10.5,6H12.5z M7,2h9v2H7V2z M5.5,5h-2C3.2,5,3,4.8,3,4.5v-3C3,1.2,3.2,1,3.5,1h2C5.8,1,6,1.2,6,1.5v3C6,4.8,5.8,5,5.5,5z M0,2h2v2H0V2z M9,9H0V7h9V9z M2,14H0v-2h2V14z M3.5,11h2C5.8,11,6,11.2,6,11.5v3C6,14.8,5.8,15,5.5,15h-2C3.2,15,3,14.8,3,14.5v-3C3,11.2,3.2,11,3.5,11z"></path></svg>
 			</span>
-			<span class="filters-button__title">Filters</span>
+			<span class="filters-button__title">{{ __('shop.filters') }}</span>
 		</button>
-		<div class="view-options__legend">Showing {{count($Numbers)}} of {{$total}} products</div>
+		<div class="view-options__legend">{{ __('shop.showing') }} {{count($Numbers)}} {{ __('shop.showing_of') }} {{$total}} {{ __('shop.showing_products') }}</div>
 		<div class="view-options__spring"></div>
 	</div>
 </div>
 <div class="products-view__list products-list products-list--grid--4" data-layout="list" data-with-features="false">
 	<div class="products-list__head">
-		<div class="products-list__column products-list__column--image">Image</div>
-		<div class="products-list__column products-list__column--meta">SKU</div>
-		<div class="products-list__column products-list__column--product">Product</div>
-		<div class="products-list__column products-list__column--rating">rating</div>
-		<div class="products-list__column products-list__column--price">Price</div>
+		<div class="products-list__column products-list__column--image">{{ __('shop.image') }}</div>
+		<div class="products-list__column products-list__column--meta">{{ __('shop.sku') }}</div>
+		<div class="products-list__column products-list__column--product">{{ __('shop.product') }}</div>
+		<div class="products-list__column products-list__column--rating">{{ __('shop.rating') }}</div>
+		<div class="products-list__column products-list__column--price">{{ __('shop.price') }}</div>
 	</div>
 	<div class="products-list__content">
 		@foreach ($Numbers as $Number)
@@ -55,7 +55,7 @@
 									<span class="ArticleBlock" style="color:#6c757d;border:1px solid #6c757d;">{{ $Number["article"] }}</span>
 								</div>
 							</div>
-							<a href="{{ route('product.page', ['brand' => $Number["bkey"], 'number' => $Number["akey"]]) }}">{{$Number["name"]}}</a>
+							<a href="{{ route('product.page', ['brand' => $Number["brand"], 'number' => $Number["akey"]]) }}">{{$Number["name"]}}</a>
 							<br>
 							@if(isset($Number["aid"]))
 							<div class="aid">{{ $Number["aid"] }}</div>
@@ -80,7 +80,7 @@
 						</div>
 					</div>
 					@if(isset($Number["kind"]) && $Number["kind"]!="3" && $Number["superseded"]!="")
-					<span class="superseded" title="Замененный {{ $Number["superseded"] }}"> Замененный: {{ $Number["superseded"] }}</span>
+					<span class="superseded" title="{{ __('shop.superseded') }} {{ $Number["superseded"] }}"> {{ __('shop.superseded') }}: {{ $Number["superseded"] }}</span>
 					@endif
 					@if(isset($Number["kind"]))
 						@if ($Number["kind"] == 2)<div class="artkind_trade" style="padding-top:5px;">Trade</div>@endif
@@ -109,9 +109,9 @@
 					<div class="product-card__features">
 						<ul>
 						@if(isset($Number["properties"]))
-							@foreach ($Number["properties"] as $PName=>$PValue)
-							@if(!is_null($PValue))
-							<li><span>{{ $PName }}</span>:<span>{{$PValue}}</span></li>
+							@foreach ($Number["properties"] as $name=>$value)
+							@if(!is_null($value))
+							<li><span>{{ $name }}</span>:<span>{{ $value }}</span></li>
 							@endif
 							@endforeach
 						@endif
@@ -136,18 +136,18 @@
 						@else
 						<div class="status-badge status-badge--style--warning status-badge--has-text">
 							<div class="status-badge__body">
-								<div class="status-badge__text">{{$PriceArray["day"]}} day(s) in office</div>
+								<div class="status-badge__text">{{ __('shop.days_in_office') }} {{$PriceArray["day"]}}</div>
 								<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip" title="" data-original-title="On Order"></div>
 							</div>
 						</div>
 					@endif
 					</div>
 					<div class="form-group">
-						<div class="alert alert-primary mb-3">Warehouse: {{$PriceArray["provider_code"]}}<sup style="color:#fff;padding:2px;background: #ff6502;border-radius: 8px;width: 80px;height: 16px;text-align: center;font-weight: 500;">{{$PriceArray["options"]["percentgive"]}}%</sup></div>
+						<div class="alert alert-primary mb-3">{{ __('shop.warehouse') }}: {{$PriceArray["provider_code"]}}<sup style="color:#fff;padding:2px;background: #ff6502;border-radius: 8px;width: 80px;height: 16px;text-align: center;font-weight: 500;">{{$PriceArray["options"]["percentgive"]}}%</sup></div>
 					</div>
 					<div class="form-group">
 						<div class="status-badge__body">
-							<div class="status-badge__text">available: {{$PriceArray["available"]}}</div>
+							<div class="status-badge__text">{{ __('shop.available') }}: {{$PriceArray["available"]}}</div>
 							<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip" title="available" data-original-title="available"></div>
 						</div>
 					</div>
@@ -162,7 +162,7 @@
 						<svg width="16" height="16">
 							<path d="M13.9,8.4l-5.4,5.4c-0.3,0.3-0.7,0.3-1,0L2.1,8.4c-1.5-1.5-1.5-3.8,0-5.3C2.8,2.4,3.8,2,4.8,2s1.9,0.4,2.6,1.1L8,3.7l0.6-0.6C9.3,2.4,10.3,2,11.3,2c1,0,1.9,0.4,2.6,1.1C15.4,4.6,15.4,6.9,13.9,8.4z"></path>
 						</svg>
-						<span>Add to wishlist</span>
+						<span>{{ __('shop.add_to_wishlist') }}</span>
 					</button>
 					@break
 					@endforeach
@@ -175,7 +175,7 @@
 								</svg>
 								<span>{{ __('shop.not_available') }}</span>
 							</div>
-							<button class="btn btn-primary" type="button" OnClick="askprice('{{$Number["brand"]}}','{{$Number["article"]}}')">Запросить цену</button>
+							<button class="btn btn-primary" type="button" OnClick="askprice('{{$Number["brand"]}}','{{$Number["article"]}}')">{{ __('shop.askprice') }}</button>
 						</div>
 					</div>
 				@endif
@@ -184,33 +184,13 @@
 		</div>
 		<!--product end-->
 		@endforeach
+</div><!-- do_not_delete!!! -->
+
+
+
 <!--Pagination-->
 <div class="products-view__pagination">
-	<nav aria-label="Page navigation example">
-		<ul class="pagination">
-			<li class="page-item disabled"><a class="page-link page-link--with-arrow" href="" aria-label="Previous"><span class="page-link__arrow page-link__arrow--left" aria-hidden="true"><svg width="7" height="11"><path d="M6.7,0.3L6.7,0.3c-0.4-0.4-0.9-0.4-1.3,0L0,5.5l5.4,5.2c0.4,0.4,0.9,0.3,1.3,0l0,0c0.4-0.4,0.4-1,0-1.3l-4-3.9l4-3.9C7.1,1.2,7.1,0.6,6.7,0.3z"></path></svg></span></a></li>
-			<li class="page-item"><a class="page-link" href="#">1</a></li>
-			<li class="page-item active" aria-current="page"><span class="page-link">2 <span class="sr-only">(current)</span></span></li>
-			<li class="page-item"><a class="page-link" href="#">3</a></li>
-			<li class="page-item"><a class="page-link" href="#">4</a></li>
-			<li class="page-item page-item--dots"><div class="pagination__dots"></div></li>
-			<li class="page-item"><a class="page-link" href="#">9</a></li>
-			<li class="page-item">
-				<a class="page-link page-link--with-arrow" href="" aria-label="Next">
-					<span class="page-link__arrow page-link__arrow--right" aria-hidden="true">
-						<svg width="7" height="11">
-							<path d="M0.3,10.7L0.3,10.7c0.4,0.4,0.9,0.4,1.3,0L7,5.5L1.6,0.3C1.2-0.1,0.7,0,0.3,0.3l0,0c-0.4,0.4-0.4,1,0,1.3l4,3.9l-4,3.9C-0.1,9.8-0.1,10.4,0.3,10.7z"></path>
-						</svg>
-					</span>
-				</a>
-			</li>
-		</ul>
-	</nav>
-	<div class="products-view__pagination-legend">Showing 6 of 98 products</div>
+	<div class="products-view__pagination-legend">{{ __('shop.showing') }} {{count($Numbers)}} {{ __('shop.showing_of') }} {{$total}} {{ __('shop.showing_products') }}</div>
+	<nav aria-label="Page navigation example"><ul class="pagination">{{ $Numbers->links() }}</ul></nav>	
 </div>
-<!--div class="products-view__pagination">
-	<nav aria-label="Page navigation example">
-		<ul class="pagination">{{$Numbers->links()}}</ul></nav>
-	<div class="products-view__pagination-legend">Showing {{count($Numbers)}} of {{$total}} products</div>
-</div-->
 <!--pagination-end-->

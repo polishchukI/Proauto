@@ -7,17 +7,23 @@
             <div class="card ">
                 <div class="card-header">
                     <div class="row">
-                        <div class="col-8">
-                            <h4 class="card-title">{{ __('inventory.client_autos') }}</h4>
+                    <div class="col-8">
+                              {{ $client_autos->links() }}
                         </div>
-                        <div class="col-4 text-right">
-                            <a href="{{ route('client_autos.create') }}" class="btn btn-sm btn-simple btn-success"><i class="fas fa-plus"></i></a>
+                        <div class="col-2 text-right">
+                            <form class="form-inline my-2 my-lg-0" method="get" action="/client_autos" autocomplete="off">
+                                <input type="text" name="search" placeholder="{{ __('inventory.search') }}" value="{{ request('search') }}" class="form-control-sm" />
+                                <button class="btn btn-simple btn-sm btn-selector" type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                        <div class="col-2 text-right">
+                            <!--a href="{{ route('client_autos.create') }}" class="btn btn-sm btn-simple btn-success"><i class="fas fa-plus"></i></a-->
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
-					<div class="table-responsive">
-						<table class="table" id="dataTable" width="100%" cellspacing="0">
+                    <div class="">
+                        <table class="table">
                             <thead class=" text-primary">
                                 <th scope="col">{{ __('inventory.auto_name') }}<br>VIN</td>
 								<th scope="col">{{ __('inventory.client') }}</th>
@@ -44,12 +50,12 @@
 										<td>{{ $client_auto->engine }}</td>
                                         <td>{{ $client_auto->fuel }}</td>
                                         <td>
-                                            <a href="{{ route('client_autos.show', $client_auto) }}" class="btn btn-sm btn-simple btn-standard" data-toggle="tooltip" data-placement="bottom" title="{{ __('inventory.more_details') }}">
+                                            <a href="{{ route('client_autos.show', $client_auto) }}" class="btn btn-sm btn-simple btn-selector" data-toggle="tooltip" data-placement="bottom" title="{{ __('inventory.more_details') }}">
                                                 <i class="fas fa-search"></i>
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="{{ route('client_autos.edit', $client_auto) }}" class="btn btn-sm btn-simple btn-standard" data-toggle="tooltip" data-placement="bottom" title="{{ __('inventory.edit') }}">
+                                            <a href="{{ route('client_autos.edit', $client_auto) }}" class="btn btn-sm btn-simple btn-selector" data-toggle="tooltip" data-placement="bottom" title="{{ __('inventory.edit') }}">
                                                 <i class="fas fa-edit"></i>
                                             </a>
                                         </td>

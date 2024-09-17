@@ -7,7 +7,7 @@
 		<div class="container">
 			<div class="block-header__body">
 				@include('shop.layouts.breadcrumbs')
-				<h1 class="block-header__title">Каталог запчастей</h1>
+				<h1 class="block-header__title">{{ __('shop.partsCatalog') }}</h1>
 			</div>
 		</div>
 		<div class="block-split block-split--has-sidebar">

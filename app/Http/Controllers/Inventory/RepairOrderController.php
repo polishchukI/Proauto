@@ -63,7 +63,7 @@ class RepairOrderController extends Controller
 
         if($existent->count())
         {
-            return back()->withError('There is already an unfinished repair_order belonging to this customer. <a href="'.route('sales.show', $existent->first()).'">Click here to go to it</a>');
+			return back()->withError('Существует не проведеный документ "Заказ-Наряд" для данного клиента. <a href="'.route('repair_orders.show', $existent->first()).'">Нажмите для перехода</a>');
         }
 
 		$created_at						= Carbon::now();
@@ -75,7 +75,7 @@ class RepairOrderController extends Controller
 		
 		$repair_order = $repair_order->create($requestData);
 
-        return redirect()->route('repair_orders.show', ['repair_order' => $repair_order->id])->withStatus('RepairOrder registered successfully, you can start registering products and transactions.');
+        return redirect()->route('repair_orders.show', ['repair_order' => $repair_order->id])->withStatus('Документ "Заказ-Наряд" зарегистрирован');
     }
     
     public function show(RepairOrder $repair_order)
@@ -101,7 +101,7 @@ class RepairOrderController extends Controller
 		ProductRepairOrder::where('repair_order_id','=',$repair_order->id)->delete();
         $repair_order->delete();
 
-        return redirect()->route('repair_orders.index')->withStatus('The repair_order record has been successfully deleted.');
+        return redirect()->route('repair_orders.index')->withStatus('Документ "Заказ-Наряд" удален');
     }
 
     public function print_repair_order(RepairOrder $repair_order)
@@ -148,7 +148,7 @@ class RepairOrderController extends Controller
 		
 		$product						= Product::findOrFail($product_id);
 		$warehouse_id					= $repair_order->warehouse_id;
-		$stock							= AddProductController::get_product_stocks($product_id);
+		$stock							= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 		$currency						= $repair_order->currency;
 
 		$price							= ($price !=0) ? $price : AddProductController::get_product_price($product_id, 'out', $currency);
@@ -228,7 +228,7 @@ class RepairOrderController extends Controller
 		
 		$product						= Product::findOrFail($product_id);
 		$warehouse_id					= $repair_order->warehouse_id;
-		$stock							= AddProductController::get_product_stocks($product_id);
+		$stock							= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 		$currency						= $repair_order->currency;
 
 		$price							= ($price !=0) ? $price : AddProductController::get_product_price($product_id, 'out', $currency);

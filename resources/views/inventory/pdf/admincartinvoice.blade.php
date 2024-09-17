@@ -85,22 +85,27 @@
 					<table class="table">
 						<tbody>
 							<tr>
-								<td style="width: 50%;"><b>{{ __('inventory_doc_print.organization_name') }}</b> {{ config('inventory_settings.name') }}<br /></td>
-								<td style="width: 50%;"><b>{{ __('inventory_doc_print.client') }}</b> {{$client["name"]}}<br /></td>
+								<td style="width: 50%;"><b>{{ __('inventory_doc_print.organisation_name') }}</b> {{ $admincart["organisation_name"] }}<br /></td>
+								<td style="width: 50%;"><b>{{ __('inventory_doc_print.client') }}</b> {{ $client["name"] }}<br /></td>
 							</tr>
 							<tr>
-								<td style="width: 50%;"><b>{{ __('inventory_doc_print.organization_phone') }}</b> {{ config('inventory_settings.phone') }}<br /></td>
+								<td style="width: 50%;"><b>{{ __('inventory_doc_print.organisation_phone') }}</b> {{ $admincart["organisation_phone"] }}<br /></td>
 								<td style="width: 50%;"><b><b>{{ __('inventory_doc_print.date') }}</b> {{date('j F, Y', strtotime($admincart["created_at"]))}}<br /></td>
 							</tr>
 							<tr>
-								<td style="width: 50%;"><b>{{ __('inventory_doc_print.organization_phone') }}</b> {{ config('inventory_settings.phone2') }}<br /></td>
+								<td style="width: 50%;"><b>{{ __('inventory_doc_print.organisation_phone') }}</b> {{ $admincart["organisation_phone2"] }}<br /></td>
 								<td style="width: 50%;"><b>{{ __('inventory_doc_print.currency') }}</b> {{$admincart["currency"]}}<br /></td>
 							</tr>
 							<tr>
-								<td style="width: 50%;"><b>{{ __('inventory_doc_print.organization_email') }}</b> {{ config('inventory_settings.email') }}<br /></td>
-								<td style="width: 50%;"><b>{{ __('inventory_doc_print.admincart') }}</b> № {{$admincart["id"]}}<br /></td>
+								<td style="width: 50%;"><b>{{ __('inventory_doc_print.organisation_email') }}</b> {{ $admincart["organisation_email"] }}<br /></td>
+								<td style="width: 50%;"><b>{{ __('inventory_doc_print.admincart') }}</b> № {{ $admincart["id"] }}<br /></td>
 							</tr>
 						</tbody>
+						<tfoot>
+							<tr>
+								<th scope="row">{{ __('inventory_doc_print.comment') }}</th><td>{{ $admincart["comment"] }}</td>
+							</tr>
+						</tfoot>
 					</table>
 				</div>
 				<div><br></div>
@@ -165,7 +170,7 @@
 					</table>
 				</div>
 				<div><br></div>
-				<div class="table-responsive">{{  config('inventory_settings.terms_of_delivery') }}</div>
+				<div class="table-responsive">{{  $admincart["terms_of_delivery"] }}</div>
 			</div>
 		</div>
 	</body>

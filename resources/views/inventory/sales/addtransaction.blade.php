@@ -21,6 +21,31 @@
                     <input type="hidden" name="user_id" value="{{ Auth::id() }}">
                     <h6 class="heading-small text-muted mb-4">{{__('inventory.transaction_information')}}</h6>
                     <div class="pl-lg-4">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-amount">{{__('inventory.client')}}</label>
+                                    <div class="row mt-2">
+                                        <div class="col-12"><span class="text-info">{{ $sale->client->name }}</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-amount">{{__('inventory.settlements')}}</label>
+                                    <div class="row mt-2">
+                                        @if($sale->client->settlements->sum('total_amount') > 0)
+                                        <div class="col-9"><span class="text-success">{{ __('inventory.balance_positive') }}</span></div><div class="col-3"><span class="text-success">{{ $sale->client->settlements->sum('total_amount') }}</span></div>
+                                        @elseif($sale->client->settlements->sum('total_amount') < 0)
+                                        <div class="col-9"><span class="text-danger">{{ __('inventory.balance_negative') }}</span></div><div class="col-3"><span class="text-danger">{{ $sale->client->settlements->sum('total_amount') }}</span></div>
+                                        @else
+                                        <div class="col-12"><span class="text-info">{{ __('inventory.balance_no_debt') }}</span></div>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
                         <div class="form-group{{ $errors->has('type') ? ' has-danger' : '' }}">
                             <label class="form-control-label" for="input-method">{{__('inventory.transaction_type')}}</label>
                             <select name="type" id="input-method" class="form-select form-control-alternative{{ $errors->has('type') ? ' is-invalid' : '' }}" required>

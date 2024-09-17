@@ -52,11 +52,20 @@
                                 </form>
                             </div>
                             <!--print-->
-                            <div class="col-1">
-                                <form action="{{ route('admincarts.print', $admincart) }}" method="get" class="d-inline">
-                                    @csrf
-                                    <button type="submit" class="btn btn-simple btn-sm btn-print" data-toggle="tooltip" title="{{ __('inventory.print') }}"><i class="fas fa-print"></i></button>
-                                </form>
+                            <div class="col-2">
+                                <div class="btn-group">
+                                    <button class="btn btn-simple btn-sm btn-print dropdown-toggle" style="position:relative;width:100%;margin-top: 4px;margin-right: 14px;margin-bottom: 4px;margin-left: 14px;padding-top: 4px;padding-right: 14px;padding-bottom: 4px;padding-left: 14px;" type="button" data-toggle="dropdown"><i class="fas fa-print"></i></button>
+                                        <div class="dropdown-menu">
+                                            <form action="{{ route('admincarts.print', $admincart) }}" method="get" class="d-inline">
+                                            @csrf
+                                            <button class="dropdown-item" type="submit">{{ __('inventory.print') }}</button>
+                                        </form>
+                                        <form action="{{ route('admincarts.client_print', $admincart) }}" method="get" class="d-inline">
+                                            @csrf
+                                            <button class="dropdown-item" type="submit">{{ __('inventory.client_print') }}</button>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                             <!--delete-->
                             <div class="col-1">
@@ -67,7 +76,7 @@
                                 </form>
                             </div>
                             <!--index-->
-                            <div class="col-7 text-right">
+                            <div class="col-6 text-right">
                                 <a class="btn btn-simple btn-sm btn-back" href="{{ route('admincarts.index') }}" title="{{ __('inventory.back_to_list') }}"><i class="fas fa-arrow-left"></i></a>
                             </div>
                         </div>
@@ -223,7 +232,7 @@
                 </div>
                 <div class="modal-footer">
                     <button id="admincart-single-product-add" type="button" class="btn btn-sm btn-simple btn-success">{{ __('modal.add') }}</button>
-                    <button type="button" class="btn btn-sm btn-simple btn-secondary" data-dismiss="modal">{{ __('modal.close') }}</button>
+                    <button type="button" class="btn btn-sm btn-simple btn-delete" data-dismiss="modal">{{ __('modal.close') }}</button>
                 </div>
             </div>
         </div>

@@ -38,13 +38,30 @@ use Picqer\Barcode\BarcodeGeneratorHTML;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\WSController;
 use App\Http\Controllers\Inventory\AddProductController;
+use App\Http\Controllers\Tecdoc\NewTecdocController;
 use App\Http\Controllers\FunctionsController as Functions;
 
 class AdminCartController extends Controller
 {
-    public function index()
+	public function index(Request $request)
     {
-        $admincarts = AdminCart::paginate(25);
+		$keyword = $request->get('search');
+        if (!empty($keyword))
+		{
+            $admincarts = AdminCart::select('admin_carts.*')
+					->join('clients', 'clients.id', '=', 'admin_carts.client_id')
+					->where('admin_carts.id', 'LIKE', "%$keyword%")
+					->orwhere('admin_carts.barcode', 'LIKE', "%$keyword%")
+					->orwhere('admin_carts.comment', 'LIKE', "%$keyword%")
+					->orwhere('admin_carts.id', 'LIKE', "%$keyword%")
+					->orwhere('clients.name', 'LIKE', "%$keyword%")
+					->paginate(25)
+					->withQueryString();
+        }
+		else
+		{
+			$admincarts = AdminCart::paginate(25);
+        }
 
         return view('inventory.admincarts.index', compact('admincarts'));
     }
@@ -62,6 +79,13 @@ class AdminCartController extends Controller
     {
 		$requestData				=  $request->all();
 
+		$existent = AdminCart::where('client_id', $request->get('client_id'))->where('finalized_at', null)->get();
+
+		if($existent->count())
+		{
+			return back()->withError('Существует не проведеный документ "Корзина" для данного покупателя. <a href="'.route('admincarts.show', $existent->first()).'">Нажмите для перехода</a>');
+		}
+
 		$created_at					= Carbon::now();
 		$dateprefix					= $created_at->format('Y m d');
 		$code_6						= sprintf("%06s",(string)$request->client_id);
@@ -70,7 +94,7 @@ class AdminCartController extends Controller
 
         $admincart = $admincart->create($requestData);
         
-        return redirect()->route('admincarts.show', ['admincart' => $admincart->id])->withStatus('Admincart registered successfully.');
+        return redirect()->route('admincarts.show', ['admincart' => $admincart->id])->withStatus('Документ "Корзина" успешно зарегистрирован.');
     }
 	
     public function show(Request $request, AdminCart $admincart)
@@ -110,22 +134,47 @@ class AdminCartController extends Controller
 		$count			= 0;
 		$result			= [];
 
-		$searchnumber	= $request->admincart_product_search_input;
-		$admincart_id	= $request->admincart_id;
+		$catalog_result			= [];
+		$crosses_result			= [];
+		$oem_result				= [];
+		$products_result		= [];
+		$price_result			= [];
+
+		$searchnumber			= $request->admincart_product_search_input;
+		$admincart_id			= $request->admincart_id;
+		
+		$catalog_search			= $request->catalog_search;
+		$ws_search				= $request->ws_search;
+		$oem_search				= $request->oem_search;
+		$prices_search			= $request->prices_search;
 		
 		$searchnumber_uppercase = Str::upper($searchnumber);
-		$search = Functions::SingleKey($searchnumber_uppercase);
-        
-		$catalog_result = $this->admincart_search_in_catalog($search);//tecdoc request -
+		$search					= Functions::SingleKey($searchnumber_uppercase);		
 
+		$products_result		= $this->admincart_search_in_products($search);
+		$crosses_result			= $this->admincart_search_in_crosses($search);
+
+		//tecdoc request -
+		if($catalog_search == "true") {
+				$catalog_result			= $this->admincart_search_in_catalog($search);
+		}
+		
 		//request to update prices and stocks from webservice
-		$ws_result = $this->admincart_search_in_ws($search);
+		if($ws_search == "true") {
+				$ws_result				= $this->admincart_search_in_ws($search);
+		}
 
-		$crosses_result = $this->admincart_search_in_crosses($search);//crosses
-		$oem_result = $this->admincart_search_in_oem_catalog($search);//td oem
-		$products_result = $this->admincart_search_in_products($search);//base
-		$price_result = $this->admincart_search_in_prices($search);//provider prices+
-		$result = array_merge($catalog_result,$crosses_result, $oem_result,$products_result,$price_result);
+		//oem_catalog number
+		if($oem_search == "true") {
+				$oem_result				= $this->admincart_search_in_oem_catalog($search);
+		}		
+		
+		//provider prices search
+		if($prices_search == "true") {
+				$price_result			= $this->admincart_search_in_prices($search);
+		}
+
+		$result = array_merge($catalog_result, $crosses_result, $oem_result, $products_result, $price_result);
 		
 		foreach ($result as $item)
 		{
@@ -137,7 +186,8 @@ class AdminCartController extends Controller
 			{
 				$temp_key[] = $pkey;
 				$product_id = $this->admincart_product_id($pkey);
-				$stocks = $this->admincart_productstocks($product_id);
+				$stocks = AddProductController::get_product_stocks($product_id);
+				// $stocks = $this->admincart_productstocks($product_id);
 				$price = $this->admincart_productprices($product_id);
 				$data[] = ["count"				=> $count,
 							"product_id"		=> $product_id,
@@ -172,19 +222,7 @@ class AdminCartController extends Controller
 	{
 		$result = [];
 		try{
-			$q = CatalogArticleCross::select('article_cross.PartsDataSupplierArticleNumber AS article', 'suppliers.description AS brand',
-				'articles.NormalizedDescription AS name', 'suppliers.id AS supplier_id')
-				->leftjoin('manufacturers','article_cross.manufacturerId','=','manufacturers.id')
-				->leftjoin('suppliers','article_cross.SupplierId','=','suppliers.id')
-				->join('articles', function ($join) {$join->on('articles.DataSupplierArticleNumber', '=', 'article_cross.PartsDataSupplierArticleNumber')->on('articles.supplierId', '=', 'article_cross.SupplierId');})
-				->where('OENbr','=', $number)
-				->orWhere('article_cross.PartsDataSupplierArticleNumber','=', $number)
-				->orderBy('article_cross.PartsDataSupplierArticleNumber', 'asc')
-				->distinct()->get();
-				if($q)
-				{
-					$result = $q->toArray();
-				}
+			$result = NewTecdocController::SearchNumber($number);
 		}
 		catch(\Exception $e)
 		{
@@ -507,6 +545,7 @@ class AdminCartController extends Controller
 		$brand						= $request->brand;
 		$article					= $request->article;
 		$product_name				= $request->product_name;
+		$product_description		= $request->product_description;
 		$category_id				= $request->category;
 		$product_group_id			= $request->group;
 		$group_name					= ProductGroup::where('id','=',$product_group_id)->first()->name;
@@ -514,16 +553,43 @@ class AdminCartController extends Controller
 		$bkey						= Functions::SingleKey($brand,true);
 		$pkey						= $bkey . $akey;
 
+		///////////name, fullname, description
+		if($product_name)
+		{
+			if($product_description)
+			{
+				$name = $product_name . " [" . $product_description . "]";
+			}
+			else
+			{
+				$name = $product_name;
+			}
+		}
+		else
+		{
+			if($product_description)
+			{
+				$name = $group_name . " [" . $product_description . "]";
+			}
+			else
+			{
+				$name = $group_name;
+			}
+		}
+
+
 		$requestData['article']						= $article;
 		$requestData['akey']						= $akey;
 		$requestData['brand']						= $brand;		
 		$requestData['bkey']						= $bkey;		
 		$requestData['pkey']						= $pkey;		
-		$requestData['name']						= $product_name ?? $group_name;		
+		$requestData['name']						= $name;// ?? $group_name . " [" . $product_description . "]";
+		$requestData['description']					= $product_description ?? "" ;
 		$requestData['product_category_id']			= $category_id;		
 		$requestData['product_group_id']			= $product_group_id;		
-		$requestData['full_name']					= ($product_name ?? $group_name). ", " . $brand . ", " . $article;
+		$requestData['full_name']					= $name . ", " . $brand . ", " . $article;
 		
+		// dd(compact('requestData'));
 		$new_product = $product_model->create($requestData);
 		
 		return response()->json([
@@ -539,6 +605,7 @@ class AdminCartController extends Controller
 		$brand						= $request->brand;
 		$article					= $request->article;
 		$product_name				= $request->product_name;
+		$product_description		= $request->product_description;
 		$category_id				= $request->category;
 		$product_group_id			= $request->group;
 		$group_name					= ProductGroup::where('id','=',$product_group_id)->first()->name;
@@ -546,16 +613,42 @@ class AdminCartController extends Controller
 		$bkey						= Functions::SingleKey($brand,true);
 		$pkey						= $bkey . $akey;
 
+		///////////name, fullname, description
+		if($product_name)
+		{
+			if($product_description)
+			{
+				$name = $product_name . " [" . $product_description . "]";
+			}
+			else
+			{
+				$name = $product_name;
+			}
+		}
+		else
+		{
+			if($product_description)
+			{
+				$name = $group_name . " [" . $product_description . "]";
+			}
+			else
+			{
+				$name = $group_name;
+			}
+		}
+
 		$requestData['article']						= $article;
 		$requestData['akey']						= $akey;
 		$requestData['brand']						= $brand;		
 		$requestData['bkey']						= $bkey;		
 		$requestData['pkey']						= $pkey;		
-		$requestData['name']						= $product_name ?? $group_name;		
+		$requestData['name']						= $name;// ?? $group_name . " [" . $product_description . "]";
+		$requestData['description']					= $product_description ?? "" ;
 		$requestData['product_category_id']			= $category_id;		
 		$requestData['product_group_id']			= $product_group_id;		
-		$requestData['full_name']					= ($product_name ?? $group_name). ", " . $brand . ", " . $article;
+		$requestData['full_name']					= $name . ", " . $brand . ", " . $article;
 		
+		// dd(compact('requestData'));
 		$new_product = $product_model->create($requestData);
 		
 		return response()->json([
@@ -570,23 +663,50 @@ class AdminCartController extends Controller
 		$brand						= $request->brand;
 		$article					= $request->article;
 		$product_name				= $request->product_name;
+		$product_description		= $request->product_description;
 		$category_id				= $request->category;
 		$product_group_id			= $request->group;
 		$group_name					= ProductGroup::where('id','=',$product_group_id)->first()->name;
 		$akey						= Functions::SingleKey($article);
 		$bkey						= Functions::SingleKey($brand,true);
 		$pkey						= $bkey . $akey;
+		
+		///////////name, fullname, description
+		if($product_name)
+		{
+			if($product_description)
+			{
+				$name = $product_name . " [" . $product_description . "]";
+			}
+			else
+			{
+				$name = $product_name;
+			}
+		}
+		else
+		{
+			if($product_description)
+			{
+				$name = $group_name . " [" . $product_description . "]";
+			}
+			else
+			{
+				$name = $group_name;
+			}
+		}
 
 		$requestData['article']						= $article;
 		$requestData['akey']						= $akey;
 		$requestData['brand']						= $brand;		
 		$requestData['bkey']						= $bkey;		
 		$requestData['pkey']						= $pkey;		
-		$requestData['name']						= $product_name ?? $group_name;		
+		$requestData['name']						= $name;// ?? $group_name . " [" . $product_description . "]";
+		$requestData['description']					= $product_description;
 		$requestData['product_category_id']			= $category_id;		
 		$requestData['product_group_id']			= $product_group_id;		
-		$requestData['full_name']					= ($product_name ?? $group_name). ", " . $brand . ", " . $article;
+		$requestData['full_name']					= $name . ", " . $brand . ", " . $article;
 		
+		// dd(compact('requestData'));
 		$new_product = $product_model->create($requestData);//creating product in to base
 
 		//adding product in to cart
@@ -599,9 +719,10 @@ class AdminCartController extends Controller
 		$admincart						= AdminCart::findOrFail($admincart_id);
 		$product						= Product::findOrFail($product_id);
 		$warehouse_id					= $admincart->warehouse_id;
-		$stock							= AddProductController::get_product_stocks($product_id);
+		$stock							= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 		$currency						= $admincart->currency;
 		$price							= ($price !=0) ? $price : AddProductController::get_product_price($product_id, 'out', $currency);
+		$price_in						= AddProductController::get_product_price($product_id, 'in', $currency);
 		$total_amount					= $price * $quantity;
 		$created_at						= Carbon::now();
 
@@ -632,6 +753,7 @@ class AdminCartController extends Controller
 				'name'				=> $product->name,
 				'quantity'			=> $quantity,
 				'stock'				=> $stock,
+				'price_in'				=> $price_in,
 				'price'				=> $price,
 				'total_amount'		=> $total_amount,
 				'created_at'		=> $created_at,
@@ -645,6 +767,7 @@ class AdminCartController extends Controller
 		$brand						= $request->brand;
 		$article					= $request->article;
 		$product_name				= $request->product_name;
+		$product_description		= $request->product_description;
 		$category_id				= $request->category;
 		$product_group_id			= $request->group;
 		$group_name					= ProductGroup::where('id','=',$product_group_id)->first()->name;
@@ -652,15 +775,39 @@ class AdminCartController extends Controller
 		$bkey						= Functions::SingleKey($brand,true);
 		$pkey						= $bkey . $akey;
 
+		///////////name, fullname, description
+		if($product_name)
+		{
+			if($product_description)
+			{
+				$name = $product_name . " [" . $product_description . "]";
+			}
+			else
+			{
+				$name = $product_name;
+			}
+		}
+		else
+		{
+			if($product_description)
+			{
+				$name = $group_name . " [" . $product_description . "]";
+			}
+			else
+			{
+				$name = $group_name;
+			}
+		}
+
 		$requestData['article']						= $article;
 		$requestData['akey']						= $akey;
 		$requestData['brand']						= $brand;		
 		$requestData['bkey']						= $bkey;		
 		$requestData['pkey']						= $pkey;		
-		$requestData['name']						= $product_name ?? $group_name;		
+		$requestData['name']						= $name;// ?? $group_name;		
 		$requestData['product_category_id']			= $category_id;		
 		$requestData['product_group_id']			= $product_group_id;		
-		$requestData['full_name']					= ($product_name ?? $group_name). ", " . $brand . ", " . $article;
+		$requestData['full_name']					= $name . ", " . $brand . ", " . $article;
 		
 		$new_product = $product_model->create($requestData);//creating product in to base
 
@@ -674,7 +821,7 @@ class AdminCartController extends Controller
 		$admincart						= AdminCart::findOrFail($admincart_id);
 		$product						= Product::findOrFail($product_id);
 		$warehouse_id					= $admincart->warehouse_id;
-		$stock							= AddProductController::get_product_stocks($product_id);
+		$stock							= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 		$currency						= $admincart->currency;
 		$price							= ($price !=0) ? $price : AddProductController::get_product_price($product_id, 'out', $currency);
 		$total_amount					= $price * $quantity;
@@ -726,31 +873,13 @@ class AdminCartController extends Controller
 		return view('inventory.admincarts.catalog_product_add_to_base', compact('categories','groups','from_search','admincart_id','brands'));
 	}
 
-	// public static function cart_product_store(Request $request, AdminCart $admincart, ProductAdminCart $productadmincart)
-    // {
-	// 	$requesteddata['admincart_id']	= $request->admincart_id;
-	// 	$admincart						= AdminCart::findOrFail($request->admincart_id);
-	// 	$requesteddata['currency']		= $admincart->currency;
-	// 	$requesteddata['warehouse_id']	= $admincart->warehouse_id;
-	// 	$requesteddata['product_id']	= $request->product_id;
-	// 	$requesteddata['price']			= $request->price;
-	// 	$requesteddata['quantity']		= $request->quantity;
-	// 	$requesteddata['total_amount']	= $requesteddata['price'] * $requesteddata['quantity'];
-	// 	$productadmincart->create($requesteddata);
-		
-	// 	return back();
-	// 	// return response()->json($requesteddata);
-    // }
-
 	public function finalize(AdminCart $admincart)
     {
-        $finalized_at = Carbon::now()->toDateTimeString();
-
-		$adminCartProducts = ProductAdminCart::where('admincart_id','=',$admincart->id)->get();
-		
-        $admincart->quantity = $adminCartProducts->sum('quantity');
-        $admincart->total_amount = $adminCartProducts->sum('total_amount');
-        $admincart->finalized_at = $finalized_at;
+		$finalized_at					= Carbon::now()->toDateTimeString();
+		$adminCartProducts				= ProductAdminCart::where('admincart_id','=',$admincart->id)->get();
+        $admincart->quantity			= $adminCartProducts->sum('quantity');
+		$admincart->total_amount		= $adminCartProducts->sum('total_amount');
+		$admincart->finalized_at		= $finalized_at;
 		
         $admincart->save();
 
@@ -785,8 +914,7 @@ class AdminCartController extends Controller
 			$this->getTreeJS($root_id, $treejs);
 			$treeJS				= $treejs;
 
-			return view('inventory.admincarts.addproduct_table', compact('admincart', 'treeJS'));
-	
+			return view('inventory.admincarts.addproduct_table', compact('admincart', 'treeJS'));	
 	}
 
 	public function admincart_products_filter_by_group(Request $request)
@@ -828,8 +956,9 @@ class AdminCartController extends Controller
 		$admincart						= AdminCart::findOrFail($admincart_id);
 		$product						= Product::findOrFail($product_id);
 		$warehouse_id					= $admincart->warehouse_id;
-		$stock							= AddProductController::get_product_stocks($product_id);
+		$stock							= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 		$currency						= $admincart->currency;
+		$price_in						= AddProductController::get_product_price($product_id, 'in', $currency);
 		$price							= ($price !=0) ? $price : AddProductController::get_product_price($product_id, 'out', $currency);
 		$total_amount					= $price * $quantity;
 		$created_at						= Carbon::now();
@@ -860,6 +989,7 @@ class AdminCartController extends Controller
 				'name'				=> $product->name,
 				'quantity'			=> $quantity,
 				'stock'				=> $stock,
+				'price_in'				=> $price_in,
 				'price'				=> $price,
 				'total_amount'		=> $total_amount,
 				'created_at'		=> $created_at,
@@ -899,8 +1029,9 @@ class AdminCartController extends Controller
 		$admincart						= AdminCart::findOrFail($admincart_id);
 		$product						= Product::findOrFail($product_id);
 		$warehouse_id					= $admincart->warehouse_id;
-		$stock							= AddProductController::get_product_stocks($product_id);
+		$stock							= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 		$currency						= $admincart->currency;
+		$price_in						= AddProductController::get_product_price($product_id, 'in', $currency);
 		$price							= ($price !=0) ? $price : AddProductController::get_product_price($product_id, 'out', $currency);
 		$total_amount					= $price * $quantity;
 		$created_at						= Carbon::now();
@@ -932,6 +1063,7 @@ class AdminCartController extends Controller
 				'name'				=> $product->name,
 				'quantity'			=> $quantity,
 				'stock'				=> $stock,
+				'price_in'				=> $price_in,
 				'price'				=> $price,
 				'total_amount'		=> $total_amount,
 				'created_at'		=> $created_at,
@@ -965,7 +1097,7 @@ class AdminCartController extends Controller
 	public function admincart_update_product_store(Request $request)
 	{
 		$product_id						= $request->product_id;
-		$admincart_id						= $request->admincart_id;
+		$admincart_id					= $request->admincart_id;
 		$price							= floatval($request->price);//????
 		$quantity						= $request->quantity;
 
@@ -982,6 +1114,8 @@ class AdminCartController extends Controller
             if ($old_price != $new_price || $old_quantity != $new_quantity)
 			{
                 $admincart = AdminCart::find($admincart_id);
+				$price_in						= AddProductController::get_product_price($product_id, 'in', $admincart->currency);
+
                 if ($admincart) {
                     $item = $item->update([
                         'price' => $new_price,
@@ -998,9 +1132,10 @@ class AdminCartController extends Controller
                             'docHeaderValues' => $docHeaderValues,
                             'info'    => [
                                     'product_id'    => $product_id,
-                                    'price' => $new_price,
-                                    'quantity' => $new_quantity,
-                                    'total_amount' => $new_total_amount,
+                                    'price'			=> $new_price,
+                                    'price_in'			=> $price_in,
+                                    'quantity'		=> $new_quantity,
+                                    'total_amount'	=> $new_total_amount,
                             ],
                         ]);
                     }
@@ -1068,18 +1203,25 @@ class AdminCartController extends Controller
 		
 		$admincart["subtotal"] = $products->sum('total');
 		$admincart["tax"] = 0;
-		$admincart["terms_of_delivery"] = InventorySetting::find(1)->terms_of_delivery;
+		$inventorySettings = InventorySetting::where('id','=', '1')->first()->toArray();
+		foreach ($inventorySettings as $key=>$value)
+		{
+			if ($key === 'id') { continue; }
+			$admincart[$key] = $value;
+		}
+		
 		$admincart["total_amount"] = $admincart["subtotal"]+$admincart["tax"];
 
 		$generator = new BarcodeGeneratorHTML();
         $barcode = $generator->getBarcode((string)$admincart->barcode, $generator::TYPE_CODE_128, 1, 25);
 		
+        // dd(compact('admincart'));
         $pdf = PDF::loadView('inventory.pdf.admincartinvoice', compact('admincart', 'barcode', 'products', 'client', 'billingaddress', 'shippingaddress'));
         $file_name = 'admincart-' . $admincart->id . '.pdf';
         return $pdf->stream($file_name)->header('Content-Type','application/pdf');
     }
 
-	public function admincart_print_client(Admincart $admincart)
+	public function admincart_client_print(Admincart $admincart)
     {
 		$products = ProductAdminCart::select('products.id as article',
 							'products.brand',
@@ -1094,12 +1236,19 @@ class AdminCartController extends Controller
 		
 		$admincart["subtotal"] = $products->sum('total');
 		$admincart["tax"] = 0;
-		$admincart["terms_of_delivery"] = InventorySetting::find(1)->terms_of_delivery;
+		$inventorySettings = InventorySetting::where('id','=', '1')->first()->toArray();
+		foreach ($inventorySettings as $key=>$value)
+		{
+			if ($key === 'id') { continue; }
+			$admincart[$key] = $value;
+		}
+
 		$admincart["total_amount"] = $admincart["subtotal"]+$admincart["tax"];
 
 		$generator = new BarcodeGeneratorHTML();
         $barcode = $generator->getBarcode((string)$admincart->barcode, $generator::TYPE_CODE_128, 1, 25);
-		
+
+        // dd(compact('admincart'));
         $pdf = PDF::loadView('inventory.pdf.admincartinvoice', compact('admincart', 'barcode', 'products', 'client', 'billingaddress', 'shippingaddress'));
         $file_name = 'admincart-' . $admincart->id . '.pdf';
         return $pdf->stream($file_name)->header('Content-Type','application/pdf');

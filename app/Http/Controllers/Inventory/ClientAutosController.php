@@ -30,9 +30,24 @@ use App\Http\Controllers\FunctionsController as Functions;
 
 class ClientAutosController extends Controller
 {
-	public function index()
+	public function index(Request $request)
     {
-        $client_autos = ClientAuto::all();
+		$keyword = $request->get('search');
+        if (!empty($keyword))
+		{
+            $client_autos = ClientAuto::select('client_autos.*')
+				->where('client_autos.name', 'LIKE', "%$keyword%")
+				->orWhere('clients.name', 'LIKE', "%$keyword%")
+				->orwhere('client_autos.vin', 'LIKE', "%$keyword%")
+				->orwhere('client_autos.plate', 'LIKE', "%$keyword%")
+				->orwhere('client_autos.comment', 'LIKE', "%$keyword%")
+				->join('clients', 'client_autos.client_id', '=', 'clients.id')
+				->paginate(25);
+        }
+		else
+		{
+			$client_autos = ClientAuto::paginate(25);
+        }
 
         return view('inventory.client_autos.index', compact('client_autos'));
     }
@@ -111,9 +126,9 @@ class ClientAutosController extends Controller
 		
 		$clientservicepart = $clientservicepart->create($requestData);
 
-		$servicepart = Product::where('id','=', $clientservicepart->product_id)->get()->first();
-		$stock = AddProductController::get_product_stocks($clientservicepart->product_id);
-		$price = AddProductController::get_product_price($clientservicepart->product_id, "out", $document_currency);
+		$servicepart			= Product::where('id','=', $clientservicepart->product_id)->get()->first();
+		$stock					= AddProductController::get_product_stocks($clientservicepart->product_id, auth()->user()->default_warehouse_id);
+		$price					= AddProductController::get_product_price($clientservicepart->product_id, "out", $document_currency);
 		
 		return response()->json([
 			'status'  => 1 , 
@@ -168,7 +183,7 @@ class ClientAutosController extends Controller
 		{
 			// dd(compact('item'));
 			$servicepart	= Product::where('id','=', $product_id)->get()->first();
-			$stock			= AddProductController::get_product_stocks($product_id);
+			$stock			= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 			$price			= AddProductController::get_product_price($product_id, "out", $document_currency);
 
 			$item = $item->update([

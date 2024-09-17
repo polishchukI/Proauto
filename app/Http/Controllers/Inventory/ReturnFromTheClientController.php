@@ -22,6 +22,7 @@ use App\Models\Product\SoldProduct;
 use App\Models\Product\ProductPrice;
 use App\Models\Product\ProductStock;
 use App\Models\Product\ProductReturnFromTheClient;
+use App\Models\Inventory\InventorySetting;
 
 use Picqer\Barcode\BarcodeGeneratorHTML;
 
@@ -115,11 +116,11 @@ class ReturnFromTheClientController extends Controller
         switch($request->all()['type'])
 		{
             case 'income':
-                $request->merge(['title' => 'Оплата полученая по расходной накладной №: ' . $request->get('return_from_the_client_id')]);
+                $request->merge(['title' => 'Оплата полученая документу Возврат от покупателя №: ' . $request->get('return_from_the_client_id')]);
                 break;
 
             case 'expense':
-                $request->merge(['title' => 'Возврат оплаты по документу возврата товара: ' . $request->get('return_from_the_client_id')]);
+                $request->merge(['title' => 'Возврат оплаты по документу Возврат от покупателя №: ' . $request->get('return_from_the_client_id')]);
 
                 if($request->get('amount') > 0)
 				{
@@ -162,6 +163,13 @@ class ReturnFromTheClientController extends Controller
         $return_from_the_client["subtotal"]				= $products->sum('total');
 		$return_from_the_client["tax"]					= 0;
 		$return_from_the_client["total_amount"]			= $return_from_the_client["subtotal"]+$return_from_the_client["tax"];
+
+		$inventorySettings = InventorySetting::where('id','=', '1')->first()->toArray();
+		foreach ($inventorySettings as $key=>$value)
+		{
+			if ($key === 'id') { continue; }
+			$return_from_the_client[$key] = $value;
+		}
 		
 		$generator = new BarcodeGeneratorHTML();
         $barcode = $generator->getBarcode((string)$return_from_the_client->barcode, $generator::TYPE_CODE_128, 1, 25);
@@ -202,7 +210,7 @@ class ReturnFromTheClientController extends Controller
 		
 		$product						= Product::findOrFail($product_id);
 		$warehouse_id					= $return_from_the_client->warehouse_id;
-		$stock							= AddProductController::get_product_stocks($product_id);
+		$stock							= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 		$currency						= $return_from_the_client->currency;
 		
 		$price							= SoldProduct::where('product_id', $product_id)->where('sale_id', $return_from_the_client->reference_id)->first()->price;

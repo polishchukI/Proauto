@@ -24,6 +24,11 @@ class Transaction extends Model
     {
         return $this->belongsTo('App\Models\Inventory\Sale');
     }
+    
+    public function client_order_correction()
+    {
+        return $this->belongsTo('App\Models\Inventory\ClientOrderCorrection');
+    }
 
     public function client()
     {

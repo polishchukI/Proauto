@@ -23,8 +23,8 @@
 			</div>
 		</div>
 		<div class="modal-footer">
-			<button id="returns_to_provider-product-update" type="button" class="btn btn-sm btn-simple">{{ __('modal.update') }}</button>
-			<button id="returns_to_provider-product-delete" type="button" class="btn btn-sm btn-simple"><i class="fas fa-times text-danger"></i> {{ __('modal.delete') }}</button>
+			<button id="returns_to_provider-product-update" type="button" class="btn btn-sm btn-simple btn-success">{{ __('modal.update') }}</button>
+			<button id="returns_to_provider-product-delete" type="button" class="btn btn-sm btn-simple btn-delete"><i class="fas fa-times"></i> {{ __('modal.delete') }}</button>
 		</div>
 	</div>
 </div>

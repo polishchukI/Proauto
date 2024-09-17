@@ -78,33 +78,45 @@
                                 <p>{{ __('inventory.returns_from_the_client') }}</p>
                             </a>
                         </li>
+                        <li @if ($pageSlug == 'warehouse_write_offs') class="active " @endif>
+                            <a href="{{ route('warehouse_write_offs.index')  }}">
+                                <i class="fa-solid fa-book-bookmark"></i>
+                                <p>{{ __('inventory.warehouse_write_offs') }}</p>
+                            </a>
+                        </li>
 					</ul>
                 </div>
             </li>
-            <!--admincarts-->
-            {{-- <li>
-                <a data-toggle="collapse" href="#admincarts" {{ $section == 'admincarts' ? 'aria-expanded=true' : '' }}>
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="nav-link-text">{{ __('inventory.admincarts') }}</span>
+            <!--contragents-->
+            <li>
+                <a data-toggle="collapse" href="#contragents" {{ $section == 'contragents' ? 'aria-expanded=true' : '' }}>
+                    <i class="far fa-user"></i>
+                    <span class="nav-link-text">{{ __('inventory.contragents') }}</span>
                     <b class="caret mt-1"></b>
                 </a>
-                <div class="collapse {{ $section == 'admincarts' ? 'show' : '' }}" id="admincarts">
-                    <ul class="nav pl-4">
-                        <li @if ($pageSlug == 'admincarts_fullist') class="active " @endif>
-                            <a href="{{ route('admincarts.index') }}">
-                                <i class="fas fa-shopping-cart"></i>
-                                <p>{{ __('inventory.admincarts') }}</p>
+                <div class="collapse {{ $section == 'contragents' ? 'show' : '' }}" id="contragents">
+					<ul class="nav pl-4">
+                        <li @if ($pageSlug == 'clients-list') class="active " @endif>
+                            <a href="{{ route('clients.index')  }}">
+                            <i class="far fa-user"></i>
+                                <p>{{ __('inventory.clients') }}</p>
                             </a>
                         </li>
-                        <li @if ($pageSlug == 'admincarts_newcart') class="active " @endif>
-                            <a href="{{ route('admincarts.create') }}">
-                                <i class="fas fa-cart-plus"></i>
-                                <p>{{ __('inventory.new_admincart') }}</p>
+                        <li @if ($pageSlug == 'client_autos') class="active " @endif>
+                            <a href="{{ route('client_autos.index') }}">
+                            <i class="fas fa-car-alt"></i>
+                                <p>{{ __('inventory.client_autos') }}</p>
                             </a>
                         </li>
+						<li @if ($pageSlug == 'providers') class="active " @endif>
+							<a href="{{ route('providers.index') }}">
+                            <i class="fas fa-truck-loading"></i>
+                                <p>{{ __('inventory.providers') }}</p>
+							</a>
+						</li>
                     </ul>
                 </div>
-            </li> --}}
+            </li>
             <!--salary_management-->
             <li>
                 <a data-toggle="collapse" href="#blog" {{ $section == 'blog' ? 'aria-expanded=true' : '' }}>
@@ -200,7 +212,7 @@
                             </a>
                         </li>
                         <li @if ($pageSlug == 'transfers') class="active " @endif>
-                            <a href="{{ route('transfer.index')  }}">
+                            <a href="{{ route('transfers.index')  }}">
                             <i class="fas fa-exchange-alt"></i>
                                 <p>{{ __('inventory.transfers') }}</p>
                             </a>
@@ -291,11 +303,6 @@
                                             <i class="far fa-copyright"></i><p>{{ __('inventory.brands') }}</p>
                                         </a>
                                     </li>
-                                    <li @if ($pageSlug == 'new_brand') class="active " @endif>
-                                        <a href="{{ route('brands.create') }}">
-                                        <i class="fas fa-plus"></i><p>{{ __('inventory.new_brand') }}</p>
-                                        </a>
-                                    </li>
                                     <li @if ($pageSlug == 'brand_renames') class="active " @endif>
                                         <a href="{{ route('brand_renames.index') }}">
                                             <i class="fas fa-exchange-alt"></i><p>{{ __('inventory.brand_renames') }}</p>
@@ -346,56 +353,6 @@
                                 <p>{{ __('inventory.services') }}</p>
                             </a>
                         </li>
-                    </ul>
-                </div>
-            </li>
-			<!--contragents-->
-            <li>
-                <a data-toggle="collapse" href="#contragents" {{ $section == 'contragents' ? 'aria-expanded=true' : '' }}>
-                    <i class="far fa-user"></i>
-                    <span class="nav-link-text">{{ __('inventory.contragents') }}</span>
-                    <b class="caret mt-1"></b>
-                </a>
-                <div class="collapse {{ $section == 'contragents' ? 'show' : '' }}" id="contragents">
-                    <ul class="nav pl-4">
-                        <!-- contragents multilevel -->
-                        <li @if ($pageSlug == 'clients') class="active " @endif>
-                            <a data-toggle="collapse" aria-expanded="false" href="#multicollapseClients" class="collapsed">
-                                <span class="sidebar-normal"><i class="far fa-copyright"></i>{{ __('inventory.clients') }}
-                                    <b class="caret"></b>
-                                </span>
-                            </a>
-                            <div class="collapse" id="multicollapseClients" style="">
-                                <ul class="nav">
-                                <li @if ($pageSlug == 'clients-list') class="active " @endif>
-                                        <a href="{{ route('clients.index')  }}">
-                                        <i class="far fa-user"></i>
-                                            <p>{{ __('inventory.clients') }}</p>
-                                        </a>
-                                    </li>
-                                    <li @if ($pageSlug == 'clients-create') class="active " @endif>
-                                        <a href="{{ route('clients.create')  }}">
-                                        <i class="fas fa-plus"></i>
-                                            <p>{{ __('inventory.new_client') }}</p>
-                                        </a>
-                                    </li>
-                                    <li @if ($pageSlug == 'client_autos') class="active " @endif>
-                                        <a href="{{ route('client_autos.index') }}">
-                                        <i class="fas fa-car-alt"></i>
-                                            <p>{{ __('inventory.client_autos') }}</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-					<ul class="nav pl-4">
-						<li @if ($pageSlug == 'providers') class="active " @endif>
-							<a href="{{ route('providers.index') }}">
-                            <i class="fas fa-truck-loading"></i>
-                                <p>{{ __('inventory.providers') }}</p>
-							</a>
-						</li>
                     </ul>
                 </div>
             </li>
@@ -472,12 +429,6 @@
                     </ul>
                     
                 </div>
-            </li>
-            <li @if ($pageSlug == 'phpinfo') class="active " @endif>
-                <a href="/phpinfo">
-                    <i class="fas fa-chart-bar"></i>
-                    <p>{{ __('inventory.phpinfo') }}</p>
-                </a>
             </li>
         </ul>
     </div>

@@ -1,4 +1,4 @@
-@extends('inventory.layouts.app', ['page' => 'Product group Information', 'pageSlug' => 'product_groups', 'section' => 'inventory', 'search' => 'product_groups'])
+@extends('inventory.layouts.app', ['page' => 'Product product_group Information', 'pageSlug' => 'product_groups', 'section' => 'inventory', 'search' => 'product_groups'])
 
 @section('content')
     <div class="row">
@@ -17,12 +17,12 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{{ $group->id }}</td>
-                                <td>{{ $group->name }}</td>
-                                <td>{{ $group->products->count() }}</td>
-                                <td>{{ $group->products->sum('stock') }}</td>
-                                <td>{{ $group->products->sum('stock_defective') }}</td>
-                                <td>${{ round($group->products->avg('price'), 2) }}</td>
+                                <td>{{ $product_group->id }}</td>
+                                <td>{{ $product_group->name }}</td>
+                                <td>{{ $product_group->products->count() }}</td>
+                                <td>{{ $product_group->products->sum('stock') }}</td>
+                                <td>{{ $product_group->products->sum('stock_defective') }}</td>
+                                <td>${{ round($product_group->products->avg('price'), 2) }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -34,12 +34,11 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">products: {{ $products->count() }}</h4>
+                    <h4 class="card-title">products: {{ $product_group->products->count() }}</h4>
                 </div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
-                            <th>ID</th>
                             <th>Name</th>
                             <th>Stock</th>
                             <th>Defective Stock</th>
@@ -50,10 +49,9 @@
                             <th></th>
                         </thead>
                         <tbody>
-                            @foreach ($products as $product)
+                            @foreach ($product_group->products as $product)
                                 <tr>
-                                    <td><a href="{{ route('products.show', $product) }}">{{ $product->id }}</a></td>
-                                    <td><a href="{{ route('products.show', $product) }}">{{ $product->name }}</a></td>
+                                    <td><a href="{{ route('products.show', $product) }}">{{ $product->full_name }}</a></td>
                                     <td>{{ $product->stock }}</td>
                                     <td>{{ $product->stock_defective }}</td>
                                     <td>{{ format_money($product->price) }}</td>
@@ -69,11 +67,6 @@
                             @endforeach
                         </tbody>
                     </table>
-                </div>
-                <div class="card-footer py-4">
-                    <nav class="d-flex justify-content-end">
-                        {{ $products->links() }}
-                    </nav>
                 </div>
             </div>
         </div>

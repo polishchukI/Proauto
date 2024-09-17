@@ -248,7 +248,7 @@
 			6. The  existence of a right to complain to a supervisory authority;<br>
 			7. All  available information about the origin of the data, if the personal data were  not collected from the data subject;<br>
 			8. The  existence of automated decision-making including profiling pursuant to  Art.&nbsp;22 (1) and (4) GDPR and – at least in these cases – meaningful  information about the logic involved as well as the significance and the  envisaged consequences of such processing for the data subject.</p>
-			<p>You also have the right to request information about  whether the personal data concerning you are being transferred to a third  country or an international organization. In this regard, you can request to be  informed about the appropriate safeguards pursuant to Art.&nbsp;46 GDPR in  connection with the transfer.</p>
+			<p>You also have the right to request information about  whether the personal data concerning you are being transferred to a third  country or an international organisation. In this regard, you can request to be  informed about the appropriate safeguards pursuant to Art.&nbsp;46 GDPR in  connection with the transfer.</p>
 			<p><b>9.2. Right to rectification</b></p>
 			<p>You have a right to rectification and/or completion  vis-à-vis the controller if the processed personal data concerning you are  incorrect or incomplete. The controller shall carry out the rectification  without undue delay.</p>
 			<p><b>9.3. Right to restriction of processing</b></p>

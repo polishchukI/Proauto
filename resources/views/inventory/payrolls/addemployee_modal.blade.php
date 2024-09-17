@@ -28,10 +28,10 @@
 		</div>
 		<div class="modal-footer">
 		@if($edit == "true")
-			<button id="payroll-employee-update" type="button" class="btn btn-sm btn-simple">{{ __('modal.update') }}</button>
-			<button id="payroll-employee-delete" type="button" class="btn btn-sm btn-simple"><i class="fas fa-times text-danger"></i> {{ __('modal.delete') }}</button>
+			<button id="payroll-employee-update" type="button" class="btn btn-sm btn-simple btn-success">{{ __('modal.update') }}</button>
+			<button id="payroll-employee-delete" type="button" class="btn btn-sm btn-simple btn-delete"><i class="fas fa-times text-danger"></i> {{ __('modal.delete') }}</button>
 		@else
-		<button id="payroll-employee-add" type="button" class="btn btn-sm btn-simple">{{ __('modal.add') }}</button>
+		<button id="payroll-employee-add" type="button" class="btn btn-sm btn-simple btn-success">{{ __('modal.add') }}</button>
 		@endif	
 		</div>
 	</div>

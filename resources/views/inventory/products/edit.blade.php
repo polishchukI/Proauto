@@ -177,7 +177,7 @@
 									<div class="col-12 text-center">
 										<div class="fileinput fileinput-new text-center" data-provides="fileinput">
 											<div class="fileinput-new thumbnail">
-												<img src="/images/admin/image_placeholder.jpg" alt="...">
+												<img src="/images/admin/image_placeholder.jpg" alt="$product->name">
 											</div>
 											<div class="fileinput-preview fileinput-exists thumbnail" style=""></div>
 											<div>
@@ -262,7 +262,7 @@
 												</thead>
 												<tbody>
 												@foreach($crosses as $cross)
-													<tr id="selected_cross-{{ $cross->id }}" class="pointer" OnClick="product_editcross('{{$cross['id']}}','{{$cross['uid']}}')">
+													<tr id="selected_cross-{{ $cross->id }}" class="pointer" ondblclick="product_editcross('{{$cross['id']}}','{{$cross['uid']}}')">
 														<td>{{ $cross->article }}</td>
 														<td>{{ $cross->brand }}</td>
 														<td>{{ $cross->name }}</td>

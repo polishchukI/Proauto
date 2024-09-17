@@ -4,7 +4,7 @@ return [
 
     'invoice' => 'Заказ',
     'phone' => 'Телефон',
-    'organization_name' => 'Наименование организации',
+    'organisation_name' => 'Наименование организации',
     'currency' => 'Валюта',
     'client' => 'Покупатель',
     'email' => 'e-mail',

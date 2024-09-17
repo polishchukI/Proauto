@@ -14,7 +14,6 @@ return [
     'client_order' => 'Заказ клиента',
     'to_provider_order_doc_id' => 'Заказ поставщику #',
     'to_provider_order' => 'Заказ поставщику',
-    'client_order_doc_id' => 'Заказ клиента #',
     'client_order_status' => 'Состояние',
     'pending_to_provider_orders' => 'Ожидающие заказы поставщикам',
     'pending_sales' => 'Ожидающие продажи',

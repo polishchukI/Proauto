@@ -26,6 +26,7 @@ use App\Models\Inventory\Warehouse;
 use App\Models\Inventory\Transaction;
 use App\Models\Inventory\PaymentMethod;
 use App\Models\Inventory\ReturnToProvider;
+use App\Models\Inventory\InventorySetting;
 
 use App\Models\OrderControl\ProductToProviderOrderControl;
 
@@ -38,9 +39,26 @@ use App\Http\Controllers\Inventory\AddProductController;
 
 class ReceiptController extends Controller
 {
-    public function index()
+	public function index(Request $request)
     {
-        $receipts = Receipt::paginate(25);
+		$keyword = $request->get('search');
+        if (!empty($keyword))
+		{
+            $receipts = Receipt::select('receipts.*')
+					->join('providers', 'providers.id', '=', 'receipts.provider_id')
+					->where('receipts.id', 'LIKE', "%$keyword%")
+					->orwhere('receipts.comment', 'LIKE', "%$keyword%")
+					->orwhere('receipts.provider_doc_number', 'LIKE', "%$keyword%")
+					->orwhere('receipts.barcode', 'LIKE', "%$keyword%")
+					->orwhere('receipts.id', 'LIKE', "%$keyword%")
+					->orwhere('providers.name', 'LIKE', "%$keyword%")
+					->paginate(25)
+					->withQueryString();
+        }
+		else
+		{
+			$receipts = Receipt::paginate(25);
+        }        
 
         return view('inventory.receipts.index', compact('receipts'));
     }
@@ -100,7 +118,7 @@ class ReceiptController extends Controller
 								]);
 			}
 		}
-		return redirect()->route('receipts.show', $receipt)->withStatus('Receipt registered successfully, you can start adding the products belonging to it.');
+		return redirect()->route('receipts.show', $receipt)->withStatus('Документ "Приходная накладная" зарегистрирован');
     }
 
     public function show(Receipt $receipt)
@@ -119,7 +137,7 @@ class ReceiptController extends Controller
 		ReceivedProduct::where('receipt_id','=',$receipt->id)->delete();
         $receipt->delete();
 
-        return redirect()->route('receipts.index')->withStatus('Receipt successfully removed.');
+        return redirect()->route('receipts.index')->withStatus('Документ "Приходная накладная" удален');
     }
 
 	public function unfinalize(Receipt $receipt)
@@ -128,7 +146,7 @@ class ReceiptController extends Controller
 			'finalized_at' => null,
 		]);
 
-        return back()->withStatus('The <To provider order> has been successfully unfinalized.');
+        return back()->withStatus('Отмена проведения документа "Приходная накладная" успешна');
 	}
 
 	public function finalize(Receipt $receipt)
@@ -175,6 +193,7 @@ class ReceiptController extends Controller
 									'currency'				=> $income_product->currency,
 									'price'					=> $this->ceilCoefficient($income_product->price*(1+($surcharge/100)), $surcharge_coefficient),
 									'date'					=> Carbon::now()->toDateString(),
+									'created_at'			=> Carbon::now(),
 									'price_type'			=> "out",
 								]);
 				}
@@ -187,6 +206,7 @@ class ReceiptController extends Controller
 										'currency'				=> $income_product->currency,
 										'price'					=> $this->ceilCoefficient($income_product->price*(1+($receipt->surcharge/100)), $receipt->surcharge_coefficient),
 										'date'					=> Carbon::now()->toDateString(),
+										'created_at'			=> Carbon::now(),
 										'price_type'			=> "out",
 									]);
 					}
@@ -240,7 +260,7 @@ class ReceiptController extends Controller
 		$receipt->finalized_at = $finalized_at;
         $receipt->save();
 		
-        return back()->withStatus('Receipt successfully completed.');
+        return back()->withStatus('Документ "Приходная накладная" проведен');
     }
 
 	public function ceilCoefficient($price, $rate = 50)
@@ -280,7 +300,7 @@ class ReceiptController extends Controller
 		$receipt						= Receipt::findOrFail($receipt_id);
 		$product						= Product::findOrFail($product_id);
 		$warehouse_id					= $receipt->warehouse_id;
-		$stock							= AddProductController::get_product_stocks($product_id);
+		$stock							= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 		$currency						= $receipt->currency;
 		$price							= ($price !=0) ? $price : AddProductController::get_product_price($product_id, 'in', $currency);
 		$total_amount					= $price * $quantity;
@@ -353,7 +373,7 @@ class ReceiptController extends Controller
 		$receipt						= Receipt::findOrFail($receipt_id);
 		$product						= Product::findOrFail($product_id);
 		$warehouse_id					= $receipt->warehouse_id;
-		$stock							= AddProductController::get_product_stocks($product_id);
+		$stock							= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 		$currency						= $receipt->currency;
 		$price							= ($price !=0) ? $price : AddProductController::get_product_price($product_id, 'in', $currency);
 		$total_amount					= $price * $quantity;
@@ -527,6 +547,13 @@ class ReceiptController extends Controller
 		$receipt["tax"] = 0;
 		$receipt["total_amount"] = $receipt["subtotal"]+$receipt["tax"];
 
+		$inventorySettings = InventorySetting::where('id','=', '1')->first()->toArray();
+		foreach ($inventorySettings as $key=>$value)
+		{
+			if ($key === 'id') { continue; }
+			$receipt[$key] = $value;
+		}
+
 		$generator = new BarcodeGeneratorHTML();
         $barcode = $generator->getBarcode((string)$receipt->barcode, $generator::TYPE_CODE_128, 1, 25);
 		
@@ -575,7 +602,7 @@ class ReceiptController extends Controller
 								'user_id'			=> $request->user_id,
 								'created_at'		=> Carbon::now()]);
 
-        return redirect()->route('receipts.show', compact('receipt'))->withStatus('Successfully registered transaction.');
+        return redirect()->route('receipts.show', compact('receipt'))->withStatus('Документ "Оплата" проведен');
     }
 
     public function edittransaction(Receipt $receipt, Transaction $transaction)
@@ -604,14 +631,14 @@ class ReceiptController extends Controller
         }
         $transaction->update($request->all());
 
-        return redirect()->route('receipts.show', compact('receipt'))->withStatus('Successfully modified transaction.');
+        return redirect()->route('receipts.show', compact('receipt'))->withStatus('Документ "Оплата" обновлен');
     }
 
     public function destroytransaction(Receipt $receipt, Transaction $transaction)
     {
         $transaction->delete();
 
-        return back()->withStatus('Transaction deleted successfully.');
+        return back()->withStatus('Документ "Оплата" удален');
     }
 
 	//////////////////tree view
@@ -696,7 +723,7 @@ class ReceiptController extends Controller
 		$warehouse_id					= $to_provider_order->warehouse_id;
 
 		$receipt						= Receipt::findOrFail($receipt_id);
-		$stock							= AddProductController::get_product_stocks($product_id);
+		$stock							= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 		$currency						= $to_provider_order->currency;
 		$price							= AddProductController::get_product_price($product_id, 'in', $currency);
 		$total_amount					= $price * $orderInfo->quantity;
@@ -761,7 +788,7 @@ class ReceiptController extends Controller
 
 			if($existent->count())
 			{
-				return back()->withError('There is already an unfinished receipt belonging to this customer. <a href="'.route('returns_to_provider.show', $existent->first()).'">Click here to go to it</a>');
+				return back()->withError('Существует не проведеный документ "Возврат поставщику" для данного поставщика. <a href="'.route('returns_to_provider.show', $existent->first()).'">Нажмите для перехода</a>');
 			}
 		}        
 
@@ -792,6 +819,55 @@ class ReceiptController extends Controller
 		
 		return redirect()->route('returns_to_provider.show', $return_to_provider)->withStatus('Successfully registered Return from the provider.');
     }
+	
+	//receipt_add_edit_comment
+	public static function receipt_comment(Request $request)
+	{
+		$receipt_id						= $request->receipt_id;
+		$comment							= Receipt::where('id', $receipt_id)->first()->comment;
+	
+		return view('inventory.receipts.comment', compact('receipt_id','comment'));
+	}
+	
+	public static function receipt_comment_update(Request $request)
+	{
+		$comment		= $request->comment;
+		$receipt		= Receipt::findOrFail($request->get('receipt_id'));
+
+		$receipt->update([
+			'comment' => $comment,
+		]);
+		
+		if ($receipt)
+		{
+			$comment	= Receipt::where('id', $receipt->id)->first()->comment;
+
+			return response()->json([
+				'status' 				=> 1 , 
+				'message'				=> ['Изменен', 'success'],
+				'comment'				=> $comment,
+			]);
+		}
+	}
+
+	public static function receipt_comment_delete(Request $request)
+	{
+		$receipt		= Receipt::findOrFail($request->get('receipt_id'));
+
+		$receipt->update([
+			'comment' => '',
+		]);
+		
+		if ($receipt)
+		{
+			$comment	= Receipt::where('id', $receipt->id)->first()->comment;
+
+			return response()->json([
+				'status' 				=> 1 , 
+				'message'				=> ['Удалено', 'success'],
+			]);
+		}
+	}
 
 	public static function docHeaderValues(Receipt $receipt)
 	{

@@ -169,8 +169,8 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="row">
-                            <div class="col-3"><b>{{ __('inventory.comment') }}</b></div>
-                            <div class="col-9">{{ $sale->comment }}</div>
+                            <div class="col-3"><a OnClick="sale_comment('{{$sale->id}}')">{{ __('inventory.comment') }}</a></div>
+                            <div class="col-9" id="saleComment">{{ $sale->comment }}</div>
                         </div>
                         <div class="row">
                         @if($sale->client->comment)

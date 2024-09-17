@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 
 class ProductsTableSeeder extends Seeder
@@ -17,7 +19,7 @@ class ProductsTableSeeder extends Seeder
         \DB::table('products')->delete();
         
         \DB::table('products')->insert(array (
-            0 => 
+            
             array (
                 'id' => 1,
                 'article' => '0451103336',
@@ -37,7 +39,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            1 => 
+            
             array (
                 'id' => 3,
                 'article' => '7700274177',
@@ -57,7 +59,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            2 => 
+            
             array (
                 'id' => 8,
                 'article' => '7700500168',
@@ -77,7 +79,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            3 => 
+            
             array (
                 'id' => 10,
                 'article' => '7700500155',
@@ -97,7 +99,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            4 => 
+            
             array (
                 'id' => 13,
                 'article' => '7701477024',
@@ -117,7 +119,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            5 => 
+            
             array (
                 'id' => 14,
                 'article' => 'K015453XS',
@@ -137,7 +139,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            6 => 
+            
             array (
                 'id' => 16,
                 'article' => '7701070525',
@@ -157,7 +159,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            7 => 
+            
             array (
                 'id' => 19,
                 'article' => 'KTB957',
@@ -177,7 +179,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            8 => 
+            
             array (
                 'id' => 28,
                 'article' => '0092S30050',
@@ -197,7 +199,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            9 => 
+            
             array (
                 'id' => 29,
                 'article' => '108190001',
@@ -217,7 +219,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            10 => 
+            
             array (
                 'id' => 30,
                 'article' => 'KFT203',
@@ -237,7 +239,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            11 => 
+            
             array (
                 'id' => 31,
                 'article' => '9213R-02B',
@@ -257,7 +259,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            12 => 
+            
             array (
                 'id' => 32,
                 'article' => '26300-35503',
@@ -277,7 +279,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            13 => 
+            
             array (
                 'id' => 33,
                 'article' => '30414',
@@ -297,7 +299,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            14 => 
+            
             array (
                 'id' => 34,
                 'article' => '61-00011-00',
@@ -317,7 +319,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            15 => 
+            
             array (
                 'id' => 35,
                 'article' => '0986487585',
@@ -337,7 +339,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            16 => 
+            
             array (
                 'id' => 36,
                 'article' => 'AP157',
@@ -357,7 +359,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            17 => 
+            
             array (
                 'id' => 37,
                 'article' => 'H300W09',
@@ -377,7 +379,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            18 => 
+            
             array (
                 'id' => 38,
                 'article' => 'F00VC17504',
@@ -397,7 +399,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            19 => 
+            
             array (
                 'id' => 39,
                 'article' => '14-32178-01',
@@ -417,7 +419,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            20 => 
+            
             array (
                 'id' => 40,
                 'article' => '582.830',
@@ -437,7 +439,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            21 => 
+            
             array (
                 'id' => 41,
                 'article' => '156813',
@@ -457,7 +459,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            22 => 
+            
             array (
                 'id' => 42,
                 'article' => 'D2W001TT',
@@ -477,7 +479,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            23 => 
+            
             array (
                 'id' => 43,
                 'article' => '70-31414-10',
@@ -497,7 +499,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            24 => 
+            
             array (
                 'id' => 44,
                 'article' => '542.050',
@@ -517,7 +519,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            25 => 
+            
             array (
                 'id' => 45,
                 'article' => '71-36089-00',
@@ -537,7 +539,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            26 => 
+            
             array (
                 'id' => 46,
                 'article' => 'P999-G12-005',
@@ -557,7 +559,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            27 => 
+            
             array (
                 'id' => 47,
                 'article' => 'P999-G12',
@@ -577,7 +579,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            28 => 
+            
             array (
                 'id' => 48,
                 'article' => '214003',
@@ -597,7 +599,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            29 => 
+            
             array (
                 'id' => 49,
                 'article' => 'GS-3865',
@@ -617,7 +619,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            30 => 
+            
             array (
                 'id' => 50,
                 'article' => '818105',
@@ -637,7 +639,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            31 => 
+            
             array (
                 'id' => 51,
                 'article' => '81260-33030',
@@ -657,7 +659,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            32 => 
+            
             array (
                 'id' => 52,
                 'article' => 'KL06H145100AD',
@@ -677,7 +679,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            33 => 
+            
             array (
                 'id' => 56,
                 'article' => 'CT1139K2',
@@ -697,7 +699,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            34 => 
+            
             array (
                 'id' => 58,
                 'article' => '530 0550 10',
@@ -717,7 +719,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            35 => 
+            
             array (
                 'id' => 59,
                 'article' => '4001814',
@@ -737,7 +739,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            36 => 
+            
             array (
                 'id' => 60,
                 'article' => 'SF-2162',
@@ -757,7 +759,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            37 => 
+            
             array (
                 'id' => 61,
                 'article' => 'A1461V',
@@ -777,7 +779,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            38 => 
+            
             array (
                 'id' => 62,
                 'article' => '05P730',
@@ -797,7 +799,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            39 => 
+            
             array (
                 'id' => 63,
                 'article' => '4372',
@@ -817,7 +819,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            40 => 
+            
             array (
                 'id' => 64,
                 'article' => '06830',
@@ -837,7 +839,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            41 => 
+            
             array (
                 'id' => 65,
                 'article' => '1987475110',
@@ -857,7 +859,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            42 => 
+            
             array (
                 'id' => 66,
                 'article' => '13205700',
@@ -877,7 +879,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            43 => 
+            
             array (
                 'id' => 67,
                 'article' => '026150001A',
@@ -897,7 +899,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            44 => 
+            
             array (
                 'id' => 68,
                 'article' => 'GB40706R00',
@@ -917,7 +919,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            45 => 
+            
             array (
                 'id' => 69,
                 'article' => 'NLZ.34.05.030 NEW',
@@ -937,7 +939,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            46 => 
+            
             array (
                 'id' => 70,
                 'article' => '151 049 0097',
@@ -957,7 +959,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            47 => 
+            
             array (
                 'id' => 71,
                 'article' => '8200561434',
@@ -977,7 +979,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            48 => 
+            
             array (
                 'id' => 72,
                 'article' => 'TH6971.89J',
@@ -997,7 +999,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            49 => 
+            
             array (
                 'id' => 73,
                 'article' => '352061089000',
@@ -1017,7 +1019,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            50 => 
+            
             array (
                 'id' => 74,
                 'article' => '8200124902',
@@ -1037,7 +1039,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            51 => 
+            
             array (
                 'id' => 75,
                 'article' => '5543',
@@ -1057,7 +1059,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            52 => 
+            
             array (
                 'id' => 76,
                 'article' => '5544',
@@ -1077,7 +1079,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            53 => 
+            
             array (
                 'id' => 77,
                 'article' => '05P220',
@@ -1097,7 +1099,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            54 => 
+            
             array (
                 'id' => 78,
                 'article' => '729.960',
@@ -1117,7 +1119,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            55 => 
+            
             array (
                 'id' => 79,
                 'article' => '06J109259A',
@@ -1137,7 +1139,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            56 => 
+            
             array (
                 'id' => 80,
                 'article' => '427003410',
@@ -1157,7 +1159,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            57 => 
+            
             array (
                 'id' => 81,
                 'article' => '706117260',
@@ -1177,7 +1179,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            58 => 
+            
             array (
                 'id' => 82,
                 'article' => '230090',
@@ -1197,7 +1199,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            59 => 
+            
             array (
                 'id' => 83,
                 'article' => '170554',
@@ -1217,7 +1219,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            60 => 
+            
             array (
                 'id' => 84,
                 'article' => 'C30005',
@@ -1237,7 +1239,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            61 => 
+            
             array (
                 'id' => 85,
                 'article' => 'HU6013Z',
@@ -1257,27 +1259,27 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            62 => 
+            
             array (
                 'id' => 86,
                 'article' => '47197',
                 'akey' => '47197',
-                'brand' => 'FEBIBILSTEIN',
-                'bkey' => 'FEBI',
-                'pkey' => 'FEBI47197',
+                'brand' => 'FEBI BILSTEIN',
+                'bkey' => 'FEBIBILSTEIN',
+                'pkey' => 'FEBIBILSTEIN47197',
                 'product_category_id' => 1,
                 'product_group_id' => 10591,
                 'name' => 'Пробка масляного поддона',
-                'full_name' => 'Пробка масляного поддона, FEBIBILSTEIN, 47197',
+                'full_name' => 'Пробка масляного поддона, FEBI BILSTEIN, 47197',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2023-10-14 10:23:42',
-                'updated_at' => '2024-01-30 15:01:05',
+                'updated_at' => '2024-07-12 08:40:29',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            63 => 
+            
             array (
                 'id' => 87,
                 'article' => '944-011',
@@ -1297,7 +1299,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            64 => 
+            
             array (
                 'id' => 88,
                 'article' => 'BK-4470',
@@ -1317,7 +1319,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            65 => 
+            
             array (
                 'id' => 89,
                 'article' => '77AP025',
@@ -1337,7 +1339,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            66 => 
+            
             array (
                 'id' => 90,
                 'article' => 'BR-3259',
@@ -1357,7 +1359,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            67 => 
+            
             array (
                 'id' => 91,
                 'article' => '713630030',
@@ -1377,7 +1379,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            68 => 
+            
             array (
                 'id' => 92,
                 'article' => '30275',
@@ -1397,7 +1399,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            69 => 
+            
             array (
                 'id' => 93,
                 'article' => '207007001',
@@ -1417,7 +1419,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            70 => 
+            
             array (
                 'id' => 94,
                 'article' => '4042621',
@@ -1437,7 +1439,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            71 => 
+            
             array (
                 'id' => 95,
                 'article' => '06033',
@@ -1457,7 +1459,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            72 => 
+            
             array (
                 'id' => 96,
                 'article' => '90129204',
@@ -1477,7 +1479,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            73 => 
+            
             array (
                 'id' => 97,
                 'article' => '90523189',
@@ -1497,7 +1499,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            74 => 
+            
             array (
                 'id' => 98,
                 'article' => '01210',
@@ -1517,7 +1519,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            75 => 
+            
             array (
                 'id' => 99,
                 'article' => '181711',
@@ -1537,7 +1539,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            76 => 
+            
             array (
                 'id' => 100,
                 'article' => '2204218',
@@ -1557,7 +1559,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            77 => 
+            
             array (
                 'id' => 101,
                 'article' => '1068020002',
@@ -1577,7 +1579,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            78 => 
+            
             array (
                 'id' => 102,
                 'article' => '1802540180',
@@ -1597,7 +1599,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            79 => 
+            
             array (
                 'id' => 103,
                 'article' => '1802541180',
@@ -1617,7 +1619,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            80 => 
+            
             array (
                 'id' => 104,
                 'article' => '1802526180',
@@ -1637,7 +1639,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            81 => 
+            
             array (
                 'id' => 105,
                 'article' => '1802525180',
@@ -1657,7 +1659,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            82 => 
+            
             array (
                 'id' => 106,
                 'article' => '017-02405',
@@ -1677,7 +1679,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            83 => 
+            
             array (
                 'id' => 107,
                 'article' => '713630300',
@@ -1697,7 +1699,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            84 => 
+            
             array (
                 'id' => 108,
                 'article' => '0242235668',
@@ -1717,7 +1719,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            85 => 
+            
             array (
                 'id' => 109,
                 'article' => '4402601',
@@ -1737,7 +1739,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            86 => 
+            
             array (
                 'id' => 110,
                 'article' => 'QF01E00040',
@@ -1757,7 +1759,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            87 => 
+            
             array (
                 'id' => 111,
                 'article' => 'CRKD-11',
@@ -1777,7 +1779,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            88 => 
+            
             array (
                 'id' => 112,
                 'article' => 'W719/30',
@@ -1797,7 +1799,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            89 => 
+            
             array (
                 'id' => 113,
                 'article' => '6132-7012',
@@ -1817,7 +1819,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            90 => 
+            
             array (
                 'id' => 114,
                 'article' => 'SH10004',
@@ -1837,7 +1839,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            91 => 
+            
             array (
                 'id' => 115,
                 'article' => '36163',
@@ -1847,17 +1849,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'BARDAHL36163',
                 'product_category_id' => 5,
                 'product_group_id' => 50001,
-                'name' => 'Масло моторное XTC 5W40 5L',
-                'full_name' => 'Масло моторное XTC 5W40 5L, BARDAHL, 36163',
+                'name' => 'Масло моторное [XTC, 5W40, 5L]',
+                'full_name' => 'Масло моторное [XTC, 5W40, 5L], BARDAHL, 36163',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2023-10-25 04:38:54',
-                'updated_at' => '2023-10-25 04:38:54',
+                'updated_at' => '2024-07-08 11:59:32',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            92 => 
+            
             array (
                 'id' => 116,
                 'article' => 'K20PBR-S10',
@@ -1877,27 +1879,27 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            93 => 
+            
             array (
                 'id' => 117,
                 'article' => 'OC90',
                 'akey' => 'OC90',
-                'brand' => 'MAHLE FILTER',
-                'bkey' => 'MAHLE',
-                'pkey' => 'MAHLEOC90',
+                'brand' => 'MAHLE',
+                'bkey' => 'MAHLEORIGINAL',
+                'pkey' => 'MAHLEORIGINALOC90',
                 'product_category_id' => 1,
                 'product_group_id' => 10359,
-                'name' => 'Фильтр масляный',
-                'full_name' => 'Фильтр масляный, MAHLE FILTER, OC90',
+                'name' => 'Фильтр масляный [LANOS, LACETTI, GM]',
+                'full_name' => 'Фильтр масляный [LANOS, LACETTI, GM], MAHLE, OC90',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2023-10-25 04:59:32',
-                'updated_at' => '2023-10-25 04:59:32',
+                'updated_at' => '2024-07-08 12:15:12',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            94 => 
+            
             array (
                 'id' => 118,
                 'article' => 'PAC-024',
@@ -1907,17 +1909,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'PARTSMALLPAC024',
                 'product_category_id' => 1,
                 'product_group_id' => 10360,
-                'name' => 'Фильтр воздушный',
-                'full_name' => 'Фильтр воздушный, PARTS-MALL, PAC-024',
+                'name' => 'Фильтр воздушный [LACETTI, GM]',
+                'full_name' => 'Фильтр воздушный [LACETTI, GM], PARTS-MALL, PAC-024',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2023-10-25 05:02:30',
-                'updated_at' => '2023-10-25 05:10:20',
+                'updated_at' => '2024-07-08 13:58:22',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            95 => 
+            
             array (
                 'id' => 119,
                 'article' => 'PMC-003',
@@ -1927,17 +1929,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'PARTSMALLPMC003',
                 'product_category_id' => 1,
                 'product_group_id' => 10363,
-                'name' => 'Фильтр салона',
-                'full_name' => 'Фильтр салона, PARTS-MALL, PMC-003',
+                'name' => 'Фильтр салона [LACETTI]',
+                'full_name' => 'Фильтр салона [LACETTI], PARTS-MALL, PMC-003',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2023-10-25 05:03:15',
-                'updated_at' => '2023-10-25 05:03:15',
+                'updated_at' => '2024-07-08 12:24:04',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            96 => 
+            
             array (
                 'id' => 120,
                 'article' => '401604793R',
@@ -1957,7 +1959,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            97 => 
+            
             array (
                 'id' => 121,
                 'article' => '93-90425',
@@ -1977,7 +1979,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            98 => 
+            
             array (
                 'id' => 122,
                 'article' => '21-01-4145',
@@ -1997,7 +1999,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            99 => 
+            
             array (
                 'id' => 123,
                 'article' => '24390',
@@ -2017,7 +2019,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            100 => 
+            
             array (
                 'id' => 124,
                 'article' => '31485',
@@ -2037,7 +2039,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            101 => 
+            
             array (
                 'id' => 125,
                 'article' => '171945',
@@ -2057,7 +2059,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            102 => 
+            
             array (
                 'id' => 126,
                 'article' => '7703077435',
@@ -2067,17 +2069,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'RENAULT7703077435',
                 'product_category_id' => 1,
                 'product_group_id' => 10011,
-                'name' => 'Клипса подкрылка',
-                'full_name' => 'Клипса подкрылка, RENAULT, 7703077435',
+                'name' => 'Клипса подкрылка [RENAULT]',
+                'full_name' => 'Клипса подкрылка [RENAULT], RENAULT, 7703077435',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2023-10-25 12:05:41',
-                'updated_at' => '2023-10-25 12:05:41',
+                'updated_at' => '2024-07-12 08:52:36',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            103 => 
+            
             array (
                 'id' => 127,
                 'article' => 'NRG5L',
@@ -2097,7 +2099,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            104 => 
+            
             array (
                 'id' => 128,
                 'article' => 'BF41L',
@@ -2107,17 +2109,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'COMMABF41L',
                 'product_category_id' => 5,
                 'product_group_id' => 50003,
-                'name' => 'Жидкость тормозная',
-                'full_name' => 'Жидкость тормозная, COMMA, BF41L',
+                'name' => 'Жидкость тормозная [DOT4, 1.0L]',
+                'full_name' => 'Жидкость тормозная [DOT4, 1.0L], COMMA, BF41L',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2023-10-26 08:05:29',
-                'updated_at' => '2023-10-26 08:05:29',
+                'updated_at' => '2024-07-12 08:38:38',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            105 => 
+            
             array (
                 'id' => 129,
                 'article' => 'BF4ESP1L',
@@ -2137,7 +2139,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            106 => 
+            
             array (
                 'id' => 130,
                 'article' => 'SYN4L',
@@ -2157,7 +2159,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            107 => 
+            
             array (
                 'id' => 131,
                 'article' => 'XFG4L',
@@ -2177,7 +2179,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            108 => 
+            
             array (
                 'id' => 132,
                 'article' => 'XFG5L',
@@ -2185,7 +2187,7 @@ class ProductsTableSeeder extends Seeder
                 'brand' => 'COMMA',
                 'bkey' => 'COMMA',
                 'pkey' => 'COMMAXFG5L',
-                'product_category_id' => 1,
+                'product_category_id' => 5,
                 'product_group_id' => 50001,
                 'name' => 'Масло моторное X-FLOW TYPE G 5W40 5L',
                 'full_name' => 'Масло моторное X-FLOW TYPE G 5W40 5L, COMMA, XFG5L',
@@ -2197,7 +2199,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            109 => 
+            
             array (
                 'id' => 133,
                 'article' => '223519',
@@ -2207,17 +2209,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'ELF223519',
                 'product_category_id' => 5,
                 'product_group_id' => 50002,
-                'name' => 'Масло трансмиссионное МКПП NFX 75W',
-                'full_name' => 'Масло трансмиссионное МКПП NFX 75W, ELF, 223519',
+                'name' => 'Масло трансмиссионное [NFX, 75W, МКПП, 1L]',
+                'full_name' => 'Масло трансмиссионное [NFX, 75W, МКПП, 1L], ELF, 223519',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2023-10-26 08:24:24',
-                'updated_at' => '2023-10-26 08:24:24',
+                'updated_at' => '2024-07-08 07:53:49',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            110 => 
+            
             array (
                 'id' => 134,
                 'article' => 'LR-03',
@@ -2237,7 +2239,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            111 => 
+            
             array (
                 'id' => 135,
                 'article' => 'LF-1443',
@@ -2257,7 +2259,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            112 => 
+            
             array (
                 'id' => 136,
                 'article' => '1802542180',
@@ -2277,7 +2279,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            113 => 
+            
             array (
                 'id' => 137,
                 'article' => '1802543180',
@@ -2297,7 +2299,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            114 => 
+            
             array (
                 'id' => 138,
                 'article' => 'MSS016199',
@@ -2317,7 +2319,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            115 => 
+            
             array (
                 'id' => 141,
                 'article' => '4263463',
@@ -2337,7 +2339,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            116 => 
+            
             array (
                 'id' => 142,
                 'article' => '8200362442',
@@ -2357,7 +2359,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            117 => 
+            
             array (
                 'id' => 143,
                 'article' => 'HU618X',
@@ -2377,7 +2379,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            118 => 
+            
             array (
                 'id' => 144,
                 'article' => 'LF-1387',
@@ -2397,7 +2399,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            119 => 
+            
             array (
                 'id' => 145,
                 'article' => '7701207667',
@@ -2417,27 +2419,27 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            120 => 
+            
             array (
                 'id' => 146,
                 'article' => 'C491',
                 'akey' => 'C491',
-                'brand' => 'Purflux',
+                'brand' => 'PURFLUX',
                 'bkey' => 'PURFLUX',
                 'pkey' => 'PURFLUXC491',
                 'product_category_id' => 1,
                 'product_group_id' => 10361,
-                'name' => 'Фильтр топливный',
-                'full_name' => 'Фильтр топливный, Purflux, C491',
+                'name' => 'Фильтр топливный [Дизель. TRAFIC II, VIVARO]',
+                'full_name' => 'Фильтр топливный [Дизель. TRAFIC II, VIVARO], PURFLUX, C491',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2023-10-28 10:56:46',
-                'updated_at' => '2023-10-28 10:56:46',
+                'updated_at' => '2024-07-12 08:26:19',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            121 => 
+            
             array (
                 'id' => 147,
                 'article' => 'IF-3078',
@@ -2457,7 +2459,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            122 => 
+            
             array (
                 'id' => 148,
                 'article' => '7PK1970',
@@ -2477,7 +2479,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            123 => 
+            
             array (
                 'id' => 149,
                 'article' => '813.052',
@@ -2487,17 +2489,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'ELRING813052',
                 'product_category_id' => 1,
                 'product_group_id' => 13926,
-                'name' => 'Прокладка пробки поддона D4F',
-                'full_name' => 'Прокладка пробки поддона D4F, ELRING, 813.052',
+                'name' => 'Прокладка пробки поддона [D4, R9]',
+                'full_name' => 'Прокладка пробки поддона [D4, R9], ELRING, 813.052',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2023-10-28 12:41:16',
-                'updated_at' => '2024-01-26 17:47:50',
+                'updated_at' => '2024-07-08 12:25:38',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            124 => 
+            
             array (
                 'id' => 150,
                 'article' => 'BS-1007',
@@ -2517,7 +2519,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            125 => 
+            
             array (
                 'id' => 151,
                 'article' => '0250603001',
@@ -2537,7 +2539,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            126 => 
+            
             array (
                 'id' => 152,
                 'article' => '05100-00441',
@@ -2557,7 +2559,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            127 => 
+            
             array (
                 'id' => 153,
                 'article' => '1010002',
@@ -2577,7 +2579,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            128 => 
+            
             array (
                 'id' => 154,
                 'article' => '05100-00410',
@@ -2597,7 +2599,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            129 => 
+            
             array (
                 'id' => 155,
                 'article' => '1041002',
@@ -2617,7 +2619,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            130 => 
+            
             array (
                 'id' => 156,
                 'article' => 'A901001C3',
@@ -2637,7 +2639,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            131 => 
+            
             array (
                 'id' => 157,
                 'article' => '8200663654',
@@ -2657,7 +2659,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            132 => 
+            
             array (
                 'id' => 158,
                 'article' => '152092567R',
@@ -2677,7 +2679,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            133 => 
+            
             array (
                 'id' => 159,
                 'article' => 'OX1308D',
@@ -2697,7 +2699,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            134 => 
+            
             array (
                 'id' => 160,
                 'article' => '165468296R',
@@ -2717,7 +2719,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            135 => 
+            
             array (
                 'id' => 161,
                 'article' => 'C22014',
@@ -2737,7 +2739,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            136 => 
+            
             array (
                 'id' => 162,
                 'article' => '165571618R',
@@ -2757,7 +2759,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            137 => 
+            
             array (
                 'id' => 163,
                 'article' => '15CC30',
@@ -2777,7 +2779,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            138 => 
+            
             array (
                 'id' => 164,
                 'article' => '15CC2F',
@@ -2797,7 +2799,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            139 => 
+            
             array (
                 'id' => 165,
                 'article' => '91-02401-1',
@@ -2817,7 +2819,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            140 => 
+            
             array (
                 'id' => 166,
                 'article' => '91-02401-2',
@@ -2837,7 +2839,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            141 => 
+            
             array (
                 'id' => 167,
                 'article' => '8200177718',
@@ -2857,7 +2859,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            142 => 
+            
             array (
                 'id' => 168,
                 'article' => '8200039836',
@@ -2877,7 +2879,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            143 => 
+            
             array (
                 'id' => 169,
                 'article' => 'A130R3004',
@@ -2897,7 +2899,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            144 => 
+            
             array (
                 'id' => 170,
                 'article' => 'ZVP005J',
@@ -2917,7 +2919,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            145 => 
+            
             array (
                 'id' => 171,
                 'article' => 'ZVP008J',
@@ -2937,7 +2939,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            146 => 
+            
             array (
                 'id' => 172,
                 'article' => '524.620',
@@ -2957,7 +2959,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            147 => 
+            
             array (
                 'id' => 173,
                 'article' => '03714',
@@ -2977,7 +2979,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            148 => 
+            
             array (
                 'id' => 174,
                 'article' => '7703065274',
@@ -2997,7 +2999,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            149 => 
+            
             array (
                 'id' => 175,
                 'article' => 'W75/3',
@@ -3017,7 +3019,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            150 => 
+            
             array (
                 'id' => 176,
                 'article' => '35-68',
@@ -3037,7 +3039,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            151 => 
+            
             array (
                 'id' => 177,
                 'article' => 'LF-1428',
@@ -3057,7 +3059,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            152 => 
+            
             array (
                 'id' => 178,
                 'article' => 'SR-1700',
@@ -3077,7 +3079,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            153 => 
+            
             array (
                 'id' => 179,
                 'article' => '550379',
@@ -3097,7 +3099,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            154 => 
+            
             array (
                 'id' => 180,
                 'article' => '383424036R',
@@ -3117,7 +3119,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            155 => 
+            
             array (
                 'id' => 181,
                 'article' => 'R1020PCA',
@@ -3137,7 +3139,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            156 => 
+            
             array (
                 'id' => 182,
                 'article' => '713644140',
@@ -3157,7 +3159,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            157 => 
+            
             array (
                 'id' => 183,
                 'article' => 'RL-1383',
@@ -3177,7 +3179,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            158 => 
+            
             array (
                 'id' => 184,
                 'article' => 'G11161',
@@ -3197,7 +3199,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            159 => 
+            
             array (
                 'id' => 185,
                 'article' => 'R4874/S',
@@ -3217,7 +3219,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            160 => 
+            
             array (
                 'id' => 186,
                 'article' => 'R4875/RCR',
@@ -3237,7 +3239,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            161 => 
+            
             array (
                 'id' => 187,
                 'article' => 'P999-GRN',
@@ -3257,7 +3259,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            162 => 
+            
             array (
                 'id' => 189,
                 'article' => '4003455',
@@ -3277,7 +3279,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            163 => 
+            
             array (
                 'id' => 190,
                 'article' => '4003464',
@@ -3297,7 +3299,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            164 => 
+            
             array (
                 'id' => 191,
                 'article' => '023717P',
@@ -3317,7 +3319,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            165 => 
+            
             array (
                 'id' => 192,
                 'article' => 'GCH552',
@@ -3337,7 +3339,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            166 => 
+            
             array (
                 'id' => 193,
                 'article' => '11.6771',
@@ -3357,7 +3359,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            167 => 
+            
             array (
                 'id' => 194,
                 'article' => '4005274',
@@ -3377,7 +3379,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            168 => 
+            
             array (
                 'id' => 195,
                 'article' => '05P750',
@@ -3387,17 +3389,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'LPR05P750',
                 'product_category_id' => 1,
                 'product_group_id' => 10130,
-                'name' => 'Комплект тормозных колодок. Диск [ESPACE III, перед]',
-                'full_name' => 'Комплект тормозных колодок. Диск [ESPACE III, перед], LPR, 05P750',
+                'name' => 'Комплект тормозных колодок [Диск, ESPACE III, перед]',
+                'full_name' => 'Комплект тормозных колодок [Диск, ESPACE III, перед], LPR, 05P750',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2023-11-10 16:02:50',
-                'updated_at' => '2024-05-15 09:57:15',
+                'updated_at' => '2024-07-12 17:28:15',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            169 => 
+            
             array (
                 'id' => 196,
                 'article' => '400155',
@@ -3417,7 +3419,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            170 => 
+            
             array (
                 'id' => 197,
                 'article' => '05P427',
@@ -3437,7 +3439,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            171 => 
+            
             array (
                 'id' => 198,
                 'article' => 'KD455.43',
@@ -3457,7 +3459,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            172 => 
+            
             array (
                 'id' => 199,
                 'article' => '10-26180-SX',
@@ -3477,7 +3479,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            173 => 
+            
             array (
                 'id' => 200,
                 'article' => '4001544',
@@ -3497,7 +3499,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            174 => 
+            
             array (
                 'id' => 201,
                 'article' => '4001535',
@@ -3517,7 +3519,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            175 => 
+            
             array (
                 'id' => 202,
                 'article' => '906527',
@@ -3537,7 +3539,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            176 => 
+            
             array (
                 'id' => 203,
                 'article' => '4001568',
@@ -3557,7 +3559,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            177 => 
+            
             array (
                 'id' => 204,
                 'article' => '4001567',
@@ -3569,7 +3571,14 @@ class ProductsTableSeeder extends Seeder
                 'product_group_id' => 14149,
                 'name' => 'Сайлентблок подрамника REANULT ESPACE III задний',
                 'full_name' => 'Сайлентблок подрамника REANULT ESPACE III задний, SASIC, 4001567',
-                'description' => NULL,
+                'description' => 'Тип установки Резиново-металлическая опора
+Сторона установки сзади
+Сторона установки передний мост
+Внутренний диаметр 12
+Наружный диаметр [мм] 40
+Внутренняя длина [мм] 61
+Наружная длина [мм] 46,5
+для оригинального номера 7700824709',
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2023-11-11 04:51:17',
@@ -3577,7 +3586,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            178 => 
+            
             array (
                 'id' => 205,
                 'article' => '21.523',
@@ -3597,7 +3606,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            179 => 
+            
             array (
                 'id' => 206,
                 'article' => '21.514',
@@ -3617,7 +3626,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            180 => 
+            
             array (
                 'id' => 207,
                 'article' => 'CT908K1',
@@ -3637,7 +3646,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            181 => 
+            
             array (
                 'id' => 208,
                 'article' => 'PP836/4',
@@ -3657,7 +3666,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            182 => 
+            
             array (
                 'id' => 209,
                 'article' => 'AK370/4',
@@ -3677,7 +3686,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            183 => 
+            
             array (
                 'id' => 210,
                 'article' => 'OP526/1',
@@ -3697,7 +3706,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            184 => 
+            
             array (
                 'id' => 211,
                 'article' => 'K1111A',
@@ -3707,17 +3716,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'FILTRONK1111A',
                 'product_category_id' => 1,
                 'product_group_id' => 10363,
-                'name' => 'Фильтр салона',
-                'full_name' => 'Фильтр салона, FILTRON, K1111A',
+                'name' => 'Фильтр салона [VAG, GOLF V, TIGUAN, PASSAT B6]',
+                'full_name' => 'Фильтр салона [VAG, GOLF V, TIGUAN, PASSAT B6], FILTRON, K1111A',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2023-11-11 11:14:20',
-                'updated_at' => '2023-11-11 11:14:20',
+                'updated_at' => '2024-07-23 07:12:07',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            185 => 
+            
             array (
                 'id' => 212,
                 'article' => 'G052167M4',
@@ -3725,7 +3734,7 @@ class ProductsTableSeeder extends Seeder
                 'brand' => 'VW',
                 'bkey' => 'VW',
                 'pkey' => 'VWG052167M4',
-                'product_category_id' => 1,
+                'product_category_id' => 5,
                 'product_group_id' => 50001,
                 'name' => 'Масло моторное [SPECIAL PLUS, 5W40, 5L]',
                 'full_name' => 'Масло моторное [SPECIAL PLUS, 5W40, 5L], VW, G052167M4',
@@ -3737,7 +3746,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            186 => 
+            
             array (
                 'id' => 213,
                 'article' => 'OP617/1',
@@ -3757,7 +3766,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            187 => 
+            
             array (
                 'id' => 214,
                 'article' => 'EAF00121T',
@@ -3777,7 +3786,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            188 => 
+            
             array (
                 'id' => 215,
                 'article' => 'WF0077P',
@@ -3787,17 +3796,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'CALORSTATBYVERNETWF0077P',
                 'product_category_id' => 1,
                 'product_group_id' => 10186,
-                'name' => 'Корпус термостата',
-                'full_name' => 'Корпус термостата, CALORSTAT by Vernet, WF0077P',
+                'name' => 'Корпус термостата [RENAULT, K7, E7]',
+                'full_name' => 'Корпус термостата [RENAULT, K7, E7], CALORSTAT by Vernet, WF0077P',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2023-11-11 16:06:03',
-                'updated_at' => '2023-11-11 16:06:03',
+                'updated_at' => '2024-07-12 08:49:39',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            189 => 
+            
             array (
                 'id' => 216,
                 'article' => '8200267272',
@@ -3817,7 +3826,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            190 => 
+            
             array (
                 'id' => 217,
                 'article' => '30539',
@@ -3837,7 +3846,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            191 => 
+            
             array (
                 'id' => 218,
                 'article' => '8450006355',
@@ -3857,7 +3866,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            192 => 
+            
             array (
                 'id' => 219,
                 'article' => '8200768913',
@@ -3877,7 +3886,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            193 => 
+            
             array (
                 'id' => 220,
                 'article' => 'K015473XS',
@@ -3897,7 +3906,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            194 => 
+            
             array (
                 'id' => 221,
                 'article' => '2513025002',
@@ -3917,7 +3926,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            195 => 
+            
             array (
                 'id' => 222,
                 'article' => 'Z14',
@@ -3937,7 +3946,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            196 => 
+            
             array (
                 'id' => 223,
                 'article' => '0242240566',
@@ -3957,7 +3966,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            197 => 
+            
             array (
                 'id' => 224,
                 'article' => 'AX953',
@@ -3977,7 +3986,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            198 => 
+            
             array (
                 'id' => 225,
                 'article' => '4631148764606',
@@ -3997,7 +4006,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            199 => 
+            
             array (
                 'id' => 226,
                 'article' => '4002450',
@@ -4017,7 +4026,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            200 => 
+            
             array (
                 'id' => 227,
                 'article' => '2101-2906231',
@@ -4037,7 +4046,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            201 => 
+            
             array (
                 'id' => 228,
                 'article' => '17032072',
@@ -4057,7 +4066,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            202 => 
+            
             array (
                 'id' => 229,
                 'article' => '6333',
@@ -4077,7 +4086,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            203 => 
+            
             array (
                 'id' => 230,
                 'article' => '700671',
@@ -4097,7 +4106,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            204 => 
+            
             array (
                 'id' => 231,
                 'article' => '61505',
@@ -4117,7 +4126,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            205 => 
+            
             array (
                 'id' => 232,
                 'article' => 'SP4034',
@@ -4137,7 +4146,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            206 => 
+            
             array (
                 'id' => 233,
                 'article' => '07730',
@@ -4157,7 +4166,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            207 => 
+            
             array (
                 'id' => 234,
                 'article' => 'OF-4009',
@@ -4177,7 +4186,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            208 => 
+            
             array (
                 'id' => 235,
                 'article' => 'LF-1391',
@@ -4197,7 +4206,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            209 => 
+            
             array (
                 'id' => 236,
                 'article' => 'JBJ100',
@@ -4217,7 +4226,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            210 => 
+            
             array (
                 'id' => 237,
                 'article' => '9333070K',
@@ -4237,7 +4246,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            211 => 
+            
             array (
                 'id' => 238,
                 'article' => '770199',
@@ -4257,7 +4266,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            212 => 
+            
             array (
                 'id' => 239,
                 'article' => '156812',
@@ -4277,7 +4286,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            213 => 
+            
             array (
                 'id' => 240,
                 'article' => 'R155.88',
@@ -4297,7 +4306,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            214 => 
+            
             array (
                 'id' => 241,
                 'article' => 'VKBA6658',
@@ -4317,7 +4326,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            215 => 
+            
             array (
                 'id' => 242,
                 'article' => '7701210004',
@@ -4337,7 +4346,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            216 => 
+            
             array (
                 'id' => 243,
                 'article' => 'FC41795S01',
@@ -4357,7 +4366,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            217 => 
+            
             array (
                 'id' => 244,
                 'article' => '0242235914',
@@ -4377,7 +4386,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            218 => 
+            
             array (
                 'id' => 245,
                 'article' => 'K20TXR',
@@ -4397,7 +4406,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            219 => 
+            
             array (
                 'id' => 246,
                 'article' => 'M255.08',
@@ -4417,7 +4426,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            220 => 
+            
             array (
                 'id' => 247,
                 'article' => '4001645',
@@ -4437,7 +4446,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            221 => 
+            
             array (
                 'id' => 248,
                 'article' => '2954002',
@@ -4457,7 +4466,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            222 => 
+            
             array (
                 'id' => 249,
                 'article' => '1005110011',
@@ -4477,27 +4486,27 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            223 => 
+            
             array (
                 'id' => 250,
-                'article' => '19011692',
+                'article' => '19-01-1692',
                 'akey' => '19011692',
                 'brand' => 'ТОЧКА ОПОРЫ',
                 'bkey' => 'ТОЧКАОПОРЫ',
                 'pkey' => 'ТОЧКАОПОРЫ19011692',
                 'product_category_id' => 1,
                 'product_group_id' => 10696,
-                'name' => 'Втулка стабилизатора заднего JETTA V',
-                'full_name' => 'Втулка стабилизатора заднего JETTA V, ТОЧКАОПОРЫ, 19011692',
+                'name' => 'Втулка стабилизатора заднего [JETTA V, JETTA VI]',
+                'full_name' => 'Втулка стабилизатора заднего [JETTA V, JETTA VI], ТОЧКА ОПОРЫ, 19-01-1692',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2023-11-16 07:49:01',
-                'updated_at' => '2023-11-16 07:52:28',
+                'updated_at' => '2024-07-23 07:30:03',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            224 => 
+            
             array (
                 'id' => 251,
                 'article' => '22013189',
@@ -4517,7 +4526,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            225 => 
+            
             array (
                 'id' => 252,
                 'article' => 'K20PRU',
@@ -4537,7 +4546,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            226 => 
+            
             array (
                 'id' => 253,
                 'article' => 'MMF015399',
@@ -4557,7 +4566,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            227 => 
+            
             array (
                 'id' => 254,
                 'article' => '7701051797',
@@ -4577,7 +4586,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            228 => 
+            
             array (
                 'id' => 255,
                 'article' => 'CRHO-13',
@@ -4597,7 +4606,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            229 => 
+            
             array (
                 'id' => 256,
                 'article' => '19758',
@@ -4617,7 +4626,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            230 => 
+            
             array (
                 'id' => 257,
                 'article' => '4005300',
@@ -4637,7 +4646,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            231 => 
+            
             array (
                 'id' => 258,
                 'article' => '8200177921',
@@ -4657,7 +4666,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            232 => 
+            
             array (
                 'id' => 259,
                 'article' => '8200384109',
@@ -4677,7 +4686,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            233 => 
+            
             array (
                 'id' => 260,
                 'article' => 'UPT2',
@@ -4697,7 +4706,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            234 => 
+            
             array (
                 'id' => 261,
                 'article' => '93182102',
@@ -4717,7 +4726,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            235 => 
+            
             array (
                 'id' => 262,
                 'article' => '19141626',
@@ -4737,7 +4746,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            236 => 
+            
             array (
                 'id' => 263,
                 'article' => '313484',
@@ -4757,7 +4766,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            237 => 
+            
             array (
                 'id' => 264,
                 'article' => '23994',
@@ -4777,7 +4786,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            238 => 
+            
             array (
                 'id' => 265,
                 'article' => '2546401',
@@ -4797,7 +4806,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            239 => 
+            
             array (
                 'id' => 266,
                 'article' => '9002491',
@@ -4817,7 +4826,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            240 => 
+            
             array (
                 'id' => 267,
                 'article' => '80004481',
@@ -4837,7 +4846,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            241 => 
+            
             array (
                 'id' => 268,
                 'article' => '3798201',
@@ -4857,7 +4866,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            242 => 
+            
             array (
                 'id' => 269,
                 'article' => '30970',
@@ -4877,7 +4886,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            243 => 
+            
             array (
                 'id' => 270,
                 'article' => '30972',
@@ -4897,7 +4906,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            244 => 
+            
             array (
                 'id' => 271,
                 'article' => 'OPSB10169',
@@ -4917,7 +4926,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            245 => 
+            
             array (
                 'id' => 272,
                 'article' => 'OPSB10168',
@@ -4937,7 +4946,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            246 => 
+            
             array (
                 'id' => 273,
                 'article' => 'OE648/6',
@@ -4957,7 +4966,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            247 => 
+            
             array (
                 'id' => 274,
                 'article' => 'AP051',
@@ -4977,7 +4986,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            248 => 
+            
             array (
                 'id' => 275,
                 'article' => '93165557',
@@ -4997,7 +5006,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            249 => 
+            
             array (
                 'id' => 276,
                 'article' => '36303',
@@ -5017,7 +5026,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            250 => 
+            
             array (
                 'id' => 277,
                 'article' => 'H21706',
@@ -5037,7 +5046,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            251 => 
+            
             array (
                 'id' => 278,
                 'article' => '1987946059',
@@ -5057,7 +5066,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            252 => 
+            
             array (
                 'id' => 279,
                 'article' => '7701071133',
@@ -5077,7 +5086,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            253 => 
+            
             array (
                 'id' => 280,
                 'article' => '8200919080',
@@ -5097,7 +5106,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            254 => 
+            
             array (
                 'id' => 281,
                 'article' => '6007EE',
@@ -5117,7 +5126,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            255 => 
+            
             array (
                 'id' => 282,
                 'article' => '551-1974R-UE',
@@ -5137,7 +5146,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            256 => 
+            
             array (
                 'id' => 283,
                 'article' => '8809478942216',
@@ -5157,7 +5166,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            257 => 
+            
             array (
                 'id' => 284,
                 'article' => '410602192R',
@@ -5177,7 +5186,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            258 => 
+            
             array (
                 'id' => 285,
                 'article' => '0986478124',
@@ -5197,7 +5206,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            259 => 
+            
             array (
                 'id' => 286,
                 'article' => 'MBC035225',
@@ -5217,7 +5226,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            260 => 
+            
             array (
                 'id' => 287,
                 'article' => '614410',
@@ -5237,7 +5246,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            261 => 
+            
             array (
                 'id' => 288,
                 'article' => '0141.20',
@@ -5257,7 +5266,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            262 => 
+            
             array (
                 'id' => 289,
                 'article' => '224432F000',
@@ -5277,7 +5286,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            263 => 
+            
             array (
                 'id' => 290,
                 'article' => '224412F001',
@@ -5297,7 +5306,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            264 => 
+            
             array (
                 'id' => 291,
                 'article' => '243872F000',
@@ -5317,7 +5326,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            265 => 
+            
             array (
                 'id' => 292,
                 'article' => '243612F000',
@@ -5337,7 +5346,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            266 => 
+            
             array (
                 'id' => 293,
                 'article' => '243862F000',
@@ -5357,7 +5366,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            267 => 
+            
             array (
                 'id' => 294,
                 'article' => '245102F000',
@@ -5377,7 +5386,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            268 => 
+            
             array (
                 'id' => 295,
                 'article' => '243772F000',
@@ -5397,7 +5406,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            269 => 
+            
             array (
                 'id' => 296,
                 'article' => '243512F000',
@@ -5417,7 +5426,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            270 => 
+            
             array (
                 'id' => 297,
                 'article' => '243762F000',
@@ -5437,7 +5446,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            271 => 
+            
             array (
                 'id' => 298,
                 'article' => '244102F000',
@@ -5457,7 +5466,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            272 => 
+            
             array (
                 'id' => 299,
                 'article' => '166245',
@@ -5477,7 +5486,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            273 => 
+            
             array (
                 'id' => 300,
                 'article' => 'LF-1975',
@@ -5497,7 +5506,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            274 => 
+            
             array (
                 'id' => 301,
                 'article' => 'IF-3100',
@@ -5517,7 +5526,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            275 => 
+            
             array (
                 'id' => 302,
                 'article' => '20034106B',
@@ -5537,7 +5546,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            276 => 
+            
             array (
                 'id' => 303,
                 'article' => '93-90482-056',
@@ -5557,7 +5566,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            277 => 
+            
             array (
                 'id' => 304,
                 'article' => '017-00423',
@@ -5577,7 +5586,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            278 => 
+            
             array (
                 'id' => 305,
                 'article' => '017-02310',
@@ -5597,7 +5606,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            279 => 
+            
             array (
                 'id' => 306,
                 'article' => '91-90404-2',
@@ -5617,7 +5626,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            280 => 
+            
             array (
                 'id' => 307,
                 'article' => '91-90404-1',
@@ -5637,7 +5646,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            281 => 
+            
             array (
                 'id' => 308,
                 'article' => '97-90406',
@@ -5657,7 +5666,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            282 => 
+            
             array (
                 'id' => 309,
                 'article' => 'GH038021',
@@ -5677,7 +5686,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            283 => 
+            
             array (
                 'id' => 310,
                 'article' => 'KTB600',
@@ -5697,7 +5706,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            284 => 
+            
             array (
                 'id' => 311,
                 'article' => '331.630',
@@ -5717,7 +5726,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            285 => 
+            
             array (
                 'id' => 312,
                 'article' => 'WHT002001',
@@ -5737,7 +5746,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            286 => 
+            
             array (
                 'id' => 313,
                 'article' => '6003LLU/5K',
@@ -5757,7 +5766,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            287 => 
+            
             array (
                 'id' => 314,
                 'article' => '133409',
@@ -5777,7 +5786,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            288 => 
+            
             array (
                 'id' => 315,
                 'article' => 'SC07A42LLSAC4/L588',
@@ -5797,7 +5806,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            289 => 
+            
             array (
                 'id' => 316,
                 'article' => 'FC40570S06',
@@ -5817,7 +5826,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            290 => 
+            
             array (
                 'id' => 317,
                 'article' => '63007EE',
@@ -5837,7 +5846,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            291 => 
+            
             array (
                 'id' => 318,
                 'article' => '7701475009',
@@ -5857,7 +5866,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            292 => 
+            
             array (
                 'id' => 319,
                 'article' => '0242235912',
@@ -5877,7 +5886,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            293 => 
+            
             array (
                 'id' => 320,
                 'article' => '364.670',
@@ -5897,7 +5906,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            294 => 
+            
             array (
                 'id' => 321,
                 'article' => '0986487749',
@@ -5917,7 +5926,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            295 => 
+            
             array (
                 'id' => 322,
                 'article' => 'JN789',
@@ -5937,7 +5946,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            296 => 
+            
             array (
                 'id' => 323,
                 'article' => '4669',
@@ -5957,7 +5966,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            297 => 
+            
             array (
                 'id' => 324,
                 'article' => '2704096',
@@ -5977,7 +5986,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            298 => 
+            
             array (
                 'id' => 325,
                 'article' => 'TH6047.89J',
@@ -5997,7 +6006,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            299 => 
+            
             array (
                 'id' => 326,
                 'article' => '25185276',
@@ -6017,7 +6026,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            300 => 
+            
             array (
                 'id' => 327,
                 'article' => 'HU710X',
@@ -6037,7 +6046,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            301 => 
+            
             array (
                 'id' => 328,
                 'article' => '109775',
@@ -6045,7 +6054,7 @@ class ProductsTableSeeder extends Seeder
                 'brand' => 'MOTUL',
                 'bkey' => 'MOTUL',
                 'pkey' => 'MOTUL109775',
-                'product_category_id' => 1,
+                'product_category_id' => 5,
                 'product_group_id' => 50001,
                 'name' => 'Масло моторное 8100 X-cess GEN2 5W40 4L',
                 'full_name' => 'Масло моторное 8100 X-cess GEN2 5W40 4L, MOTUL, 109775',
@@ -6057,7 +6066,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            302 => 
+            
             array (
                 'id' => 329,
                 'article' => '06A133062AA',
@@ -6077,7 +6086,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            303 => 
+            
             array (
                 'id' => 330,
                 'article' => '1187300100',
@@ -6097,7 +6106,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            304 => 
+            
             array (
                 'id' => 331,
                 'article' => '1J1823633A',
@@ -6117,7 +6126,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            305 => 
+            
             array (
                 'id' => 332,
                 'article' => '51277180',
@@ -6137,7 +6146,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            306 => 
+            
             array (
                 'id' => 333,
                 'article' => '251642',
@@ -6157,7 +6166,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            307 => 
+            
             array (
                 'id' => 334,
                 'article' => 'BC1103',
@@ -6177,7 +6186,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            308 => 
+            
             array (
                 'id' => 335,
                 'article' => 'W6025',
@@ -6197,7 +6206,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            309 => 
+            
             array (
                 'id' => 336,
                 'article' => 'ADN12324',
@@ -6217,7 +6226,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            310 => 
+            
             array (
                 'id' => 337,
                 'article' => 'K1321',
@@ -6237,7 +6246,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            311 => 
+            
             array (
                 'id' => 338,
                 'article' => 'ADBP220052',
@@ -6257,7 +6266,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            312 => 
+            
             array (
                 'id' => 339,
                 'article' => 'RC0017',
@@ -6277,7 +6286,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            313 => 
+            
             array (
                 'id' => 340,
                 'article' => 'RC0016',
@@ -6297,7 +6306,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            314 => 
+            
             array (
                 'id' => 341,
                 'article' => 'RC0018',
@@ -6317,7 +6326,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            315 => 
+            
             array (
                 'id' => 342,
                 'article' => '618309100',
@@ -6337,7 +6346,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            316 => 
+            
             array (
                 'id' => 343,
                 'article' => '620108000',
@@ -6357,7 +6366,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            317 => 
+            
             array (
                 'id' => 344,
                 'article' => '804102',
@@ -6377,7 +6386,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            318 => 
+            
             array (
                 'id' => 345,
                 'article' => '510009710',
@@ -6397,7 +6406,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            319 => 
+            
             array (
                 'id' => 346,
                 'article' => 'ADR163012',
@@ -6417,7 +6426,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            320 => 
+            
             array (
                 'id' => 347,
                 'article' => '530044110',
@@ -6437,7 +6446,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            321 => 
+            
             array (
                 'id' => 348,
                 'article' => '1676',
@@ -6457,7 +6466,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            322 => 
+            
             array (
                 'id' => 349,
                 'article' => 'OP 570/1',
@@ -6477,7 +6486,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            323 => 
+            
             array (
                 'id' => 350,
                 'article' => '6303LLU/5K',
@@ -6497,7 +6506,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            324 => 
+            
             array (
                 'id' => 351,
                 'article' => '6202LLU/5K',
@@ -6517,7 +6526,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            325 => 
+            
             array (
                 'id' => 352,
                 'article' => 'GWR-06A',
@@ -6537,7 +6546,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            326 => 
+            
             array (
                 'id' => 353,
                 'article' => 'OP643/3',
@@ -6557,7 +6566,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            327 => 
+            
             array (
                 'id' => 354,
                 'article' => '111414015',
@@ -6577,7 +6586,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            328 => 
+            
             array (
                 'id' => 355,
                 'article' => '1942003',
@@ -6597,7 +6606,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            329 => 
+            
             array (
                 'id' => 356,
                 'article' => '545004269R',
@@ -6617,7 +6626,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            330 => 
+            
             array (
                 'id' => 358,
                 'article' => '330543',
@@ -6637,7 +6646,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            331 => 
+            
             array (
                 'id' => 359,
                 'article' => 'B13CR0068',
@@ -6657,7 +6666,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            332 => 
+            
             array (
                 'id' => 360,
                 'article' => '3481054G00',
@@ -6677,7 +6686,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            333 => 
+            
             array (
                 'id' => 361,
                 'article' => '55567050',
@@ -6697,7 +6706,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            334 => 
+            
             array (
                 'id' => 362,
                 'article' => '55587031',
@@ -6717,7 +6726,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            335 => 
+            
             array (
                 'id' => 363,
                 'article' => '10-25037-SX',
@@ -6737,7 +6746,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            336 => 
+            
             array (
                 'id' => 364,
                 'article' => '94660',
@@ -6757,7 +6766,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            337 => 
+            
             array (
                 'id' => 365,
                 'article' => 'GT10022',
@@ -6777,7 +6786,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            338 => 
+            
             array (
                 'id' => 366,
                 'article' => 'GT10170',
@@ -6797,7 +6806,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            339 => 
+            
             array (
                 'id' => 367,
                 'article' => '01.0022',
@@ -6817,7 +6826,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            340 => 
+            
             array (
                 'id' => 368,
                 'article' => 'G7203',
@@ -6837,7 +6846,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            341 => 
+            
             array (
                 'id' => 370,
                 'article' => '026470H',
@@ -6857,7 +6866,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            342 => 
+            
             array (
                 'id' => 371,
                 'article' => '101000041AC',
@@ -6877,7 +6886,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            343 => 
+            
             array (
                 'id' => 373,
                 'article' => 'RTA6551',
@@ -6897,7 +6906,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            344 => 
+            
             array (
                 'id' => 374,
                 'article' => 'R155.74',
@@ -6917,7 +6926,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            345 => 
+            
             array (
                 'id' => 375,
                 'article' => 'XGB41166S01P',
@@ -6937,7 +6946,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            346 => 
+            
             array (
                 'id' => 376,
                 'article' => 'R155.63',
@@ -6957,7 +6966,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            347 => 
+            
             array (
                 'id' => 377,
                 'article' => 'FC41722S01',
@@ -6977,7 +6986,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            348 => 
+            
             array (
                 'id' => 378,
                 'article' => 'FC40772S03',
@@ -6997,7 +7006,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            349 => 
+            
             array (
                 'id' => 379,
                 'article' => 'FC40858S03',
@@ -7017,7 +7026,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            350 => 
+            
             array (
                 'id' => 380,
                 'article' => 'GB12438S01',
@@ -7037,7 +7046,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            351 => 
+            
             array (
                 'id' => 381,
                 'article' => 'R155.70',
@@ -7057,7 +7066,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            352 => 
+            
             array (
                 'id' => 382,
                 'article' => 'AMD.FL221',
@@ -7077,7 +7086,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            353 => 
+            
             array (
                 'id' => 383,
                 'article' => '7700116078',
@@ -7097,7 +7106,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            354 => 
+            
             array (
                 'id' => 384,
                 'article' => '7700867792',
@@ -7117,7 +7126,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            355 => 
+            
             array (
                 'id' => 385,
                 'article' => '1641',
@@ -7137,7 +7146,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            356 => 
+            
             array (
                 'id' => 386,
                 'article' => '8200582675',
@@ -7157,7 +7166,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            357 => 
+            
             array (
                 'id' => 387,
                 'article' => '04641',
@@ -7177,7 +7186,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            358 => 
+            
             array (
                 'id' => 388,
                 'article' => '7700274026',
@@ -7197,7 +7206,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            359 => 
+            
             array (
                 'id' => 389,
                 'article' => '7700106271',
@@ -7217,7 +7226,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            360 => 
+            
             array (
                 'id' => 390,
                 'article' => '732020',
@@ -7237,7 +7246,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            361 => 
+            
             array (
                 'id' => 391,
                 'article' => '732021',
@@ -7257,7 +7266,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            362 => 
+            
             array (
                 'id' => 392,
                 'article' => '97834-22100',
@@ -7277,7 +7286,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            363 => 
+            
             array (
                 'id' => 393,
                 'article' => '97713-1E000',
@@ -7297,7 +7306,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            364 => 
+            
             array (
                 'id' => 394,
                 'article' => '4PK812',
@@ -7317,7 +7326,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            365 => 
+            
             array (
                 'id' => 395,
                 'article' => 'KX204D',
@@ -7337,7 +7346,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            366 => 
+            
             array (
                 'id' => 396,
                 'article' => 'P726X',
@@ -7357,7 +7366,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            367 => 
+            
             array (
                 'id' => 397,
                 'article' => '251444',
@@ -7377,7 +7386,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            368 => 
+            
             array (
                 'id' => 398,
                 'article' => 'R15596',
@@ -7397,7 +7406,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            369 => 
+            
             array (
                 'id' => 399,
                 'article' => '530045010',
@@ -7417,7 +7426,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            370 => 
+            
             array (
                 'id' => 400,
                 'article' => 'K015603XS',
@@ -7437,7 +7446,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            371 => 
+            
             array (
                 'id' => 401,
                 'article' => 'KTB562',
@@ -7457,7 +7466,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            372 => 
+            
             array (
                 'id' => 402,
                 'article' => '530072410',
@@ -7477,7 +7486,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            373 => 
+            
             array (
                 'id' => 403,
                 'article' => 'CT1077K2',
@@ -7497,7 +7506,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            374 => 
+            
             array (
                 'id' => 404,
                 'article' => 'W79',
@@ -7507,17 +7516,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'MANNFILTERW79',
                 'product_category_id' => 1,
                 'product_group_id' => 10359,
-                'name' => 'Фильтр масляный [1.5 dCi]',
-                'full_name' => 'Фильтр масляный [1.5 dCi], MANN-FILTER, W79',
+                'name' => 'Фильтр масляный [REANULT, K9K, F8Q, F9Q, F4R]',
+                'full_name' => 'Фильтр масляный [REANULT, K9K, F8Q, F9Q, F4R], MANN-FILTER, W79',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2023-12-21 14:07:23',
-                'updated_at' => '2024-06-16 17:09:46',
+                'updated_at' => '2024-07-12 09:20:18',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            375 => 
+            
             array (
                 'id' => 405,
                 'article' => 'QF80B00009',
@@ -7537,7 +7546,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            376 => 
+            
             array (
                 'id' => 406,
                 'article' => 'FC12271S03',
@@ -7557,7 +7566,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            377 => 
+            
             array (
                 'id' => 407,
                 'article' => '622307400',
@@ -7577,7 +7586,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            378 => 
+            
             array (
                 'id' => 408,
                 'article' => '821422',
@@ -7597,7 +7606,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            379 => 
+            
             array (
                 'id' => 409,
                 'article' => 'KS-4326',
@@ -7617,7 +7626,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            380 => 
+            
             array (
                 'id' => 410,
                 'article' => '273012B010',
@@ -7637,7 +7646,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            381 => 
+            
             array (
                 'id' => 411,
                 'article' => '313478',
@@ -7657,7 +7666,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            382 => 
+            
             array (
                 'id' => 412,
                 'article' => '313480',
@@ -7677,7 +7686,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            383 => 
+            
             array (
                 'id' => 413,
                 'article' => '302050901R',
@@ -7697,7 +7706,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            384 => 
+            
             array (
                 'id' => 414,
                 'article' => '620311909',
@@ -7717,7 +7726,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            385 => 
+            
             array (
                 'id' => 415,
                 'article' => '826303',
@@ -7737,7 +7746,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            386 => 
+            
             array (
                 'id' => 416,
                 'article' => '510009010',
@@ -7757,7 +7766,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            387 => 
+            
             array (
                 'id' => 417,
                 'article' => '3493',
@@ -7777,7 +7786,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            388 => 
+            
             array (
                 'id' => 418,
                 'article' => '3182654204',
@@ -7797,7 +7806,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            389 => 
+            
             array (
                 'id' => 419,
                 'article' => '810086',
@@ -7817,7 +7826,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            390 => 
+            
             array (
                 'id' => 420,
                 'article' => 'KS4114',
@@ -7837,7 +7846,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            391 => 
+            
             array (
                 'id' => 421,
                 'article' => '130C11053R',
@@ -7857,7 +7866,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            392 => 
+            
             array (
                 'id' => 422,
                 'article' => 'KTB259',
@@ -7877,7 +7886,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            393 => 
+            
             array (
                 'id' => 423,
                 'article' => 'CT988K2',
@@ -7897,7 +7906,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            394 => 
+            
             array (
                 'id' => 424,
                 'article' => '1700',
@@ -7917,7 +7926,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            395 => 
+            
             array (
                 'id' => 425,
                 'article' => '1709',
@@ -7937,7 +7946,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            396 => 
+            
             array (
                 'id' => 426,
                 'article' => '330750',
@@ -7957,7 +7966,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            397 => 
+            
             array (
                 'id' => 427,
                 'article' => 'OP570',
@@ -7977,7 +7986,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            398 => 
+            
             array (
                 'id' => 428,
                 'article' => 'ST-1640',
@@ -7997,7 +8006,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            399 => 
+            
             array (
                 'id' => 429,
                 'article' => 'ST-1540',
@@ -8017,7 +8026,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            400 => 
+            
             array (
                 'id' => 430,
                 'article' => '4006224',
@@ -8027,17 +8036,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'SASIC4006224',
                 'product_category_id' => 1,
                 'product_group_id' => 13847,
-                'name' => 'Пыльник рулевой тяги LOGAN',
-                'full_name' => 'Пыльник рулевой тяги LOGAN, SASIC, 4006224',
+                'name' => 'Пыльник рулевой тяги [LOGAN]',
+                'full_name' => 'Пыльник рулевой тяги [LOGAN], SASIC, 4006224',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2023-12-28 10:51:26',
-                'updated_at' => '2023-12-28 10:51:26',
+                'updated_at' => '2024-07-12 08:42:30',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            401 => 
+            
             array (
                 'id' => 431,
                 'article' => '530044210',
@@ -8057,7 +8066,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            402 => 
+            
             array (
                 'id' => 432,
                 'article' => 'K015610XS',
@@ -8077,7 +8086,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            403 => 
+            
             array (
                 'id' => 433,
                 'article' => '7701477050',
@@ -8097,7 +8106,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            404 => 
+            
             array (
                 'id' => 434,
                 'article' => 'TH6628.89J',
@@ -8117,7 +8126,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            405 => 
+            
             array (
                 'id' => 435,
                 'article' => '8200080147',
@@ -8137,7 +8146,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            406 => 
+            
             array (
                 'id' => 436,
                 'article' => 'ADPB007',
@@ -8157,7 +8166,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            407 => 
+            
             array (
                 'id' => 437,
                 'article' => 'GB40300S03',
@@ -8177,7 +8186,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            408 => 
+            
             array (
                 'id' => 438,
                 'article' => '23991',
@@ -8197,7 +8206,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            409 => 
+            
             array (
                 'id' => 439,
                 'article' => '8200953294',
@@ -8217,7 +8226,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            410 => 
+            
             array (
                 'id' => 440,
                 'article' => '302050453R',
@@ -8237,7 +8246,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            411 => 
+            
             array (
                 'id' => 441,
                 'article' => '821183',
@@ -8257,7 +8266,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            412 => 
+            
             array (
                 'id' => 442,
                 'article' => '8671095396',
@@ -8277,7 +8286,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            413 => 
+            
             array (
                 'id' => 443,
                 'article' => '1987948494',
@@ -8297,7 +8306,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            414 => 
+            
             array (
                 'id' => 444,
                 'article' => '68-0329',
@@ -8317,7 +8326,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            415 => 
+            
             array (
                 'id' => 445,
                 'article' => '5512003RUE',
@@ -8337,7 +8346,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            416 => 
+            
             array (
                 'id' => 446,
                 'article' => '5512003LUE',
@@ -8357,7 +8366,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            417 => 
+            
             array (
                 'id' => 447,
                 'article' => '835002',
@@ -8377,7 +8386,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            418 => 
+            
             array (
                 'id' => 448,
                 'article' => '235003',
@@ -8397,7 +8406,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            419 => 
+            
             array (
                 'id' => 449,
                 'article' => '07446',
@@ -8417,7 +8426,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            420 => 
+            
             array (
                 'id' => 450,
                 'article' => '07445',
@@ -8437,7 +8446,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            421 => 
+            
             array (
                 'id' => 451,
                 'article' => '32014',
@@ -8457,7 +8466,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            422 => 
+            
             array (
                 'id' => 452,
                 'article' => '3397118905',
@@ -8477,7 +8486,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            423 => 
+            
             array (
                 'id' => 453,
                 'article' => '3397004631',
@@ -8497,7 +8506,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            424 => 
+            
             array (
                 'id' => 454,
                 'article' => '534011520',
@@ -8517,7 +8526,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            425 => 
+            
             array (
                 'id' => 455,
                 'article' => '850398',
@@ -8537,7 +8546,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            426 => 
+            
             array (
                 'id' => 456,
                 'article' => '02-1968',
@@ -8557,7 +8566,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            427 => 
+            
             array (
                 'id' => 457,
                 'article' => '02-1969',
@@ -8577,7 +8586,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            428 => 
+            
             array (
                 'id' => 458,
                 'article' => '3404140',
@@ -8597,7 +8606,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            429 => 
+            
             array (
                 'id' => 459,
                 'article' => '10553005',
@@ -8617,7 +8626,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            430 => 
+            
             array (
                 'id' => 460,
                 'article' => '1251.02',
@@ -8637,7 +8646,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            431 => 
+            
             array (
                 'id' => 461,
                 'article' => '620017',
@@ -8657,7 +8666,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            432 => 
+            
             array (
                 'id' => 462,
                 'article' => '26520',
@@ -8677,7 +8686,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            433 => 
+            
             array (
                 'id' => 463,
                 'article' => '49184',
@@ -8697,7 +8706,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            434 => 
+            
             array (
                 'id' => 464,
                 'article' => '803740',
@@ -8717,7 +8726,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            435 => 
+            
             array (
                 'id' => 465,
                 'article' => '08-116100-00',
@@ -8737,7 +8746,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            436 => 
+            
             array (
                 'id' => 466,
                 'article' => '800042110000',
@@ -8757,7 +8766,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            437 => 
+            
             array (
                 'id' => 467,
                 'article' => '50210100',
@@ -8777,7 +8786,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            438 => 
+            
             array (
                 'id' => 468,
                 'article' => '530008910',
@@ -8797,7 +8806,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            439 => 
+            
             array (
                 'id' => 469,
                 'article' => 'A191',
@@ -8817,7 +8826,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            440 => 
+            
             array (
                 'id' => 470,
                 'article' => '77534600',
@@ -8837,7 +8846,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            441 => 
+            
             array (
                 'id' => 471,
                 'article' => '79221600',
@@ -8857,7 +8866,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            442 => 
+            
             array (
                 'id' => 472,
                 'article' => '148331',
@@ -8877,7 +8886,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            443 => 
+            
             array (
                 'id' => 473,
                 'article' => '12018554B',
@@ -8897,7 +8906,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            444 => 
+            
             array (
                 'id' => 474,
                 'article' => '403.730',
@@ -8917,7 +8926,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            445 => 
+            
             array (
                 'id' => 475,
                 'article' => '135230',
@@ -8937,7 +8946,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            446 => 
+            
             array (
                 'id' => 476,
                 'article' => '470370',
@@ -8957,7 +8966,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            447 => 
+            
             array (
                 'id' => 477,
                 'article' => 'OP642/2',
@@ -8977,7 +8986,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            448 => 
+            
             array (
                 'id' => 478,
                 'article' => 'AP134/8',
@@ -8997,7 +9006,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            449 => 
+            
             array (
                 'id' => 479,
                 'article' => '194873',
@@ -9005,7 +9014,7 @@ class ProductsTableSeeder extends Seeder
                 'brand' => 'ELF',
                 'bkey' => 'ELF',
                 'pkey' => 'ELF194873',
-                'product_category_id' => 1,
+                'product_category_id' => 5,
                 'product_group_id' => 50001,
                 'name' => 'Масло моторное [EVOLUTION 900 NF, 5W40, 4L]',
                 'full_name' => 'Масло моторное [EVOLUTION 900 NF, 5W40, 4L], ELF, 194873',
@@ -9017,7 +9026,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            450 => 
+            
             array (
                 'id' => 480,
                 'article' => '651002659R',
@@ -9037,7 +9046,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            451 => 
+            
             array (
                 'id' => 481,
                 'article' => '1802531180',
@@ -9057,7 +9066,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            452 => 
+            
             array (
                 'id' => 482,
                 'article' => '1801433180',
@@ -9077,7 +9086,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            453 => 
+            
             array (
                 'id' => 483,
                 'article' => '1800333180',
@@ -9097,7 +9106,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            454 => 
+            
             array (
                 'id' => 484,
                 'article' => '1801115180',
@@ -9117,7 +9126,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            455 => 
+            
             array (
                 'id' => 485,
                 'article' => '7703062062',
@@ -9137,7 +9146,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            456 => 
+            
             array (
                 'id' => 486,
                 'article' => 'RC0030',
@@ -9157,7 +9166,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            457 => 
+            
             array (
                 'id' => 487,
                 'article' => '8200662185',
@@ -9177,7 +9186,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            458 => 
+            
             array (
                 'id' => 488,
                 'article' => '0242129801',
@@ -9197,7 +9206,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            459 => 
+            
             array (
                 'id' => 489,
                 'article' => '110265505R',
@@ -9217,7 +9226,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            460 => 
+            
             array (
                 'id' => 490,
                 'article' => '1102601M02',
@@ -9237,7 +9246,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            461 => 
+            
             array (
                 'id' => 491,
                 'article' => '224018760R',
@@ -9257,7 +9266,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            462 => 
+            
             array (
                 'id' => 492,
                 'article' => '6473228',
@@ -9277,7 +9286,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            463 => 
+            
             array (
                 'id' => 493,
                 'article' => '5NB941774E',
@@ -9297,7 +9306,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            464 => 
+            
             array (
                 'id' => 494,
                 'article' => '5NB941773E',
@@ -9317,7 +9326,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            465 => 
+            
             array (
                 'id' => 495,
                 'article' => 'EX546601E200',
@@ -9327,17 +9336,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'MANDOEX546601E200',
                 'product_category_id' => 1,
                 'product_group_id' => 10221,
-            'name' => 'Амортизатор HYUNDAI ACCENT III (перед, прав)',
-            'full_name' => 'Амортизатор HYUNDAI ACCENT III (перед, прав), MANDO, EX546601E200',
+                'name' => 'Амортизатор [ACCENT MC, передний, правый]',
+                'full_name' => 'Амортизатор [ACCENT MC, передний, правый], MANDO, EX546601E200',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-01-26 05:32:11',
-                'updated_at' => '2024-01-26 05:32:11',
+                'updated_at' => '2024-07-08 15:06:25',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            466 => 
+            
             array (
                 'id' => 496,
                 'article' => 'EX546501E200',
@@ -9347,17 +9356,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'MANDOEX546501E200',
                 'product_category_id' => 1,
                 'product_group_id' => 10221,
-            'name' => 'Амортизатор HYUNDAI ACCENT III (перед, лев)',
-            'full_name' => 'Амортизатор HYUNDAI ACCENT III (перед, лев), MANDO, EX546501E200',
+                'name' => 'Амортизатор [ACCENT MC, передний, левый]',
+                'full_name' => 'Амортизатор [ACCENT MC, передний, левый], MANDO, EX546501E200',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-01-26 05:32:49',
-                'updated_at' => '2024-01-26 05:32:49',
+                'updated_at' => '2024-07-08 15:07:02',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            467 => 
+            
             array (
                 'id' => 497,
                 'article' => '13270665',
@@ -9377,7 +9386,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            468 => 
+            
             array (
                 'id' => 498,
                 'article' => '9598799',
@@ -9397,7 +9406,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            469 => 
+            
             array (
                 'id' => 499,
                 'article' => 'BSG90-922-070',
@@ -9417,7 +9426,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            470 => 
+            
             array (
                 'id' => 500,
                 'article' => 'OC456',
@@ -9427,17 +9436,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'MAHLEORIGINALOC456',
                 'product_category_id' => 1,
                 'product_group_id' => 10359,
-                'name' => 'Фильтр масляный',
-                'full_name' => 'Фильтр масляный, MAHLE ORIGINAL, OC456',
+                'name' => 'Фильтр масляный [VAG 1.8, 2.0 TFSI]',
+                'full_name' => 'Фильтр масляный [VAG 1.8, 2.0 TFSI], MAHLE ORIGINAL, OC456',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-01-26 16:35:03',
-                'updated_at' => '2024-01-26 16:35:03',
+                'updated_at' => '2024-07-26 06:27:57',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            471 => 
+            
             array (
                 'id' => 501,
                 'article' => 'AP139/2',
@@ -9457,7 +9466,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            472 => 
+            
             array (
                 'id' => 502,
                 'article' => 'P999-YLW',
@@ -9477,7 +9486,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            473 => 
+            
             array (
                 'id' => 503,
                 'article' => 'AR131/1',
@@ -9497,7 +9506,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            474 => 
+            
             array (
                 'id' => 504,
                 'article' => 'K1152',
@@ -9517,7 +9526,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            475 => 
+            
             array (
                 'id' => 505,
                 'article' => '530049010',
@@ -9537,7 +9546,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            476 => 
+            
             array (
                 'id' => 506,
                 'article' => '6001546886',
@@ -9557,7 +9566,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            477 => 
+            
             array (
                 'id' => 507,
                 'article' => '103344',
@@ -9577,7 +9586,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            478 => 
+            
             array (
                 'id' => 508,
                 'article' => '970.330.100',
@@ -9597,7 +9606,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            479 => 
+            
             array (
                 'id' => 509,
                 'article' => '834.823',
@@ -9617,7 +9626,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            480 => 
+            
             array (
                 'id' => 510,
                 'article' => '655.840',
@@ -9637,7 +9646,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            481 => 
+            
             array (
                 'id' => 511,
                 'article' => '0242245576',
@@ -9657,7 +9666,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            482 => 
+            
             array (
                 'id' => 512,
                 'article' => 'GH23320A',
@@ -9677,7 +9686,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            483 => 
+            
             array (
                 'id' => 513,
                 'article' => 'JTS483',
@@ -9697,7 +9706,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            484 => 
+            
             array (
                 'id' => 514,
                 'article' => '023600P',
@@ -9717,7 +9726,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            485 => 
+            
             array (
                 'id' => 515,
                 'article' => '1675',
@@ -9737,7 +9746,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            486 => 
+            
             array (
                 'id' => 516,
                 'article' => '2677401',
@@ -9757,7 +9766,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            487 => 
+            
             array (
                 'id' => 517,
                 'article' => '6PK1820',
@@ -9777,7 +9786,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            488 => 
+            
             array (
                 'id' => 518,
                 'article' => '500172',
@@ -9797,7 +9806,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            489 => 
+            
             array (
                 'id' => 519,
                 'article' => '500153',
@@ -9817,7 +9826,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            490 => 
+            
             array (
                 'id' => 520,
                 'article' => '117206746R',
@@ -9837,7 +9846,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            491 => 
+            
             array (
                 'id' => 521,
                 'article' => '57-0288',
@@ -9857,7 +9866,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            492 => 
+            
             array (
                 'id' => 522,
                 'article' => '57-0289',
@@ -9877,7 +9886,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            493 => 
+            
             array (
                 'id' => 523,
                 'article' => '7701056009',
@@ -9897,7 +9906,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            494 => 
+            
             array (
                 'id' => 524,
                 'article' => '755566',
@@ -9917,7 +9926,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            495 => 
+            
             array (
                 'id' => 525,
                 'article' => '330027',
@@ -9937,7 +9946,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            496 => 
+            
             array (
                 'id' => 526,
                 'article' => 'SD0983',
@@ -9957,7 +9966,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            497 => 
+            
             array (
                 'id' => 527,
                 'article' => '1904012',
@@ -9977,7 +9986,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            498 => 
+            
             array (
                 'id' => 528,
                 'article' => '7246LGNV3FD',
@@ -9997,7 +10006,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            499 => 
+            
             array (
                 'id' => 529,
                 'article' => '194878',
@@ -10005,7 +10014,7 @@ class ProductsTableSeeder extends Seeder
                 'brand' => 'ELF',
                 'bkey' => 'ELF',
                 'pkey' => 'ELF194878',
-                'product_category_id' => 2,
+                'product_category_id' => 5,
                 'product_group_id' => 50001,
                 'name' => 'Масло моторное EVOLUTION SXR 5W40 4L',
                 'full_name' => 'Масло моторное EVOLUTION SXR 5W40 4L, ELF, 194878',
@@ -10019,7 +10028,7 @@ class ProductsTableSeeder extends Seeder
             ),
         ));
         \DB::table('products')->insert(array (
-            0 => 
+            
             array (
                 'id' => 530,
                 'article' => '9330009',
@@ -10039,7 +10048,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            1 => 
+            
             array (
                 'id' => 531,
                 'article' => '4003408',
@@ -10059,7 +10068,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            2 => 
+            
             array (
                 'id' => 532,
                 'article' => '1630210',
@@ -10069,17 +10078,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'SASIC1630210',
                 'product_category_id' => 1,
                 'product_group_id' => 10591,
-                'name' => 'Пробка масляного поддона',
-                'full_name' => 'Пробка масляного поддона, SASIC, 1630210',
+                'name' => 'Пробка масляного поддона [K7, E7]',
+                'full_name' => 'Пробка масляного поддона [K7, E7], SASIC, 1630210',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-01-30 14:56:09',
-                'updated_at' => '2024-01-30 14:57:45',
+                'updated_at' => '2024-07-12 08:41:56',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            3 => 
+            
             array (
                 'id' => 533,
                 'article' => 'IF-3088',
@@ -10099,7 +10108,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            4 => 
+            
             array (
                 'id' => 534,
                 'article' => '6PK1820',
@@ -10119,7 +10128,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            5 => 
+            
             array (
                 'id' => 535,
                 'article' => '1252.02',
@@ -10139,7 +10148,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            6 => 
+            
             array (
                 'id' => 536,
                 'article' => '3362001',
@@ -10159,7 +10168,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            7 => 
+            
             array (
                 'id' => 537,
                 'article' => 'CERE-3R',
@@ -10179,7 +10188,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            8 => 
+            
             array (
                 'id' => 538,
                 'article' => 'CBRE-1',
@@ -10199,7 +10208,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            9 => 
+            
             array (
                 'id' => 539,
                 'article' => '4003470',
@@ -10219,7 +10228,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            10 => 
+            
             array (
                 'id' => 540,
                 'article' => '807213282R',
@@ -10239,7 +10248,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            11 => 
+            
             array (
                 'id' => 541,
                 'article' => '5PK1750',
@@ -10259,7 +10268,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            12 => 
+            
             array (
                 'id' => 542,
                 'article' => '4005152',
@@ -10279,7 +10288,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            13 => 
+            
             array (
                 'id' => 543,
                 'article' => '4005153',
@@ -10299,7 +10308,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            14 => 
+            
             array (
                 'id' => 544,
                 'article' => '64150',
@@ -10319,7 +10328,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            15 => 
+            
             array (
                 'id' => 545,
                 'article' => '64193',
@@ -10327,19 +10336,19 @@ class ProductsTableSeeder extends Seeder
                 'brand' => 'OSRAM',
                 'bkey' => 'OSRAM',
                 'pkey' => 'OSRAM64193',
-                'product_category_id' => 1,
+                'product_category_id' => 2,
                 'product_group_id' => 50507,
-                'name' => 'Автолампа галогенная H4',
-                'full_name' => 'Автолампа галогенная H4, OSRAM, 64193',
+                'name' => 'Автолампа галогенная [H4, 12V, 55/60W, P43t]',
+                'full_name' => 'Автолампа галогенная [H4, 12V, 55/60W, P43t], OSRAM, 64193',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-02-02 17:15:37',
-                'updated_at' => '2024-02-02 17:38:46',
+                'updated_at' => '2024-07-12 08:30:49',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            16 => 
+            
             array (
                 'id' => 546,
                 'article' => '64210',
@@ -10359,7 +10368,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            17 => 
+            
             array (
                 'id' => 547,
                 'article' => 'LAN27K6',
@@ -10379,7 +10388,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            18 => 
+            
             array (
                 'id' => 548,
                 'article' => 'L640',
@@ -10399,7 +10408,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            19 => 
+            
             array (
                 'id' => 549,
                 'article' => '03-00',
@@ -10409,17 +10418,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'CAFFARO0300',
                 'product_category_id' => 1,
                 'product_group_id' => 10535,
-                'name' => 'Ролик обводной сервисного ремня',
-                'full_name' => 'Ролик обводной сервисного ремня, CAFFARO, 03-00',
+                'name' => 'Ролик обводной сервисного ремня [RENAULT, пластик]',
+                'full_name' => 'Ролик обводной сервисного ремня [RENAULT, пластик], CAFFARO, 03-00',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-02-02 19:08:44',
-                'updated_at' => '2024-02-02 19:08:44',
+                'updated_at' => '2024-07-12 08:43:37',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            20 => 
+            
             array (
                 'id' => 550,
                 'article' => '5PK1110',
@@ -10439,7 +10448,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            21 => 
+            
             array (
                 'id' => 551,
                 'article' => 'KTB794',
@@ -10459,7 +10468,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            22 => 
+            
             array (
                 'id' => 552,
                 'article' => 'KTB517',
@@ -10479,7 +10488,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            23 => 
+            
             array (
                 'id' => 553,
                 'article' => '017-00403',
@@ -10499,7 +10508,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            24 => 
+            
             array (
                 'id' => 554,
                 'article' => '353490',
@@ -10519,7 +10528,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            25 => 
+            
             array (
                 'id' => 555,
                 'article' => '715047',
@@ -10539,7 +10548,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            26 => 
+            
             array (
                 'id' => 556,
                 'article' => '392414459R',
@@ -10559,7 +10568,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            27 => 
+            
             array (
                 'id' => 557,
                 'article' => '05P1581',
@@ -10579,7 +10588,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            28 => 
+            
             array (
                 'id' => 558,
                 'article' => 'ADG043164',
@@ -10599,7 +10608,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            29 => 
+            
             array (
                 'id' => 559,
                 'article' => 'SP1363',
@@ -10619,7 +10628,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            30 => 
+            
             array (
                 'id' => 560,
                 'article' => 'SD3044',
@@ -10639,7 +10648,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            31 => 
+            
             array (
                 'id' => 561,
                 'article' => 'SP1186',
@@ -10659,7 +10668,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            32 => 
+            
             array (
                 'id' => 562,
                 'article' => '4PK850',
@@ -10679,7 +10688,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            33 => 
+            
             array (
                 'id' => 563,
                 'article' => '13A0675C',
@@ -10699,7 +10708,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            34 => 
+            
             array (
                 'id' => 564,
                 'article' => 'SD2028',
@@ -10719,7 +10728,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            35 => 
+            
             array (
                 'id' => 565,
                 'article' => 'GTA0720',
@@ -10739,7 +10748,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            36 => 
+            
             array (
                 'id' => 566,
                 'article' => '41421-23020',
@@ -10759,7 +10768,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            37 => 
+            
             array (
                 'id' => 567,
                 'article' => '4130023030',
@@ -10779,7 +10788,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            38 => 
+            
             array (
                 'id' => 568,
                 'article' => '4110023035',
@@ -10799,7 +10808,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            39 => 
+            
             array (
                 'id' => 569,
                 'article' => '53216',
@@ -10819,7 +10828,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            40 => 
+            
             array (
                 'id' => 570,
                 'article' => '551-1135R-LDEM1',
@@ -10839,7 +10848,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            41 => 
+            
             array (
                 'id' => 571,
                 'article' => '551-1135L-LDEM1',
@@ -10859,7 +10868,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            42 => 
+            
             array (
                 'id' => 572,
                 'article' => 'ACB35X55X20',
@@ -10879,7 +10888,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            43 => 
+            
             array (
                 'id' => 573,
                 'article' => '3134501',
@@ -10899,7 +10908,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            44 => 
+            
             array (
                 'id' => 574,
                 'article' => '602000600',
@@ -10919,7 +10928,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            45 => 
+            
             array (
                 'id' => 575,
                 'article' => 'BK-4101',
@@ -10939,7 +10948,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            46 => 
+            
             array (
                 'id' => 576,
                 'article' => '415084409',
@@ -10959,7 +10968,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            47 => 
+            
             array (
                 'id' => 577,
                 'article' => 'BK-4058',
@@ -10979,7 +10988,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            48 => 
+            
             array (
                 'id' => 578,
                 'article' => 'SA191',
@@ -10999,7 +11008,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            49 => 
+            
             array (
                 'id' => 579,
                 'article' => 'BK-4054',
@@ -11019,7 +11028,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            50 => 
+            
             array (
                 'id' => 580,
                 'article' => 'DG-005',
@@ -11039,7 +11048,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            51 => 
+            
             array (
                 'id' => 581,
                 'article' => '837101',
@@ -11059,7 +11068,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            52 => 
+            
             array (
                 'id' => 582,
                 'article' => 'AP1086',
@@ -11079,7 +11088,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            53 => 
+            
             array (
                 'id' => 583,
                 'article' => 'ML5516',
@@ -11099,7 +11108,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            54 => 
+            
             array (
                 'id' => 584,
                 'article' => 'GF-1739',
@@ -11119,7 +11128,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            55 => 
+            
             array (
                 'id' => 585,
                 'article' => '12-1612',
@@ -11139,7 +11148,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            56 => 
+            
             array (
                 'id' => 586,
                 'article' => 'ZS052',
@@ -11159,7 +11168,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            57 => 
+            
             array (
                 'id' => 587,
                 'article' => '61-00009-SX',
@@ -11179,7 +11188,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            58 => 
+            
             array (
                 'id' => 588,
                 'article' => '4PK1538',
@@ -11199,7 +11208,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            59 => 
+            
             array (
                 'id' => 589,
                 'article' => '1987948363',
@@ -11219,7 +11228,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            60 => 
+            
             array (
                 'id' => 590,
                 'article' => 'OP629/1',
@@ -11239,7 +11248,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            61 => 
+            
             array (
                 'id' => 591,
                 'article' => 'AK372/1',
@@ -11259,7 +11268,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            62 => 
+            
             array (
                 'id' => 592,
                 'article' => 'K1150A',
@@ -11279,7 +11288,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            63 => 
+            
             array (
                 'id' => 593,
                 'article' => '156E7A',
@@ -11287,7 +11296,7 @@ class ProductsTableSeeder extends Seeder
                 'brand' => 'FORD',
                 'bkey' => 'FORD',
                 'pkey' => 'FORD156E7A',
-                'product_category_id' => 1,
+                'product_category_id' => 5,
                 'product_group_id' => 50001,
                 'name' => 'Масло моторное FORMULA S/SD 5W40 5L',
                 'full_name' => 'Масло моторное FORMULA S/SD 5W40 5L, FORD, 156E7A',
@@ -11299,7 +11308,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            64 => 
+            
             array (
                 'id' => 594,
                 'article' => '532931',
@@ -11319,7 +11328,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            65 => 
+            
             array (
                 'id' => 595,
                 'article' => '2812102',
@@ -11339,7 +11348,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            66 => 
+            
             array (
                 'id' => 596,
                 'article' => '4014835722613',
@@ -11359,7 +11368,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            67 => 
+            
             array (
                 'id' => 597,
                 'article' => '4014835722699',
@@ -11379,7 +11388,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            68 => 
+            
             array (
                 'id' => 598,
                 'article' => '4014835722651',
@@ -11399,7 +11408,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            69 => 
+            
             array (
                 'id' => 599,
                 'article' => '15583D',
@@ -11419,7 +11428,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            70 => 
+            
             array (
                 'id' => 600,
                 'article' => '194875',
@@ -11427,7 +11436,7 @@ class ProductsTableSeeder extends Seeder
                 'brand' => 'ELF',
                 'bkey' => 'ELF',
                 'pkey' => 'ELF194875',
-                'product_category_id' => 1,
+                'product_category_id' => 5,
                 'product_group_id' => 50001,
                 'name' => 'Масло моторное [EVOLUTION 900 NF, 5W40, 1L]',
                 'full_name' => 'Масло моторное [EVOLUTION 900 NF, 5W40, 1L], ELF, 194875',
@@ -11439,7 +11448,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            71 => 
+            
             array (
                 'id' => 601,
                 'article' => '194872',
@@ -11447,7 +11456,7 @@ class ProductsTableSeeder extends Seeder
                 'brand' => 'ELF',
                 'bkey' => 'ELF',
                 'pkey' => 'ELF194872',
-                'product_category_id' => 1,
+                'product_category_id' => 5,
                 'product_group_id' => 50001,
                 'name' => 'Масло моторное [EVOLUTION 900 NF, 5W40, 5L]',
                 'full_name' => 'Масло моторное [EVOLUTION 900 NF, 5W40, 5L], ELF, 194872',
@@ -11459,7 +11468,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            72 => 
+            
             array (
                 'id' => 602,
                 'article' => '2754002',
@@ -11479,7 +11488,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            73 => 
+            
             array (
                 'id' => 603,
                 'article' => 'GK3455A',
@@ -11499,7 +11508,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            74 => 
+            
             array (
                 'id' => 604,
                 'article' => '058020341E',
@@ -11519,7 +11528,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            75 => 
+            
             array (
                 'id' => 605,
                 'article' => '1904052',
@@ -11539,7 +11548,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            76 => 
+            
             array (
                 'id' => 606,
                 'article' => 'SM-1032S',
@@ -11559,7 +11568,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            77 => 
+            
             array (
                 'id' => 607,
                 'article' => 'BKR5E11',
@@ -11579,7 +11588,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            78 => 
+            
             array (
                 'id' => 608,
                 'article' => 'W811/80',
@@ -11599,7 +11608,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            79 => 
+            
             array (
                 'id' => 609,
                 'article' => 'CRAB-045',
@@ -11619,7 +11628,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            80 => 
+            
             array (
                 'id' => 610,
                 'article' => 'GTA0740',
@@ -11639,7 +11648,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            81 => 
+            
             array (
                 'id' => 611,
                 'article' => '4PK845',
@@ -11659,7 +11668,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            82 => 
+            
             array (
                 'id' => 612,
                 'article' => '048-03-905',
@@ -11679,7 +11688,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            83 => 
+            
             array (
                 'id' => 613,
                 'article' => '3000951064',
@@ -11699,7 +11708,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            84 => 
+            
             array (
                 'id' => 614,
                 'article' => '621304509',
@@ -11719,7 +11728,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            85 => 
+            
             array (
                 'id' => 615,
                 'article' => '90345227',
@@ -11739,7 +11748,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            86 => 
+            
             array (
                 'id' => 616,
                 'article' => '13276148',
@@ -11759,7 +11768,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            87 => 
+            
             array (
                 'id' => 617,
                 'article' => '21829',
@@ -11779,7 +11788,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            88 => 
+            
             array (
                 'id' => 618,
                 'article' => '40580',
@@ -11799,7 +11808,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            89 => 
+            
             array (
                 'id' => 619,
                 'article' => '3182654213',
@@ -11819,7 +11828,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            90 => 
+            
             array (
                 'id' => 620,
                 'article' => '110910001',
@@ -11839,7 +11848,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            91 => 
+            
             array (
                 'id' => 621,
                 'article' => '123-749',
@@ -11859,7 +11868,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            92 => 
+            
             array (
                 'id' => 622,
                 'article' => '123-725',
@@ -11879,7 +11888,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            93 => 
+            
             array (
                 'id' => 623,
                 'article' => '123-760',
@@ -11899,7 +11908,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            94 => 
+            
             array (
                 'id' => 624,
                 'article' => 'MSS017335',
@@ -11919,7 +11928,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            95 => 
+            
             array (
                 'id' => 625,
                 'article' => 'BS-5179',
@@ -11939,7 +11948,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            96 => 
+            
             array (
                 'id' => 626,
                 'article' => '0986479164',
@@ -11959,7 +11968,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            97 => 
+            
             array (
                 'id' => 627,
                 'article' => 'DDF1502',
@@ -11979,7 +11988,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            98 => 
+            
             array (
                 'id' => 628,
                 'article' => 'MBC035354',
@@ -11999,7 +12008,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            99 => 
+            
             array (
                 'id' => 629,
                 'article' => 'CRRE-1',
@@ -12019,7 +12028,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            100 => 
+            
             array (
                 'id' => 630,
                 'article' => 'CR0530',
@@ -12039,7 +12048,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            101 => 
+            
             array (
                 'id' => 631,
                 'article' => '4001725',
@@ -12059,7 +12068,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            102 => 
+            
             array (
                 'id' => 632,
                 'article' => '1009345',
@@ -12079,7 +12088,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => 1,
             ),
-            103 => 
+            
             array (
                 'id' => 633,
                 'article' => '880058',
@@ -12099,7 +12108,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            104 => 
+            
             array (
                 'id' => 634,
                 'article' => '36153',
@@ -12119,7 +12128,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            105 => 
+            
             array (
                 'id' => 635,
                 'article' => 'KU2601',
@@ -12139,7 +12148,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            106 => 
+            
             array (
                 'id' => 636,
                 'article' => 'AP185/6',
@@ -12159,7 +12168,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            107 => 
+            
             array (
                 'id' => 637,
                 'article' => 'PP831/1',
@@ -12179,7 +12188,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            108 => 
+            
             array (
                 'id' => 638,
                 'article' => 'K1267A',
@@ -12199,7 +12208,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            109 => 
+            
             array (
                 'id' => 639,
                 'article' => '6PK1200',
@@ -12219,7 +12228,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            110 => 
+            
             array (
                 'id' => 640,
                 'article' => '530063910',
@@ -12229,17 +12238,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'INA530063910',
                 'product_category_id' => 1,
                 'product_group_id' => 10505,
-                'name' => 'Комплект ремня ГРМ K4J',
-                'full_name' => 'Комплект ремня ГРМ K4J, INA, 530063910',
+                'name' => 'Комплект ремня ГРМ [RENAULT, K4J]',
+                'full_name' => 'Комплект ремня ГРМ [RENAULT, K4J], INA, 530063910',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-02-21 07:36:01',
-                'updated_at' => '2024-06-20 10:30:25',
+                'updated_at' => '2024-07-12 08:27:23',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            111 => 
+            
             array (
                 'id' => 641,
                 'article' => '440609415R',
@@ -12259,7 +12268,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            112 => 
+            
             array (
                 'id' => 642,
                 'article' => '05P1796',
@@ -12279,7 +12288,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            113 => 
+            
             array (
                 'id' => 643,
                 'article' => '7700500048',
@@ -12299,7 +12308,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            114 => 
+            
             array (
                 'id' => 644,
                 'article' => '10253010',
@@ -12319,7 +12328,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            115 => 
+            
             array (
                 'id' => 645,
                 'article' => 'WPS11358',
@@ -12339,7 +12348,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            116 => 
+            
             array (
                 'id' => 646,
                 'article' => 'GA355.29',
@@ -12359,7 +12368,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            117 => 
+            
             array (
                 'id' => 647,
                 'article' => '500059',
@@ -12379,7 +12388,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            118 => 
+            
             array (
                 'id' => 654,
                 'article' => '05P349',
@@ -12399,7 +12408,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            119 => 
+            
             array (
                 'id' => 655,
                 'article' => 'K16PR-U11',
@@ -12419,7 +12428,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            120 => 
+            
             array (
                 'id' => 656,
                 'article' => 'GB-9719',
@@ -12439,7 +12448,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            121 => 
+            
             array (
                 'id' => 657,
                 'article' => '1637238180',
@@ -12459,7 +12468,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            122 => 
+            
             array (
                 'id' => 658,
                 'article' => 'HU7020Z',
@@ -12479,7 +12488,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            123 => 
+            
             array (
                 'id' => 659,
                 'article' => 'QF96A00231',
@@ -12499,7 +12508,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            124 => 
+            
             array (
                 'id' => 660,
                 'article' => 'LS-2006',
@@ -12519,7 +12528,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            125 => 
+            
             array (
                 'id' => 661,
                 'article' => 'LF964M',
@@ -12539,7 +12548,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            126 => 
+            
             array (
                 'id' => 662,
                 'article' => 'K6RPU-11',
@@ -12559,7 +12568,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            127 => 
+            
             array (
                 'id' => 663,
                 'article' => '330007',
@@ -12579,7 +12588,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            128 => 
+            
             array (
                 'id' => 664,
                 'article' => '16176-PT2-004',
@@ -12599,7 +12608,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            129 => 
+            
             array (
                 'id' => 665,
                 'article' => '10-01118-SX',
@@ -12619,7 +12628,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            130 => 
+            
             array (
                 'id' => 666,
                 'article' => 'PP930',
@@ -12639,7 +12648,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            131 => 
+            
             array (
                 'id' => 667,
                 'article' => '15-53766-01',
@@ -12659,7 +12668,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            132 => 
+            
             array (
                 'id' => 668,
                 'article' => '5PK955',
@@ -12679,7 +12688,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            133 => 
+            
             array (
                 'id' => 669,
                 'article' => 'RCHE-80',
@@ -12699,7 +12708,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            134 => 
+            
             array (
                 'id' => 670,
                 'article' => 'J5324022',
@@ -12719,7 +12728,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            135 => 
+            
             array (
                 'id' => 671,
                 'article' => '1.422.098',
@@ -12739,7 +12748,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            136 => 
+            
             array (
                 'id' => 672,
                 'article' => '19036248B',
@@ -12759,7 +12768,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            137 => 
+            
             array (
                 'id' => 673,
                 'article' => '801038',
@@ -12779,7 +12788,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            138 => 
+            
             array (
                 'id' => 674,
                 'article' => '802321',
@@ -12799,7 +12808,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            139 => 
+            
             array (
                 'id' => 675,
                 'article' => '4095050',
@@ -12819,7 +12828,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            140 => 
+            
             array (
                 'id' => 676,
                 'article' => 'OX379D',
@@ -12839,7 +12848,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            141 => 
+            
             array (
                 'id' => 677,
                 'article' => 'AP149/10',
@@ -12859,7 +12868,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            142 => 
+            
             array (
                 'id' => 678,
                 'article' => 'OE 671/3',
@@ -12879,7 +12888,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            143 => 
+            
             array (
                 'id' => 679,
                 'article' => 'G052167M2',
@@ -12887,7 +12896,7 @@ class ProductsTableSeeder extends Seeder
                 'brand' => 'VW',
                 'bkey' => 'VW',
                 'pkey' => 'VWG052167M2',
-                'product_category_id' => 1,
+                'product_category_id' => 5,
                 'product_group_id' => 50001,
                 'name' => 'Масло моторное [SPECIAL PLUS, 5W40, 1L]',
                 'full_name' => 'Масло моторное [SPECIAL PLUS, 5W40, 1L], VW, G052167M2',
@@ -12899,7 +12908,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            144 => 
+            
             array (
                 'id' => 680,
                 'article' => 'FCR210413',
@@ -12919,7 +12928,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            145 => 
+            
             array (
                 'id' => 681,
                 'article' => 'FCR220033',
@@ -12939,7 +12948,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            146 => 
+            
             array (
                 'id' => 682,
                 'article' => '43467',
@@ -12959,7 +12968,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            147 => 
+            
             array (
                 'id' => 683,
                 'article' => '08630',
@@ -12979,7 +12988,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            148 => 
+            
             array (
                 'id' => 684,
                 'article' => 'AP082/1',
@@ -12999,7 +13008,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            149 => 
+            
             array (
                 'id' => 685,
                 'article' => '106101',
@@ -13019,7 +13028,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            150 => 
+            
             array (
                 'id' => 686,
                 'article' => '29934',
@@ -13039,7 +13048,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            151 => 
+            
             array (
                 'id' => 687,
                 'article' => 'OP520/1',
@@ -13059,7 +13068,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            152 => 
+            
             array (
                 'id' => 688,
                 'article' => '8200742812',
@@ -13079,7 +13088,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            153 => 
+            
             array (
                 'id' => 689,
                 'article' => 'MSS016988',
@@ -13099,7 +13108,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            154 => 
+            
             array (
                 'id' => 690,
                 'article' => '30111-590-050',
@@ -13119,7 +13128,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            155 => 
+            
             array (
                 'id' => 691,
                 'article' => '51696',
@@ -13139,7 +13148,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            156 => 
+            
             array (
                 'id' => 692,
                 'article' => 'MSC015476',
@@ -13159,7 +13168,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            157 => 
+            
             array (
                 'id' => 693,
                 'article' => '224404252R',
@@ -13179,7 +13188,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            158 => 
+            
             array (
                 'id' => 694,
                 'article' => '7700273504',
@@ -13189,17 +13198,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'RENAULT7700273504',
                 'product_category_id' => 1,
                 'product_group_id' => 10499,
-                'name' => 'Винт регулировочный клапана K7',
-                'full_name' => 'Винт регулировочный клапана K7, RENAULT, 7700273504',
+                'name' => 'Винт регулировочный клапана [RENAULT, K7]',
+                'full_name' => 'Винт регулировочный клапана [RENAULT, K7], RENAULT, 7700273504',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-02-29 14:07:32',
-                'updated_at' => '2024-02-29 14:07:32',
+                'updated_at' => '2024-07-12 08:47:33',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            159 => 
+            
             array (
                 'id' => 695,
                 'article' => '0242236530',
@@ -13219,7 +13228,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            160 => 
+            
             array (
                 'id' => 696,
                 'article' => 'AP183/3',
@@ -13239,7 +13248,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            161 => 
+            
             array (
                 'id' => 697,
                 'article' => 'OP641/2',
@@ -13259,7 +13268,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            162 => 
+            
             array (
                 'id' => 698,
                 'article' => 'K1313A',
@@ -13279,7 +13288,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            163 => 
+            
             array (
                 'id' => 699,
                 'article' => '05P1795',
@@ -13299,7 +13308,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            164 => 
+            
             array (
                 'id' => 700,
                 'article' => '588.670.001',
@@ -13319,7 +13328,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            165 => 
+            
             array (
                 'id' => 701,
                 'article' => 'HS109004',
@@ -13339,7 +13348,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            166 => 
+            
             array (
                 'id' => 702,
                 'article' => '770093',
@@ -13359,7 +13368,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            167 => 
+            
             array (
                 'id' => 703,
                 'article' => 'MFF-3830',
@@ -13379,7 +13388,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            168 => 
+            
             array (
                 'id' => 704,
                 'article' => '553044110',
@@ -13399,7 +13408,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            169 => 
+            
             array (
                 'id' => 705,
                 'article' => '553028010',
@@ -13419,7 +13428,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            170 => 
+            
             array (
                 'id' => 706,
                 'article' => 'K1313',
@@ -13439,7 +13448,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            171 => 
+            
             array (
                 'id' => 707,
                 'article' => '21157',
@@ -13459,7 +13468,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            172 => 
+            
             array (
                 'id' => 708,
                 'article' => '4001723',
@@ -13479,7 +13488,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            173 => 
+            
             array (
                 'id' => 709,
                 'article' => 'C0198C',
@@ -13499,7 +13508,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            174 => 
+            
             array (
                 'id' => 710,
                 'article' => 'QF01E00013',
@@ -13519,7 +13528,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            175 => 
+            
             array (
                 'id' => 711,
                 'article' => 'CB0345',
@@ -13539,7 +13548,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            176 => 
+            
             array (
                 'id' => 712,
                 'article' => 'CL0842',
@@ -13559,7 +13568,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            177 => 
+            
             array (
                 'id' => 713,
                 'article' => 'VKBA3637',
@@ -13579,7 +13588,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            178 => 
+            
             array (
                 'id' => 714,
                 'article' => '1987479107',
@@ -13599,7 +13608,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            179 => 
+            
             array (
                 'id' => 715,
                 'article' => '213868',
@@ -13619,7 +13628,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            180 => 
+            
             array (
                 'id' => 716,
                 'article' => 'JTS484',
@@ -13639,7 +13648,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            181 => 
+            
             array (
                 'id' => 717,
                 'article' => '02E398029B',
@@ -13659,7 +13668,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            182 => 
+            
             array (
                 'id' => 718,
                 'article' => '415073209',
@@ -13679,7 +13688,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            183 => 
+            
             array (
                 'id' => 719,
                 'article' => '8521468030',
@@ -13699,7 +13708,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            184 => 
+            
             array (
                 'id' => 720,
                 'article' => '8521468020',
@@ -13719,7 +13728,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            185 => 
+            
             array (
                 'id' => 721,
                 'article' => '3397014140',
@@ -13739,7 +13748,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            186 => 
+            
             array (
                 'id' => 722,
                 'article' => 'SDKI-299',
@@ -13759,7 +13768,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            187 => 
+            
             array (
                 'id' => 723,
                 'article' => 'KTT060034',
@@ -13779,7 +13788,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            188 => 
+            
             array (
                 'id' => 724,
                 'article' => '559008630',
@@ -13799,7 +13808,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            189 => 
+            
             array (
                 'id' => 725,
                 'article' => '179519',
@@ -13819,7 +13828,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            190 => 
+            
             array (
                 'id' => 726,
                 'article' => 'BS-1162',
@@ -13839,7 +13848,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            191 => 
+            
             array (
                 'id' => 727,
                 'article' => '22854',
@@ -13859,7 +13868,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            192 => 
+            
             array (
                 'id' => 728,
                 'article' => '8200431675',
@@ -13879,7 +13888,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            193 => 
+            
             array (
                 'id' => 729,
                 'article' => '4005507',
@@ -13899,7 +13908,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            194 => 
+            
             array (
                 'id' => 730,
                 'article' => '19036599B',
@@ -13919,7 +13928,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            195 => 
+            
             array (
                 'id' => 731,
                 'article' => '755.020',
@@ -13939,7 +13948,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            196 => 
+            
             array (
                 'id' => 732,
                 'article' => '1556072',
@@ -13959,7 +13968,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            197 => 
+            
             array (
                 'id' => 733,
                 'article' => 'A214',
@@ -13979,7 +13988,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            198 => 
+            
             array (
                 'id' => 734,
                 'article' => '7700718856',
@@ -13999,7 +14008,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            199 => 
+            
             array (
                 'id' => 735,
                 'article' => '4001500',
@@ -14019,7 +14028,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            200 => 
+            
             array (
                 'id' => 736,
                 'article' => 'QF76A00064',
@@ -14039,7 +14048,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            201 => 
+            
             array (
                 'id' => 737,
                 'article' => '3AE8074602ZZ',
@@ -14059,7 +14068,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            202 => 
+            
             array (
                 'id' => 738,
                 'article' => 'STVWA9087M1',
@@ -14079,7 +14088,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            203 => 
+            
             array (
                 'id' => 739,
                 'article' => '333-99',
@@ -14099,7 +14108,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            204 => 
+            
             array (
                 'id' => 740,
                 'article' => '6PK1117',
@@ -14119,7 +14128,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            205 => 
+            
             array (
                 'id' => 741,
                 'article' => '6PK1120',
@@ -14139,7 +14148,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            206 => 
+            
             array (
                 'id' => 742,
                 'article' => 'DF-002',
@@ -14159,7 +14168,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            207 => 
+            
             array (
                 'id' => 743,
                 'article' => '1K0955429B',
@@ -14179,7 +14188,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            208 => 
+            
             array (
                 'id' => 744,
                 'article' => 'BX2132',
@@ -14199,7 +14208,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            209 => 
+            
             array (
                 'id' => 745,
                 'article' => '135172',
@@ -14209,17 +14218,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'CARGO135172',
                 'product_category_id' => 1,
                 'product_group_id' => 74835,
-                'name' => 'Генератор. Коллекторный узел',
-                'full_name' => 'Генератор. Коллекторный узел, CARGO, 135172',
+                'name' => 'Генератор. Коллекторный узел [BOSCH]',
+                'full_name' => 'Генератор. Коллекторный узел [BOSCH], CARGO, 135172',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-03-13 19:51:19',
-                'updated_at' => '2024-03-13 19:51:19',
+                'updated_at' => '2024-07-12 08:50:34',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            210 => 
+            
             array (
                 'id' => 746,
                 'article' => '6Q1423055BL',
@@ -14239,7 +14248,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            211 => 
+            
             array (
                 'id' => 747,
                 'article' => '6Q1423055AX',
@@ -14259,7 +14268,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            212 => 
+            
             array (
                 'id' => 748,
                 'article' => '2764301',
@@ -14279,7 +14288,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            213 => 
+            
             array (
                 'id' => 749,
                 'article' => '2764401',
@@ -14299,7 +14308,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            214 => 
+            
             array (
                 'id' => 750,
                 'article' => '139224',
@@ -14319,7 +14328,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            215 => 
+            
             array (
                 'id' => 751,
                 'article' => 'TS10E3',
@@ -14339,7 +14348,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            216 => 
+            
             array (
                 'id' => 752,
                 'article' => 'PSX1554',
@@ -14359,7 +14368,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            217 => 
+            
             array (
                 'id' => 753,
                 'article' => '140250',
@@ -14379,7 +14388,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            218 => 
+            
             array (
                 'id' => 754,
                 'article' => '140249',
@@ -14399,7 +14408,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            219 => 
+            
             array (
                 'id' => 755,
                 'article' => '235869',
@@ -14419,7 +14428,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            220 => 
+            
             array (
                 'id' => 756,
                 'article' => '231148',
@@ -14439,7 +14448,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            221 => 
+            
             array (
                 'id' => 757,
                 'article' => 'HK1010',
@@ -14459,7 +14468,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            222 => 
+            
             array (
                 'id' => 758,
                 'article' => '140482',
@@ -14479,7 +14488,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            223 => 
+            
             array (
                 'id' => 759,
                 'article' => 'GH22530',
@@ -14499,7 +14508,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            224 => 
+            
             array (
                 'id' => 760,
                 'article' => 'OE650/1',
@@ -14519,7 +14528,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            225 => 
+            
             array (
                 'id' => 761,
                 'article' => 'PE973/3',
@@ -14539,7 +14548,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            226 => 
+            
             array (
                 'id' => 762,
                 'article' => '530020110',
@@ -14559,7 +14568,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            227 => 
+            
             array (
                 'id' => 763,
                 'article' => 'GE100',
@@ -14579,7 +14588,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            228 => 
+            
             array (
                 'id' => 764,
                 'article' => '05P866',
@@ -14589,17 +14598,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'LPR05P866',
                 'product_category_id' => 1,
                 'product_group_id' => 10130,
-                'name' => 'Комплект тормозных колодок. Диск',
-                'full_name' => 'Комплект тормозных колодок. Диск, LPR, 05P866',
+                'name' => 'Комплект тормозных колодок [Диск, GOLF 5, PASSAT B6, перед]',
+                'full_name' => 'Комплект тормозных колодок [Диск, GOLF 5, PASSAT B6, перед], LPR, 05P866',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-03-19 09:44:03',
-                'updated_at' => '2024-03-19 09:44:03',
+                'updated_at' => '2024-07-12 17:27:54',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            229 => 
+            
             array (
                 'id' => 765,
                 'article' => '05P634',
@@ -14609,17 +14618,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'LPR05P634',
                 'product_category_id' => 1,
                 'product_group_id' => 10130,
-                'name' => 'Комплект тормозных колодок. Диск',
-                'full_name' => 'Комплект тормозных колодок. Диск, LPR, 05P634',
+                'name' => 'Комплект тормозных колодок [Диск]',
+                'full_name' => 'Комплект тормозных колодок [Диск], LPR, 05P634',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-03-19 09:55:33',
-                'updated_at' => '2024-03-19 09:55:33',
+                'updated_at' => '2024-07-18 18:37:01',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            230 => 
+            
             array (
                 'id' => 766,
                 'article' => '14702004',
@@ -14639,7 +14648,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            231 => 
+            
             array (
                 'id' => 767,
                 'article' => 'MLS-057',
@@ -14659,7 +14668,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            232 => 
+            
             array (
                 'id' => 768,
                 'article' => '1578',
@@ -14679,7 +14688,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            233 => 
+            
             array (
                 'id' => 769,
                 'article' => '7703053945',
@@ -14699,7 +14708,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            234 => 
+            
             array (
                 'id' => 770,
                 'article' => '6025308656',
@@ -14719,7 +14728,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            235 => 
+            
             array (
                 'id' => 771,
                 'article' => '7703034251',
@@ -14739,7 +14748,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            236 => 
+            
             array (
                 'id' => 772,
                 'article' => '6025308657',
@@ -14759,7 +14768,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            237 => 
+            
             array (
                 'id' => 773,
                 'article' => '6025309181',
@@ -14779,7 +14788,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            238 => 
+            
             array (
                 'id' => 774,
                 'article' => '7703034179',
@@ -14799,7 +14808,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            239 => 
+            
             array (
                 'id' => 775,
                 'article' => '562103901R',
@@ -14819,7 +14828,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            240 => 
+            
             array (
                 'id' => 776,
                 'article' => '543027341R',
@@ -14839,7 +14848,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            241 => 
+            
             array (
                 'id' => 777,
                 'article' => '1987477955',
@@ -14859,7 +14868,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            242 => 
+            
             array (
                 'id' => 778,
                 'article' => '0242229699',
@@ -14879,7 +14888,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            243 => 
+            
             array (
                 'id' => 779,
                 'article' => 'A130R4004',
@@ -14899,7 +14908,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            244 => 
+            
             array (
                 'id' => 780,
                 'article' => 'A130R4001',
@@ -14919,7 +14928,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            245 => 
+            
             array (
                 'id' => 781,
                 'article' => '93744675',
@@ -14939,7 +14948,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            246 => 
+            
             array (
                 'id' => 782,
                 'article' => '556073',
@@ -14959,7 +14968,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            247 => 
+            
             array (
                 'id' => 783,
                 'article' => '402154',
@@ -14979,7 +14988,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            248 => 
+            
             array (
                 'id' => 784,
                 'article' => '400945K',
@@ -14999,7 +15008,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            249 => 
+            
             array (
                 'id' => 785,
                 'article' => 'D42100C',
@@ -15019,7 +15028,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            250 => 
+            
             array (
                 'id' => 786,
                 'article' => 'GDB1550',
@@ -15039,7 +15048,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            251 => 
+            
             array (
                 'id' => 787,
                 'article' => 'PFB450SE',
@@ -15059,7 +15068,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            252 => 
+            
             array (
                 'id' => 788,
                 'article' => '1170302500',
@@ -15079,7 +15088,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            253 => 
+            
             array (
                 'id' => 789,
                 'article' => '0986475837',
@@ -15099,7 +15108,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            254 => 
+            
             array (
                 'id' => 790,
                 'article' => '4696',
@@ -15119,7 +15128,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            255 => 
+            
             array (
                 'id' => 791,
                 'article' => 'F026002249',
@@ -15139,7 +15148,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            256 => 
+            
             array (
                 'id' => 792,
                 'article' => '4078',
@@ -15159,7 +15168,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            257 => 
+            
             array (
                 'id' => 793,
                 'article' => '5192',
@@ -15179,7 +15188,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            258 => 
+            
             array (
                 'id' => 794,
                 'article' => '4045',
@@ -15199,7 +15208,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            259 => 
+            
             array (
                 'id' => 795,
                 'article' => 'PFB401SE',
@@ -15219,7 +15228,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            260 => 
+            
             array (
                 'id' => 796,
                 'article' => 'V20805',
@@ -15239,7 +15248,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            261 => 
+            
             array (
                 'id' => 797,
                 'article' => 'RNL5790501L',
@@ -15259,7 +15268,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            262 => 
+            
             array (
                 'id' => 798,
                 'article' => 'RNL5790501R',
@@ -15279,7 +15288,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            263 => 
+            
             array (
                 'id' => 799,
                 'article' => 'RNL5790500L',
@@ -15299,7 +15308,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            264 => 
+            
             array (
                 'id' => 800,
                 'article' => 'RNL5790500R',
@@ -15319,7 +15328,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            265 => 
+            
             array (
                 'id' => 801,
                 'article' => '6001546980',
@@ -15339,7 +15348,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            266 => 
+            
             array (
                 'id' => 802,
                 'article' => '6001546981',
@@ -15359,7 +15368,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            267 => 
+            
             array (
                 'id' => 803,
                 'article' => '742082SP',
@@ -15379,7 +15388,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            268 => 
+            
             array (
                 'id' => 804,
                 'article' => 'SG-5049',
@@ -15399,7 +15408,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            269 => 
+            
             array (
                 'id' => 805,
                 'article' => '1717510',
@@ -15419,7 +15428,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            270 => 
+            
             array (
                 'id' => 806,
                 'article' => '1930091',
@@ -15439,7 +15448,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            271 => 
+            
             array (
                 'id' => 807,
                 'article' => '14E8BA',
@@ -15459,7 +15468,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            272 => 
+            
             array (
                 'id' => 808,
                 'article' => '14E8B9',
@@ -15479,7 +15488,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            273 => 
+            
             array (
                 'id' => 809,
                 'article' => '6303DDUC3E',
@@ -15499,7 +15508,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            274 => 
+            
             array (
                 'id' => 810,
                 'article' => '6003DDUC3E',
@@ -15519,7 +15528,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            275 => 
+            
             array (
                 'id' => 811,
                 'article' => 'QF71M00018',
@@ -15539,7 +15548,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            276 => 
+            
             array (
                 'id' => 812,
                 'article' => 'QF71M00019',
@@ -15559,7 +15568,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            277 => 
+            
             array (
                 'id' => 813,
                 'article' => '076906051A',
@@ -15579,7 +15588,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            278 => 
+            
             array (
                 'id' => 814,
                 'article' => '0281002710',
@@ -15599,7 +15608,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            279 => 
+            
             array (
                 'id' => 815,
                 'article' => '1741459',
@@ -15619,7 +15628,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            280 => 
+            
             array (
                 'id' => 816,
                 'article' => 'AP023/5',
@@ -15639,7 +15648,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            281 => 
+            
             array (
                 'id' => 817,
                 'article' => 'C210R2156',
@@ -15659,7 +15668,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            282 => 
+            
             array (
                 'id' => 818,
                 'article' => 'SD3049',
@@ -15679,7 +15688,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            283 => 
+            
             array (
                 'id' => 819,
                 'article' => '8200362638',
@@ -15699,7 +15708,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            284 => 
+            
             array (
                 'id' => 820,
                 'article' => 'G7396',
@@ -15719,7 +15728,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            285 => 
+            
             array (
                 'id' => 821,
                 'article' => '8200222463',
@@ -15739,7 +15748,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            286 => 
+            
             array (
                 'id' => 822,
                 'article' => '8200934066',
@@ -15759,7 +15768,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            287 => 
+            
             array (
                 'id' => 823,
                 'article' => '8200851839',
@@ -15779,7 +15788,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            288 => 
+            
             array (
                 'id' => 824,
                 'article' => '7700352126',
@@ -15799,7 +15808,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            289 => 
+            
             array (
                 'id' => 825,
                 'article' => 'TRK0568',
@@ -15819,7 +15828,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            290 => 
+            
             array (
                 'id' => 826,
                 'article' => '8200046751',
@@ -15839,7 +15848,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            291 => 
+            
             array (
                 'id' => 827,
                 'article' => '100.17110',
@@ -15859,7 +15868,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            292 => 
+            
             array (
                 'id' => 828,
                 'article' => 'TRK2068',
@@ -15879,7 +15888,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            293 => 
+            
             array (
                 'id' => 829,
                 'article' => 'TRK2121',
@@ -15899,7 +15908,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            294 => 
+            
             array (
                 'id' => 830,
                 'article' => 'TRK2120',
@@ -15919,7 +15928,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            295 => 
+            
             array (
                 'id' => 831,
                 'article' => 'TRK2069',
@@ -15939,7 +15948,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            296 => 
+            
             array (
                 'id' => 832,
                 'article' => '06L109257F',
@@ -15959,7 +15968,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            297 => 
+            
             array (
                 'id' => 833,
                 'article' => '06K109021M',
@@ -15979,7 +15988,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            298 => 
+            
             array (
                 'id' => 834,
                 'article' => 'GS3403',
@@ -15999,7 +16008,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            299 => 
+            
             array (
                 'id' => 835,
                 'article' => '9243001K',
@@ -16019,7 +16028,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            300 => 
+            
             array (
                 'id' => 836,
                 'article' => 'RL-1267',
@@ -16039,7 +16048,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            301 => 
+            
             array (
                 'id' => 837,
                 'article' => 'RU-4030',
@@ -16059,7 +16068,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            302 => 
+            
             array (
                 'id' => 838,
                 'article' => 'BL28007',
@@ -16079,7 +16088,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            303 => 
+            
             array (
                 'id' => 839,
                 'article' => 'JTS252',
@@ -16099,7 +16108,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            304 => 
+            
             array (
                 'id' => 840,
                 'article' => 'CE0191R',
@@ -16119,7 +16128,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            305 => 
+            
             array (
                 'id' => 841,
                 'article' => 'CE0190L',
@@ -16139,7 +16148,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            306 => 
+            
             array (
                 'id' => 842,
                 'article' => 'SG-2309',
@@ -16159,7 +16168,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            307 => 
+            
             array (
                 'id' => 843,
                 'article' => 'MM-40010',
@@ -16179,7 +16188,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            308 => 
+            
             array (
                 'id' => 844,
                 'article' => '341173',
@@ -16199,7 +16208,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            309 => 
+            
             array (
                 'id' => 845,
                 'article' => '3212-0087-SX',
@@ -16219,7 +16228,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            310 => 
+            
             array (
                 'id' => 846,
                 'article' => 'PSA341173',
@@ -16239,7 +16248,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            311 => 
+            
             array (
                 'id' => 847,
                 'article' => 'DG02772',
@@ -16259,7 +16268,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            312 => 
+            
             array (
                 'id' => 848,
                 'article' => '13109800',
@@ -16279,7 +16288,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            313 => 
+            
             array (
                 'id' => 849,
                 'article' => 'OP572',
@@ -16299,7 +16308,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            314 => 
+            
             array (
                 'id' => 850,
                 'article' => '1109140005',
@@ -16319,7 +16328,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            315 => 
+            
             array (
                 'id' => 851,
                 'article' => '1601255180',
@@ -16339,7 +16348,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            316 => 
+            
             array (
                 'id' => 852,
                 'article' => 'Q16PRU',
@@ -16359,7 +16368,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            317 => 
+            
             array (
                 'id' => 853,
                 'article' => 'K16TT',
@@ -16379,7 +16388,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            318 => 
+            
             array (
                 'id' => 854,
                 'article' => 'MI28040',
@@ -16399,7 +16408,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            319 => 
+            
             array (
                 'id' => 855,
                 'article' => 'R8-50810SV4J82',
@@ -16419,7 +16428,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            320 => 
+            
             array (
                 'id' => 856,
                 'article' => 'M259.01',
@@ -16439,7 +16448,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            321 => 
+            
             array (
                 'id' => 857,
                 'article' => '7703065311',
@@ -16459,7 +16468,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            322 => 
+            
             array (
                 'id' => 858,
                 'article' => 'QZ0134513',
@@ -16479,7 +16488,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            323 => 
+            
             array (
                 'id' => 859,
                 'article' => '30316',
@@ -16499,7 +16508,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            324 => 
+            
             array (
                 'id' => 860,
                 'article' => '535336',
@@ -16519,7 +16528,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            325 => 
+            
             array (
                 'id' => 861,
                 'article' => '05-3917',
@@ -16539,7 +16548,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            326 => 
+            
             array (
                 'id' => 862,
                 'article' => '05-3918',
@@ -16559,7 +16568,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            327 => 
+            
             array (
                 'id' => 863,
                 'article' => '52116-12390',
@@ -16579,7 +16588,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            328 => 
+            
             array (
                 'id' => 864,
                 'article' => 'K1111',
@@ -16599,7 +16608,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            329 => 
+            
             array (
                 'id' => 865,
                 'article' => 'CH97025',
@@ -16619,7 +16628,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            330 => 
+            
             array (
                 'id' => 866,
                 'article' => 'CH97024',
@@ -16639,7 +16648,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            331 => 
+            
             array (
                 'id' => 867,
                 'article' => '92120505',
@@ -16659,7 +16668,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            332 => 
+            
             array (
                 'id' => 868,
                 'article' => '0986479932',
@@ -16679,7 +16688,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            333 => 
+            
             array (
                 'id' => 869,
                 'article' => '697210',
@@ -16699,7 +16708,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            334 => 
+            
             array (
                 'id' => 870,
                 'article' => 'SD5409',
@@ -16719,7 +16728,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            335 => 
+            
             array (
                 'id' => 871,
                 'article' => '1163109500',
@@ -16739,7 +16748,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            336 => 
+            
             array (
                 'id' => 872,
                 'article' => '79048',
@@ -16759,7 +16768,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            337 => 
+            
             array (
                 'id' => 873,
                 'article' => 'K20TT',
@@ -16779,7 +16788,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            338 => 
+            
             array (
                 'id' => 874,
                 'article' => '05-33',
@@ -16799,7 +16808,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            339 => 
+            
             array (
                 'id' => 875,
                 'article' => '0986280600',
@@ -16819,7 +16828,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            340 => 
+            
             array (
                 'id' => 876,
                 'article' => '550476',
@@ -16839,7 +16848,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            341 => 
+            
             array (
                 'id' => 877,
                 'article' => 'PP836/2',
@@ -16859,7 +16868,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            342 => 
+            
             array (
                 'id' => 878,
                 'article' => 'AK370/2',
@@ -16879,7 +16888,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            343 => 
+            
             array (
                 'id' => 879,
                 'article' => '0242240665',
@@ -16899,7 +16908,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            344 => 
+            
             array (
                 'id' => 880,
                 'article' => 'G052195M4',
@@ -16919,7 +16928,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            345 => 
+            
             array (
                 'id' => 881,
                 'article' => 'G052195M2',
@@ -16939,7 +16948,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            346 => 
+            
             array (
                 'id' => 882,
                 'article' => 'MK10163',
@@ -16959,7 +16968,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            347 => 
+            
             array (
                 'id' => 883,
                 'article' => 'K1130',
@@ -16979,7 +16988,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            348 => 
+            
             array (
                 'id' => 884,
                 'article' => 'AP185/2',
@@ -16999,7 +17008,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            349 => 
+            
             array (
                 'id' => 885,
                 'article' => 'OP621',
@@ -17019,7 +17028,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            350 => 
+            
             array (
                 'id' => 886,
                 'article' => 'AP190/9',
@@ -17039,7 +17048,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            351 => 
+            
             array (
                 'id' => 887,
                 'article' => 'K1271',
@@ -17059,7 +17068,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            352 => 
+            
             array (
                 'id' => 888,
                 'article' => 'K20PR-U11',
@@ -17079,7 +17088,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            353 => 
+            
             array (
                 'id' => 889,
                 'article' => 'OEM3712',
@@ -17099,7 +17108,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            354 => 
+            
             array (
                 'id' => 890,
                 'article' => 'OEM1357R',
@@ -17109,17 +17118,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'OEMOEM1357R',
                 'product_category_id' => 1,
                 'product_group_id' => 10291,
-            'name' => 'Решетка противотуманной фары правая Volkswagen Passat B7 (2010-2015) текстурная',
-            'full_name' => 'Решетка противотуманной фары правая Volkswagen Passat B7 (2010-2015) текстурная, O.E.M., OEM1357R',
+                'name' => 'Решетка противотуманной фары [PASSAT B7, текстурная, правая]',
+                'full_name' => 'Решетка противотуманной фары [PASSAT B7, текстурная, правая], O.E.M., OEM1357R',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-04-17 17:29:10',
-                'updated_at' => '2024-04-23 15:39:46',
+                'updated_at' => '2024-07-12 17:30:06',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            355 => 
+            
             array (
                 'id' => 891,
                 'article' => '1140000300',
@@ -17139,7 +17148,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            356 => 
+            
             array (
                 'id' => 892,
                 'article' => 'OP8010150-0000',
@@ -17159,7 +17168,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            357 => 
+            
             array (
                 'id' => 893,
                 'article' => 'OP28-402-2FR',
@@ -17179,7 +17188,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            358 => 
+            
             array (
                 'id' => 894,
                 'article' => 'OP7171001',
@@ -17199,7 +17208,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            359 => 
+            
             array (
                 'id' => 895,
                 'article' => '442-1149R-LDEM2',
@@ -17219,7 +17228,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            360 => 
+            
             array (
                 'id' => 896,
                 'article' => 'CQ0519L',
@@ -17239,7 +17248,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            361 => 
+            
             array (
                 'id' => 897,
                 'article' => '95-09643-2',
@@ -17259,7 +17268,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            362 => 
+            
             array (
                 'id' => 898,
                 'article' => '1450200970',
@@ -17279,7 +17288,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            363 => 
+            
             array (
                 'id' => 899,
                 'article' => 'S060075',
@@ -17299,7 +17308,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            364 => 
+            
             array (
                 'id' => 900,
                 'article' => '444-1929R-UE-CR',
@@ -17319,7 +17328,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            365 => 
+            
             array (
                 'id' => 901,
                 'article' => 'CQ0517',
@@ -17339,7 +17348,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            366 => 
+            
             array (
                 'id' => 902,
                 'article' => 'SG-2292',
@@ -17359,7 +17368,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            367 => 
+            
             array (
                 'id' => 903,
                 'article' => '349084',
@@ -17379,7 +17388,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            368 => 
+            
             array (
                 'id' => 904,
                 'article' => 'EX553112H000',
@@ -17399,7 +17408,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            369 => 
+            
             array (
                 'id' => 905,
                 'article' => 'CL0290L',
@@ -17419,7 +17428,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            370 => 
+            
             array (
                 'id' => 906,
                 'article' => 'CL0290R',
@@ -17439,7 +17448,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            371 => 
+            
             array (
                 'id' => 907,
                 'article' => 'CL0290',
@@ -17459,7 +17468,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            372 => 
+            
             array (
                 'id' => 908,
                 'article' => '4001578',
@@ -17479,7 +17488,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            373 => 
+            
             array (
                 'id' => 909,
                 'article' => '184422',
@@ -17499,7 +17508,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            374 => 
+            
             array (
                 'id' => 910,
                 'article' => '038906081B',
@@ -17519,7 +17528,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            375 => 
+            
             array (
                 'id' => 911,
                 'article' => '330971',
@@ -17539,7 +17548,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            376 => 
+            
             array (
                 'id' => 912,
                 'article' => 'DF-103',
@@ -17559,7 +17568,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            377 => 
+            
             array (
                 'id' => 913,
                 'article' => '3397118979',
@@ -17579,7 +17588,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            378 => 
+            
             array (
                 'id' => 914,
                 'article' => 'DF-230',
@@ -17599,7 +17608,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            379 => 
+            
             array (
                 'id' => 915,
                 'article' => 'CLKH-45',
@@ -17619,7 +17628,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            380 => 
+            
             array (
                 'id' => 916,
                 'article' => 'OEM1356L',
@@ -17629,17 +17638,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'OEMOEM1356L',
                 'product_category_id' => 1,
                 'product_group_id' => 10291,
-            'name' => 'Решетка противотуманной фары левая Volkswagen Passat B7 (2010-2015) текстурная',
-            'full_name' => 'Решетка противотуманной фары левая Volkswagen Passat B7 (2010-2015) текстурная, O.E.M., OEM1356L',
+                'name' => 'Решетка противотуманной фары [PASSAT B7, текстурная, левая]',
+                'full_name' => 'Решетка противотуманной фары [PASSAT B7, текстурная, левая], O.E.M., OEM1356L',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-04-23 04:35:24',
-                'updated_at' => '2024-04-23 04:35:24',
+                'updated_at' => '2024-07-12 17:30:29',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            381 => 
+            
             array (
                 'id' => 917,
                 'article' => '351319205340',
@@ -17659,7 +17668,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            382 => 
+            
             array (
                 'id' => 918,
                 'article' => 'LRIC2148',
@@ -17679,7 +17688,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            383 => 
+            
             array (
                 'id' => 919,
                 'article' => 'K1314',
@@ -17699,7 +17708,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            384 => 
+            
             array (
                 'id' => 920,
                 'article' => '3431201',
@@ -17719,7 +17728,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            385 => 
+            
             array (
                 'id' => 921,
                 'article' => '96-01451-1',
@@ -17739,7 +17748,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            386 => 
+            
             array (
                 'id' => 922,
                 'article' => '94684',
@@ -17759,7 +17768,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            387 => 
+            
             array (
                 'id' => 923,
                 'article' => '817777',
@@ -17779,7 +17788,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            388 => 
+            
             array (
                 'id' => 924,
                 'article' => '35520',
@@ -17799,7 +17808,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            389 => 
+            
             array (
                 'id' => 925,
                 'article' => 'LCAC18K1',
@@ -17819,7 +17828,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            390 => 
+            
             array (
                 'id' => 926,
                 'article' => 'DCP32045',
@@ -17839,7 +17848,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            391 => 
+            
             array (
                 'id' => 927,
                 'article' => 'AC-E418',
@@ -17859,7 +17868,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            392 => 
+            
             array (
                 'id' => 928,
                 'article' => 'VR-V4114',
@@ -17879,7 +17888,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            393 => 
+            
             array (
                 'id' => 929,
                 'article' => '05.28',
@@ -17899,7 +17908,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            394 => 
+            
             array (
                 'id' => 930,
                 'article' => '144607066R',
@@ -17909,17 +17918,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'RENAULT144607066R',
                 'product_category_id' => 1,
                 'product_group_id' => 12176,
-            'name' => 'Патрубок интеркулера TRAFIC II (турбина -> интеркулер)',
-            'full_name' => 'Патрубок интеркулера TRAFIC II (турбина -> интеркулер), RENAULT, 144607066R',
+                'name' => 'Патрубок интеркулера [TRAFIC II, турбина -> интеркулер]',
+                'full_name' => 'Патрубок интеркулера [TRAFIC II, турбина -> интеркулер], RENAULT, 144607066R',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-04-29 10:44:47',
-                'updated_at' => '2024-04-29 10:44:47',
+                'updated_at' => '2024-07-13 08:04:01',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            395 => 
+            
             array (
                 'id' => 931,
                 'article' => '5C0413031M',
@@ -17939,7 +17948,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            396 => 
+            
             array (
                 'id' => 932,
                 'article' => '5C0513029E',
@@ -17959,7 +17968,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            397 => 
+            
             array (
                 'id' => 933,
                 'article' => '312617',
@@ -17979,7 +17988,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            398 => 
+            
             array (
                 'id' => 934,
                 'article' => '22-139191',
@@ -17999,7 +18008,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            399 => 
+            
             array (
                 'id' => 935,
                 'article' => '3418',
@@ -18019,7 +18028,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            400 => 
+            
             array (
                 'id' => 936,
                 'article' => 'LN1541',
@@ -18039,7 +18048,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            401 => 
+            
             array (
                 'id' => 937,
                 'article' => '9028',
@@ -18059,7 +18068,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            402 => 
+            
             array (
                 'id' => 938,
                 'article' => '07165',
@@ -18079,7 +18088,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            403 => 
+            
             array (
                 'id' => 939,
                 'article' => '3397007099',
@@ -18099,7 +18108,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            404 => 
+            
             array (
                 'id' => 940,
                 'article' => '935552H0009Y',
@@ -18119,7 +18128,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            405 => 
+            
             array (
                 'id' => 941,
                 'article' => 'P842S',
@@ -18139,7 +18148,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            406 => 
+            
             array (
                 'id' => 942,
                 'article' => '96183228',
@@ -18159,7 +18168,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            407 => 
+            
             array (
                 'id' => 943,
                 'article' => 'WHT001812',
@@ -18179,7 +18188,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            408 => 
+            
             array (
                 'id' => 944,
                 'article' => 'BE-4030',
@@ -18199,7 +18208,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            409 => 
+            
             array (
                 'id' => 945,
                 'article' => '111477001',
@@ -18219,7 +18228,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            410 => 
+            
             array (
                 'id' => 946,
                 'article' => '99909801',
@@ -18239,7 +18248,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            411 => 
+            
             array (
                 'id' => 947,
                 'article' => '1160400500',
@@ -18259,7 +18268,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            412 => 
+            
             array (
                 'id' => 948,
                 'article' => '09801',
@@ -18279,7 +18288,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            413 => 
+            
             array (
                 'id' => 949,
                 'article' => 'GZ0163',
@@ -18299,7 +18308,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            414 => 
+            
             array (
                 'id' => 950,
                 'article' => '1350200480',
@@ -18319,7 +18328,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            415 => 
+            
             array (
                 'id' => 951,
                 'article' => '1350200470',
@@ -18339,7 +18348,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            416 => 
+            
             array (
                 'id' => 952,
                 'article' => '10627',
@@ -18359,7 +18368,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            417 => 
+            
             array (
                 'id' => 953,
                 'article' => '03282',
@@ -18379,7 +18388,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            418 => 
+            
             array (
                 'id' => 954,
                 'article' => '348825',
@@ -18399,7 +18408,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            419 => 
+            
             array (
                 'id' => 955,
                 'article' => '0986479095',
@@ -18419,7 +18428,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            420 => 
+            
             array (
                 'id' => 956,
                 'article' => 'DDF1580C',
@@ -18439,7 +18448,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            421 => 
+            
             array (
                 'id' => 957,
                 'article' => '600.3229.20',
@@ -18459,7 +18468,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            422 => 
+            
             array (
                 'id' => 958,
                 'article' => 'PN0565',
@@ -18479,7 +18488,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            423 => 
+            
             array (
                 'id' => 959,
                 'article' => 'GDB1875',
@@ -18499,7 +18508,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            424 => 
+            
             array (
                 'id' => 960,
                 'article' => '1379.10',
@@ -18519,7 +18528,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            425 => 
+            
             array (
                 'id' => 961,
                 'article' => '0986495371',
@@ -18539,7 +18548,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            426 => 
+            
             array (
                 'id' => 962,
                 'article' => '93-90439',
@@ -18559,7 +18568,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            427 => 
+            
             array (
                 'id' => 963,
                 'article' => 'D4189',
@@ -18579,7 +18588,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            428 => 
+            
             array (
                 'id' => 964,
                 'article' => '400290',
@@ -18599,7 +18608,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            429 => 
+            
             array (
                 'id' => 965,
                 'article' => '410058',
@@ -18619,7 +18628,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            430 => 
+            
             array (
                 'id' => 966,
                 'article' => '410012',
@@ -18639,7 +18648,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            431 => 
+            
             array (
                 'id' => 967,
                 'article' => '7E-HKS15.8X20.6X19-1',
@@ -18659,7 +18668,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            432 => 
+            
             array (
                 'id' => 968,
                 'article' => 'TRK1112',
@@ -18679,7 +18688,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            433 => 
+            
             array (
                 'id' => 969,
                 'article' => 'GDB1768',
@@ -18699,7 +18708,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            434 => 
+            
             array (
                 'id' => 970,
                 'article' => '13.0460-2765.2',
@@ -18719,7 +18728,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            435 => 
+            
             array (
                 'id' => 971,
                 'article' => '0986494201',
@@ -18739,7 +18748,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            436 => 
+            
             array (
                 'id' => 972,
                 'article' => '2440903',
@@ -18759,7 +18768,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            437 => 
+            
             array (
                 'id' => 973,
                 'article' => 'PN0477W',
@@ -18779,7 +18788,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            438 => 
+            
             array (
                 'id' => 974,
                 'article' => '24743.190.2',
@@ -18799,7 +18808,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            439 => 
+            
             array (
                 'id' => 975,
                 'article' => 'P85145',
@@ -18819,7 +18828,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            440 => 
+            
             array (
                 'id' => 976,
                 'article' => 'DF6148',
@@ -18839,7 +18848,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            441 => 
+            
             array (
                 'id' => 977,
                 'article' => '92229305',
@@ -18859,7 +18868,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            442 => 
+            
             array (
                 'id' => 978,
                 'article' => 'RN1736',
@@ -18879,7 +18888,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            443 => 
+            
             array (
                 'id' => 979,
                 'article' => '0986479753',
@@ -18899,7 +18908,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            444 => 
+            
             array (
                 'id' => 980,
                 'article' => '09.B972.11',
@@ -18919,7 +18928,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            445 => 
+            
             array (
                 'id' => 981,
                 'article' => '100.3355.20',
@@ -18939,7 +18948,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            446 => 
+            
             array (
                 'id' => 982,
                 'article' => '24.0130-0221.1',
@@ -18959,7 +18968,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            447 => 
+            
             array (
                 'id' => 983,
                 'article' => 'ZV750AK',
@@ -18979,7 +18988,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            448 => 
+            
             array (
                 'id' => 984,
                 'article' => 'ZV95GA',
@@ -18999,7 +19008,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            449 => 
+            
             array (
                 'id' => 985,
                 'article' => '1T0598611B',
@@ -19019,7 +19028,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            450 => 
+            
             array (
                 'id' => 986,
                 'article' => 'GH21930M',
@@ -19039,7 +19048,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            451 => 
+            
             array (
                 'id' => 987,
                 'article' => '9232018K',
@@ -19059,7 +19068,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            452 => 
+            
             array (
                 'id' => 988,
                 'article' => '1778516',
@@ -19079,7 +19088,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            453 => 
+            
             array (
                 'id' => 989,
                 'article' => '1712228',
@@ -19099,7 +19108,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            454 => 
+            
             array (
                 'id' => 990,
                 'article' => '1848',
@@ -19119,7 +19128,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            455 => 
+            
             array (
                 'id' => 991,
                 'article' => '343845',
@@ -19139,7 +19148,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            456 => 
+            
             array (
                 'id' => 992,
                 'article' => '304999001',
@@ -19159,7 +19168,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            457 => 
+            
             array (
                 'id' => 993,
                 'article' => '990550',
@@ -19179,7 +19188,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            458 => 
+            
             array (
                 'id' => 994,
                 'article' => '614503',
@@ -19199,7 +19208,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            459 => 
+            
             array (
                 'id' => 995,
                 'article' => 'MSS017156',
@@ -19219,7 +19228,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            460 => 
+            
             array (
                 'id' => 996,
                 'article' => '30820',
@@ -19239,7 +19248,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            461 => 
+            
             array (
                 'id' => 997,
                 'article' => '6025301845',
@@ -19259,7 +19268,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            462 => 
+            
             array (
                 'id' => 998,
                 'article' => 'GL.LK.1.3',
@@ -19279,7 +19288,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            463 => 
+            
             array (
                 'id' => 999,
                 'article' => 'D8003E',
@@ -19299,7 +19308,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            464 => 
+            
             array (
                 'id' => 1000,
                 'article' => '6208G',
@@ -19319,7 +19328,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            465 => 
+            
             array (
                 'id' => 1001,
                 'article' => 'B18734',
@@ -19339,7 +19348,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            466 => 
+            
             array (
                 'id' => 1002,
                 'article' => 'PA1035',
@@ -19359,7 +19368,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            467 => 
+            
             array (
                 'id' => 1005,
                 'article' => '4028',
@@ -19379,7 +19388,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            468 => 
+            
             array (
                 'id' => 1006,
                 'article' => '07330',
@@ -19399,7 +19408,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            469 => 
+            
             array (
                 'id' => 1007,
                 'article' => '826577',
@@ -19419,7 +19428,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            470 => 
+            
             array (
                 'id' => 1008,
                 'article' => '985250931R',
@@ -19439,7 +19448,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            471 => 
+            
             array (
                 'id' => 1009,
                 'article' => '985705074R',
@@ -19459,7 +19468,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            472 => 
+            
             array (
                 'id' => 1010,
                 'article' => '510335',
@@ -19479,7 +19488,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            473 => 
+            
             array (
                 'id' => 1011,
                 'article' => '553035310',
@@ -19499,7 +19508,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            474 => 
+            
             array (
                 'id' => 1012,
                 'article' => '552018310',
@@ -19519,7 +19528,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            475 => 
+            
             array (
                 'id' => 1013,
                 'article' => '552017910',
@@ -19539,7 +19548,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            476 => 
+            
             array (
                 'id' => 1014,
                 'article' => '552018010',
@@ -19559,7 +19568,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            477 => 
+            
             array (
                 'id' => 1015,
                 'article' => '551025110',
@@ -19579,7 +19588,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            478 => 
+            
             array (
                 'id' => 1016,
                 'article' => '559019610',
@@ -19599,7 +19608,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            479 => 
+            
             array (
                 'id' => 1017,
                 'article' => '553038710',
@@ -19619,7 +19628,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            480 => 
+            
             array (
                 'id' => 1018,
                 'article' => '552026610',
@@ -19639,7 +19648,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            481 => 
+            
             array (
                 'id' => 1019,
                 'article' => '555056810',
@@ -19659,7 +19668,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            482 => 
+            
             array (
                 'id' => 1020,
                 'article' => '552026510',
@@ -19679,7 +19688,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            483 => 
+            
             array (
                 'id' => 1021,
                 'article' => '551026710',
@@ -19699,7 +19708,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            484 => 
+            
             array (
                 'id' => 1022,
                 'article' => '559019633',
@@ -19719,7 +19728,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            485 => 
+            
             array (
                 'id' => 1023,
                 'article' => '268.000',
@@ -19739,7 +19748,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            486 => 
+            
             array (
                 'id' => 1024,
                 'article' => '302.690',
@@ -19759,7 +19768,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            487 => 
+            
             array (
                 'id' => 1025,
                 'article' => 'B10218',
@@ -19779,7 +19788,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            488 => 
+            
             array (
                 'id' => 1026,
                 'article' => '554018210',
@@ -19799,7 +19808,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            489 => 
+            
             array (
                 'id' => 1027,
                 'article' => '553038810',
@@ -19819,7 +19828,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            490 => 
+            
             array (
                 'id' => 1028,
                 'article' => '551026810',
@@ -19839,7 +19848,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            491 => 
+            
             array (
                 'id' => 1029,
                 'article' => '400454',
@@ -19859,7 +19868,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            492 => 
+            
             array (
                 'id' => 1030,
                 'article' => '8200404274',
@@ -19879,7 +19888,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            493 => 
+            
             array (
                 'id' => 1031,
                 'article' => '224412B800',
@@ -19899,7 +19908,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            494 => 
+            
             array (
                 'id' => 1032,
                 'article' => '66240',
@@ -19919,7 +19928,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            495 => 
+            
             array (
                 'id' => 1033,
                 'article' => '622228100',
@@ -19939,7 +19948,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            496 => 
+            
             array (
                 'id' => 1034,
                 'article' => '19-3682',
@@ -19959,7 +19968,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            497 => 
+            
             array (
                 'id' => 1035,
                 'article' => '7D0393',
@@ -19979,7 +19988,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            498 => 
+            
             array (
                 'id' => 1036,
                 'article' => 'VKMA06109',
@@ -19999,7 +20008,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            499 => 
+            
             array (
                 'id' => 1037,
                 'article' => 'LRc FDFs03392',
@@ -20021,7 +20030,7 @@ class ProductsTableSeeder extends Seeder
             ),
         ));
         \DB::table('products')->insert(array (
-            0 => 
+            
             array (
                 'id' => 1038,
                 'article' => '356300',
@@ -20041,7 +20050,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            1 => 
+            
             array (
                 'id' => 1039,
                 'article' => '55327',
@@ -20061,7 +20070,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            2 => 
+            
             array (
                 'id' => 1040,
                 'article' => '232017',
@@ -20081,7 +20090,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            3 => 
+            
             array (
                 'id' => 1041,
                 'article' => '33011027',
@@ -20101,7 +20110,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            4 => 
+            
             array (
                 'id' => 1042,
                 'article' => 'M000T46371ZT',
@@ -20121,7 +20130,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            5 => 
+            
             array (
                 'id' => 1043,
                 'article' => '6202DDUC3E',
@@ -20141,7 +20150,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            6 => 
+            
             array (
                 'id' => 1044,
                 'article' => 'PX602',
@@ -20161,7 +20170,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            7 => 
+            
             array (
                 'id' => 1045,
                 'article' => 'ZEF1628',
@@ -20181,7 +20190,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            8 => 
+            
             array (
                 'id' => 1046,
                 'article' => 'TV16TT',
@@ -20201,7 +20210,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            9 => 
+            
             array (
                 'id' => 1047,
                 'article' => 'RA06-931',
@@ -20221,7 +20230,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            10 => 
+            
             array (
                 'id' => 1048,
                 'article' => '4005536',
@@ -20241,7 +20250,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            11 => 
+            
             array (
                 'id' => 1049,
                 'article' => '400213',
@@ -20261,7 +20270,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            12 => 
+            
             array (
                 'id' => 1050,
                 'article' => 'CBKH-22',
@@ -20281,7 +20290,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            13 => 
+            
             array (
                 'id' => 1051,
                 'article' => 'CE0331L',
@@ -20301,7 +20310,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            14 => 
+            
             array (
                 'id' => 1052,
                 'article' => 'CE0331R',
@@ -20321,7 +20330,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            15 => 
+            
             array (
                 'id' => 1053,
                 'article' => 'HX132D',
@@ -20341,7 +20350,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            16 => 
+            
             array (
                 'id' => 1054,
                 'article' => '105786',
@@ -20361,7 +20370,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            17 => 
+            
             array (
                 'id' => 1055,
                 'article' => 'N0438092',
@@ -20381,7 +20390,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            18 => 
+            
             array (
                 'id' => 1056,
                 'article' => 'N90215404',
@@ -20401,7 +20410,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            19 => 
+            
             array (
                 'id' => 1057,
                 'article' => '982.340',
@@ -20421,7 +20430,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            20 => 
+            
             array (
                 'id' => 1058,
                 'article' => 'VPM03780',
@@ -20441,7 +20450,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            21 => 
+            
             array (
                 'id' => 1059,
                 'article' => 'C1424B',
@@ -20461,7 +20470,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            22 => 
+            
             array (
                 'id' => 1060,
                 'article' => '990464',
@@ -20481,7 +20490,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            23 => 
+            
             array (
                 'id' => 1061,
                 'article' => '6PK1045',
@@ -20501,7 +20510,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            24 => 
+            
             array (
                 'id' => 1062,
                 'article' => '30602',
@@ -20521,7 +20530,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            25 => 
+            
             array (
                 'id' => 1063,
                 'article' => 'ZN1801',
@@ -20541,7 +20550,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            26 => 
+            
             array (
                 'id' => 1064,
                 'article' => 'KB655.11',
@@ -20561,7 +20570,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            27 => 
+            
             array (
                 'id' => 1065,
                 'article' => 'D4345',
@@ -20581,7 +20590,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            28 => 
+            
             array (
                 'id' => 1066,
                 'article' => '0242240593',
@@ -20601,7 +20610,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            29 => 
+            
             array (
                 'id' => 1067,
                 'article' => '1K0906093J',
@@ -20621,7 +20630,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            30 => 
+            
             array (
                 'id' => 1068,
                 'article' => '94362',
@@ -20641,7 +20650,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            31 => 
+            
             array (
                 'id' => 1069,
                 'article' => 'VDC-115MHD',
@@ -20661,7 +20670,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            32 => 
+            
             array (
                 'id' => 1070,
                 'article' => '3C0972741',
@@ -20681,7 +20690,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            33 => 
+            
             array (
                 'id' => 1071,
                 'article' => 'AX6596S',
@@ -20701,7 +20710,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            34 => 
+            
             array (
                 'id' => 1072,
                 'article' => '35BD219T1XDDUK01',
@@ -20721,7 +20730,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            35 => 
+            
             array (
                 'id' => 1073,
                 'article' => 'JTC-3703',
@@ -20741,7 +20750,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            36 => 
+            
             array (
                 'id' => 1074,
                 'article' => 'OP617',
@@ -20761,7 +20770,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            37 => 
+            
             array (
                 'id' => 1075,
                 'article' => 'AP1228',
@@ -20781,7 +20790,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            38 => 
+            
             array (
                 'id' => 1076,
                 'article' => 'K1329',
@@ -20801,7 +20810,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            39 => 
+            
             array (
                 'id' => 1077,
                 'article' => 'EFF00212T',
@@ -20821,7 +20830,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            40 => 
+            
             array (
                 'id' => 1078,
                 'article' => 'XUH22TT',
@@ -20841,7 +20850,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            41 => 
+            
             array (
                 'id' => 1079,
                 'article' => '04300-00110',
@@ -20861,7 +20870,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            42 => 
+            
             array (
                 'id' => 1080,
                 'article' => '46321-23001',
@@ -20881,7 +20890,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            43 => 
+            
             array (
                 'id' => 1081,
                 'article' => '04500-00100',
@@ -20901,7 +20910,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            44 => 
+            
             array (
                 'id' => 1082,
                 'article' => '21513-21000',
@@ -20921,7 +20930,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            45 => 
+            
             array (
                 'id' => 1083,
                 'article' => 'CB0033',
@@ -20941,7 +20950,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            46 => 
+            
             array (
                 'id' => 1084,
                 'article' => 'ACL-12-07',
@@ -20961,7 +20970,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            47 => 
+            
             array (
                 'id' => 1085,
                 'article' => '12992403',
@@ -20981,7 +20990,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            48 => 
+            
             array (
                 'id' => 1086,
                 'article' => '55568390',
@@ -21001,7 +21010,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            49 => 
+            
             array (
                 'id' => 1087,
                 'article' => '55563374',
@@ -21021,7 +21030,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            50 => 
+            
             array (
                 'id' => 1088,
                 'article' => '55568386',
@@ -21041,7 +21050,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            51 => 
+            
             array (
                 'id' => 1089,
                 'article' => 'K1167',
@@ -21061,7 +21070,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            52 => 
+            
             array (
                 'id' => 1090,
                 'article' => '20368',
@@ -21081,7 +21090,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            53 => 
+            
             array (
                 'id' => 1091,
                 'article' => '20367',
@@ -21101,7 +21110,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            54 => 
+            
             array (
                 'id' => 1092,
                 'article' => 'PA724A',
@@ -21121,7 +21130,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            55 => 
+            
             array (
                 'id' => 1093,
                 'article' => 'MCC015294',
@@ -21141,7 +21150,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            56 => 
+            
             array (
                 'id' => 1094,
                 'article' => 'CE0840R',
@@ -21161,7 +21170,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            57 => 
+            
             array (
                 'id' => 1095,
                 'article' => 'CE0839L',
@@ -21181,7 +21190,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            58 => 
+            
             array (
                 'id' => 1096,
                 'article' => '7701065703',
@@ -21201,7 +21210,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            59 => 
+            
             array (
                 'id' => 1097,
                 'article' => '551-1167R-LDEMC',
@@ -21221,7 +21230,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            60 => 
+            
             array (
                 'id' => 1098,
                 'article' => '7252AGNBLV',
@@ -21241,7 +21250,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            61 => 
+            
             array (
                 'id' => 1099,
                 'article' => '7782432194',
@@ -21261,7 +21270,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            62 => 
+            
             array (
                 'id' => 1100,
                 'article' => '620340101R',
@@ -21281,7 +21290,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            63 => 
+            
             array (
                 'id' => 1101,
                 'article' => '12015425B',
@@ -21301,7 +21310,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            64 => 
+            
             array (
                 'id' => 1102,
                 'article' => '20015738B',
@@ -21321,7 +21330,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            65 => 
+            
             array (
                 'id' => 1103,
                 'article' => '285470',
@@ -21341,7 +21350,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            66 => 
+            
             array (
                 'id' => 1104,
                 'article' => '6545.10',
@@ -21361,7 +21370,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            67 => 
+            
             array (
                 'id' => 1105,
                 'article' => '0986478853',
@@ -21381,7 +21390,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            68 => 
+            
             array (
                 'id' => 1106,
                 'article' => '92082205',
@@ -21401,7 +21410,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            69 => 
+            
             array (
                 'id' => 1107,
                 'article' => 'CR0148',
@@ -21421,7 +21430,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            70 => 
+            
             array (
                 'id' => 1108,
                 'article' => '23862',
@@ -21441,7 +21450,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            71 => 
+            
             array (
                 'id' => 1109,
                 'article' => '450384P',
@@ -21461,7 +21470,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            72 => 
+            
             array (
                 'id' => 1110,
                 'article' => '8200236726',
@@ -21481,7 +21490,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            73 => 
+            
             array (
                 'id' => 1111,
                 'article' => '8200236731',
@@ -21501,7 +21510,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            74 => 
+            
             array (
                 'id' => 1112,
                 'article' => '24-172936',
@@ -21521,7 +21530,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            75 => 
+            
             array (
                 'id' => 1113,
                 'article' => '8200052311',
@@ -21531,17 +21540,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'RENAULT8200052311',
                 'product_category_id' => 1,
                 'product_group_id' => 10329,
-                'name' => 'Прокладка впускного коллектора',
-                'full_name' => 'Прокладка впускного коллектора, RENAULT, 8200052311',
+                'name' => 'Прокладка впускного коллектора [RENAULT, K4M, вентиляция картера]',
+                'full_name' => 'Прокладка впускного коллектора [RENAULT, K4M, вентиляция картера], RENAULT, 8200052311',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-05-30 16:45:02',
-                'updated_at' => '2024-05-30 16:45:02',
+                'updated_at' => '2024-07-12 08:41:25',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            76 => 
+            
             array (
                 'id' => 1114,
                 'article' => '079919525M',
@@ -21561,7 +21570,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            77 => 
+            
             array (
                 'id' => 1115,
                 'article' => '06A919501A',
@@ -21581,7 +21590,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            78 => 
+            
             array (
                 'id' => 1116,
                 'article' => '36-241118',
@@ -21601,7 +21610,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            79 => 
+            
             array (
                 'id' => 1117,
                 'article' => '01341',
@@ -21621,7 +21630,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            80 => 
+            
             array (
                 'id' => 1118,
                 'article' => 'GL.RK.1.4',
@@ -21641,7 +21650,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            81 => 
+            
             array (
                 'id' => 1119,
                 'article' => '1000-010-188',
@@ -21661,7 +21670,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            82 => 
+            
             array (
                 'id' => 1120,
                 'article' => 'KT130005',
@@ -21681,7 +21690,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            83 => 
+            
             array (
                 'id' => 1121,
                 'article' => 'KT130005E',
@@ -21701,7 +21710,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            84 => 
+            
             array (
                 'id' => 1122,
                 'article' => 'SM-3001',
@@ -21721,7 +21730,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            85 => 
+            
             array (
                 'id' => 1123,
                 'article' => 'D5056MH',
@@ -21741,7 +21750,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            86 => 
+            
             array (
                 'id' => 1124,
                 'article' => 'D5060MH',
@@ -21761,7 +21770,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            87 => 
+            
             array (
                 'id' => 1125,
                 'article' => 'SP2094',
@@ -21781,7 +21790,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            88 => 
+            
             array (
                 'id' => 1126,
                 'article' => 'SD3004',
@@ -21801,7 +21810,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            89 => 
+            
             array (
                 'id' => 1127,
                 'article' => 'SD3003',
@@ -21821,7 +21830,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            90 => 
+            
             array (
                 'id' => 1128,
                 'article' => 'AX6562S',
@@ -21841,7 +21850,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            91 => 
+            
             array (
                 'id' => 1129,
                 'article' => '551927-8',
@@ -21861,7 +21870,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            92 => 
+            
             array (
                 'id' => 1130,
                 'article' => '5519277',
@@ -21881,7 +21890,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            93 => 
+            
             array (
                 'id' => 1131,
                 'article' => '360101216R',
@@ -21901,7 +21910,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            94 => 
+            
             array (
                 'id' => 1132,
                 'article' => '551-1144L-LD-EM',
@@ -21921,7 +21930,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            95 => 
+            
             array (
                 'id' => 1133,
                 'article' => '20-0367-05-2',
@@ -21941,7 +21950,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            96 => 
+            
             array (
                 'id' => 1134,
                 'article' => '20-0368-05-2',
@@ -21961,7 +21970,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            97 => 
+            
             array (
                 'id' => 1135,
                 'article' => '6027072J',
@@ -21981,7 +21990,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            98 => 
+            
             array (
                 'id' => 1136,
                 'article' => '255522448R',
@@ -22001,7 +22010,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            99 => 
+            
             array (
                 'id' => 1137,
                 'article' => '465056',
@@ -22021,7 +22030,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            100 => 
+            
             array (
                 'id' => 1138,
                 'article' => '400357',
@@ -22041,7 +22050,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            101 => 
+            
             array (
                 'id' => 1139,
                 'article' => '401103',
@@ -22061,7 +22070,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            102 => 
+            
             array (
                 'id' => 1140,
                 'article' => 'BDA959',
@@ -22081,7 +22090,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            103 => 
+            
             array (
                 'id' => 1141,
                 'article' => '30273',
@@ -22101,7 +22110,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            104 => 
+            
             array (
                 'id' => 1142,
                 'article' => '853810K010',
@@ -22121,7 +22130,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            105 => 
+            
             array (
                 'id' => 1143,
                 'article' => '7700715851',
@@ -22141,7 +22150,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            106 => 
+            
             array (
                 'id' => 1144,
                 'article' => 'EZC-RE-027',
@@ -22161,7 +22170,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            107 => 
+            
             array (
                 'id' => 1145,
                 'article' => '330028',
@@ -22181,7 +22190,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            108 => 
+            
             array (
                 'id' => 1146,
                 'article' => 'AX6522S',
@@ -22201,7 +22210,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            109 => 
+            
             array (
                 'id' => 1147,
                 'article' => '1713777',
@@ -22221,7 +22230,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            110 => 
+            
             array (
                 'id' => 1148,
                 'article' => 'KM8001',
@@ -22241,7 +22250,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            111 => 
+            
             array (
                 'id' => 1149,
                 'article' => '3397014244',
@@ -22261,7 +22270,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            112 => 
+            
             array (
                 'id' => 1150,
                 'article' => 'BC33012',
@@ -22281,7 +22290,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            113 => 
+            
             array (
                 'id' => 1151,
                 'article' => '12018754B',
@@ -22301,7 +22310,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            114 => 
+            
             array (
                 'id' => 1152,
                 'article' => '81-38507-00',
@@ -22321,7 +22330,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            115 => 
+            
             array (
                 'id' => 1153,
                 'article' => '20035460B',
@@ -22341,7 +22350,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            116 => 
+            
             array (
                 'id' => 1154,
                 'article' => 'CL0414',
@@ -22361,7 +22370,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            117 => 
+            
             array (
                 'id' => 1155,
                 'article' => 'CLMZ-19',
@@ -22381,7 +22390,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            118 => 
+            
             array (
                 'id' => 1156,
                 'article' => 'IF-3414K',
@@ -22401,7 +22410,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            119 => 
+            
             array (
                 'id' => 1157,
                 'article' => '04729',
@@ -22421,7 +22430,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            120 => 
+            
             array (
                 'id' => 1158,
                 'article' => 'ZN0836',
@@ -22441,7 +22450,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            121 => 
+            
             array (
                 'id' => 1159,
                 'article' => '96209433',
@@ -22461,7 +22470,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            122 => 
+            
             array (
                 'id' => 1160,
                 'article' => 'GTA0790',
@@ -22481,7 +22490,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            123 => 
+            
             array (
                 'id' => 1161,
                 'article' => '13X850',
@@ -22501,7 +22510,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            124 => 
+            
             array (
                 'id' => 1162,
                 'article' => '6301DDUCM',
@@ -22521,7 +22530,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            125 => 
+            
             array (
                 'id' => 1163,
                 'article' => 'BHS1566E',
@@ -22541,7 +22550,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            126 => 
+            
             array (
                 'id' => 1164,
                 'article' => 'PB5083',
@@ -22561,7 +22570,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            127 => 
+            
             array (
                 'id' => 1165,
                 'article' => 'AX319',
@@ -22581,7 +22590,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            128 => 
+            
             array (
                 'id' => 1166,
                 'article' => '570003',
@@ -22601,7 +22610,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            129 => 
+            
             array (
                 'id' => 1167,
                 'article' => 'G9M024BTA',
@@ -22621,7 +22630,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            130 => 
+            
             array (
                 'id' => 1168,
                 'article' => 'G9M025BTA',
@@ -22641,7 +22650,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            131 => 
+            
             array (
                 'id' => 1169,
                 'article' => '940864',
@@ -22661,7 +22670,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            132 => 
+            
             array (
                 'id' => 1170,
                 'article' => 'CB0047',
@@ -22681,7 +22690,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            133 => 
+            
             array (
                 'id' => 1171,
                 'article' => 'VKD35033',
@@ -22701,7 +22710,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            134 => 
+            
             array (
                 'id' => 1172,
                 'article' => '3457901',
@@ -22721,7 +22730,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            135 => 
+            
             array (
                 'id' => 1173,
                 'article' => '0258986615',
@@ -22741,7 +22750,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            136 => 
+            
             array (
                 'id' => 1174,
                 'article' => '0258006046',
@@ -22761,7 +22770,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            137 => 
+            
             array (
                 'id' => 1175,
                 'article' => '535007210',
@@ -22781,7 +22790,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            138 => 
+            
             array (
                 'id' => 1176,
                 'article' => 'OE662',
@@ -22801,7 +22810,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            139 => 
+            
             array (
                 'id' => 1177,
                 'article' => 'AP165/1',
@@ -22821,7 +22830,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            140 => 
+            
             array (
                 'id' => 1178,
                 'article' => 'PP966/2',
@@ -22841,7 +22850,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            141 => 
+            
             array (
                 'id' => 1179,
                 'article' => 'PP866/2',
@@ -22861,7 +22870,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            142 => 
+            
             array (
                 'id' => 1180,
                 'article' => 'K1126',
@@ -22881,7 +22890,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            143 => 
+            
             array (
                 'id' => 1181,
                 'article' => '108946',
@@ -22901,7 +22910,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            144 => 
+            
             array (
                 'id' => 1182,
                 'article' => '108944',
@@ -22921,7 +22930,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            145 => 
+            
             array (
                 'id' => 1183,
                 'article' => 'LCAC0978',
@@ -22941,7 +22950,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            146 => 
+            
             array (
                 'id' => 1184,
                 'article' => 'MSS015402',
@@ -22961,7 +22970,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            147 => 
+            
             array (
                 'id' => 1185,
                 'article' => 'TJB1152',
@@ -22981,7 +22990,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            148 => 
+            
             array (
                 'id' => 1186,
                 'article' => 'OP641',
@@ -23001,7 +23010,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            149 => 
+            
             array (
                 'id' => 1187,
                 'article' => '104616',
@@ -23021,7 +23030,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            150 => 
+            
             array (
                 'id' => 1188,
                 'article' => 'BL31055',
@@ -23041,7 +23050,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            151 => 
+            
             array (
                 'id' => 1189,
                 'article' => '05P1275',
@@ -23061,7 +23070,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            152 => 
+            
             array (
                 'id' => 1190,
                 'article' => '0986495098',
@@ -23081,7 +23090,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            153 => 
+            
             array (
                 'id' => 1191,
                 'article' => 'V5007',
@@ -23101,7 +23110,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            154 => 
+            
             array (
                 'id' => 1192,
                 'article' => 'GEW-BE001',
@@ -23121,7 +23130,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            155 => 
+            
             array (
                 'id' => 1193,
                 'article' => 'LRC0505',
@@ -23141,7 +23150,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            156 => 
+            
             array (
                 'id' => 1194,
                 'article' => '5PK1390',
@@ -23161,7 +23170,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            157 => 
+            
             array (
                 'id' => 1195,
                 'article' => '6PK2010',
@@ -23181,7 +23190,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            158 => 
+            
             array (
                 'id' => 1196,
                 'article' => '1987947800',
@@ -23201,7 +23210,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            159 => 
+            
             array (
                 'id' => 1197,
                 'article' => '1987946010',
@@ -23221,7 +23230,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            160 => 
+            
             array (
                 'id' => 1198,
                 'article' => '1987947888',
@@ -23241,7 +23250,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            161 => 
+            
             array (
                 'id' => 1199,
                 'article' => '1987947890',
@@ -23261,7 +23270,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            162 => 
+            
             array (
                 'id' => 1200,
                 'article' => '1987947895',
@@ -23281,7 +23290,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            163 => 
+            
             array (
                 'id' => 1201,
                 'article' => '1987947926',
@@ -23301,7 +23310,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            164 => 
+            
             array (
                 'id' => 1202,
                 'article' => '1987948410',
@@ -23321,7 +23330,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            165 => 
+            
             array (
                 'id' => 1203,
                 'article' => '1987946045',
@@ -23341,7 +23350,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            166 => 
+            
             array (
                 'id' => 1204,
                 'article' => '1987947941',
@@ -23361,7 +23370,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            167 => 
+            
             array (
                 'id' => 1205,
                 'article' => '1987947842',
@@ -23381,7 +23390,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            168 => 
+            
             array (
                 'id' => 1206,
                 'article' => '1987947818',
@@ -23401,7 +23410,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            169 => 
+            
             array (
                 'id' => 1207,
                 'article' => '1987947885',
@@ -23421,7 +23430,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            170 => 
+            
             array (
                 'id' => 1208,
                 'article' => '1987947916',
@@ -23441,7 +23450,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            171 => 
+            
             array (
                 'id' => 1209,
                 'article' => '1987947958',
@@ -23461,7 +23470,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            172 => 
+            
             array (
                 'id' => 1210,
                 'article' => '1987948304',
@@ -23481,7 +23490,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            173 => 
+            
             array (
                 'id' => 1211,
                 'article' => '1987AE0743',
@@ -23501,7 +23510,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            174 => 
+            
             array (
                 'id' => 1212,
                 'article' => '1987946255',
@@ -23521,7 +23530,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            175 => 
+            
             array (
                 'id' => 1213,
                 'article' => '1987945171',
@@ -23541,7 +23550,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            176 => 
+            
             array (
                 'id' => 1214,
                 'article' => '1987946062',
@@ -23561,7 +23570,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            177 => 
+            
             array (
                 'id' => 1215,
                 'article' => '1987947572',
@@ -23581,7 +23590,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            178 => 
+            
             array (
                 'id' => 1216,
                 'article' => '1987947931',
@@ -23601,7 +23610,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            179 => 
+            
             array (
                 'id' => 1217,
                 'article' => '1987948321',
@@ -23621,7 +23630,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            180 => 
+            
             array (
                 'id' => 1218,
                 'article' => '1987948350',
@@ -23641,7 +23650,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            181 => 
+            
             array (
                 'id' => 1219,
                 'article' => '1987948403',
@@ -23661,7 +23670,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            182 => 
+            
             array (
                 'id' => 1220,
                 'article' => '1987947896',
@@ -23681,7 +23690,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            183 => 
+            
             array (
                 'id' => 1221,
                 'article' => '1987947897',
@@ -23701,7 +23710,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            184 => 
+            
             array (
                 'id' => 1222,
                 'article' => '1987947898',
@@ -23721,7 +23730,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            185 => 
+            
             array (
                 'id' => 1223,
                 'article' => '1987947901',
@@ -23741,7 +23750,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            186 => 
+            
             array (
                 'id' => 1224,
                 'article' => '1987947921',
@@ -23761,7 +23770,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            187 => 
+            
             array (
                 'id' => 1225,
                 'article' => '1987947850',
@@ -23781,7 +23790,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            188 => 
+            
             array (
                 'id' => 1226,
                 'article' => '1987946070',
@@ -23801,7 +23810,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            189 => 
+            
             array (
                 'id' => 1227,
                 'article' => '1987947911',
@@ -23821,7 +23830,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            190 => 
+            
             array (
                 'id' => 1228,
                 'article' => '1987947829',
@@ -23841,7 +23850,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            191 => 
+            
             array (
                 'id' => 1229,
                 'article' => '1987948398',
@@ -23861,7 +23870,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            192 => 
+            
             array (
                 'id' => 1230,
                 'article' => '1987947918',
@@ -23881,7 +23890,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            193 => 
+            
             array (
                 'id' => 1231,
                 'article' => '1987947812',
@@ -23901,7 +23910,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            194 => 
+            
             array (
                 'id' => 1232,
                 'article' => '1987947813',
@@ -23921,7 +23930,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            195 => 
+            
             array (
                 'id' => 1233,
                 'article' => '1987946000',
@@ -23941,7 +23950,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            196 => 
+            
             array (
                 'id' => 1234,
                 'article' => '1987947940',
@@ -23961,7 +23970,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            197 => 
+            
             array (
                 'id' => 1235,
                 'article' => '1987947972',
@@ -23981,7 +23990,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            198 => 
+            
             array (
                 'id' => 1236,
                 'article' => '1987947944',
@@ -24001,7 +24010,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            199 => 
+            
             array (
                 'id' => 1237,
                 'article' => '1987946052',
@@ -24021,7 +24030,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            200 => 
+            
             array (
                 'id' => 1238,
                 'article' => '1987948453',
@@ -24041,7 +24050,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            201 => 
+            
             array (
                 'id' => 1239,
                 'article' => '1987947952',
@@ -24061,7 +24070,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            202 => 
+            
             array (
                 'id' => 1240,
                 'article' => '1987947981',
@@ -24081,7 +24090,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            203 => 
+            
             array (
                 'id' => 1241,
                 'article' => '1987946077',
@@ -24101,7 +24110,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            204 => 
+            
             array (
                 'id' => 1242,
                 'article' => '1987946064',
@@ -24121,7 +24130,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            205 => 
+            
             array (
                 'id' => 1243,
                 'article' => '1987947819',
@@ -24141,7 +24150,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            206 => 
+            
             array (
                 'id' => 1244,
                 'article' => '1987947994',
@@ -24161,7 +24170,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            207 => 
+            
             array (
                 'id' => 1245,
                 'article' => '1987947824',
@@ -24181,7 +24190,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            208 => 
+            
             array (
                 'id' => 1246,
                 'article' => '1987947960',
@@ -24201,7 +24210,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            209 => 
+            
             array (
                 'id' => 1247,
                 'article' => '1987946034',
@@ -24221,7 +24230,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            210 => 
+            
             array (
                 'id' => 1248,
                 'article' => '1987947932',
@@ -24241,7 +24250,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            211 => 
+            
             array (
                 'id' => 1249,
                 'article' => '1987947936',
@@ -24261,7 +24270,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            212 => 
+            
             array (
                 'id' => 1250,
                 'article' => '1987947938',
@@ -24281,7 +24290,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            213 => 
+            
             array (
                 'id' => 1251,
                 'article' => '1987946024',
@@ -24301,7 +24310,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            214 => 
+            
             array (
                 'id' => 1252,
                 'article' => '1987946200',
@@ -24321,7 +24330,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            215 => 
+            
             array (
                 'id' => 1253,
                 'article' => '1987947934',
@@ -24341,7 +24350,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            216 => 
+            
             array (
                 'id' => 1254,
                 'article' => '1987947955',
@@ -24361,7 +24370,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            217 => 
+            
             array (
                 'id' => 1255,
                 'article' => '1987946039',
@@ -24381,7 +24390,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            218 => 
+            
             array (
                 'id' => 1256,
                 'article' => '3PK750',
@@ -24401,7 +24410,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            219 => 
+            
             array (
                 'id' => 1257,
                 'article' => '4PK725',
@@ -24421,7 +24430,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            220 => 
+            
             array (
                 'id' => 1258,
                 'article' => '4PK915',
@@ -24441,7 +24450,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            221 => 
+            
             array (
                 'id' => 1259,
                 'article' => '6PK1020EXTRA',
@@ -24461,7 +24470,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            222 => 
+            
             array (
                 'id' => 1260,
                 'article' => '4PK715',
@@ -24481,7 +24490,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            223 => 
+            
             array (
                 'id' => 1261,
                 'article' => '4PK850',
@@ -24501,7 +24510,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            224 => 
+            
             array (
                 'id' => 1262,
                 'article' => '4PK890',
@@ -24521,7 +24530,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            225 => 
+            
             array (
                 'id' => 1263,
                 'article' => '4PK916ELAST',
@@ -24541,7 +24550,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            226 => 
+            
             array (
                 'id' => 1264,
                 'article' => '5PK1110',
@@ -24561,7 +24570,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            227 => 
+            
             array (
                 'id' => 1265,
                 'article' => '5PK1135',
@@ -24581,7 +24590,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            228 => 
+            
             array (
                 'id' => 1266,
                 'article' => '5PK1200',
@@ -24601,7 +24610,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            229 => 
+            
             array (
                 'id' => 1267,
                 'article' => '5PK1750',
@@ -24621,7 +24630,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            230 => 
+            
             array (
                 'id' => 1268,
                 'article' => '5PK491',
@@ -24641,7 +24650,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            231 => 
+            
             array (
                 'id' => 1269,
                 'article' => '5PK934',
@@ -24661,7 +24670,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            232 => 
+            
             array (
                 'id' => 1270,
                 'article' => '6PK1054',
@@ -24681,7 +24690,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            233 => 
+            
             array (
                 'id' => 1271,
                 'article' => '6PK1070',
@@ -24701,7 +24710,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            234 => 
+            
             array (
                 'id' => 1272,
                 'article' => '6PK1080',
@@ -24721,7 +24730,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            235 => 
+            
             array (
                 'id' => 1273,
                 'article' => '6PK1115',
@@ -24741,7 +24750,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            236 => 
+            
             array (
                 'id' => 1274,
                 'article' => '6PK1190',
@@ -24761,7 +24770,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            237 => 
+            
             array (
                 'id' => 1275,
                 'article' => '6PK1195',
@@ -24781,7 +24790,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            238 => 
+            
             array (
                 'id' => 1276,
                 'article' => '6PK1200',
@@ -24801,7 +24810,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            239 => 
+            
             array (
                 'id' => 1277,
                 'article' => '6PK1218 ',
@@ -24821,7 +24830,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            240 => 
+            
             array (
                 'id' => 1278,
                 'article' => '6PK1400',
@@ -24841,7 +24850,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            241 => 
+            
             array (
                 'id' => 1279,
                 'article' => '6PK1698',
@@ -24861,7 +24870,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            242 => 
+            
             array (
                 'id' => 1280,
                 'article' => '6PK1733',
@@ -24881,7 +24890,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            243 => 
+            
             array (
                 'id' => 1281,
                 'article' => '6PK1795',
@@ -24901,7 +24910,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            244 => 
+            
             array (
                 'id' => 1282,
                 'article' => '6PK1900',
@@ -24921,7 +24930,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            245 => 
+            
             array (
                 'id' => 1283,
                 'article' => '6PK1980',
@@ -24941,7 +24950,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            246 => 
+            
             array (
                 'id' => 1284,
                 'article' => '6PK2000',
@@ -24961,7 +24970,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            247 => 
+            
             array (
                 'id' => 1285,
                 'article' => '6PK2581',
@@ -24981,7 +24990,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            248 => 
+            
             array (
                 'id' => 1286,
                 'article' => '6PK976',
@@ -25001,7 +25010,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            249 => 
+            
             array (
                 'id' => 1287,
                 'article' => '7DPK2074',
@@ -25021,7 +25030,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            250 => 
+            
             array (
                 'id' => 1288,
                 'article' => '7PK1125',
@@ -25041,7 +25050,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            251 => 
+            
             array (
                 'id' => 1289,
                 'article' => '7PK2035',
@@ -25061,7 +25070,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            252 => 
+            
             array (
                 'id' => 1290,
                 'article' => '7PK2061',
@@ -25081,7 +25090,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            253 => 
+            
             array (
                 'id' => 1291,
                 'article' => '6PK1059ELAST',
@@ -25101,7 +25110,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            254 => 
+            
             array (
                 'id' => 1292,
                 'article' => '6PK2241',
@@ -25121,7 +25130,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            255 => 
+            
             array (
                 'id' => 1293,
                 'article' => '5PK921',
@@ -25141,7 +25150,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            256 => 
+            
             array (
                 'id' => 1294,
                 'article' => '3PK715',
@@ -25161,7 +25170,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            257 => 
+            
             array (
                 'id' => 1295,
                 'article' => '4PK1390HD',
@@ -25181,7 +25190,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            258 => 
+            
             array (
                 'id' => 1296,
                 'article' => '4PK668',
@@ -25201,7 +25210,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            259 => 
+            
             array (
                 'id' => 1297,
                 'article' => '4PK715',
@@ -25221,7 +25230,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            260 => 
+            
             array (
                 'id' => 1298,
                 'article' => '4PK720',
@@ -25241,7 +25250,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            261 => 
+            
             array (
                 'id' => 1299,
                 'article' => '4PK835',
@@ -25261,7 +25270,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            262 => 
+            
             array (
                 'id' => 1300,
                 'article' => '4PK862',
@@ -25281,7 +25290,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            263 => 
+            
             array (
                 'id' => 1301,
                 'article' => '5PK1200',
@@ -25301,7 +25310,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            264 => 
+            
             array (
                 'id' => 1302,
                 'article' => '5PK1220',
@@ -25321,7 +25330,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            265 => 
+            
             array (
                 'id' => 1303,
                 'article' => '5PK1790',
@@ -25341,7 +25350,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            266 => 
+            
             array (
                 'id' => 1304,
                 'article' => '5PK835',
@@ -25361,7 +25370,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            267 => 
+            
             array (
                 'id' => 1305,
                 'article' => '5PK875',
@@ -25381,7 +25390,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            268 => 
+            
             array (
                 'id' => 1306,
                 'article' => '6PK1000',
@@ -25401,7 +25410,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            269 => 
+            
             array (
                 'id' => 1307,
                 'article' => '6PK1069',
@@ -25421,7 +25430,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            270 => 
+            
             array (
                 'id' => 1308,
                 'article' => '6PK1130',
@@ -25441,7 +25450,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            271 => 
+            
             array (
                 'id' => 1309,
                 'article' => '6PK1185',
@@ -25461,7 +25470,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            272 => 
+            
             array (
                 'id' => 1310,
                 'article' => '6PK1195',
@@ -25481,7 +25490,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            273 => 
+            
             array (
                 'id' => 1311,
                 'article' => '6PK1205',
@@ -25501,7 +25510,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            274 => 
+            
             array (
                 'id' => 1312,
                 'article' => '6PK1220',
@@ -25521,7 +25530,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            275 => 
+            
             array (
                 'id' => 1313,
                 'article' => '6PK1400',
@@ -25541,7 +25550,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            276 => 
+            
             array (
                 'id' => 1314,
                 'article' => '6PK1510HD',
@@ -25561,7 +25570,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            277 => 
+            
             array (
                 'id' => 1315,
                 'article' => '6PK1538',
@@ -25581,7 +25590,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            278 => 
+            
             array (
                 'id' => 1316,
                 'article' => '6PK1550',
@@ -25601,7 +25610,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            279 => 
+            
             array (
                 'id' => 1317,
                 'article' => '6PK1683',
@@ -25621,7 +25630,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            280 => 
+            
             array (
                 'id' => 1318,
                 'article' => '6PK1715',
@@ -25641,7 +25650,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            281 => 
+            
             array (
                 'id' => 1319,
                 'article' => '6PK1775',
@@ -25661,7 +25670,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            282 => 
+            
             array (
                 'id' => 1320,
                 'article' => '6PK1795',
@@ -25681,7 +25690,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            283 => 
+            
             array (
                 'id' => 1321,
                 'article' => '6PK1815',
@@ -25701,7 +25710,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            284 => 
+            
             array (
                 'id' => 1322,
                 'article' => '6PK1890',
@@ -25721,7 +25730,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            285 => 
+            
             array (
                 'id' => 1323,
                 'article' => '6PK1900',
@@ -25741,7 +25750,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            286 => 
+            
             array (
                 'id' => 1324,
                 'article' => '6PK2055',
@@ -25761,7 +25770,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            287 => 
+            
             array (
                 'id' => 1325,
                 'article' => '6PK2135',
@@ -25781,7 +25790,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            288 => 
+            
             array (
                 'id' => 1326,
                 'article' => '6PK2160',
@@ -25801,7 +25810,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            289 => 
+            
             array (
                 'id' => 1327,
                 'article' => '6PK2475',
@@ -25821,7 +25830,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            290 => 
+            
             array (
                 'id' => 1328,
                 'article' => '6PK2581',
@@ -25841,7 +25850,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            291 => 
+            
             array (
                 'id' => 1329,
                 'article' => '6PK965',
@@ -25861,7 +25870,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            292 => 
+            
             array (
                 'id' => 1330,
                 'article' => '6PK975',
@@ -25881,7 +25890,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            293 => 
+            
             array (
                 'id' => 1331,
                 'article' => '7PK1127',
@@ -25901,7 +25910,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            294 => 
+            
             array (
                 'id' => 1332,
                 'article' => '7PK1790',
@@ -25921,7 +25930,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            295 => 
+            
             array (
                 'id' => 1333,
                 'article' => '7PK1975',
@@ -25941,7 +25950,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            296 => 
+            
             array (
                 'id' => 1334,
                 'article' => '7PK2285',
@@ -25961,7 +25970,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            297 => 
+            
             array (
                 'id' => 1335,
                 'article' => '6PK1660',
@@ -25981,7 +25990,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            298 => 
+            
             array (
                 'id' => 1336,
                 'article' => '4PK945',
@@ -26001,7 +26010,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            299 => 
+            
             array (
                 'id' => 1337,
                 'article' => '6PK1513',
@@ -26021,7 +26030,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            300 => 
+            
             array (
                 'id' => 1338,
                 'article' => '7PK1140',
@@ -26041,7 +26050,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            301 => 
+            
             array (
                 'id' => 1339,
                 'article' => '6PK1113',
@@ -26061,7 +26070,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            302 => 
+            
             array (
                 'id' => 1340,
                 'article' => '6PK1395',
@@ -26081,7 +26090,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            303 => 
+            
             array (
                 'id' => 1341,
                 'article' => '3PK751SF',
@@ -26101,7 +26110,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            304 => 
+            
             array (
                 'id' => 1342,
                 'article' => '58428',
@@ -26121,7 +26130,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            305 => 
+            
             array (
                 'id' => 1343,
                 'article' => '5PK1193',
@@ -26141,7 +26150,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            306 => 
+            
             array (
                 'id' => 1344,
                 'article' => '5PK1200',
@@ -26161,7 +26170,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            307 => 
+            
             array (
                 'id' => 1345,
                 'article' => '5PK1750',
@@ -26181,7 +26190,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            308 => 
+            
             array (
                 'id' => 1346,
                 'article' => '5PK1790',
@@ -26201,7 +26210,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            309 => 
+            
             array (
                 'id' => 1347,
                 'article' => '6PK1195',
@@ -26221,7 +26230,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            310 => 
+            
             array (
                 'id' => 1348,
                 'article' => '6PK1380',
@@ -26241,7 +26250,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            311 => 
+            
             array (
                 'id' => 1349,
                 'article' => '7PK1190',
@@ -26261,7 +26270,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            312 => 
+            
             array (
                 'id' => 1350,
                 'article' => '7PK1740',
@@ -26281,7 +26290,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            313 => 
+            
             array (
                 'id' => 1351,
                 'article' => '6PK1053',
@@ -26301,7 +26310,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            314 => 
+            
             array (
                 'id' => 1352,
                 'article' => '6PK1640',
@@ -26321,7 +26330,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            315 => 
+            
             array (
                 'id' => 1353,
                 'article' => '2250K9',
@@ -26341,7 +26350,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            316 => 
+            
             array (
                 'id' => 1354,
                 'article' => '5PK1840',
@@ -26361,7 +26370,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            317 => 
+            
             array (
                 'id' => 1355,
                 'article' => '4PK856',
@@ -26381,7 +26390,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            318 => 
+            
             array (
                 'id' => 1356,
                 'article' => '6PK1200',
@@ -26401,7 +26410,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            319 => 
+            
             array (
                 'id' => 1357,
                 'article' => '0500061195',
@@ -26421,7 +26430,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            320 => 
+            
             array (
                 'id' => 1358,
                 'article' => '0500060976',
@@ -26441,7 +26450,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            321 => 
+            
             array (
                 'id' => 1359,
                 'article' => '0500071125',
@@ -26461,7 +26470,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            322 => 
+            
             array (
                 'id' => 1360,
                 'article' => 'J1040845',
@@ -26481,7 +26490,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            323 => 
+            
             array (
                 'id' => 1361,
                 'article' => '02117-93523',
@@ -26501,7 +26510,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            324 => 
+            
             array (
                 'id' => 1362,
                 'article' => '11720-AD200',
@@ -26521,7 +26530,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            325 => 
+            
             array (
                 'id' => 1363,
                 'article' => '8200072113',
@@ -26541,7 +26550,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            326 => 
+            
             array (
                 'id' => 1364,
                 'article' => '8200821813',
@@ -26561,7 +26570,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            327 => 
+            
             array (
                 'id' => 1365,
                 'article' => '8200833550',
@@ -26581,7 +26590,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            328 => 
+            
             array (
                 'id' => 1366,
                 'article' => '8200830192',
@@ -26601,7 +26610,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            329 => 
+            
             array (
                 'id' => 1367,
                 'article' => '8200211651',
@@ -26621,7 +26630,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            330 => 
+            
             array (
                 'id' => 1368,
                 'article' => '8200841132',
@@ -26641,7 +26650,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            331 => 
+            
             array (
                 'id' => 1369,
                 'article' => '8200833541',
@@ -26661,7 +26670,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            332 => 
+            
             array (
                 'id' => 1370,
                 'article' => '7701475192',
@@ -26681,7 +26690,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            333 => 
+            
             array (
                 'id' => 1371,
                 'article' => '8200869440',
@@ -26701,7 +26710,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            334 => 
+            
             array (
                 'id' => 1372,
                 'article' => '1774051',
@@ -26721,7 +26730,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            335 => 
+            
             array (
                 'id' => 1373,
                 'article' => 'VKMV6PK2137',
@@ -26741,7 +26750,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            336 => 
+            
             array (
                 'id' => 1374,
                 'article' => '07K145933F',
@@ -26761,7 +26770,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            337 => 
+            
             array (
                 'id' => 1449,
                 'article' => 'T38433',
@@ -26781,7 +26790,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            338 => 
+            
             array (
                 'id' => 1450,
                 'article' => '06J903133A',
@@ -26801,7 +26810,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            339 => 
+            
             array (
                 'id' => 1451,
                 'article' => '25281-2B000',
@@ -26823,7 +26832,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            340 => 
+            
             array (
                 'id' => 1452,
                 'article' => 'MR984375',
@@ -26845,7 +26854,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            341 => 
+            
             array (
                 'id' => 1453,
                 'article' => '06A903315E',
@@ -26867,7 +26876,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            342 => 
+            
             array (
                 'id' => 1454,
                 'article' => '30936203',
@@ -26887,7 +26896,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            343 => 
+            
             array (
                 'id' => 1455,
                 'article' => '534027810',
@@ -26908,7 +26917,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            344 => 
+            
             array (
                 'id' => 1456,
                 'article' => '534026910',
@@ -26930,7 +26939,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            345 => 
+            
             array (
                 'id' => 1457,
                 'article' => '56834',
@@ -26952,7 +26961,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            346 => 
+            
             array (
                 'id' => 1458,
                 'article' => 'VKM36055',
@@ -26972,7 +26981,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            347 => 
+            
             array (
                 'id' => 1459,
                 'article' => '06K109467K',
@@ -26992,7 +27001,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            348 => 
+            
             array (
                 'id' => 1460,
                 'article' => '553024310',
@@ -27012,7 +27021,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            349 => 
+            
             array (
                 'id' => 1461,
                 'article' => '534011820',
@@ -27034,7 +27043,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            350 => 
+            
             array (
                 'id' => 1462,
                 'article' => 'E2R5585BTA',
@@ -27056,7 +27065,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            351 => 
+            
             array (
                 'id' => 1463,
                 'article' => 'T39077',
@@ -27078,7 +27087,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            352 => 
+            
             array (
                 'id' => 1464,
                 'article' => '55622',
@@ -27100,7 +27109,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            353 => 
+            
             array (
                 'id' => 1465,
                 'article' => '120455',
@@ -27123,7 +27132,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            354 => 
+            
             array (
                 'id' => 1466,
                 'article' => 'GA355.00',
@@ -27146,7 +27155,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            355 => 
+            
             array (
                 'id' => 1467,
                 'article' => 'GA355.04',
@@ -27169,7 +27178,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            356 => 
+            
             array (
                 'id' => 1468,
                 'article' => 'GA357.47',
@@ -27192,7 +27201,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            357 => 
+            
             array (
                 'id' => 1469,
                 'article' => 'V85585',
@@ -27221,7 +27230,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            358 => 
+            
             array (
                 'id' => 1470,
                 'article' => 'T43014',
@@ -27241,7 +27250,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            359 => 
+            
             array (
                 'id' => 1471,
                 'article' => 'GT355.40',
@@ -27264,7 +27273,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            360 => 
+            
             array (
                 'id' => 1472,
                 'article' => '531005510',
@@ -27286,7 +27295,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            361 => 
+            
             array (
                 'id' => 1473,
                 'article' => '531062830',
@@ -27308,7 +27317,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            362 => 
+            
             array (
                 'id' => 1474,
                 'article' => '531081810',
@@ -27330,7 +27339,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            363 => 
+            
             array (
                 'id' => 1475,
                 'article' => 'PSC-B003',
@@ -27350,7 +27359,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            364 => 
+            
             array (
                 'id' => 1476,
                 'article' => 'T41154',
@@ -27370,7 +27379,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            365 => 
+            
             array (
                 'id' => 1477,
                 'article' => 'GE357.36',
@@ -27393,7 +27402,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            366 => 
+            
             array (
                 'id' => 1478,
                 'article' => '532053610',
@@ -27415,7 +27424,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            367 => 
+            
             array (
                 'id' => 1479,
                 'article' => 'GA355.06',
@@ -27438,7 +27447,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            368 => 
+            
             array (
                 'id' => 1480,
                 'article' => '01-00',
@@ -27461,7 +27470,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            369 => 
+            
             array (
                 'id' => 1481,
                 'article' => '492-00',
@@ -27484,7 +27493,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            370 => 
+            
             array (
                 'id' => 1482,
                 'article' => '11955JA00C',
@@ -27504,7 +27513,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            371 => 
+            
             array (
                 'id' => 1483,
                 'article' => '8200603359',
@@ -27524,7 +27533,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            372 => 
+            
             array (
                 'id' => 1484,
                 'article' => '06J198299',
@@ -27544,7 +27553,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            373 => 
+            
             array (
                 'id' => 1485,
                 'article' => '25306203',
@@ -27564,7 +27573,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            374 => 
+            
             array (
                 'id' => 1486,
                 'article' => 'T41155',
@@ -27584,7 +27593,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            375 => 
+            
             array (
                 'id' => 1487,
                 'article' => 'T43225',
@@ -27604,7 +27613,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            376 => 
+            
             array (
                 'id' => 1488,
                 'article' => 'GT10150',
@@ -27625,7 +27634,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            377 => 
+            
             array (
                 'id' => 1489,
                 'article' => 'MN137247',
@@ -27646,7 +27655,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            378 => 
+            
             array (
                 'id' => 1490,
                 'article' => 'GT355.22',
@@ -27669,7 +27678,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            379 => 
+            
             array (
                 'id' => 1491,
                 'article' => '30684',
@@ -27695,7 +27704,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            380 => 
+            
             array (
                 'id' => 1492,
                 'article' => 'E2F5357BTA',
@@ -27717,7 +27726,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            381 => 
+            
             array (
                 'id' => 1493,
                 'article' => '15-00',
@@ -27740,7 +27749,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            382 => 
+            
             array (
                 'id' => 1494,
                 'article' => '16-97',
@@ -27763,7 +27772,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            383 => 
+            
             array (
                 'id' => 1495,
                 'article' => '18-10',
@@ -27786,7 +27795,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            384 => 
+            
             array (
                 'id' => 1496,
                 'article' => '19-25',
@@ -27809,7 +27818,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            385 => 
+            
             array (
                 'id' => 1497,
                 'article' => '191-00',
@@ -27829,7 +27838,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            386 => 
+            
             array (
                 'id' => 1498,
                 'article' => '197-99',
@@ -27852,7 +27861,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            387 => 
+            
             array (
                 'id' => 1499,
                 'article' => '211-00',
@@ -27875,7 +27884,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            388 => 
+            
             array (
                 'id' => 1500,
                 'article' => '22-99',
@@ -27895,7 +27904,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            389 => 
+            
             array (
                 'id' => 1501,
                 'article' => '231-00',
@@ -27918,7 +27927,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            390 => 
+            
             array (
                 'id' => 1502,
                 'article' => '25-98',
@@ -27941,7 +27950,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            391 => 
+            
             array (
                 'id' => 1503,
                 'article' => '291-116',
@@ -27964,7 +27973,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            392 => 
+            
             array (
                 'id' => 1504,
                 'article' => '300-00',
@@ -27987,7 +27996,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            393 => 
+            
             array (
                 'id' => 1505,
                 'article' => '301-00',
@@ -28010,7 +28019,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            394 => 
+            
             array (
                 'id' => 1506,
                 'article' => '302-00',
@@ -28033,7 +28042,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            395 => 
+            
             array (
                 'id' => 1507,
                 'article' => '304-00',
@@ -28056,7 +28065,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            396 => 
+            
             array (
                 'id' => 1508,
                 'article' => '323-99',
@@ -28079,7 +28088,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            397 => 
+            
             array (
                 'id' => 1509,
                 'article' => '349-00',
@@ -28102,7 +28111,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            398 => 
+            
             array (
                 'id' => 1510,
                 'article' => '36-68',
@@ -28125,7 +28134,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            399 => 
+            
             array (
                 'id' => 1511,
                 'article' => '382-00',
@@ -28148,7 +28157,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            400 => 
+            
             array (
                 'id' => 1512,
                 'article' => '413-00',
@@ -28171,7 +28180,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            401 => 
+            
             array (
                 'id' => 1513,
                 'article' => '466-91',
@@ -28194,7 +28203,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            402 => 
+            
             array (
                 'id' => 1514,
                 'article' => '47-00',
@@ -28217,7 +28226,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            403 => 
+            
             array (
                 'id' => 1515,
                 'article' => '48-00',
@@ -28241,7 +28250,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            404 => 
+            
             array (
                 'id' => 1516,
                 'article' => '500-555',
@@ -28264,7 +28273,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            405 => 
+            
             array (
                 'id' => 1517,
                 'article' => '500151',
@@ -28287,7 +28296,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            406 => 
+            
             array (
                 'id' => 1518,
                 'article' => '500192',
@@ -28310,7 +28319,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            407 => 
+            
             array (
                 'id' => 1519,
                 'article' => '500205',
@@ -28333,7 +28342,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            408 => 
+            
             array (
                 'id' => 1520,
                 'article' => '500305',
@@ -28356,7 +28365,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            409 => 
+            
             array (
                 'id' => 1521,
                 'article' => 'ATB2436',
@@ -28379,7 +28388,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            410 => 
+            
             array (
                 'id' => 1522,
                 'article' => 'T36105',
@@ -28399,7 +28408,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            411 => 
+            
             array (
                 'id' => 1523,
                 'article' => 'T38454',
@@ -28419,7 +28428,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            412 => 
+            
             array (
                 'id' => 1524,
                 'article' => 'GT10160',
@@ -28441,7 +28450,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            413 => 
+            
             array (
                 'id' => 1525,
                 'article' => 'GTA-0410',
@@ -28464,7 +28473,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            414 => 
+            
             array (
                 'id' => 1526,
                 'article' => 'GTA0020',
@@ -28493,7 +28502,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            415 => 
+            
             array (
                 'id' => 1527,
                 'article' => 'GTA0370',
@@ -28513,7 +28522,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            416 => 
+            
             array (
                 'id' => 1528,
                 'article' => 'GTA0490',
@@ -28538,7 +28547,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            417 => 
+            
             array (
                 'id' => 1529,
                 'article' => 'GTA0570',
@@ -28561,7 +28570,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            418 => 
+            
             array (
                 'id' => 1530,
                 'article' => '31190-RL2-G01',
@@ -28583,7 +28592,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            419 => 
+            
             array (
                 'id' => 1531,
                 'article' => '25286-37100',
@@ -28606,7 +28615,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            420 => 
+            
             array (
                 'id' => 1532,
                 'article' => '532062110',
@@ -28627,7 +28636,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            421 => 
+            
             array (
                 'id' => 1533,
                 'article' => '8200104754',
@@ -28647,7 +28656,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            422 => 
+            
             array (
                 'id' => 1534,
                 'article' => '55351',
@@ -28668,7 +28677,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            423 => 
+            
             array (
                 'id' => 1535,
                 'article' => '55356',
@@ -28689,7 +28698,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            424 => 
+            
             array (
                 'id' => 1536,
                 'article' => 'GA355.14',
@@ -28718,7 +28727,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            425 => 
+            
             array (
                 'id' => 1537,
                 'article' => 'GA355.84',
@@ -28741,7 +28750,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            426 => 
+            
             array (
                 'id' => 1538,
                 'article' => 'GE355.35',
@@ -28763,7 +28772,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            427 => 
+            
             array (
                 'id' => 1539,
                 'article' => 'K6112',
@@ -28785,7 +28794,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            428 => 
+            
             array (
                 'id' => 1540,
                 'article' => '07K903315S',
@@ -28805,7 +28814,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            429 => 
+            
             array (
                 'id' => 1541,
                 'article' => '07K903315T',
@@ -28825,7 +28834,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            430 => 
+            
             array (
                 'id' => 1542,
                 'article' => '16-91',
@@ -28849,7 +28858,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            431 => 
+            
             array (
                 'id' => 1543,
                 'article' => '500275',
@@ -28872,7 +28881,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            432 => 
+            
             array (
                 'id' => 1544,
                 'article' => 'GA355.97',
@@ -28895,7 +28904,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            433 => 
+            
             array (
                 'id' => 1545,
                 'article' => 'V85519',
@@ -28915,7 +28924,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            434 => 
+            
             array (
                 'id' => 1546,
                 'article' => '187-00',
@@ -28938,7 +28947,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            435 => 
+            
             array (
                 'id' => 1547,
                 'article' => '1192500QAE',
@@ -28958,7 +28967,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            436 => 
+            
             array (
                 'id' => 1548,
                 'article' => '60921033',
@@ -28978,7 +28987,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            437 => 
+            
             array (
                 'id' => 1549,
                 'article' => '532034910',
@@ -29000,7 +29009,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            438 => 
+            
             array (
                 'id' => 1550,
                 'article' => '55634',
@@ -29022,14 +29031,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            439 => 
+            
             array (
                 'id' => 1576,
                 'article' => '560149',
                 'akey' => '560149',
                 'brand' => 'HUTCHINSON',
                 'bkey' => 'HUTCHINSON',
-                'pkey' => NULL,
+                'pkey' => 'HUTCHINSON560149',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29042,14 +29051,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            440 => 
+            
             array (
                 'id' => 1577,
                 'article' => 'F8-6669',
                 'akey' => 'F86669',
                 'brand' => 'OPTIMAL',
                 'bkey' => 'OPTIMAL',
-                'pkey' => NULL,
+                'pkey' => 'OPTIMALF86669',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки [KANGOO 2 торсиона]',
@@ -29062,14 +29071,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            441 => 
+            
             array (
                 'id' => 1578,
                 'article' => '36589',
                 'akey' => '36589',
                 'brand' => 'ORIGINAL IMPERIUM',
                 'bkey' => 'ORIGINALIMPERIUM',
-                'pkey' => NULL,
+                'pkey' => 'ORIGINALIMPERIUM36589',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки [KANGOO 2 торсиона]',
@@ -29082,14 +29091,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            442 => 
+            
             array (
                 'id' => 1579,
                 'article' => '10702/AJ',
                 'akey' => '10702AJ',
                 'brand' => 'PROTTEGO',
                 'bkey' => 'PROTTEGO',
-                'pkey' => NULL,
+                'pkey' => 'PROTTEGO10702AJ',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29102,14 +29111,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            443 => 
+            
             array (
                 'id' => 1580,
                 'article' => '560352',
                 'akey' => '560352',
                 'brand' => 'HUTCHINSON',
                 'bkey' => 'HUTCHINSON',
-                'pkey' => NULL,
+                'pkey' => 'HUTCHINSON560352',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29122,14 +29131,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            444 => 
+            
             array (
                 'id' => 1581,
                 'article' => '4001414',
                 'akey' => '4001414',
                 'brand' => 'SASIC',
                 'bkey' => 'SASIC',
-                'pkey' => NULL,
+                'pkey' => 'SASIC4001414',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки [KANGOO 4 торсиона]',
@@ -29149,14 +29158,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            445 => 
+            
             array (
                 'id' => 1582,
                 'article' => '60923777',
                 'akey' => '60923777',
                 'brand' => 'SWAG',
                 'bkey' => 'SWAG',
-                'pkey' => NULL,
+                'pkey' => 'SWAG60923777',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29178,14 +29187,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            446 => 
+            
             array (
                 'id' => 1583,
                 'article' => '8200380965',
                 'akey' => '8200380965',
                 'brand' => 'RENAULT',
                 'bkey' => 'RENAULT',
-                'pkey' => NULL,
+                'pkey' => 'RENAULT8200380965',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29198,41 +29207,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            447 => 
-            array (
-                'id' => 1584,
-                'article' => '2604002',
-                'akey' => '2604002',
-                'brand' => 'SASIC',
-                'bkey' => 'SASIC',
-                'pkey' => NULL,
-                'product_category_id' => 1,
-                'product_group_id' => 10686,
-                'name' => 'Сайлентблок задней балки',
-                'full_name' => 'Сайлентблок задней балки, SASIC, 2604002',
-                'description' => 'TecDoc_ID 3244614
-Сторона установки задний мост
-Тип установки Резиново-металлическая опора
-Внутренний диаметр 12
-Наружный диаметр [мм] 70
-Внутренняя длина [мм] 90
-Наружная длина [мм] 58
-для оригинального номера 8200380965',
-                'parameters' => NULL,
-                'weight' => NULL,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'deleted_at' => NULL,
-                'product_price_group_id' => NULL,
-            ),
-            448 => 
+            
             array (
                 'id' => 1585,
                 'article' => '7701209534',
                 'akey' => '7701209534',
                 'brand' => 'RENAULT',
                 'bkey' => 'RENAULT',
-                'pkey' => NULL,
+                'pkey' => 'RENAULT7701209534',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки [к-т]',
@@ -29245,14 +29227,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            449 => 
+            
             array (
                 'id' => 1586,
                 'article' => '985301',
                 'akey' => '985301',
                 'brand' => 'RUVILLE',
                 'bkey' => 'RUVILLE',
-                'pkey' => NULL,
+                'pkey' => 'RUVILLE985301',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29270,14 +29252,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            450 => 
+            
             array (
                 'id' => 1587,
                 'article' => '27539',
                 'akey' => '27539',
                 'brand' => 'FEBI BILSTEIN',
                 'bkey' => 'FEBIBILSTEIN',
-                'pkey' => NULL,
+                'pkey' => 'FEBIBILSTEIN27539',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29295,14 +29277,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            451 => 
+            
             array (
                 'id' => 1588,
                 'article' => '3128501',
                 'akey' => '3128501',
                 'brand' => 'LEMFORDER',
                 'bkey' => 'LEMFORDER',
-                'pkey' => NULL,
+                'pkey' => 'LEMFORDER3128501',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29318,14 +29300,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            452 => 
+            
             array (
                 'id' => 1589,
                 'article' => '6001549988',
                 'akey' => '6001549988',
                 'brand' => 'RENAULT',
                 'bkey' => 'RENAULT',
-                'pkey' => NULL,
+                'pkey' => 'RENAULT6001549988',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29338,37 +29320,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            453 => 
-            array (
-                'id' => 1590,
-                'article' => '2604001',
-                'akey' => '2604001',
-                'brand' => 'SASIC',
-                'bkey' => 'SASIC',
-                'pkey' => NULL,
-                'product_category_id' => 1,
-                'product_group_id' => 10686,
-                'name' => 'Сайлентблок задней балки',
-                'full_name' => 'Сайлентблок задней балки, SASIC, 2604001',
-                'description' => 'TecDoc_ID 3244613
-Сторона установки задний мост
-Тип установки Резиново-металлическая опора
-для оригинального номера 6001549989',
-                'parameters' => NULL,
-                'weight' => NULL,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'deleted_at' => NULL,
-                'product_price_group_id' => NULL,
-            ),
-            454 => 
+            
             array (
                 'id' => 1591,
                 'article' => '560444',
                 'akey' => '560444',
                 'brand' => 'HUTCHINSON',
                 'bkey' => 'HUTCHINSON',
-                'pkey' => NULL,
+                'pkey' => 'HUTCHINSON560444',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29381,14 +29340,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            455 => 
+            
             array (
                 'id' => 1592,
                 'article' => '31396',
                 'akey' => '31396',
                 'brand' => 'FEBI BILSTEIN',
                 'bkey' => 'FEBIBILSTEIN',
-                'pkey' => NULL,
+                'pkey' => 'FEBIBILSTEIN31396',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29408,61 +29367,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            456 => 
-            array (
-                'id' => 1593,
-                'article' => '550447517R',
-                'akey' => '550447517R',
-                'brand' => 'RENAULT',
-                'bkey' => 'RENAULT',
-                'pkey' => NULL,
-                'product_category_id' => 1,
-                'product_group_id' => 10686,
-                'name' => 'Сайлентблок задней балки',
-                'full_name' => 'Сайлентблок задней балки, RENAULT, 550447517R',
-                'description' => 'TecDoc_ID 2094541
-Сторона установки Задняя ось двусторонне
-Толщина [мм] 90
-Вес [кг] 0,540
-необходимое количество 1
-Материал резина/металл
-Внутренний диаметр 12
-Внешний диаметр [мм] 70',
-                'parameters' => NULL,
-                'weight' => NULL,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'deleted_at' => NULL,
-                'product_price_group_id' => NULL,
-            ),
-            457 => 
-            array (
-                'id' => 1594,
-                'article' => '531560',
-                'akey' => '531560',
-                'brand' => 'HUTCHINSON',
-                'bkey' => 'HUTCHINSON',
-                'pkey' => NULL,
-                'product_category_id' => 1,
-                'product_group_id' => 10686,
-                'name' => 'Сайлентблок задней балки',
-                'full_name' => 'Сайлентблок задней балки, HUTCHINSON, 531560',
-                'description' => 'TecDoc_ID 3101248',
-                'parameters' => NULL,
-                'weight' => NULL,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'deleted_at' => NULL,
-                'product_price_group_id' => NULL,
-            ),
-            458 => 
+            
             array (
                 'id' => 1595,
                 'article' => '4005528',
                 'akey' => '4005528',
                 'brand' => 'SASIC',
                 'bkey' => 'SASIC',
-                'pkey' => NULL,
+                'pkey' => 'SASIC4005528',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29475,14 +29387,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            459 => 
+            
             array (
                 'id' => 1596,
                 'article' => '4005529',
                 'akey' => '4005529',
                 'brand' => 'SASIC',
                 'bkey' => 'SASIC',
-                'pkey' => NULL,
+                'pkey' => 'SASIC4005529',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29499,14 +29411,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            460 => 
+            
             array (
                 'id' => 1597,
                 'article' => '8200427869',
                 'akey' => '8200427869',
                 'brand' => 'RENAULT',
                 'bkey' => 'RENAULT',
-                'pkey' => NULL,
+                'pkey' => 'RENAULT8200427869',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки [LAGUNA II]',
@@ -29519,14 +29431,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            461 => 
+            
             array (
                 'id' => 1598,
                 'article' => '7700416271',
                 'akey' => '7700416271',
                 'brand' => 'RENAULT',
                 'bkey' => 'RENAULT',
-                'pkey' => NULL,
+                'pkey' => 'RENAULT7700416271',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки [LAGUNA II]',
@@ -29539,14 +29451,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            462 => 
+            
             array (
                 'id' => 1599,
                 'article' => '550446624R',
                 'akey' => '550446624R',
                 'brand' => 'RENAULT',
                 'bkey' => 'RENAULT',
-                'pkey' => NULL,
+                'pkey' => 'RENAULT550446624R',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки [LAGUNA III]',
@@ -29559,14 +29471,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            463 => 
+            
             array (
                 'id' => 1600,
                 'article' => 'RE-SB-4191',
                 'akey' => 'RESB4191',
                 'brand' => 'MOOG',
                 'bkey' => 'MOOG',
-                'pkey' => NULL,
+                'pkey' => 'MOOGRESB4191',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29579,14 +29491,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            464 => 
+            
             array (
                 'id' => 1601,
                 'article' => '2307-0571',
                 'akey' => '23070571',
                 'brand' => 'PROFIT',
                 'bkey' => 'PROFIT',
-                'pkey' => NULL,
+                'pkey' => 'PROFIT23070571',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29599,14 +29511,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            465 => 
+            
             array (
                 'id' => 1602,
                 'article' => '31395',
                 'akey' => '31395',
                 'brand' => 'FEBI BILSTEIN',
                 'bkey' => 'FEBIBILSTEIN',
-                'pkey' => NULL,
+                'pkey' => 'FEBIBILSTEIN31395',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29626,14 +29538,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            466 => 
+            
             array (
                 'id' => 1603,
                 'article' => '531652',
                 'akey' => '531652',
                 'brand' => 'HUTCHINSON',
                 'bkey' => 'HUTCHINSON',
-                'pkey' => NULL,
+                'pkey' => 'HUTCHINSON531652',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29646,14 +29558,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            467 => 
+            
             array (
                 'id' => 1604,
                 'article' => '01334',
                 'akey' => '01334',
                 'brand' => 'ASAM',
                 'bkey' => 'ASAM',
-                'pkey' => NULL,
+                'pkey' => 'ASAM01334',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29671,14 +29583,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            468 => 
+            
             array (
                 'id' => 1605,
                 'article' => '590098',
                 'akey' => '590098',
                 'brand' => 'HUTCHINSON',
                 'bkey' => 'HUTCHINSON',
-                'pkey' => NULL,
+                'pkey' => 'HUTCHINSON590098',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29691,14 +29603,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            469 => 
+            
             array (
                 'id' => 1606,
                 'article' => '3593601',
                 'akey' => '3593601',
                 'brand' => 'LEMFORDER',
                 'bkey' => 'LEMFORDER',
-                'pkey' => NULL,
+                'pkey' => 'LEMFORDER3593601',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29717,14 +29629,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            470 => 
+            
             array (
                 'id' => 1607,
                 'article' => '6145400005',
                 'akey' => '6145400005',
                 'brand' => 'MEYLE',
                 'bkey' => 'MEYLE',
-                'pkey' => NULL,
+                'pkey' => 'MEYLE6145400005',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29742,14 +29654,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            471 => 
+            
             array (
                 'id' => 1608,
                 'article' => '6147100000',
                 'akey' => '6147100000',
                 'brand' => 'MEYLE',
                 'bkey' => 'MEYLE',
-                'pkey' => NULL,
+                'pkey' => 'MEYLE6147100000',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29767,14 +29679,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            472 => 
+            
             array (
                 'id' => 1609,
                 'article' => 'F8-6597',
                 'akey' => 'F86597',
                 'brand' => 'OPTIMAL',
                 'bkey' => 'OPTIMAL',
-                'pkey' => NULL,
+                'pkey' => 'OPTIMALF86597',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29789,14 +29701,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            473 => 
+            
             array (
                 'id' => 1610,
                 'article' => '6001549989',
                 'akey' => '6001549989',
                 'brand' => 'RENAULT',
                 'bkey' => 'RENAULT',
-                'pkey' => NULL,
+                'pkey' => 'RENAULT6001549989',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки [LOGAN, DUSTER]',
@@ -29809,14 +29721,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            474 => 
+            
             array (
                 'id' => 1611,
                 'article' => '2604003',
                 'akey' => '2604003',
                 'brand' => 'SASIC',
                 'bkey' => 'SASIC',
-                'pkey' => NULL,
+                'pkey' => 'SASIC2604003',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29836,14 +29748,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            475 => 
+            
             array (
                 'id' => 1612,
                 'article' => '2604008',
                 'akey' => '2604008',
                 'brand' => 'SASIC',
                 'bkey' => 'SASIC',
-                'pkey' => NULL,
+                'pkey' => 'SASIC2604008',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29862,14 +29774,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            476 => 
+            
             array (
                 'id' => 1613,
                 'article' => '2604009',
                 'akey' => '2604009',
                 'brand' => 'SASIC',
                 'bkey' => 'SASIC',
-                'pkey' => NULL,
+                'pkey' => 'SASIC2604009',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29882,68 +29794,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            477 => 
-            array (
-                'id' => 1614,
-                'article' => '4001567',
-                'akey' => '4001567',
-                'brand' => 'SASIC',
-                'bkey' => 'SASIC',
-                'pkey' => NULL,
-                'product_category_id' => 1,
-                'product_group_id' => 10686,
-                'name' => 'Сайлентблок задней балки',
-                'full_name' => 'Сайлентблок задней балки, SASIC, 4001567',
-                'description' => 'Тип установки Резиново-металлическая опора
-Сторона установки сзади
-Сторона установки передний мост
-Внутренний диаметр 12
-Наружный диаметр [мм] 40
-Внутренняя длина [мм] 61
-Наружная длина [мм] 46,5
-для оригинального номера 7700824709',
-                'parameters' => NULL,
-                'weight' => NULL,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'deleted_at' => NULL,
-                'product_price_group_id' => NULL,
-            ),
-            478 => 
-            array (
-                'id' => 1615,
-                'article' => '4001568',
-                'akey' => '4001568',
-                'brand' => 'SASIC',
-                'bkey' => 'SASIC',
-                'pkey' => NULL,
-                'product_category_id' => 1,
-                'product_group_id' => 10686,
-                'name' => 'Сайлентблок задней балки',
-                'full_name' => 'Сайлентблок задней балки, SASIC, 4001568',
-                'description' => 'Тип установки Резиново-металлическая опора
-Сторона установки спереди
-Сторона установки передний мост
-Внутренний диаметр 13,5
-Наружный диаметр [мм] 40
-Внутренняя длина [мм] 83,5
-Наружная длина [мм] 52
-для оригинального номера 7700826216',
-                'parameters' => NULL,
-                'weight' => NULL,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'deleted_at' => NULL,
-                'product_price_group_id' => NULL,
-            ),
-            479 => 
+            
             array (
                 'id' => 1616,
                 'article' => '4003324',
                 'akey' => '4003324',
                 'brand' => 'SASIC',
                 'bkey' => 'SASIC',
-                'pkey' => NULL,
+                'pkey' => 'SASIC4003324',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29963,14 +29821,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            480 => 
+            
             array (
                 'id' => 1617,
                 'article' => '4003384',
                 'akey' => '4003384',
                 'brand' => 'SASIC',
                 'bkey' => 'SASIC',
-                'pkey' => NULL,
+                'pkey' => 'SASIC4003384',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -29989,14 +29847,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            481 => 
+            
             array (
                 'id' => 1618,
                 'article' => '60922854',
                 'akey' => '60922854',
                 'brand' => 'SWAG',
                 'bkey' => 'SWAG',
-                'pkey' => NULL,
+                'pkey' => 'SWAG60922854',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -30017,14 +29875,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            482 => 
+            
             array (
                 'id' => 1619,
                 'article' => '14-06-2430',
                 'akey' => '14062430',
                 'brand' => 'ТОЧКА ОПОРЫ',
                 'bkey' => 'ТОЧКАОПОРЫ',
-                'pkey' => NULL,
+                'pkey' => 'ТОЧКАОПОРЫ14062430',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -30037,14 +29895,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            483 => 
+            
             array (
                 'id' => 1620,
                 'article' => '4-06-2353',
                 'akey' => '4062353',
                 'brand' => 'ТОЧКА ОПОРЫ',
                 'bkey' => 'ТОЧКАОПОРЫ',
-                'pkey' => NULL,
+                'pkey' => 'ТОЧКАОПОРЫ4062353',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -30061,14 +29919,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            484 => 
+            
             array (
                 'id' => 1621,
                 'article' => '590175',
                 'akey' => '590175',
                 'brand' => 'HUTCHINSON',
                 'bkey' => 'HUTCHINSON',
-                'pkey' => NULL,
+                'pkey' => 'HUTCHINSON590175',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -30081,14 +29939,14 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            485 => 
+            
             array (
                 'id' => 1622,
                 'article' => '50632',
                 'akey' => '50632',
                 'brand' => '3RG',
                 'bkey' => '3RG',
-                'pkey' => NULL,
+                'pkey' => '3RG50632',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблок задней балки',
@@ -30107,34 +29965,34 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            486 => 
+            
             array (
                 'id' => 1623,
                 'article' => '7701479190',
                 'akey' => '7701479190',
                 'brand' => 'RENAULT',
                 'bkey' => 'RENAULT',
-                'pkey' => NULL,
+                'pkey' => 'RENAULT7701479190',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
-                'name' => 'Сайлентблоки задней балки Megane II',
-                'full_name' => 'Сайлентблоки задней балки Megane II, RENAULT, 7701479190',
+                'name' => 'Сайлентблоки задней балки [MEGANE II, к-т]',
+                'full_name' => 'Сайлентблоки задней балки [MEGANE II, к-т], RENAULT, 7701479190',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2024-07-20 09:04:46',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            487 => 
+            
             array (
                 'id' => 1624,
                 'article' => '2604006',
                 'akey' => '2604006',
                 'brand' => 'SASIC',
                 'bkey' => 'SASIC',
-                'pkey' => NULL,
+                'pkey' => 'SASIC2604006',
                 'product_category_id' => 1,
                 'product_group_id' => 10686,
                 'name' => 'Сайлентблоки задней балки',
@@ -30154,7 +30012,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            488 => 
+            
             array (
                 'id' => 1625,
                 'article' => '641426',
@@ -30174,7 +30032,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            489 => 
+            
             array (
                 'id' => 1626,
                 'article' => '4DB007218001',
@@ -30194,7 +30052,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            490 => 
+            
             array (
                 'id' => 1627,
                 'article' => 'CBF-43',
@@ -30214,7 +30072,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            491 => 
+            
             array (
                 'id' => 1628,
                 'article' => '12011839B',
@@ -30234,7 +30092,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            492 => 
+            
             array (
                 'id' => 1629,
                 'article' => 'PK5346',
@@ -30254,7 +30112,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            493 => 
+            
             array (
                 'id' => 1630,
                 'article' => 'PK5347',
@@ -30274,7 +30132,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            494 => 
+            
             array (
                 'id' => 1631,
                 'article' => 'GCC110',
@@ -30294,7 +30152,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            495 => 
+            
             array (
                 'id' => 1632,
                 'article' => '8200741825',
@@ -30314,7 +30172,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            496 => 
+            
             array (
                 'id' => 1633,
                 'article' => '4001749',
@@ -30334,7 +30192,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            497 => 
+            
             array (
                 'id' => 1634,
                 'article' => 'AX960',
@@ -30354,7 +30212,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            498 => 
+            
             array (
                 'id' => 1635,
                 'article' => '07130',
@@ -30374,7 +30232,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            499 => 
+            
             array (
                 'id' => 1636,
                 'article' => '16003700',
@@ -30394,9 +30252,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-        ));
-        \DB::table('products')->insert(array (
-            0 => 
+            
             array (
                 'id' => 1637,
                 'article' => 'VKBA3575',
@@ -30416,7 +30272,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            1 => 
+            
             array (
                 'id' => 1638,
                 'article' => '110453',
@@ -30436,7 +30292,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            2 => 
+            
             array (
                 'id' => 1639,
                 'article' => '58980C1100',
@@ -30456,7 +30312,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            3 => 
+            
             array (
                 'id' => 1640,
                 'article' => '023718P',
@@ -30476,7 +30332,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            4 => 
+            
             array (
                 'id' => 1641,
                 'article' => 'BMO-RE-000',
@@ -30496,7 +30352,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            5 => 
+            
             array (
                 'id' => 1642,
                 'article' => '110522',
@@ -30516,7 +30372,9 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            6 => 
+        ));
+        \DB::table('products')->insert(array (
+            
             array (
                 'id' => 1643,
                 'article' => 'PN0349',
@@ -30536,7 +30394,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            7 => 
+            
             array (
                 'id' => 1644,
                 'article' => '94530648',
@@ -30556,7 +30414,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            8 => 
+            
             array (
                 'id' => 1645,
                 'article' => '530064010',
@@ -30576,7 +30434,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            9 => 
+            
             array (
                 'id' => 1646,
                 'article' => 'PA1043',
@@ -30596,7 +30454,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            10 => 
+            
             array (
                 'id' => 1647,
                 'article' => 'AP185/1',
@@ -30606,17 +30464,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'FILTRONAP1851',
                 'product_category_id' => 1,
                 'product_group_id' => 10360,
-                'name' => 'Фильтр воздушный',
-                'full_name' => 'Фильтр воздушный, FILTRON, AP185/1',
+                'name' => 'Фильтр воздушный [RENAULT, K4J]',
+                'full_name' => 'Фильтр воздушный [RENAULT, K4J], FILTRON, AP185/1',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-06-17 08:20:07',
-                'updated_at' => '2024-06-17 08:22:07',
+                'updated_at' => '2024-07-12 08:27:45',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            11 => 
+            
             array (
                 'id' => 1648,
                 'article' => 'CE0518',
@@ -30636,7 +30494,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            12 => 
+            
             array (
                 'id' => 1649,
                 'article' => 'CE0517',
@@ -30656,7 +30514,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            13 => 
+            
             array (
                 'id' => 1650,
                 'article' => '93-00406-056',
@@ -30676,7 +30534,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            14 => 
+            
             array (
                 'id' => 1651,
                 'article' => 'CR0714',
@@ -30696,7 +30554,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            15 => 
+            
             array (
                 'id' => 1652,
                 'article' => 'CB0541',
@@ -30716,7 +30574,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            16 => 
+            
             array (
                 'id' => 1653,
                 'article' => '06J121132G',
@@ -30736,7 +30594,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            17 => 
+            
             array (
                 'id' => 1654,
                 'article' => '8200052312',
@@ -30756,7 +30614,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            18 => 
+            
             array (
                 'id' => 1655,
                 'article' => '04152-31090',
@@ -30776,7 +30634,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            19 => 
+            
             array (
                 'id' => 1656,
                 'article' => 'B13CR0504',
@@ -30796,7 +30654,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            20 => 
+            
             array (
                 'id' => 1657,
                 'article' => 'K1210A',
@@ -30816,7 +30674,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            21 => 
+            
             array (
                 'id' => 1658,
                 'article' => 'CCS-VW-000',
@@ -30836,7 +30694,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            22 => 
+            
             array (
                 'id' => 1659,
                 'article' => 'OE685/1',
@@ -30856,7 +30714,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            23 => 
+            
             array (
                 'id' => 1660,
                 'article' => '183199',
@@ -30876,7 +30734,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            24 => 
+            
             array (
                 'id' => 1661,
                 'article' => '171823395',
@@ -30896,7 +30754,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            25 => 
+            
             array (
                 'id' => 1662,
                 'article' => '117501113R',
@@ -30916,7 +30774,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            26 => 
+            
             array (
                 'id' => 1663,
                 'article' => '1198500500',
@@ -30936,7 +30794,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            27 => 
+            
             array (
                 'id' => 1664,
                 'article' => '94626',
@@ -30956,7 +30814,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            28 => 
+            
             array (
                 'id' => 1665,
                 'article' => '0258017187',
@@ -30976,7 +30834,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            29 => 
+            
             array (
                 'id' => 1666,
                 'article' => '64316945584',
@@ -30996,7 +30854,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            30 => 
+            
             array (
                 'id' => 1667,
                 'article' => 'Z363',
@@ -31016,7 +30874,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            31 => 
+            
             array (
                 'id' => 1668,
                 'article' => '0242145515',
@@ -31036,7 +30894,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            32 => 
+            
             array (
                 'id' => 1669,
                 'article' => '152093920R',
@@ -31046,17 +30904,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'RENAULT152093920R',
                 'product_category_id' => 1,
                 'product_group_id' => 10359,
-                'name' => 'Фильтр масляный',
-                'full_name' => 'Фильтр масляный, RENAULT, 152093920R',
-                'description' => '',
+                'name' => 'Фильтр масляный [RENAULT, R9M]',
+                'full_name' => 'Фильтр масляный [RENAULT, R9M], RENAULT, 152093920R',
+                'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-06-20 14:58:43',
-                'updated_at' => '2024-06-20 14:58:43',
+                'updated_at' => '2024-07-08 13:53:49',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            33 => 
+            
             array (
                 'id' => 1670,
                 'article' => 'AP135/9',
@@ -31066,17 +30924,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'FILTRONAP1359',
                 'product_category_id' => 1,
                 'product_group_id' => 10360,
-                'name' => 'Фильтр воздушный',
-                'full_name' => 'Фильтр воздушный, FILTRON, AP135/9',
+                'name' => 'Фильтр воздушный [ESPACE V]',
+                'full_name' => 'Фильтр воздушный [ESPACE V], FILTRON, AP135/9',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-06-20 15:04:27',
-                'updated_at' => '2024-06-21 19:25:18',
+                'updated_at' => '2024-07-08 12:24:43',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            34 => 
+            
             array (
                 'id' => 1671,
                 'article' => 'CS618',
@@ -31086,17 +30944,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'PURFLUXCS618',
                 'product_category_id' => 1,
                 'product_group_id' => 10361,
-                'name' => 'Фильтр топливный. Дизель',
-                'full_name' => 'Фильтр топливный. Дизель, PURFLUX, CS618',
-                'description' => '',
+                'name' => 'Фильтр топливный [Дизель, ESPACE V]',
+                'full_name' => 'Фильтр топливный [Дизель, ESPACE V], PURFLUX, CS618',
+                'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-06-20 15:06:57',
-                'updated_at' => '2024-06-20 15:06:57',
+                'updated_at' => '2024-07-12 17:24:36',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            35 => 
+            
             array (
                 'id' => 1672,
                 'article' => 'K1367A',
@@ -31106,17 +30964,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'FILTRONK1367A',
                 'product_category_id' => 1,
                 'product_group_id' => 10363,
-                'name' => 'Фильтр салона',
-                'full_name' => 'Фильтр салона, FILTRON, K1367A',
-                'description' => '',
+                'name' => 'Фильтр салона [MEGANE IV, ESPACE V]',
+                'full_name' => 'Фильтр салона [MEGANE IV, ESPACE V], FILTRON, K1367A',
+                'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-06-20 15:09:29',
-                'updated_at' => '2024-06-20 15:09:29',
+                'updated_at' => '2024-07-08 12:17:53',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            36 => 
+            
             array (
                 'id' => 1673,
                 'article' => '151261',
@@ -31136,7 +30994,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            37 => 
+            
             array (
                 'id' => 1674,
                 'article' => '166252',
@@ -31156,7 +31014,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            38 => 
+            
             array (
                 'id' => 1675,
                 'article' => '88540421902',
@@ -31176,7 +31034,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            39 => 
+            
             array (
                 'id' => 1676,
                 'article' => '7700872205',
@@ -31196,7 +31054,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            40 => 
+            
             array (
                 'id' => 1677,
                 'article' => '111.05104.2',
@@ -31216,7 +31074,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            41 => 
+            
             array (
                 'id' => 1678,
                 'article' => '80180174901',
@@ -31236,7 +31094,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            42 => 
+            
             array (
                 'id' => 1679,
                 'article' => '48206',
@@ -31256,7 +31114,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            43 => 
+            
             array (
                 'id' => 1680,
                 'article' => '97506',
@@ -31276,7 +31134,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            44 => 
+            
             array (
                 'id' => 1681,
                 'article' => '27268',
@@ -31296,7 +31154,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            45 => 
+            
             array (
                 'id' => 1682,
                 'article' => '06K905601K',
@@ -31316,7 +31174,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            46 => 
+            
             array (
                 'id' => 1683,
                 'article' => '0241245677',
@@ -31336,7 +31194,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            47 => 
+            
             array (
                 'id' => 1684,
                 'article' => '95749',
@@ -31356,7 +31214,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            48 => 
+            
             array (
                 'id' => 1685,
                 'article' => '1S71-16114-AL',
@@ -31376,7 +31234,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            49 => 
+            
             array (
                 'id' => 1686,
                 'article' => '1S71-16115-AK',
@@ -31396,7 +31254,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            50 => 
+            
             array (
                 'id' => 1687,
                 'article' => '1S71-N278B50-AG',
@@ -31416,7 +31274,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            51 => 
+            
             array (
                 'id' => 1688,
                 'article' => '1S71-N278B51-AG',
@@ -31436,7 +31294,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            52 => 
+            
             array (
                 'id' => 1689,
                 'article' => 'CEM-64',
@@ -31456,7 +31314,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            53 => 
+            
             array (
                 'id' => 1690,
                 'article' => 'DAC407043WCS83',
@@ -31476,7 +31334,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            54 => 
+            
             array (
                 'id' => 1691,
                 'article' => '1332',
@@ -31496,7 +31354,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            55 => 
+            
             array (
                 'id' => 1692,
                 'article' => 'N10648301',
@@ -31506,17 +31364,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'VAGN10648301',
                 'product_category_id' => 1,
                 'product_group_id' => 14424,
-                'name' => 'Крепеж. Болт тормозного диска/барабана',
-                'full_name' => 'Крепеж. Болт тормозного диска/барабана, VAG, N10648301',
-                'description' => '',
+                'name' => 'Крепеж. Болт тормозного диска/барабана [VAG]',
+                'full_name' => 'Крепеж. Болт тормозного диска/барабана [VAG], VAG, N10648301',
+                'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-06-24 10:49:21',
-                'updated_at' => '2024-06-24 10:49:21',
+                'updated_at' => '2024-07-12 08:57:05',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            56 => 
+            
             array (
                 'id' => 1693,
                 'article' => '223650035R',
@@ -31536,7 +31394,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            57 => 
+            
             array (
                 'id' => 1694,
                 'article' => 'P999-G13-005',
@@ -31556,7 +31414,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            58 => 
+            
             array (
                 'id' => 1695,
                 'article' => 'LF-1624',
@@ -31576,7 +31434,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            59 => 
+            
             array (
                 'id' => 1696,
                 'article' => 'IF-3078K',
@@ -31596,7 +31454,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            60 => 
+            
             array (
                 'id' => 1697,
                 'article' => '26.694.00',
@@ -31616,7 +31474,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            61 => 
+            
             array (
                 'id' => 1698,
                 'article' => '194864',
@@ -31636,7 +31494,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            62 => 
+            
             array (
                 'id' => 1699,
                 'article' => '22990N',
@@ -31656,7 +31514,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            63 => 
+            
             array (
                 'id' => 1700,
                 'article' => '7711428133',
@@ -31676,7 +31534,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            64 => 
+            
             array (
                 'id' => 1701,
                 'article' => '194906',
@@ -31696,7 +31554,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            65 => 
+            
             array (
                 'id' => 1702,
                 'article' => '194908',
@@ -31716,7 +31574,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            66 => 
+            
             array (
                 'id' => 1703,
                 'article' => 'GV0856',
@@ -31736,7 +31594,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            67 => 
+            
             array (
                 'id' => 1704,
                 'article' => 'OP643/6',
@@ -31756,7 +31614,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            68 => 
+            
             array (
                 'id' => 1705,
                 'article' => 'K1321A',
@@ -31776,10 +31634,10 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            69 => 
+            
             array (
                 'id' => 1706,
-                'article' => 'AP1357',
+                'article' => 'AP135/7',
                 'akey' => 'AP1357',
                 'brand' => 'FILTRON',
                 'bkey' => 'FILTRON',
@@ -31787,16 +31645,16 @@ class ProductsTableSeeder extends Seeder
                 'product_category_id' => 1,
                 'product_group_id' => 10360,
                 'name' => 'Фильтр воздушный',
-                'full_name' => 'Фильтр воздушный, FILTRON, AP1357',
-                'description' => '',
+                'full_name' => 'Фильтр воздушный, FILTRON, AP135/7',
+                'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-06-26 04:16:41',
-                'updated_at' => '2024-06-26 04:16:41',
+                'updated_at' => '2024-07-19 16:24:14',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            70 => 
+            
             array (
                 'id' => 1707,
                 'article' => 'KE900-90042',
@@ -31816,7 +31674,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            71 => 
+            
             array (
                 'id' => 1708,
                 'article' => '2704012',
@@ -31826,17 +31684,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'SASIC2704012',
                 'product_category_id' => 1,
                 'product_group_id' => 13960,
-                'name' => 'Тяга подрамника [TRAFIC II, правая]',
-                'full_name' => 'Тяга подрамника [TRAFIC II, правая], SASIC, 2704012',
-                'description' => '',
+                'name' => 'Тяга подрамника [TRAFIC II, левая]',
+                'full_name' => 'Тяга подрамника [TRAFIC II, левая], SASIC, 2704012',
+                'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-06-26 06:28:29',
-                'updated_at' => '2024-06-26 06:28:29',
+                'updated_at' => '2024-07-18 13:36:28',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            72 => 
+            
             array (
                 'id' => 1709,
                 'article' => '2704011',
@@ -31846,17 +31704,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'SASIC2704011',
                 'product_category_id' => 1,
                 'product_group_id' => 13960,
-                'name' => 'Тяга подрамника [TRAFIC II, левая]',
-                'full_name' => 'Тяга подрамника [TRAFIC II, левая], SASIC, 2704011',
-                'description' => '',
+                'name' => 'Тяга подрамника [TRAFIC II, правая]',
+                'full_name' => 'Тяга подрамника [TRAFIC II, правая], SASIC, 2704011',
+                'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-06-26 06:29:01',
-                'updated_at' => '2024-06-26 06:29:01',
+                'updated_at' => '2024-07-18 13:36:17',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            73 => 
+            
             array (
                 'id' => 1710,
                 'article' => '194871',
@@ -31876,7 +31734,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            74 => 
+            
             array (
                 'id' => 1711,
                 'article' => 'LRAC1803',
@@ -31896,7 +31754,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            75 => 
+            
             array (
                 'id' => 1712,
                 'article' => '95490719',
@@ -31916,7 +31774,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            76 => 
+            
             array (
                 'id' => 1713,
                 'article' => 'LRAC-0978',
@@ -31936,7 +31794,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            77 => 
+            
             array (
                 'id' => 1714,
                 'article' => '92-06622',
@@ -31956,7 +31814,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            78 => 
+            
             array (
                 'id' => 1715,
                 'article' => 'CLVW-1',
@@ -31976,7 +31834,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            79 => 
+            
             array (
                 'id' => 1716,
                 'article' => '27642',
@@ -31996,7 +31854,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            80 => 
+            
             array (
                 'id' => 1717,
                 'article' => '330719',
@@ -32016,7 +31874,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            81 => 
+            
             array (
                 'id' => 1718,
                 'article' => '0281002976',
@@ -32036,7 +31894,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            82 => 
+            
             array (
                 'id' => 1719,
                 'article' => '7740423',
@@ -32056,7 +31914,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            83 => 
+            
             array (
                 'id' => 1720,
                 'article' => 'AS-203073',
@@ -32076,7 +31934,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            84 => 
+            
             array (
                 'id' => 1721,
                 'article' => '23270N',
@@ -32096,7 +31954,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            85 => 
+            
             array (
                 'id' => 1722,
                 'article' => '4PK935',
@@ -32116,7 +31974,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            86 => 
+            
             array (
                 'id' => 1723,
                 'article' => 'SR-1507',
@@ -32136,7 +31994,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            87 => 
+            
             array (
                 'id' => 1724,
                 'article' => 'CT887K1',
@@ -32156,7 +32014,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            88 => 
+            
             array (
                 'id' => 1725,
                 'article' => '534054610',
@@ -32176,7 +32034,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            89 => 
+            
             array (
                 'id' => 1726,
                 'article' => '6PK1100',
@@ -32196,7 +32054,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            90 => 
+            
             array (
                 'id' => 1727,
                 'article' => '00581389',
@@ -32216,7 +32074,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            91 => 
+            
             array (
                 'id' => 1728,
                 'article' => '3C0145840C',
@@ -32236,7 +32094,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            92 => 
+            
             array (
                 'id' => 1729,
                 'article' => '803002',
@@ -32256,7 +32114,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            93 => 
+            
             array (
                 'id' => 1730,
                 'article' => '603016',
@@ -32276,7 +32134,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            94 => 
+            
             array (
                 'id' => 1731,
                 'article' => '9336007',
@@ -32296,7 +32154,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            95 => 
+            
             array (
                 'id' => 1732,
                 'article' => '01029144B',
@@ -32316,7 +32174,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            96 => 
+            
             array (
                 'id' => 1733,
                 'article' => 'FPB1130MT',
@@ -32336,7 +32194,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            97 => 
+            
             array (
                 'id' => 1734,
                 'article' => '862010',
@@ -32356,7 +32214,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            98 => 
+            
             array (
                 'id' => 1735,
                 'article' => 'NF827425F',
@@ -32376,7 +32234,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            99 => 
+            
             array (
                 'id' => 1736,
                 'article' => 'LCAC0916',
@@ -32396,7 +32254,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            100 => 
+            
             array (
                 'id' => 1737,
                 'article' => '4416956',
@@ -32416,7 +32274,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            101 => 
+            
             array (
                 'id' => 1738,
                 'article' => '93850129',
@@ -32436,7 +32294,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            102 => 
+            
             array (
                 'id' => 1739,
                 'article' => '342054',
@@ -32446,17 +32304,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'NRF342054',
                 'product_category_id' => 1,
                 'product_group_id' => 13942,
-                'name' => 'Резистор вентилятора салона',
-                'full_name' => 'Резистор вентилятора салона, NRF, 342054',
-                'description' => '',
+                'name' => 'Резистор вентилятора салона [TRAFIC II, VIVARO-A]',
+                'full_name' => 'Резистор вентилятора салона [TRAFIC II, VIVARO-A], NRF, 342054',
+                'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-06-30 12:13:43',
-                'updated_at' => '2024-06-30 12:13:43',
+                'updated_at' => '2024-07-08 12:23:17',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            103 => 
+            
             array (
                 'id' => 1740,
                 'article' => '7701046055',
@@ -32476,7 +32334,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            104 => 
+            
             array (
                 'id' => 1741,
                 'article' => '7701207720',
@@ -32496,7 +32354,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            105 => 
+            
             array (
                 'id' => 1742,
                 'article' => '0261520143',
@@ -32516,7 +32374,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            106 => 
+            
             array (
                 'id' => 1743,
                 'article' => 'KCD8002GW',
@@ -32536,7 +32394,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            107 => 
+            
             array (
                 'id' => 1744,
                 'article' => 'ST-VW65-219-2',
@@ -32545,18 +32403,18 @@ class ProductsTableSeeder extends Seeder
                 'bkey' => 'SAT',
                 'pkey' => 'SATSTVW652192',
                 'product_category_id' => 1,
-                'product_group_id' => 10000,
-                'name' => 'Оправа ПТФ',
-                'full_name' => 'Оправа ПТФ, SAT, ST-VW65-219-2',
-                'description' => '',
+                'product_group_id' => 10291,
+                'name' => 'Решетка противотуманной фары [TOURAN, текстурная, левая]',
+                'full_name' => 'Решетка противотуманной фары [TOURAN, текстурная, левая], SAT, ST-VW65-219-2',
+                'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-07-01 08:41:23',
-                'updated_at' => '2024-07-01 08:41:23',
+                'updated_at' => '2024-07-12 17:32:11',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            108 => 
+            
             array (
                 'id' => 1745,
                 'article' => 'ST-VW65-219-1',
@@ -32565,18 +32423,18 @@ class ProductsTableSeeder extends Seeder
                 'bkey' => 'SAT',
                 'pkey' => 'SATSTVW652191',
                 'product_category_id' => 1,
-                'product_group_id' => 10000,
-                'name' => 'Оправа ПТФ',
-                'full_name' => 'Оправа ПТФ, SAT, ST-VW65-219-1',
-                'description' => '',
+                'product_group_id' => 10291,
+                'name' => 'Решетка противотуманной фары [TOURAN, текстурная, правая]',
+                'full_name' => 'Решетка противотуманной фары [TOURAN, текстурная, правая], SAT, ST-VW65-219-1',
+                'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-07-01 08:42:19',
-                'updated_at' => '2024-07-01 08:42:19',
+                'updated_at' => '2024-07-12 17:34:30',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            109 => 
+            
             array (
                 'id' => 1746,
                 'article' => '33-15-004/30',
@@ -32596,7 +32454,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            110 => 
+            
             array (
                 'id' => 1747,
                 'article' => '33-15-006/30',
@@ -32616,7 +32474,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            111 => 
+            
             array (
                 'id' => 1748,
                 'article' => 'K1006',
@@ -32626,17 +32484,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'FILTRONK1006',
                 'product_category_id' => 1,
                 'product_group_id' => 10363,
-                'name' => 'Фильтр салона',
-                'full_name' => 'Фильтр салона, FILTRON, K1006',
-                'description' => '',
+                'name' => 'Фильтр салона [OCTAVIA TOUR]',
+                'full_name' => 'Фильтр салона [OCTAVIA TOUR], FILTRON, K1006',
+                'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-07-01 14:33:14',
-                'updated_at' => '2024-07-01 14:33:14',
+                'updated_at' => '2024-07-08 12:15:53',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            112 => 
+            
             array (
                 'id' => 1749,
                 'article' => '1000-010-650T',
@@ -32656,7 +32514,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            113 => 
+            
             array (
                 'id' => 1750,
                 'article' => '06H145710C',
@@ -32676,7 +32534,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            114 => 
+            
             array (
                 'id' => 1751,
                 'article' => 'MAT7049BE',
@@ -32696,7 +32554,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            115 => 
+            
             array (
                 'id' => 1752,
                 'article' => '30990',
@@ -32716,7 +32574,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            116 => 
+            
             array (
                 'id' => 1753,
                 'article' => '10-45479-SX',
@@ -32736,7 +32594,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            117 => 
+            
             array (
                 'id' => 1754,
                 'article' => 'H39-12005',
@@ -32756,7 +32614,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            118 => 
+            
             array (
                 'id' => 1755,
                 'article' => '2238',
@@ -32776,7 +32634,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            119 => 
+            
             array (
                 'id' => 1756,
                 'article' => '32735N',
@@ -32796,7 +32654,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            120 => 
+            
             array (
                 'id' => 1757,
                 'article' => '96414596',
@@ -32806,17 +32664,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'GENERALMOTORS96414596',
                 'product_category_id' => 1,
                 'product_group_id' => 10327,
-                'name' => 'Прокладка клапанной крышки',
-                'full_name' => 'Прокладка клапанной крышки, GENERAL MOTORS, 96414596',
+                'name' => 'Прокладка клапанной крышки [GM, 1.8, LDA]',
+                'full_name' => 'Прокладка клапанной крышки [GM, 1.8, LDA], GENERAL MOTORS, 96414596',
                 'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-07-04 04:49:45',
-                'updated_at' => '2024-07-04 04:49:45',
+                'updated_at' => '2024-07-12 17:25:45',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            121 => 
+            
             array (
                 'id' => 1758,
                 'article' => '4PK1010',
@@ -32836,7 +32694,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            122 => 
+            
             array (
                 'id' => 1759,
                 'article' => '6PK1548',
@@ -32856,7 +32714,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            123 => 
+            
             array (
                 'id' => 1760,
                 'article' => '165-36',
@@ -32876,7 +32734,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            124 => 
+            
             array (
                 'id' => 1761,
                 'article' => 'K13411433626',
@@ -32896,7 +32754,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            125 => 
+            
             array (
                 'id' => 1762,
                 'article' => 'K13541730682',
@@ -32916,7 +32774,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            126 => 
+            
             array (
                 'id' => 1763,
                 'article' => '311645',
@@ -32936,7 +32794,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            127 => 
+            
             array (
                 'id' => 1764,
                 'article' => '22-266804',
@@ -32956,7 +32814,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            128 => 
+            
             array (
                 'id' => 1765,
                 'article' => '2766602',
@@ -32976,7 +32834,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            129 => 
+            
             array (
                 'id' => 1766,
                 'article' => '2766402',
@@ -32996,7 +32854,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            130 => 
+            
             array (
                 'id' => 1767,
                 'article' => '2766502',
@@ -33016,7 +32874,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            131 => 
+            
             array (
                 'id' => 1768,
                 'article' => '2766301',
@@ -33036,7 +32894,7 @@ class ProductsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            132 => 
+            
             array (
                 'id' => 1769,
                 'article' => '2825',
@@ -33046,17 +32904,17 @@ class ProductsTableSeeder extends Seeder
                 'pkey' => 'OSRAM2825',
                 'product_category_id' => 2,
                 'product_group_id' => 50507,
-                'name' => 'Автолампа [W5W, 12V, 5W, W2.1x9.5d]',
-                'full_name' => 'Автолампа [W5W, 12V, 5W, W2.1x9.5d], OSRAM, 2825',
-                'description' => '',
+                'name' => 'Автолампа галогенная [W5W, 12V, 5W, W2.1x9.5d]',
+                'full_name' => 'Автолампа галогенная [W5W, 12V, 5W, W2.1x9.5d], OSRAM, 2825',
+                'description' => NULL,
                 'parameters' => NULL,
                 'weight' => NULL,
                 'created_at' => '2024-07-05 08:02:58',
-                'updated_at' => '2024-07-05 08:02:58',
+                'updated_at' => '2024-07-12 09:33:50',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),
-            133 => 
+            
             array (
                 'id' => 1770,
                 'article' => '7701473856',
@@ -33073,6 +32931,3903 @@ class ProductsTableSeeder extends Seeder
                 'weight' => NULL,
                 'created_at' => '2024-07-05 15:34:30',
                 'updated_at' => '2024-07-05 15:34:30',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1771,
+                'article' => '80091',
+                'akey' => '80091',
+                'brand' => 'Metalcaucho',
+                'bkey' => 'METALCAUCHO',
+                'pkey' => 'METALCAUCHO80091',
+                'product_category_id' => 1,
+                'product_group_id' => 10735,
+                'name' => 'Трос стояночный [TRAFIC, на ручке]',
+                'full_name' => 'Трос стояночный [TRAFIC, на ручке], Metalcaucho, 80091',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-06 09:32:54',
+                'updated_at' => '2024-07-06 09:32:54',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1772,
+                'article' => '1987477137',
+                'akey' => '1987477137',
+                'brand' => 'BOSCH',
+                'bkey' => 'BOSCH',
+                'pkey' => 'BOSCH1987477137',
+                'product_category_id' => 1,
+                'product_group_id' => 10735,
+                'name' => 'Трос стояночный [TRAFIC, задний левый]',
+                'full_name' => 'Трос стояночный [TRAFIC, задний левый], BOSCH, 1987477137',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-06 10:07:00',
+                'updated_at' => '2024-07-06 10:07:00',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1773,
+                'article' => '1987482388',
+                'akey' => '1987482388',
+                'brand' => 'BOSCH',
+                'bkey' => 'BOSCH',
+                'pkey' => 'BOSCH1987482388',
+                'product_category_id' => 1,
+                'product_group_id' => 10735,
+                'name' => 'Трос стояночный [TRAFIC, задний правый]',
+                'full_name' => 'Трос стояночный [TRAFIC, задний правый], BOSCH, 1987482388',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-06 10:07:38',
+                'updated_at' => '2024-07-06 10:07:38',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1774,
+                'article' => '9036113',
+                'akey' => '9036113',
+                'brand' => 'NK',
+                'bkey' => 'NK',
+                'pkey' => 'NK9036113',
+                'product_category_id' => 1,
+                'product_group_id' => 10735,
+                'name' => 'Трос стояночный [TRAFIC, на ручке]',
+                'full_name' => 'Трос стояночный [TRAFIC, на ручке], NK, 9036113',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-06 10:14:07',
+                'updated_at' => '2024-07-06 10:19:37',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1775,
+                'article' => '9036114',
+                'akey' => '9036114',
+                'brand' => 'NK',
+                'bkey' => 'NK',
+                'pkey' => 'NK9036114',
+                'product_category_id' => 1,
+                'product_group_id' => 10735,
+                'name' => 'Трос стояночный [TRAFIC, промежуточный]',
+                'full_name' => 'Трос стояночный [TRAFIC, промежуточный], NK, 9036114',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-06 10:21:47',
+                'updated_at' => '2024-07-06 10:21:47',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1776,
+                'article' => '9036116',
+                'akey' => '9036116',
+                'brand' => 'NK',
+                'bkey' => 'NK',
+                'pkey' => 'NK9036116',
+                'product_category_id' => 1,
+                'product_group_id' => 10735,
+                'name' => 'Трос стояночный [TRAFIC, задний правый]',
+                'full_name' => 'Трос стояночный [TRAFIC, задний правый], NK, 9036116',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-06 10:24:40',
+                'updated_at' => '2024-07-06 10:24:40',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1777,
+                'article' => 'LRAC0909',
+                'akey' => 'LRAC0909',
+                'brand' => 'LUZAR',
+                'bkey' => 'LUZAR',
+                'pkey' => 'LUZARLRAC0909',
+                'product_category_id' => 1,
+                'product_group_id' => 10455,
+                'name' => 'Радиатор кондиционера',
+                'full_name' => 'Радиатор кондиционера, LUZAR, LRAC0909',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-06 11:37:58',
+                'updated_at' => '2024-07-06 11:37:58',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1778,
+                'article' => 'IF-0233K',
+                'akey' => 'IF0233K',
+                'brand' => 'GREEN FILTER',
+                'bkey' => 'GREENFILTER',
+                'pkey' => 'GREENFILTERIF0233K',
+                'product_category_id' => 1,
+                'product_group_id' => 10363,
+                'name' => 'Фильтр салона [MEGANE II, уголь]',
+                'full_name' => 'Фильтр салона [MEGANE II, уголь], GREEN FILTER, IF-0233K',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-06 12:16:11',
+                'updated_at' => '2024-07-06 12:16:11',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1779,
+                'article' => 'SE-8502',
+                'akey' => 'SE8502',
+                'brand' => 'ZEKKERT',
+                'bkey' => 'ZEKKERT',
+                'pkey' => 'ZEKKERTSE8502',
+                'product_category_id' => 1,
+                'product_group_id' => 13849,
+                'name' => 'Датчик скорости [Duster, Logan 04->, Sandero 08->]',
+                'full_name' => 'Датчик скорости [Duster, Logan 04->, Sandero 08->], ZEKKERT, SE-8502',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-06 14:25:17',
+                'updated_at' => '2024-07-06 14:27:08',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1780,
+                'article' => 'D4291',
+                'akey' => 'D4291',
+                'brand' => 'AUTOFREN SEINSA',
+                'bkey' => 'AUTOFRENSEINSA',
+                'pkey' => 'AUTOFRENSEINSAD4291',
+                'product_category_id' => 1,
+                'product_group_id' => 13852,
+                'name' => 'Ремкомплект тормозного суппорта',
+                'full_name' => 'Ремкомплект тормозного суппорта, AUTOFREN SEINSA, D4291',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-06 14:29:07',
+                'updated_at' => '2024-07-06 14:29:35',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1781,
+                'article' => '330731',
+                'akey' => '330731',
+                'brand' => 'ERA',
+                'bkey' => 'ERA',
+                'pkey' => 'ERA330731',
+                'product_category_id' => 1,
+                'product_group_id' => 13967,
+                'name' => 'Датчик стопов',
+                'full_name' => 'Датчик стопов, ERA, 330731',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-08 08:15:46',
+                'updated_at' => '2024-07-08 08:15:46',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1782,
+                'article' => '702004001',
+                'akey' => '702004001',
+                'brand' => 'TOPRAN',
+                'bkey' => 'TOPRAN',
+                'pkey' => 'TOPRAN702004001',
+                'product_category_id' => 1,
+                'product_group_id' => 10161,
+                'name' => 'Сцепление. Главный цилиндр',
+                'full_name' => 'Сцепление. Главный цилиндр, TOPRAN, 702004001',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-08 08:25:26',
+                'updated_at' => '2024-07-08 08:25:26',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1783,
+                'article' => 'SA153',
+                'akey' => 'SA153',
+                'brand' => 'HI-Q',
+                'bkey' => 'HIQ',
+                'pkey' => 'HIQSA153',
+                'product_category_id' => 1,
+                'product_group_id' => 10131,
+                'name' => 'Комплект тормозных колодок [Барабан]',
+                'full_name' => 'Комплект тормозных колодок [Барабан], HI-Q, SA153',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-08 14:02:02',
+                'updated_at' => '2024-07-08 14:02:02',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1784,
+                'article' => '4564',
+                'akey' => '4564',
+                'brand' => 'LPR',
+                'bkey' => 'LPR',
+                'pkey' => 'LPR4564',
+                'product_category_id' => 1,
+                'product_group_id' => 13065,
+                'name' => 'Рабочий тормозной цилиндр',
+                'full_name' => 'Рабочий тормозной цилиндр, LPR, 4564',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-08 15:11:06',
+                'updated_at' => '2024-07-08 15:11:06',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1785,
+                'article' => '431-1181RMLDEM1',
+                'akey' => '4311181RMLDEM1',
+                'brand' => 'DEPO',
+                'bkey' => 'DEPO',
+                'pkey' => 'DEPO4311181RMLDEM1',
+                'product_category_id' => 1,
+                'product_group_id' => 10533,
+                'name' => 'Фара основная [FOCUS, правая]',
+                'full_name' => 'Фара основная [FOCUS, правая], DEPO, 431-1181RMLDEM1',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-08 17:58:21',
+                'updated_at' => '2024-07-08 17:58:21',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1786,
+                'article' => '431-1181LMLDEM1',
+                'akey' => '4311181LMLDEM1',
+                'brand' => 'DEPO',
+                'bkey' => 'DEPO',
+                'pkey' => 'DEPO4311181LMLDEM1',
+                'product_category_id' => 1,
+                'product_group_id' => 10533,
+                'name' => 'Фара основная [FOCUS, левая]',
+                'full_name' => 'Фара основная [FOCUS, левая], DEPO, 431-1181LMLDEM1',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-08 18:01:02',
+                'updated_at' => '2024-07-08 18:01:02',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1787,
+                'article' => '1U0823570A',
+                'akey' => '1U0823570A',
+                'brand' => 'SKODA',
+                'bkey' => 'SKODA',
+                'pkey' => 'SKODA1U0823570A',
+                'product_category_id' => 1,
+                'product_group_id' => 10000,
+                'name' => 'Опора упора капота [VAG, FABIA, IBIZA]',
+                'full_name' => 'Опора упора капота [VAG, FABIA, IBIZA], SKODA, 1U0823570A',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-09 04:09:13',
+                'updated_at' => '2024-07-12 08:39:51',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1788,
+                'article' => '73419',
+                'akey' => '73419',
+                'brand' => 'СЕРВИС КЛЮЧ',
+                'bkey' => 'СЕРВИСКЛЮЧ',
+                'pkey' => 'СЕРВИСКЛЮЧ73419',
+                'product_category_id' => 1,
+                'product_group_id' => 14139,
+                'name' => 'Набор уплотнительных колец [упаковка, 379 штук]',
+                'full_name' => 'Набор уплотнительных колец [упаковка, 379 штук], СЕРВИС КЛЮЧ, 73419',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-09 04:13:10',
+                'updated_at' => '2024-07-12 17:26:33',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1789,
+                'article' => '7E0949117',
+                'akey' => '7E0949117',
+                'brand' => 'VAG',
+                'bkey' => 'VAG',
+                'pkey' => 'VAG7E0949117',
+                'product_category_id' => 1,
+                'product_group_id' => 10563,
+                'name' => 'Фонарь указателя поворота',
+                'full_name' => 'Фонарь указателя поворота, VAG, 7E0949117',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-09 09:08:44',
+                'updated_at' => '2024-07-09 09:08:44',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1790,
+                'article' => '441-1411N-UE',
+                'akey' => '4411411NUE',
+                'brand' => 'DEPO',
+                'bkey' => 'DEPO',
+                'pkey' => 'DEPO4411411NUE',
+                'product_category_id' => 1,
+                'product_group_id' => 10563,
+                'name' => 'Фонарь указателя поворота',
+                'full_name' => 'Фонарь указателя поворота, DEPO, 441-1411N-UE',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-09 09:10:20',
+                'updated_at' => '2024-07-09 09:10:20',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1791,
+                'article' => '6RU919051A',
+                'akey' => '6RU919051A',
+                'brand' => 'VAG',
+                'bkey' => 'VAG',
+                'pkey' => 'VAG6RU919051A',
+                'product_category_id' => 1,
+                'product_group_id' => 10817,
+                'name' => 'Топливный насос',
+                'full_name' => 'Топливный насос, VAG, 6RU919051A',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-09 09:14:00',
+                'updated_at' => '2024-07-09 09:14:00',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1792,
+                'article' => '665029',
+                'akey' => '665029',
+                'brand' => 'ERA',
+                'bkey' => 'ERA',
+                'pkey' => 'ERA665029',
+                'product_category_id' => 1,
+                'product_group_id' => 13942,
+                'name' => 'Резистор вентилятора салона [RENAULT SCENIC II]',
+                'full_name' => 'Резистор вентилятора салона [RENAULT SCENIC II], ERA, 665029',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-09 09:39:28',
+                'updated_at' => '2024-07-09 09:40:06',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1793,
+                'article' => '77AA180',
+                'akey' => '77AA180',
+                'brand' => 'MASTERKIT',
+                'bkey' => 'MASTERKIT',
+                'pkey' => 'MASTERKIT77AA180',
+                'product_category_id' => 1,
+                'product_group_id' => 13923,
+                'name' => 'Дисковый тормозной механизм [Монтажный комплект, HONDA ACCORD V]',
+                'full_name' => 'Дисковый тормозной механизм [Монтажный комплект, HONDA ACCORD V], MASTERKIT, 77AA180',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-10 13:24:53',
+                'updated_at' => '2024-07-10 13:26:49',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1794,
+                'article' => 'MBE-0047',
+                'akey' => 'MBE0047',
+                'brand' => 'MASUMA',
+                'bkey' => 'MASUMA',
+                'pkey' => 'MASUMAMBE0047',
+                'product_category_id' => 1,
+                'product_group_id' => 13924,
+                'name' => 'Ремкомплект направляющих тормозного суппорта',
+                'full_name' => 'Ремкомплект направляющих тормозного суппорта, MASUMA, MBE-0047',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-10 13:30:01',
+                'updated_at' => '2024-07-10 13:30:01',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1795,
+                'article' => 'LRc0938',
+                'akey' => 'LRC0938',
+                'brand' => 'LUZAR',
+                'bkey' => 'LUZAR',
+                'pkey' => 'LUZARLRC0938',
+                'product_category_id' => 1,
+                'product_group_id' => 10203,
+                'name' => 'Радиатор системы охлаждения',
+                'full_name' => 'Радиатор системы охлаждения, LUZAR, LRc0938',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-11 06:00:53',
+                'updated_at' => '2024-07-11 06:03:03',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1796,
+                'article' => 'LRc0908',
+                'akey' => 'LRC0908',
+                'brand' => 'LUZAR',
+                'bkey' => 'LUZAR',
+                'pkey' => 'LUZARLRC0908',
+                'product_category_id' => 1,
+                'product_group_id' => 10203,
+                'name' => 'Радиатор системы охлаждения',
+                'full_name' => 'Радиатор системы охлаждения, LUZAR, LRc0908',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-11 06:02:16',
+                'updated_at' => '2024-07-11 06:02:16',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1797,
+                'article' => '1146100000',
+                'akey' => '1146100000',
+                'brand' => 'MEYLE',
+                'bkey' => 'MEYLE',
+                'pkey' => 'MEYLE1146100000',
+                'product_category_id' => 1,
+                'product_group_id' => 10672,
+                'name' => 'Сайлентблок рычага подвески [усиленный]',
+                'full_name' => 'Сайлентблок рычага подвески [усиленный], MEYLE, 1146100000',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-11 12:00:34',
+                'updated_at' => '2024-07-11 12:02:20',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1798,
+                'article' => '194863',
+                'akey' => '194863',
+                'brand' => 'ELF',
+                'bkey' => 'ELF',
+                'pkey' => 'ELF194863',
+                'product_category_id' => 5,
+                'product_group_id' => 50001,
+                'name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 4L]',
+                'full_name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 4L], ELF, 194863',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-11 12:10:44',
+                'updated_at' => '2024-07-11 12:17:51',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1799,
+                'article' => '153666',
+                'akey' => '153666',
+                'brand' => 'ELF',
+                'bkey' => 'ELF',
+                'pkey' => 'ELF153666',
+                'product_category_id' => 5,
+                'product_group_id' => 50001,
+                'name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 1L]',
+                'full_name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 1L], ELF, 153666',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1800,
+                'article' => '156985',
+                'akey' => '156985',
+                'brand' => 'ELF',
+                'bkey' => 'ELF',
+                'pkey' => 'ELF156985',
+                'product_category_id' => 5,
+                'product_group_id' => 50001,
+                'name' => 'Масло моторное [TURBO DIESEL, 10W40, 208L]',
+                'full_name' => 'Масло моторное [TURBO DIESEL, 10W40, 208L], ELF, 156985',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1801,
+                'article' => '194770',
+                'akey' => '194770',
+                'brand' => 'ELF',
+                'bkey' => 'ELF',
+                'pkey' => 'ELF194770',
+                'product_category_id' => 5,
+                'product_group_id' => 50001,
+                'name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 60L]',
+                'full_name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 60L], ELF, 194770',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1802,
+                'article' => '194774',
+                'akey' => '194774',
+                'brand' => 'ELF',
+                'bkey' => 'ELF',
+                'pkey' => 'ELF194774',
+                'product_category_id' => 5,
+                'product_group_id' => 50001,
+                'name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 208L]',
+                'full_name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 208L], ELF, 194774',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1803,
+                'article' => '196129',
+                'akey' => '196129',
+                'brand' => 'ELF',
+                'bkey' => 'ELF',
+                'pkey' => 'ELF196129',
+                'product_category_id' => 5,
+                'product_group_id' => 50001,
+                'name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 1L]',
+                'full_name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 1L], ELF, 196129',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1804,
+                'article' => '201541',
+                'akey' => '201541',
+                'brand' => 'ELF',
+                'bkey' => 'ELF',
+                'pkey' => 'ELF201541',
+                'product_category_id' => 5,
+                'product_group_id' => 50001,
+                'name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 60L]',
+                'full_name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 60L], ELF, 201541',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1805,
+                'article' => '201544',
+                'akey' => '201544',
+                'brand' => 'ELF',
+                'bkey' => 'ELF',
+                'pkey' => 'ELF201544',
+                'product_category_id' => 5,
+                'product_group_id' => 50001,
+                'name' => 'Масло моторное [EVOLUTION 700 TURBO DIESEL, 10W40, 60L]',
+                'full_name' => 'Масло моторное [EVOLUTION 700 TURBO DIESEL, 10W40, 60L], ELF, 201544',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1806,
+                'article' => '201546',
+                'akey' => '201546',
+                'brand' => 'ELF',
+                'bkey' => 'ELF',
+                'pkey' => 'ELF201546',
+                'product_category_id' => 5,
+                'product_group_id' => 50001,
+                'name' => 'Масло моторное [EVOLUTION 700 TURBO DIESEL, 10W40, 208L]',
+                'full_name' => 'Масло моторное [EVOLUTION 700 TURBO DIESEL, 10W40, 208L], ELF, 201546',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1807,
+                'article' => '201554',
+                'akey' => '201554',
+                'brand' => 'ELF',
+                'bkey' => 'ELF',
+                'pkey' => 'ELF201554',
+                'product_category_id' => 5,
+                'product_group_id' => 50001,
+                'name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 5L]',
+                'full_name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 5L], ELF, 201554',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1808,
+                'article' => '194865',
+                'akey' => '194865',
+                'brand' => 'ELF',
+                'bkey' => 'ELF',
+                'pkey' => 'ELF194865',
+                'product_category_id' => 5,
+                'product_group_id' => 50001,
+                'name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 5L]',
+                'full_name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 5L], ELF, 194865',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1809,
+                'article' => '194866',
+                'akey' => '194866',
+                'brand' => 'ELF',
+                'bkey' => 'ELF',
+                'pkey' => 'ELF194866',
+                'product_category_id' => 5,
+                'product_group_id' => 50001,
+                'name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 1L]',
+                'full_name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 1L], ELF, 194866',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1810,
+                'article' => '196130',
+                'akey' => '196130',
+                'brand' => 'ELF',
+                'bkey' => 'ELF',
+                'pkey' => 'ELF196130',
+                'product_category_id' => 5,
+                'product_group_id' => 50001,
+                'name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 4L]',
+                'full_name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 4L], ELF, 196130',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1811,
+                'article' => '196139',
+                'akey' => '196139',
+                'brand' => 'ELF',
+                'bkey' => 'ELF',
+                'pkey' => 'ELF196139',
+                'product_category_id' => 5,
+                'product_group_id' => 50001,
+                'name' => 'Масло моторное [EVOLUTION 700 TURBO DIESEL, 10W40, 5L]',
+                'full_name' => 'Масло моторное [EVOLUTION 700 TURBO DIESEL, 10W40, 5L], ELF, 196139',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1812,
+                'article' => '196141',
+                'akey' => '196141',
+                'brand' => 'ELF',
+                'bkey' => 'ELF',
+                'pkey' => 'ELF196141',
+                'product_category_id' => 5,
+                'product_group_id' => 50001,
+                'name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 5L]',
+                'full_name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 5L], ELF, 196141',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1813,
+                'article' => '196156',
+                'akey' => '196156',
+                'brand' => 'ELF',
+                'bkey' => 'ELF',
+                'pkey' => 'ELF196156',
+                'product_category_id' => 5,
+                'product_group_id' => 50001,
+                'name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 208L]',
+                'full_name' => 'Масло моторное [EVOLUTION 700 STI, 10W40, 208L], ELF, 196156',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1814,
+                'article' => '111.01850.1',
+                'akey' => '111018501',
+                'brand' => 'АВТОБРОНЯ',
+                'bkey' => 'АВТОБРОНЯ',
+                'pkey' => 'АВТОБРОНЯ111018501',
+                'product_category_id' => 1,
+                'product_group_id' => 14391,
+                'name' => 'Защита картера и КПП [KUGA, C-MAX, FOCUS II,III 03-13]',
+                'full_name' => 'Защита картера и КПП [KUGA, C-MAX, FOCUS II,III 03-13], АВТОБРОНЯ, 111.01850.1',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-11 14:16:29',
+                'updated_at' => '2024-07-11 14:16:29',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1815,
+                'article' => '111905',
+                'akey' => '111905',
+                'brand' => 'ELF',
+                'bkey' => 'ELF',
+                'pkey' => 'ELF111905',
+                'product_category_id' => 5,
+                'product_group_id' => 50003,
+                'name' => 'Жидкость тормозная [FRELUB650]',
+                'full_name' => 'Жидкость тормозная [FRELUB650], ELF, 111905',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1816,
+                'article' => '194743',
+                'akey' => '194743',
+                'brand' => 'ELF',
+                'bkey' => 'ELF',
+                'pkey' => 'ELF194743',
+                'product_category_id' => 5,
+                'product_group_id' => 50003,
+                'name' => 'Жидкость тормозная [FRELUB650]',
+                'full_name' => 'Жидкость тормозная [FRELUB650], ELF, 194743',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1817,
+                'article' => '1987479001',
+                'akey' => '1987479001',
+                'brand' => 'BOSCH',
+                'bkey' => 'BOSCH',
+                'pkey' => 'BOSCH1987479001',
+                'product_category_id' => 5,
+                'product_group_id' => 50003,
+                'name' => 'Жидкость тормозная',
+                'full_name' => 'Жидкость тормозная, BOSCH, 1987479001',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1818,
+                'article' => '1987479002',
+                'akey' => '1987479002',
+                'brand' => 'BOSCH',
+                'bkey' => 'BOSCH',
+                'pkey' => 'BOSCH1987479002',
+                'product_category_id' => 5,
+                'product_group_id' => 50003,
+                'name' => 'Жидкость тормозная',
+                'full_name' => 'Жидкость тормозная, BOSCH, 1987479002',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1819,
+                'article' => '1987479021',
+                'akey' => '1987479021',
+                'brand' => 'BOSCH',
+                'bkey' => 'BOSCH',
+                'pkey' => 'BOSCH1987479021',
+                'product_category_id' => 5,
+                'product_group_id' => 50003,
+                'name' => 'Жидкость тормозная',
+                'full_name' => 'Жидкость тормозная, BOSCH, 1987479021',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1820,
+                'article' => '1987479035',
+                'akey' => '1987479035',
+                'brand' => 'BOSCH',
+                'bkey' => 'BOSCH',
+                'pkey' => 'BOSCH1987479035',
+                'product_category_id' => 5,
+                'product_group_id' => 50003,
+                'name' => 'Жидкость тормозная',
+                'full_name' => 'Жидкость тормозная, BOSCH, 1987479035',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1821,
+                'article' => '1987479060',
+                'akey' => '1987479060',
+                'brand' => 'BOSCH',
+                'bkey' => 'BOSCH',
+                'pkey' => 'BOSCH1987479060',
+                'product_category_id' => 5,
+                'product_group_id' => 50003,
+                'name' => 'Жидкость тормозная',
+                'full_name' => 'Жидкость тормозная, BOSCH, 1987479060',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1822,
+                'article' => '1987479105',
+                'akey' => '1987479105',
+                'brand' => 'BOSCH',
+                'bkey' => 'BOSCH',
+                'pkey' => 'BOSCH1987479105',
+                'product_category_id' => 5,
+                'product_group_id' => 50003,
+                'name' => 'Жидкость тормозная',
+                'full_name' => 'Жидкость тормозная, BOSCH, 1987479105',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1823,
+                'article' => '105836',
+                'akey' => '105836',
+                'brand' => 'MOTUL',
+                'bkey' => 'MOTUL',
+                'pkey' => 'MOTUL105836',
+                'product_category_id' => 5,
+                'product_group_id' => 50003,
+                'name' => 'Жидкость тормозная',
+                'full_name' => 'Жидкость тормозная, MOTUL, 105836',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1824,
+                'article' => '7711575504',
+                'akey' => '7711575504',
+                'brand' => 'RENAULT',
+                'bkey' => 'RENAULT',
+                'pkey' => 'RENAULT7711575504',
+                'product_category_id' => 5,
+                'product_group_id' => 50003,
+                'name' => 'Жидкость тормозная',
+                'full_name' => 'Жидкость тормозная, RENAULT, 7711575504',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1826,
+                'article' => '63022RSCM',
+                'akey' => '63022RSCM',
+                'brand' => 'KOYO',
+                'bkey' => 'KOYO',
+                'pkey' => 'KOYO63022RSCM',
+                'product_category_id' => 1,
+                'product_group_id' => 74834,
+                'name' => 'Генератор. Подшипник [15X42X13]',
+                'full_name' => 'Генератор. Подшипник [15X42X13], KOYO, 63022RSCM',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-12 09:29:44',
+                'updated_at' => '2024-07-12 09:29:44',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1827,
+                'article' => '6Q1819453',
+                'akey' => '6Q1819453',
+                'brand' => 'VAG',
+                'bkey' => 'VAG',
+                'pkey' => 'VAG6Q1819453',
+                'product_category_id' => 1,
+                'product_group_id' => 10000,
+                'name' => 'Шаговый мотор заслонки отопителя',
+                'full_name' => 'Шаговый мотор заслонки отопителя, VAG, 6Q1819453',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-12 12:05:19',
+                'updated_at' => '2024-07-12 12:05:19',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1828,
+                'article' => 'D30006H',
+                'akey' => 'D30006H',
+                'brand' => 'MK Kashiyama',
+                'bkey' => 'MKKASHIYAMA',
+                'pkey' => 'MKKASHIYAMAD30006H',
+                'product_category_id' => 1,
+                'product_group_id' => 10130,
+                'name' => 'Комплект тормозных колодок [Диск]',
+                'full_name' => 'Комплект тормозных колодок [Диск], MK Kashiyama, D30006H',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-12 19:27:26',
+                'updated_at' => '2024-07-12 19:28:00',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1829,
+                'article' => 'A6395280982',
+                'akey' => 'A6395280982',
+                'brand' => 'MERCEDES-BENZ',
+                'bkey' => 'MERCEDESBENZ',
+                'pkey' => 'MERCEDESBENZA6395280982',
+                'product_category_id' => 1,
+                'product_group_id' => 12176,
+                'name' => 'Патрубок интеркулера',
+                'full_name' => 'Патрубок интеркулера, MERCEDES-BENZ, A6395280982',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-13 07:05:53',
+                'updated_at' => '2024-07-13 07:05:53',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1830,
+                'article' => 'A0079934201',
+                'akey' => 'A0079934201',
+                'brand' => 'MERCEDES-BENZ',
+                'bkey' => 'MERCEDESBENZ',
+                'pkey' => 'MERCEDESBENZA0079934201',
+                'product_category_id' => 1,
+                'product_group_id' => 14423,
+                'name' => 'Крепеж. Клипса',
+                'full_name' => 'Крепеж. Клипса, MERCEDES-BENZ, A0079934201',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-13 07:18:40',
+                'updated_at' => '2024-07-13 07:18:40',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1831,
+                'article' => '1994',
+                'akey' => '1994',
+                'brand' => 'LIQUI MOLY',
+                'bkey' => 'LIQUIMOLY',
+                'pkey' => 'LIQUIMOLY1994',
+                'product_category_id' => 1,
+                'product_group_id' => 11762,
+                'name' => 'Очиститель системы охлаждения [Kuhlerreiniger, 0,3L]',
+                'full_name' => 'Очиститель системы охлаждения [Kuhlerreiniger, 0,3L], LIQUI MOLY, 1994',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-13 07:35:23',
+                'updated_at' => '2024-07-13 07:35:23',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1832,
+                'article' => 'AFFM097',
+                'akey' => 'AFFM097',
+                'brand' => 'MILES',
+                'bkey' => 'MILES',
+                'pkey' => 'MILESAFFM097',
+                'product_category_id' => 1,
+                'product_group_id' => 13915,
+                'name' => 'Фильтр топливный [В бак]',
+                'full_name' => 'Фильтр топливный [В бак], MILES, AFFM097',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-13 08:30:14',
+                'updated_at' => '2024-07-13 08:30:14',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1833,
+                'article' => '700132001',
+                'akey' => '700132001',
+                'brand' => 'TOPRAN',
+                'bkey' => 'TOPRAN',
+                'pkey' => 'TOPRAN700132001',
+                'product_category_id' => 1,
+                'product_group_id' => 10235,
+                'name' => 'Насос омывателя [RENAULT KANGOO]',
+                'full_name' => 'Насос омывателя [RENAULT KANGOO], TOPRAN, 700132001',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-13 08:32:00',
+                'updated_at' => '2024-07-23 18:25:37',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1834,
+                'article' => '7700308814',
+                'akey' => '7700308814',
+                'brand' => 'RENAULT',
+                'bkey' => 'RENAULT',
+                'pkey' => 'RENAULT7700308814',
+                'product_category_id' => 1,
+                'product_group_id' => 10710,
+                'name' => 'Бачок стеклоомывателя',
+                'full_name' => 'Бачок стеклоомывателя, RENAULT, 7700308814',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-13 08:33:50',
+                'updated_at' => '2024-07-13 08:33:50',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1835,
+                'article' => '06H121605E',
+                'akey' => '06H121605E',
+                'brand' => 'AUDI',
+                'bkey' => 'AUDI',
+                'pkey' => 'AUDI06H121605E',
+                'product_category_id' => 1,
+                'product_group_id' => 14388,
+                'name' => 'Ремень привода водяного насоса',
+                'full_name' => 'Ремень привода водяного насоса, AUDI, 06H121605E',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-13 09:29:18',
+                'updated_at' => '2024-07-13 09:29:18',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1836,
+                'article' => '93300307',
+                'akey' => '93300307',
+                'brand' => 'ERGON',
+                'bkey' => 'ERGON',
+                'pkey' => 'ERGON93300307',
+                'product_category_id' => 1,
+                'product_group_id' => 20124,
+                'name' => 'Зеркальный элемент [PASSAT B6, левый, подогрев]',
+                'full_name' => 'Зеркальный элемент [PASSAT B6, левый, подогрев], ERGON, 93300307',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-13 09:32:34',
+                'updated_at' => '2024-07-13 09:55:29',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1837,
+                'article' => 'D30000MH',
+                'akey' => 'D30000MH',
+                'brand' => 'MK Kashiyama',
+                'bkey' => 'MKKASHIYAMA',
+                'pkey' => 'MKKASHIYAMAD30000MH',
+                'product_category_id' => 1,
+                'product_group_id' => 10130,
+                'name' => 'Комплект тормозных колодок [Диск]',
+                'full_name' => 'Комплект тормозных колодок [Диск], MK Kashiyama, D30000MH',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-13 10:59:26',
+                'updated_at' => '2024-07-13 10:59:26',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1838,
+                'article' => '94832',
+                'akey' => '94832',
+                'brand' => 'NISSENS',
+                'bkey' => 'NISSENS',
+                'pkey' => 'NISSENS94832',
+                'product_category_id' => 1,
+                'product_group_id' => 10455,
+                'name' => 'Радиатор кондиционера',
+                'full_name' => 'Радиатор кондиционера, NISSENS, 94832',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-13 12:27:43',
+                'updated_at' => '2024-07-13 12:27:43',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1839,
+                'article' => 'LRAC181D',
+                'akey' => 'LRAC181D',
+                'brand' => 'LUZAR',
+                'bkey' => 'LUZAR',
+                'pkey' => 'LUZARLRAC181D',
+                'product_category_id' => 1,
+                'product_group_id' => 10455,
+                'name' => 'Радиатор кондиционера',
+                'full_name' => 'Радиатор кондиционера, LUZAR, LRAC181D',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-13 12:30:15',
+                'updated_at' => '2024-07-13 12:30:15',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1840,
+                'article' => '35613',
+                'akey' => '35613',
+                'brand' => 'NRF',
+                'bkey' => 'NRF',
+                'pkey' => 'NRF35613',
+                'product_category_id' => 1,
+                'product_group_id' => 10455,
+                'name' => 'Радиатор кондиционера',
+                'full_name' => 'Радиатор кондиционера, NRF, 35613',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-13 12:30:58',
+                'updated_at' => '2024-07-13 12:30:58',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1841,
+                'article' => '9555346Q',
+                'akey' => '9555346Q',
+                'brand' => 'POLCAR',
+                'bkey' => 'POLCAR',
+                'pkey' => 'POLCAR9555346Q',
+                'product_category_id' => 1,
+                'product_group_id' => 13497,
+                'name' => 'Защита двигателя [PASSAT B6, пластик, EU]',
+                'full_name' => 'Защита двигателя [PASSAT B6, пластик, EU], POLCAR, 9555346Q',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-13 14:08:32',
+                'updated_at' => '2024-07-13 14:31:55',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1842,
+                'article' => '3C8825235',
+                'akey' => '3C8825235',
+                'brand' => 'VAG',
+                'bkey' => 'VAG',
+                'pkey' => 'VAG3C8825235',
+                'product_category_id' => 1,
+                'product_group_id' => 13497,
+                'name' => 'Защита двигателя [PASSAT B6, пластик, US]',
+                'full_name' => 'Защита двигателя [PASSAT B6, пластик, US], VAG, 3C8825235',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-13 14:30:12',
+                'updated_at' => '2024-07-13 14:30:48',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1843,
+                'article' => '4017011',
+                'akey' => '4017011',
+                'brand' => 'LESJOFORS',
+                'bkey' => 'LESJOFORS',
+                'pkey' => 'LESJOFORS4017011',
+                'product_category_id' => 1,
+                'product_group_id' => 10010,
+                'name' => 'Пружина подвески [LOGAN II MCV, зеленый, розовый]',
+                'full_name' => 'Пружина подвески [LOGAN II MCV, зеленый, розовый], LESJOFORS, 4017011',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-13 14:36:33',
+                'updated_at' => '2024-07-13 14:36:33',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1844,
+                'article' => '1187300400',
+                'akey' => '1187300400',
+                'brand' => 'JP GROUP',
+                'bkey' => 'JPGROUP',
+                'pkey' => 'JPGROUP1187300400',
+                'product_category_id' => 1,
+                'product_group_id' => 14387,
+                'name' => 'Ручка открывания капота[под капотом]',
+                'full_name' => 'Ручка открывания капота[под капотом], JP GROUP, 1187300400',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-14 18:09:13',
+                'updated_at' => '2024-07-14 18:10:41',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1845,
+                'article' => '3B1857122FA94',
+                'akey' => '3B1857122FA94',
+                'brand' => 'VAG',
+                'bkey' => 'VAG',
+                'pkey' => 'VAG3B1857122FA94',
+                'product_category_id' => 1,
+                'product_group_id' => 14388,
+                'name' => 'Крышка вещевого ящика',
+                'full_name' => 'Крышка вещевого ящика, VAG, 3B1857122FA94',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-14 18:13:15',
+                'updated_at' => '2024-07-14 18:13:15',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1846,
+                'article' => '30371',
+                'akey' => '30371',
+                'brand' => 'ASAM',
+                'bkey' => 'ASAM',
+                'pkey' => 'ASAM30371',
+                'product_category_id' => 1,
+                'product_group_id' => 10485,
+                'name' => 'Трос газа [LOGAN I]',
+                'full_name' => 'Трос газа [LOGAN I], ASAM, 30371',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-15 06:40:12',
+                'updated_at' => '2024-07-15 06:40:12',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1847,
+                'article' => '15031987B',
+                'akey' => '15031987B',
+                'brand' => 'CORTECO',
+                'bkey' => 'CORTECO',
+                'pkey' => 'CORTECO15031987B',
+                'product_category_id' => 1,
+                'product_group_id' => 12878,
+                'name' => 'Сальник распредвала',
+                'full_name' => 'Сальник распредвала, CORTECO, 15031987B',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-15 11:13:12',
+                'updated_at' => '2024-07-15 11:13:12',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1848,
+                'article' => '61-54115-00',
+                'akey' => '615411500',
+                'brand' => 'VICTOR REINZ',
+                'bkey' => 'VICTORREINZ',
+                'pkey' => 'VICTORREINZ615411500',
+                'product_category_id' => 1,
+                'product_group_id' => 10474,
+                'name' => 'Прокладка головки цилиндра',
+                'full_name' => 'Прокладка головки цилиндра, VICTOR REINZ, 61-54115-00',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-15 11:16:04',
+                'updated_at' => '2024-07-15 11:16:04',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1849,
+                'article' => '96378805',
+                'akey' => '96378805',
+                'brand' => 'GENERAL MOTORS',
+                'bkey' => 'GENERALMOTORS',
+                'pkey' => 'GENERALMOTORS96378805',
+                'product_category_id' => 1,
+                'product_group_id' => 10331,
+                'name' => 'Прокладка выпускного коллектора',
+                'full_name' => 'Прокладка выпускного коллектора, GENERAL MOTORS, 96378805',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-15 11:32:04',
+                'updated_at' => '2024-07-15 11:32:04',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1850,
+                'article' => '440001P',
+                'akey' => '440001P',
+                'brand' => 'CORTECO',
+                'bkey' => 'CORTECO',
+                'pkey' => 'CORTECO440001P',
+                'product_category_id' => 1,
+                'product_group_id' => 10327,
+                'name' => 'Прокладка клапанной крышки',
+                'full_name' => 'Прокладка клапанной крышки, CORTECO, 440001P',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-15 14:58:21',
+                'updated_at' => '2024-07-15 14:58:21',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1851,
+                'article' => 'L1069',
+                'akey' => 'L1069',
+                'brand' => 'PURFLUX',
+                'bkey' => 'PURFLUX',
+                'pkey' => 'PURFLUXL1069',
+                'product_category_id' => 1,
+                'product_group_id' => 10359,
+                'name' => 'Фильтр масляный',
+                'full_name' => 'Фильтр масляный, PURFLUX, L1069',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-15 16:02:33',
+                'updated_at' => '2024-07-15 16:02:33',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1852,
+                'article' => 'OX353/7D',
+                'akey' => 'OX3537D',
+                'brand' => 'KNECHT',
+                'bkey' => 'KNECHT',
+                'pkey' => 'KNECHTOX3537D',
+                'product_category_id' => 1,
+                'product_group_id' => 10359,
+                'name' => 'Фильтр масляный',
+                'full_name' => 'Фильтр масляный, KNECHT, OX353/7D',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-15 16:06:12',
+                'updated_at' => '2024-07-15 16:06:12',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1853,
+                'article' => 'HU8007z',
+                'akey' => 'HU8007Z',
+                'brand' => 'MANN-FILTER',
+                'bkey' => 'MANNFILTER',
+                'pkey' => 'MANNFILTERHU8007Z',
+                'product_category_id' => 1,
+                'product_group_id' => 10359,
+                'name' => 'Фильтр масляный',
+                'full_name' => 'Фильтр масляный, MANN-FILTER, HU8007z',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-15 16:06:39',
+                'updated_at' => '2024-07-15 16:06:39',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1854,
+                'article' => 'AP137/3',
+                'akey' => 'AP1373',
+                'brand' => 'FILTRON',
+                'bkey' => 'FILTRON',
+                'pkey' => 'FILTRONAP1373',
+                'product_category_id' => 1,
+                'product_group_id' => 10360,
+                'name' => 'Фильтр воздушный [TRAFIC, VIVARO, 2.0 dCi, 2.5 dCi]',
+                'full_name' => 'Фильтр воздушный [TRAFIC, VIVARO, 2.0 dCi, 2.5 dCi], FILTRON, AP137/3',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-15 16:42:36',
+                'updated_at' => '2024-07-15 16:42:36',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1855,
+                'article' => '7701697898',
+                'akey' => '7701697898',
+                'brand' => 'RENAULT',
+                'bkey' => 'RENAULT',
+                'pkey' => 'RENAULT7701697898',
+                'product_category_id' => 1,
+                'product_group_id' => 10339,
+                'name' => 'МКПП',
+                'full_name' => 'МКПП, RENAULT, 7701697898',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-16 07:03:11',
+                'updated_at' => '2024-07-16 07:03:11',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1856,
+                'article' => 'EC40987H206',
+                'akey' => 'EC40987H206',
+                'brand' => 'SNR',
+                'bkey' => 'SNR',
+                'pkey' => 'SNREC40987H206',
+                'product_category_id' => 1,
+                'product_group_id' => 13205,
+                'name' => 'Подшипник КПП',
+                'full_name' => 'Подшипник КПП, SNR, EC40987H206',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-16 07:08:52',
+                'updated_at' => '2024-07-16 07:08:52',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1857,
+                'article' => 'EC12238',
+                'akey' => 'EC12238',
+                'brand' => 'SNR',
+                'bkey' => 'SNR',
+                'pkey' => 'SNREC12238',
+                'product_category_id' => 1,
+                'product_group_id' => 13205,
+                'name' => 'Подшипник КПП',
+                'full_name' => 'Подшипник КПП, SNR, EC12238',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-16 07:13:41',
+                'updated_at' => '2024-07-16 07:13:41',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1858,
+                'article' => 'EC12218S02H100',
+                'akey' => 'EC12218S02H100',
+                'brand' => 'SNR',
+                'bkey' => 'SNR',
+                'pkey' => 'SNREC12218S02H100',
+                'product_category_id' => 1,
+                'product_group_id' => 13205,
+                'name' => 'Подшипник КПП',
+                'full_name' => 'Подшипник КПП, SNR, EC12218S02H100',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-16 07:15:30',
+                'updated_at' => '2024-07-16 07:15:30',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1860,
+                'article' => 'EC12625S02H206',
+                'akey' => 'EC12625S02H206',
+                'brand' => 'SNR',
+                'bkey' => 'SNR',
+                'pkey' => 'SNREC12625S02H206',
+                'product_category_id' => 1,
+                'product_group_id' => 13205,
+                'name' => 'Подшипник КПП',
+                'full_name' => 'Подшипник КПП, SNR, EC12625S02H206',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-16 07:18:02',
+                'updated_at' => '2024-07-16 07:18:02',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1861,
+                'article' => 'EC12626H206',
+                'akey' => 'EC12626H206',
+                'brand' => 'SNR',
+                'bkey' => 'SNR',
+                'pkey' => 'SNREC12626H206',
+                'product_category_id' => 1,
+                'product_group_id' => 13205,
+                'name' => 'Подшипник КПП',
+                'full_name' => 'Подшипник КПП, SNR, EC12626H206',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-16 07:23:36',
+                'updated_at' => '2024-07-19 03:45:32',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1862,
+                'article' => '40BD49T12',
+                'akey' => '40BD49T12',
+                'brand' => 'NSK',
+                'bkey' => 'NSK',
+                'pkey' => 'NSK40BD49T12',
+                'product_category_id' => 1,
+                'product_group_id' => 73683,
+                'name' => 'Компрессор кондиционера. Подшипник муфты',
+                'full_name' => 'Компрессор кондиционера. Подшипник муфты, NSK, 40BD49T12',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-16 12:43:55',
+                'updated_at' => '2024-07-16 12:43:55',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1863,
+                'article' => '9336004',
+                'akey' => '9336004',
+                'brand' => 'GSP',
+                'bkey' => 'GSP',
+                'pkey' => 'GSP9336004',
+                'product_category_id' => 1,
+                'product_group_id' => 10679,
+                'name' => 'Подшипник ступицы колеса [VAG, крепление 3 болта]',
+                'full_name' => 'Подшипник ступицы колеса [VAG, крепление 3 болта], GSP, 9336004',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-17 08:09:36',
+                'updated_at' => '2024-07-17 08:10:50',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1864,
+                'article' => '97752-2D500',
+                'akey' => '977522D500',
+                'brand' => 'HYUNDAI',
+                'bkey' => 'HYUNDAI',
+                'pkey' => 'HYUNDAI977522D500',
+                'product_category_id' => 1,
+                'product_group_id' => 10894,
+                'name' => 'Датчики системы кондиционирования',
+                'full_name' => 'Датчики системы кондиционирования, HYUNDAI, 97752-2D500',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-18 17:01:46',
+                'updated_at' => '2024-07-18 17:01:46',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1865,
+                'article' => '07K905715G',
+                'akey' => '07K905715G',
+                'brand' => 'VOLKSWAGEN',
+                'bkey' => 'VW',
+                'pkey' => 'VW07K905715G',
+                'product_category_id' => 1,
+                'product_group_id' => 10250,
+                'name' => 'Катушка зажигания',
+                'full_name' => 'Катушка зажигания, VOLKSWAGEN, 07K905715G',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-18 17:50:34',
+                'updated_at' => '2024-07-18 17:50:34',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1866,
+                'article' => '48042',
+                'akey' => '48042',
+                'brand' => 'NGK',
+                'bkey' => 'NGK',
+                'pkey' => 'NGK48042',
+                'product_category_id' => 1,
+                'product_group_id' => 10250,
+                'name' => 'Катушка зажигания',
+                'full_name' => 'Катушка зажигания, NGK, 48042',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-18 17:51:57',
+                'updated_at' => '2024-07-18 17:51:57',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1867,
+                'article' => '0221604115',
+                'akey' => '0221604115',
+                'brand' => 'BOSCH',
+                'bkey' => 'BOSCH',
+                'pkey' => 'BOSCH0221604115',
+                'product_category_id' => 1,
+                'product_group_id' => 10250,
+                'name' => 'Катушка зажигания',
+                'full_name' => 'Катушка зажигания, BOSCH, 0221604115',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-18 18:02:14',
+                'updated_at' => '2024-07-18 18:02:14',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1868,
+                'article' => '6L0809958D',
+                'akey' => '6L0809958D',
+                'brand' => 'SEAT',
+                'bkey' => 'SEAT',
+                'pkey' => 'SEAT6L0809958D',
+                'product_category_id' => 1,
+                'product_group_id' => 10265,
+                'name' => 'Подкрылок колесной арки, передний',
+                'full_name' => 'Подкрылок колесной арки, передний, SEAT, 6L0809958D',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-18 18:02:52',
+                'updated_at' => '2024-07-18 18:02:52',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1869,
+                'article' => '18855-10060',
+                'akey' => '1885510060',
+                'brand' => 'HYUNDAI',
+                'bkey' => 'HYUNDAI',
+                'pkey' => 'HYUNDAI1885510060',
+                'product_category_id' => 1,
+                'product_group_id' => 10251,
+                'name' => 'Свеча зажигания',
+                'full_name' => 'Свеча зажигания, HYUNDAI, 18855-10060',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-19 03:42:09',
+                'updated_at' => '2024-07-19 03:42:09',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1870,
+                'article' => '50932307',
+                'akey' => '50932307',
+                'brand' => 'SWAG',
+                'bkey' => 'SWAG',
+                'pkey' => 'SWAG50932307',
+                'product_category_id' => 1,
+                'product_group_id' => 14425,
+                'name' => 'Крепеж. Шпилька колеса',
+                'full_name' => 'Крепеж. Шпилька колеса, SWAG, 50932307',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-19 03:44:02',
+                'updated_at' => '2024-07-19 03:44:02',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1871,
+                'article' => 'ZRZ-KA-311',
+                'akey' => 'ZRZKA311',
+                'brand' => 'NTY',
+                'bkey' => 'NTY',
+                'pkey' => 'NTYZRZKA311',
+                'product_category_id' => 1,
+                'product_group_id' => 14138,
+                'name' => 'Подрамник перед [KIA CERATO 05->]',
+                'full_name' => 'Подрамник перед [KIA CERATO 05->], NTY, ZRZ-KA-311',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-19 04:04:57',
+                'updated_at' => '2024-07-19 04:04:57',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1872,
+                'article' => 'OE688/2',
+                'akey' => 'OE6882',
+                'brand' => 'FILTRON',
+                'bkey' => 'FILTRON',
+                'pkey' => 'FILTRONOE6882',
+                'product_category_id' => 1,
+                'product_group_id' => 10359,
+                'name' => 'Фильтр масляный',
+                'full_name' => 'Фильтр масляный, FILTRON, OE688/2',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-19 06:52:46',
+                'updated_at' => '2024-07-19 06:52:46',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1873,
+                'article' => '106377',
+                'akey' => '106377',
+                'brand' => 'MOTUL',
+                'bkey' => 'MOTUL',
+                'pkey' => 'MOTUL106377',
+                'product_category_id' => 5,
+                'product_group_id' => 50001,
+                'name' => 'Масло моторное [8100 X-CLEAN+, 5W30, 5L]',
+                'full_name' => 'Масло моторное [8100 X-CLEAN+, 5W30, 5L], MOTUL, 106377',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-19 08:31:25',
+                'updated_at' => '2024-07-19 08:31:25',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1874,
+                'article' => 'GH042080E',
+                'akey' => 'GH042080E',
+                'brand' => 'GMB',
+                'bkey' => 'GMB',
+                'pkey' => 'GMBGH042080E',
+                'product_category_id' => 1,
+                'product_group_id' => 10679,
+                'name' => 'Подшипник ступицы колеса',
+                'full_name' => 'Подшипник ступицы колеса, GMB, GH042080E',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-19 10:12:57',
+                'updated_at' => '2024-07-19 10:12:57',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1875,
+                'article' => '77AK1634',
+                'akey' => '77AK1634',
+                'brand' => 'MASTERKIT',
+                'bkey' => 'MASTERKIT',
+                'pkey' => 'MASTERKIT77AK1634',
+                'product_category_id' => 1,
+                'product_group_id' => 10127,
+                'name' => 'Суппорт диского колесного тормозного механизма',
+                'full_name' => 'Суппорт диского колесного тормозного механизма, MASTERKIT, 77AK1634',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-19 10:14:22',
+                'updated_at' => '2024-07-19 10:14:22',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1876,
+                'article' => '4311939020',
+                'akey' => '4311939020',
+                'brand' => 'KIA',
+                'bkey' => 'KIA',
+                'pkey' => 'KIA4311939020',
+                'product_category_id' => 1,
+                'product_group_id' => 13851,
+                'name' => 'Сальник МКПП',
+                'full_name' => 'Сальник МКПП, KIA, 4311939020',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-19 13:31:55',
+                'updated_at' => '2024-07-19 13:31:55',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1877,
+                'article' => 'P36007',
+                'akey' => 'P36007',
+                'brand' => 'PATRON',
+                'bkey' => 'PATRON',
+                'pkey' => 'PATRONP36007',
+                'product_category_id' => 1,
+                'product_group_id' => 10000,
+                'name' => 'Опора домкрата [BMW]',
+                'full_name' => 'Опора домкрата [BMW], PATRON, P36007',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-19 13:33:17',
+                'updated_at' => '2024-07-19 13:33:17',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1878,
+                'article' => 'LTRV1853',
+                'akey' => 'LTRV1853',
+                'brand' => 'LUZAR',
+                'bkey' => 'LUZAR',
+                'pkey' => 'LUZARLTRV1853',
+                'product_category_id' => 1,
+                'product_group_id' => 12319,
+                'name' => 'Термостатическая капсула',
+                'full_name' => 'Термостатическая капсула, LUZAR, LTRV1853',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-19 13:34:55',
+                'updated_at' => '2024-07-19 13:47:26',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1879,
+                'article' => 'LRAC-1853',
+                'akey' => 'LRAC1853',
+                'brand' => 'LUZAR',
+                'bkey' => 'LUZAR',
+                'pkey' => 'LUZARLRAC1853',
+                'product_category_id' => 1,
+                'product_group_id' => 10455,
+                'name' => 'Радиатор кондиционера',
+                'full_name' => 'Радиатор кондиционера, LUZAR, LRAC-1853',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-19 13:43:22',
+                'updated_at' => '2024-07-21 18:16:49',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1880,
+                'article' => 'PFA10161',
+                'akey' => 'PFA10161',
+                'brand' => 'PATRON',
+                'bkey' => 'PATRON',
+                'pkey' => 'PATRONPFA10161',
+                'product_category_id' => 1,
+                'product_group_id' => 12906,
+                'name' => 'Датчик массового расхода воздуха',
+                'full_name' => 'Датчик массового расхода воздуха, PATRON, PFA10161',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-19 15:32:13',
+                'updated_at' => '2024-07-19 15:32:13',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1881,
+                'article' => '26776',
+                'akey' => '26776',
+                'brand' => 'FEBI BILSTEIN',
+                'bkey' => 'FEBIBILSTEIN',
+                'pkey' => 'FEBIBILSTEIN26776',
+                'product_category_id' => 1,
+                'product_group_id' => 10638,
+                'name' => 'Опора двигателя',
+                'full_name' => 'Опора двигателя, FEBI BILSTEIN, 26776',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-20 06:59:27',
+                'updated_at' => '2024-07-20 06:59:27',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1882,
+                'article' => '531560',
+                'akey' => '531560',
+                'brand' => 'HUTCHINSON',
+                'bkey' => 'HUTCHINSON',
+                'pkey' => 'HUTCHINSON531560',
+                'product_category_id' => 1,
+                'product_group_id' => 10686,
+                'name' => 'Сайлентблок задней балки',
+                'full_name' => 'Сайлентблок задней балки, HUTCHINSON, 531560',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-20 07:25:06',
+                'updated_at' => '2024-07-20 07:25:06',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1883,
+                'article' => '2604001',
+                'akey' => '2604001',
+                'brand' => 'SASIC',
+                'bkey' => 'SASIC',
+                'pkey' => 'SASIC2604001',
+                'product_category_id' => 1,
+                'product_group_id' => 10686,
+                'name' => 'Сайлентблок задней балки',
+                'full_name' => 'Сайлентблок задней балки, SASIC, 2604001',
+                'description' => 'TecDoc_ID 3244613
+Сторона установки задний мост
+Тип установки Резиново-металлическая опора
+для оригинального номера 6001549989',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-20 07:53:59',
+                'updated_at' => '2024-07-20 07:53:59',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1884,
+                'article' => '2604002',
+                'akey' => '2604002',
+                'brand' => 'SASIC',
+                'bkey' => 'SASIC',
+                'pkey' => 'SASIC2604002',
+                'product_category_id' => 1,
+                'product_group_id' => 10686,
+                'name' => 'Сайлентблок задней балки',
+                'full_name' => 'Сайлентблок задней балки, SASIC, 2604002',
+                'description' => 'TecDoc_ID 3244614
+Сторона установки задний мост
+Тип установки Резиново-металлическая опора
+Внутренний диаметр 12
+Наружный диаметр [мм] 70
+Внутренняя длина [мм] 90
+Наружная длина [мм] 58
+для оригинального номера 8200380965',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-20 08:29:15',
+                'updated_at' => '2024-07-20 08:29:15',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1885,
+                'article' => '550447517R',
+                'akey' => '550447517R',
+                'brand' => 'RENAULT',
+                'bkey' => 'RENAULT',
+                'pkey' => 'RENAULT550447517R',
+                'product_category_id' => 1,
+                'product_group_id' => 10686,
+                'name' => 'Сайлентблок задней балки',
+                'full_name' => 'Сайлентблок задней балки, RENAULT, 550447517R',
+                'description' => 'TecDoc_ID 2094541
+Сторона установки Задняя ось двусторонне
+Толщина [мм] 90
+Вес [кг] 0,540
+необходимое количество 1
+Материал резина/металл
+Внутренний диаметр 12
+Внешний диаметр [мм] 70',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-20 08:30:27',
+                'updated_at' => '2024-07-20 08:30:27',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1886,
+                'article' => 'BC-2003',
+                'akey' => 'BC2003',
+                'brand' => 'LYNXauto',
+                'bkey' => 'LYNXAUTO',
+                'pkey' => 'LYNXAUTOBC2003',
+                'product_category_id' => 1,
+                'product_group_id' => 13924,
+                'name' => 'Ремкомплект направляющих тормозного суппорта [TRW/Lucas, D=8]',
+                'full_name' => 'Ремкомплект направляющих тормозного суппорта [TRW/Lucas, D=8], LYNXauto, BC-2003',
+                'description' => 'TRW/Lucas, D=8',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-20 13:31:13',
+                'updated_at' => '2024-07-20 13:31:53',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1887,
+                'article' => '7700110500',
+                'akey' => '7700110500',
+                'brand' => 'RENAULT',
+                'bkey' => 'RENAULT',
+                'pkey' => 'RENAULT7700110500',
+                'product_category_id' => 1,
+                'product_group_id' => 14383,
+                'name' => 'Пружина КПП [JB3, JC5]',
+                'full_name' => 'Пружина КПП, RENAULT, 7700110500',
+                'description' => 'JB3, JC5',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-20 13:45:40',
+                'updated_at' => '2024-07-20 13:45:40',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1888,
+                'article' => '0241235752',
+                'akey' => '0241235752',
+                'brand' => 'BOSCH',
+                'bkey' => 'BOSCH',
+                'pkey' => 'BOSCH0241235752',
+                'product_category_id' => 1,
+                'product_group_id' => 10251,
+                'name' => 'Свеча зажигания',
+                'full_name' => 'Свеча зажигания, BOSCH, 0241235752',
+                'description' => 'F7LTCR',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-21 17:48:44',
+                'updated_at' => '2024-07-21 17:48:44',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1889,
+                'article' => 'SF-2113',
+                'akey' => 'SF2113',
+                'brand' => 'ZEKKERT',
+                'bkey' => 'ZEKKERT',
+                'pkey' => 'ZEKKERTSF2113',
+                'product_category_id' => 1,
+                'product_group_id' => 10010,
+                'name' => 'Пружина подвески',
+                'full_name' => 'Пружина подвески, ZEKKERT, SF-2113',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-21 17:58:10',
+                'updated_at' => '2024-07-21 17:58:10',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1890,
+                'article' => 'GM-8008',
+                'akey' => 'GM8008',
+                'brand' => 'ZEKKERT',
+                'bkey' => 'ZEKKERT',
+                'pkey' => 'ZEKKERTGM8008',
+                'product_category_id' => 1,
+                'product_group_id' => 14152,
+                'name' => 'Подшипник опорный',
+                'full_name' => 'Подшипник опорный, ZEKKERT, GM-8008',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-21 17:59:54',
+                'updated_at' => '2024-07-21 18:05:53',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1891,
+                'article' => 'SM-3041S',
+                'akey' => 'SM3041S',
+                'brand' => 'ZEKKERT',
+                'bkey' => 'ZEKKERT',
+                'pkey' => 'ZEKKERTSM3041S',
+                'product_category_id' => 1,
+                'product_group_id' => 14412,
+                'name' => 'Пыльник амортизатора [SEAT IBIZA, AUDI A2, Комплект]',
+                'full_name' => 'Пыльник амортизатора [SEAT IBIZA, AUDI A2, Комплект], ZEKKERT, SM-3041S',
+                'description' => 'SEAT IBIZA, AUDI A2, Комплект',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-21 18:01:39',
+                'updated_at' => '2024-07-21 18:04:09',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1892,
+                'article' => '5K0945258',
+                'akey' => '5K0945258',
+                'brand' => 'VAG',
+                'bkey' => 'VAG',
+                'pkey' => 'VAG5K0945258',
+                'product_category_id' => 1,
+                'product_group_id' => 10556,
+                'name' => 'Плата заднего фонаря правого',
+                'full_name' => 'Плата заднего фонаря правого, VAG, 5K0945258',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-21 18:10:32',
+                'updated_at' => '2024-07-21 18:10:32',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1894,
+                'article' => '5K0945246A',
+                'akey' => '5K0945246A',
+                'brand' => 'VAG',
+                'bkey' => 'VAG',
+                'pkey' => 'VAG5K0945246A',
+                'product_category_id' => 1,
+                'product_group_id' => 14423,
+                'name' => 'Крепеж. Клипса',
+                'full_name' => 'Крепеж. Клипса, VAG, 5K0945246A',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-21 18:12:06',
+                'updated_at' => '2024-07-21 18:12:06',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1895,
+                'article' => 'R155.07',
+                'akey' => 'R15507',
+                'brand' => 'SNR',
+                'bkey' => 'SNR',
+                'pkey' => 'SNRR15507',
+                'product_category_id' => 1,
+                'product_group_id' => 20988,
+                'name' => 'Подшипник ступицы колеса [Комплект]',
+                'full_name' => 'Подшипник ступицы колеса [Комплект], SNR, R155.07',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-22 06:52:35',
+                'updated_at' => '2024-07-22 06:57:47',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1896,
+                'article' => '55568536',
+                'akey' => '55568536',
+                'brand' => 'GENERAL MOTORS',
+                'bkey' => 'GENERALMOTORS',
+                'pkey' => 'GENERALMOTORS55568536',
+                'product_category_id' => 1,
+                'product_group_id' => 13933,
+                'name' => 'Прокладка теплообменника',
+                'full_name' => 'Прокладка теплообменника, GENERAL MOTORS, 55568536',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-22 10:03:11',
+                'updated_at' => '2024-07-22 10:03:11',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1897,
+                'article' => '55568539',
+                'akey' => '55568539',
+                'brand' => 'GENERAL MOTORS',
+                'bkey' => 'GENERALMOTORS',
+                'pkey' => 'GENERALMOTORS55568539',
+                'product_category_id' => 1,
+                'product_group_id' => 13933,
+                'name' => 'Прокладка теплообменника',
+                'full_name' => 'Прокладка теплообменника, GENERAL MOTORS, 55568539',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-22 10:05:40',
+                'updated_at' => '2024-07-22 10:05:40',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1898,
+                'article' => '55565385',
+                'akey' => '55565385',
+                'brand' => 'GENERAL MOTORS',
+                'bkey' => 'GENERALMOTORS',
+                'pkey' => 'GENERALMOTORS55565385',
+                'product_category_id' => 1,
+                'product_group_id' => 13933,
+                'name' => 'Прокладка теплообменника',
+                'full_name' => 'Прокладка теплообменника, GENERAL MOTORS, 55565385',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-22 10:06:53',
+                'updated_at' => '2024-07-22 10:17:24',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1899,
+                'article' => '55568540',
+                'akey' => '55568540',
+                'brand' => 'GENERAL MOTORS',
+                'bkey' => 'GENERALMOTORS',
+                'pkey' => 'GENERALMOTORS55568540',
+                'product_category_id' => 1,
+                'product_group_id' => 13933,
+                'name' => 'Прокладка теплообменника',
+                'full_name' => 'Прокладка теплообменника, GENERAL MOTORS, 55568540',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-22 10:08:16',
+                'updated_at' => '2024-07-22 10:08:16',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1900,
+                'article' => '55565619',
+                'akey' => '55565619',
+                'brand' => 'GENERAL MOTORS',
+                'bkey' => 'GENERALMOTORS',
+                'pkey' => 'GENERALMOTORS55565619',
+                'product_category_id' => 1,
+                'product_group_id' => 10196,
+                'name' => 'Прокладка термостата',
+                'full_name' => 'Прокладка термостата, GENERAL MOTORS, 55565619',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-22 10:13:18',
+                'updated_at' => '2024-07-22 10:13:18',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1901,
+                'article' => '55558112',
+                'akey' => '55558112',
+                'brand' => 'GENERAL MOTORS',
+                'bkey' => 'GENERALMOTORS',
+                'pkey' => 'GENERALMOTORS55558112',
+                'product_category_id' => 1,
+                'product_group_id' => 10334,
+                'name' => 'Прокладка подачи масла турбины',
+                'full_name' => 'Прокладка подачи масла турбины, GENERAL MOTORS, 55558112',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-22 10:26:21',
+                'updated_at' => '2024-07-22 10:33:16',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1902,
+                'article' => '691.370',
+                'akey' => '691370',
+                'brand' => 'ELRING',
+                'bkey' => 'ELRING',
+                'pkey' => 'ELRING691370',
+                'product_category_id' => 1,
+                'product_group_id' => 10327,
+                'name' => 'Прокладка клапанной крышки',
+                'full_name' => 'Прокладка клапанной крышки, ELRING, 691.370',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-22 10:31:14',
+                'updated_at' => '2024-07-22 10:31:14',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1903,
+                'article' => '55565348',
+                'akey' => '55565348',
+                'brand' => 'GENERAL MOTORS',
+                'bkey' => 'GENERALMOTORS',
+                'pkey' => 'GENERALMOTORS55565348',
+                'product_category_id' => 1,
+                'product_group_id' => 10331,
+                'name' => 'Прокладка выпускного коллектора',
+                'full_name' => 'Прокладка выпускного коллектора, GENERAL MOTORS, 55565348',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-22 10:32:35',
+                'updated_at' => '2024-07-22 10:32:35',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1904,
+                'article' => 'SG-4612',
+                'akey' => 'SG4612',
+                'brand' => 'ZEKKERT',
+                'bkey' => 'ZEKKERT',
+                'pkey' => 'ZEKKERTSG4612',
+                'product_category_id' => 1,
+                'product_group_id' => 10221,
+                'name' => 'Амортизатор подвески [IBIZA, POLO IV]',
+                'full_name' => 'Амортизатор подвески [IBIZA, POLO IV], ZEKKERT, SG-4612',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-22 14:01:14',
+                'updated_at' => '2024-07-24 06:26:04',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1905,
+                'article' => 'BL33046',
+                'akey' => 'BL33046',
+                'brand' => 'JIKIU',
+                'bkey' => 'JIKIU',
+                'pkey' => 'JIKIUBL33046',
+                'product_category_id' => 1,
+                'product_group_id' => 10696,
+                'name' => 'Втулка стабилизатора',
+                'full_name' => 'Втулка стабилизатора, JIKIU, BL33046',
+                'description' => '[VAG, A3, GOLF IV, BORA, D=19]',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-22 14:09:33',
+                'updated_at' => '2024-07-22 14:09:33',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1906,
+                'article' => '62921175',
+                'akey' => '62921175',
+                'brand' => 'SWAG',
+                'bkey' => 'SWAG',
+                'pkey' => 'SWAG62921175',
+                'product_category_id' => 1,
+                'product_group_id' => 14425,
+                'name' => 'Крепеж. Болт/гайка колеса []',
+                'full_name' => 'Крепеж. Болт/гайка колеса, SWAG, 62921175',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-22 14:13:15',
+                'updated_at' => '2024-07-22 14:13:15',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1907,
+                'article' => '0430000140',
+                'akey' => '0430000140',
+                'brand' => 'HYUNDAI',
+                'bkey' => 'HYUNDAI',
+                'pkey' => 'HYUNDAI0430000140',
+                'product_category_id' => 1,
+                'product_group_id' => 50002,
+                'name' => 'Масло трансмиссионное MTF 75W80',
+                'full_name' => 'Масло трансмиссионное MTF 75W80, HYUNDAI, 0430000140',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-22 14:14:34',
+                'updated_at' => '2024-07-22 14:14:34',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1908,
+                'article' => 'PN0019W',
+                'akey' => 'PN0019W',
+                'brand' => 'NiBK',
+                'bkey' => 'NIBK',
+                'pkey' => 'NIBKPN0019W',
+                'product_category_id' => 1,
+                'product_group_id' => 10130,
+                'name' => 'Комплект тормозных колодок [Диск]',
+                'full_name' => 'Комплект тормозных колодок [Диск], NiBK, PN0019W',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-23 07:23:58',
+                'updated_at' => '2024-07-23 07:23:58',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1909,
+                'article' => '1K0511327AP',
+                'akey' => '1K0511327AP',
+                'brand' => 'VAG',
+                'bkey' => 'VAG',
+                'pkey' => 'VAG1K0511327AP',
+                'product_category_id' => 1,
+                'product_group_id' => 10696,
+                'name' => 'Втулка стабилизатора',
+                'full_name' => 'Втулка стабилизатора, VAG, 1K0511327AP',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-23 07:27:09',
+                'updated_at' => '2024-07-23 07:27:09',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1910,
+                'article' => '770059',
+                'akey' => '770059',
+                'brand' => 'ERA',
+                'bkey' => 'ERA',
+                'pkey' => 'ERA770059',
+                'product_category_id' => 1,
+                'product_group_id' => 10817,
+                'name' => 'Насос топливный [OPEL, GM, 3.8bar]',
+                'full_name' => 'Насос топливный [OPEL, GM, 3.8bar], ERA, 770059',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-23 17:41:56',
+                'updated_at' => '2024-07-23 17:41:56',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1911,
+                'article' => '6PK1642',
+                'akey' => '6PK1642',
+                'brand' => 'DONGIL',
+                'bkey' => 'DONGIL',
+                'pkey' => 'DONGIL6PK1642',
+                'product_category_id' => 1,
+                'product_group_id' => 10531,
+                'name' => 'Ремень сервисный',
+                'full_name' => 'Ремень сервисный, DONGIL, 6PK1642',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-23 18:29:35',
+                'updated_at' => '2024-07-24 08:52:33',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1912,
+                'article' => '812006',
+                'akey' => '812006',
+                'brand' => 'FRENKIT',
+                'bkey' => 'FRENKIT',
+                'pkey' => 'FRENKIT812006',
+                'product_category_id' => 1,
+                'product_group_id' => 13924,
+                'name' => 'Ремкомплект направляющих тормозного суппорта [LOAGN, CLIO, MEGANE I]',
+                'full_name' => 'Ремкомплект направляющих тормозного суппорта [LOAGN, CLIO, MEGANE I], FRENKIT, 812006',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-23 19:23:22',
+                'updated_at' => '2024-07-23 19:25:39',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1913,
+                'article' => 'SP4059',
+                'akey' => 'SP4059',
+                'brand' => 'SANGSIN',
+                'bkey' => 'SANGSIN',
+                'pkey' => 'SANGSINSP4059',
+                'product_category_id' => 1,
+                'product_group_id' => 10130,
+                'name' => 'Комплект тормозных колодок [Диск] [RENAULT KANGOO 08- перед]',
+                'full_name' => 'Комплект тормозных колодок [Диск], SANGSIN, SP4059',
+                'description' => 'RENAULT KANGOO 08- перед',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-23 19:25:15',
+                'updated_at' => '2024-07-23 19:25:15',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1914,
+                'article' => 'A6392410413',
+                'akey' => 'A6392410413',
+                'brand' => 'MERCEDES-BENZ',
+                'bkey' => 'MERCEDESBENZ',
+                'pkey' => 'MERCEDESBENZA6392410413',
+                'product_category_id' => 1,
+                'product_group_id' => 10638,
+                'name' => 'Опора двигателя',
+                'full_name' => 'Опора двигателя, MERCEDES-BENZ, A6392410413',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-24 09:44:45',
+                'updated_at' => '2024-07-24 09:44:45',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1915,
+                'article' => '535005010',
+                'akey' => '535005010',
+                'brand' => 'INA',
+                'bkey' => 'INA',
+                'pkey' => 'INA535005010',
+                'product_category_id' => 1,
+                'product_group_id' => 11756,
+                'name' => 'Генератор. Шкив',
+                'full_name' => 'Генератор. Шкив, INA, 535005010',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-24 09:46:31',
+                'updated_at' => '2024-07-24 09:46:31',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1916,
+                'article' => '1520-1033',
+                'akey' => '15201033',
+                'brand' => 'PROFIT',
+                'bkey' => 'PROFIT',
+                'pkey' => 'PROFIT15201033',
+                'product_category_id' => 1,
+                'product_group_id' => 10363,
+                'name' => 'Фильтр салона',
+                'full_name' => 'Фильтр салона, PROFIT, 1520-1033',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-24 10:28:27',
+                'updated_at' => '2024-07-24 10:28:27',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1917,
+                'article' => '1520-1034',
+                'akey' => '15201034',
+                'brand' => 'PROFIT',
+                'bkey' => 'PROFIT',
+                'pkey' => 'PROFIT15201034',
+                'product_category_id' => 1,
+                'product_group_id' => 10363,
+                'name' => 'Фильтр салона',
+                'full_name' => 'Фильтр салона, PROFIT, 1520-1034',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-24 10:33:10',
+                'updated_at' => '2024-07-24 10:33:10',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1918,
+                'article' => '1521-2103',
+                'akey' => '15212103',
+                'brand' => 'PROFIT',
+                'bkey' => 'PROFIT',
+                'pkey' => 'PROFIT15212103',
+                'product_category_id' => 1,
+                'product_group_id' => 10363,
+                'name' => 'Фильтр салона',
+                'full_name' => 'Фильтр салона, PROFIT, 1521-2103',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-24 10:34:30',
+                'updated_at' => '2024-07-24 10:34:30',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1919,
+                'article' => '1521-2101',
+                'akey' => '15212101',
+                'brand' => 'PROFIT',
+                'bkey' => 'PROFIT',
+                'pkey' => 'PROFIT15212101',
+                'product_category_id' => 1,
+                'product_group_id' => 10363,
+                'name' => 'Фильтр салона [LANOS]',
+                'full_name' => 'Фильтр салона [LANOS], PROFIT, 1521-2101',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-24 10:37:56',
+                'updated_at' => '2024-07-24 10:38:41',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1920,
+                'article' => '1512-1004',
+                'akey' => '15121004',
+                'brand' => 'PROFIT',
+                'bkey' => 'PROFIT',
+                'pkey' => 'PROFIT15121004',
+                'product_category_id' => 1,
+                'product_group_id' => 10360,
+                'name' => 'Фильтр воздушный',
+                'full_name' => 'Фильтр воздушный, PROFIT, 1512-1004',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-24 10:40:24',
+                'updated_at' => '2024-07-24 10:40:24',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1921,
+                'article' => 'GH040040',
+                'akey' => 'GH040040',
+                'brand' => 'GMB',
+                'bkey' => 'GMB',
+                'pkey' => 'GMBGH040040',
+                'product_category_id' => 1,
+                'product_group_id' => 10679,
+                'name' => 'Подшипник ступицы колеса',
+                'full_name' => 'Подшипник ступицы колеса, GMB, GH040040',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-24 11:29:48',
+                'updated_at' => '2024-07-24 11:29:48',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1922,
+                'article' => 'XH0377-F0',
+                'akey' => 'XH0377F0',
+                'brand' => 'NOK',
+                'bkey' => 'NOK',
+                'pkey' => 'NOKXH0377F0',
+                'product_category_id' => 1,
+                'product_group_id' => 13936,
+                'name' => 'Раздаточная коробка. Сальник',
+                'full_name' => 'Раздаточная коробка. Сальник, NOK, XH0377-F0',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-24 11:47:23',
+                'updated_at' => '2024-07-24 11:47:23',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1923,
+                'article' => 'SP2107',
+                'akey' => 'SP2107',
+                'brand' => 'HI-Q',
+                'bkey' => 'HIQ',
+                'pkey' => 'HIQSP2107',
+                'product_category_id' => 1,
+                'product_group_id' => 10130,
+                'name' => 'Комплект тормозных колодок [Диск] [Перед, MURANO, INFINITY FX]',
+                'full_name' => 'Комплект тормозных колодок [Диск], HI-Q, SP2107',
+                'description' => 'Перед, MURANO, INFINITY FX',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-24 15:04:08',
+                'updated_at' => '2024-07-24 15:04:08',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1924,
+                'article' => 'SP1250',
+                'akey' => 'SP1250',
+                'brand' => 'HI-Q',
+                'bkey' => 'HIQ',
+                'pkey' => 'HIQSP1250',
+                'product_category_id' => 1,
+                'product_group_id' => 10130,
+                'name' => 'Комплект тормозных колодок [Диск] [зад, INFINITY EX35, G35, NISSAN ALTIMA 2.5 3.5 SENTRA 07]',
+                'full_name' => 'Комплект тормозных колодок [Диск], HI-Q, SP1250',
+                'description' => 'зад, INFINITY EX35, G35, NISSAN ALTIMA 2.5 3.5 SENTRA 07',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-24 15:06:54',
+                'updated_at' => '2024-07-24 15:06:54',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1926,
+                'article' => 'SD4210',
+                'akey' => 'SD4210',
+                'brand' => 'HI-Q',
+                'bkey' => 'HIQ',
+                'pkey' => 'HIQSD4210',
+                'product_category_id' => 1,
+                'product_group_id' => 10132,
+                'name' => 'Диск тормозной [перед, INFINITI]',
+                'full_name' => 'Диск тормозной, HI-Q, SD4210',
+                'description' => 'перед, INFINITI',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-24 15:08:38',
+                'updated_at' => '2024-07-24 15:08:38',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1927,
+                'article' => 'SD4209',
+                'akey' => 'SD4209',
+                'brand' => 'HI-Q',
+                'bkey' => 'HIQ',
+                'pkey' => 'HIQSD4209',
+                'product_category_id' => 1,
+                'product_group_id' => 10132,
+                'name' => 'Диск тормозной [задний, NISSAN MURANO, INFINITY FX]',
+                'full_name' => 'Диск тормозной, HI-Q, SD4209',
+                'description' => 'задний, NISSAN MURANO, INFINITY FX',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-24 15:10:17',
+                'updated_at' => '2024-07-24 15:10:17',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1928,
+                'article' => 'MLS-621',
+                'akey' => 'MLS621',
+                'brand' => 'MASUMA',
+                'bkey' => 'MASUMA',
+                'pkey' => 'MASUMAMLS621',
+                'product_category_id' => 1,
+                'product_group_id' => 14421,
+                'name' => 'Крепеж. Болт эксцентриковый []',
+                'full_name' => 'Крепеж. Болт эксцентриковый, MASUMA, MLS-621',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-24 16:22:17',
+                'updated_at' => '2024-07-24 16:22:17',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1929,
+                'article' => 'CR0483',
+                'akey' => 'CR0483',
+                'brand' => 'CTR',
+                'bkey' => 'CTR',
+                'pkey' => 'CTRCR0483',
+                'product_category_id' => 1,
+                'product_group_id' => 10297,
+                'name' => 'Тяга рулевая',
+                'full_name' => 'Тяга рулевая, CTR, CR0483',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-24 16:23:56',
+                'updated_at' => '2024-07-24 16:23:56',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1930,
+                'article' => 'BH22134',
+                'akey' => 'BH22134',
+                'brand' => 'JIKIU',
+                'bkey' => 'JIKIU',
+                'pkey' => 'JIKIUBH22134',
+                'product_category_id' => 1,
+                'product_group_id' => 10672,
+                'name' => 'Сайлентблок рычага подвески',
+                'full_name' => 'Сайлентблок рычага подвески, JIKIU, BH22134',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-24 16:25:19',
+                'updated_at' => '2024-07-24 16:25:19',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1931,
+                'article' => 'CE0515',
+                'akey' => 'CE0515',
+                'brand' => 'CTR',
+                'bkey' => 'CTR',
+                'pkey' => 'CTRCE0515',
+                'product_category_id' => 1,
+                'product_group_id' => 10298,
+                'name' => 'Наконечник рулевой тяги [прав]',
+                'full_name' => 'Наконечник рулевой тяги, CTR, CE0515',
+                'description' => 'прав',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-24 16:41:29',
+                'updated_at' => '2024-07-24 16:41:29',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1932,
+                'article' => 'CE0516',
+                'akey' => 'CE0516',
+                'brand' => 'CTR',
+                'bkey' => 'CTR',
+                'pkey' => 'CTRCE0516',
+                'product_category_id' => 1,
+                'product_group_id' => 10298,
+                'name' => 'Наконечник рулевой тяги [INFINITI, левый]',
+                'full_name' => 'Наконечник рулевой тяги [INFINITI, левый], CTR, CE0516',
+                'description' => 'INFINITI, лев',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-24 16:42:52',
+                'updated_at' => '2024-07-24 16:43:52',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1933,
+                'article' => 'GV0406',
+                'akey' => 'GV0406',
+                'brand' => 'CTR',
+                'bkey' => 'CTR',
+                'pkey' => 'CTRGV0406',
+                'product_category_id' => 1,
+                'product_group_id' => 10696,
+                'name' => 'Втулка стабилизатора [передняя, INFINITI]',
+                'full_name' => 'Втулка стабилизатора, CTR, GV0406',
+                'description' => 'передняя, INFINITI',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-24 16:47:30',
+                'updated_at' => '2024-07-24 16:47:30',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1934,
+                'article' => 'SP2080',
+                'akey' => 'SP2080',
+                'brand' => 'HI-Q',
+                'bkey' => 'HIQ',
+                'pkey' => 'HIQSP2080',
+                'product_category_id' => 1,
+                'product_group_id' => 10130,
+                'name' => 'Комплект тормозных колодок [Диск]',
+                'full_name' => 'Комплект тормозных колодок [Диск], HI-Q, SP2080',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-25 11:43:14',
+                'updated_at' => '2024-07-25 11:43:14',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1935,
+                'article' => 'SP2081',
+                'akey' => 'SP2081',
+                'brand' => 'HI-Q',
+                'bkey' => 'HIQ',
+                'pkey' => 'HIQSP2081',
+                'product_category_id' => 1,
+                'product_group_id' => 10130,
+                'name' => 'Комплект тормозных колодок [Диск]',
+                'full_name' => 'Комплект тормозных колодок [Диск], HI-Q, SP2081',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-25 11:46:47',
+                'updated_at' => '2024-07-25 11:46:47',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1936,
+                'article' => 'PL0597',
+                'akey' => 'PL0597',
+                'brand' => 'CTR',
+                'bkey' => 'CTR',
+                'pkey' => 'CTRPL0597',
+                'product_category_id' => 1,
+                'product_group_id' => 10677,
+                'name' => 'Тяга стабилизатора []',
+                'full_name' => 'Тяга стабилизатора, CTR, PL0597',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-25 14:10:35',
+                'updated_at' => '2024-07-25 14:10:35',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1937,
+                'article' => 'BL21081',
+                'akey' => 'BL21081',
+                'brand' => 'JIKIU',
+                'bkey' => 'JIKIU',
+                'pkey' => 'JIKIUBL21081',
+                'product_category_id' => 1,
+                'product_group_id' => 10696,
+                'name' => 'Втулка стабилизатора',
+                'full_name' => 'Втулка стабилизатора, JIKIU, BL21081',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-25 14:15:28',
+                'updated_at' => '2024-07-25 14:15:28',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1938,
+                'article' => '09.A417.1X',
+                'akey' => '09A4171X',
+                'brand' => 'BREMBO',
+                'bkey' => 'BREMBO',
+                'pkey' => 'BREMBO09A4171X',
+                'product_category_id' => 1,
+                'product_group_id' => 10132,
+                'name' => 'Диск тормозной []',
+                'full_name' => 'Диск тормозной [], BREMBO, 09.A417.1X',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-25 14:17:20',
+                'updated_at' => '2024-07-25 14:25:33',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1939,
+                'article' => 'SD4016',
+                'akey' => 'SD4016',
+                'brand' => 'HI-Q',
+                'bkey' => 'HIQ',
+                'pkey' => 'HIQSD4016',
+                'product_category_id' => 1,
+                'product_group_id' => 10132,
+                'name' => 'Диск тормозной []',
+                'full_name' => 'Диск тормозной, HI-Q, SD4016',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-25 14:20:47',
+                'updated_at' => '2024-07-25 14:20:47',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1940,
+                'article' => 'SP1391',
+                'akey' => 'SP1391',
+                'brand' => 'HI-Q',
+                'bkey' => 'HIQ',
+                'pkey' => 'HIQSP1391',
+                'product_category_id' => 1,
+                'product_group_id' => 10130,
+                'name' => 'Комплект тормозных колодок [Диск] []',
+                'full_name' => 'Комплект тормозных колодок [Диск], HI-Q, SP1391',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-25 14:32:25',
+                'updated_at' => '2024-07-25 14:32:25',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1941,
+                'article' => 'DF4276',
+                'akey' => 'DF4276',
+                'brand' => 'TRW',
+                'bkey' => 'TRW',
+                'pkey' => 'TRWDF4276',
+                'product_category_id' => 1,
+                'product_group_id' => 10132,
+                'name' => 'Диск тормозной []',
+                'full_name' => 'Диск тормозной, TRW, DF4276',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-25 14:34:56',
+                'updated_at' => '2024-07-25 14:34:56',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1942,
+                'article' => 'SP1701',
+                'akey' => 'SP1701',
+                'brand' => 'HI-Q',
+                'bkey' => 'HIQ',
+                'pkey' => 'HIQSP1701',
+                'product_category_id' => 1,
+                'product_group_id' => 10130,
+                'name' => 'Комплект тормозных колодок [Диск] [перед, AUDI A3, VW GOLF IV, SKODA OCTAVIA 97]',
+                'full_name' => 'Комплект тормозных колодок [Диск], HI-Q, SP1701',
+                'description' => 'перед, AUDI A3, VW GOLF IV, SKODA OCTAVIA 97',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-25 14:37:57',
+                'updated_at' => '2024-07-25 14:37:57',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1943,
+                'article' => 'SD5405',
+                'akey' => 'SD5405',
+                'brand' => 'HI-Q',
+                'bkey' => 'HIQ',
+                'pkey' => 'HIQSD5405',
+                'product_category_id' => 1,
+                'product_group_id' => 10132,
+                'name' => 'Диск тормозной',
+                'full_name' => 'Диск тормозной, HI-Q, SD5405',
+                'description' => 'перед, JETTA 163, OCTAVIA 5E',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-25 14:41:59',
+                'updated_at' => '2024-07-25 14:41:59',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1944,
+                'article' => 'SD3062',
+                'akey' => 'SD3062',
+                'brand' => 'HI-Q',
+                'bkey' => 'HIQ',
+                'pkey' => 'HIQSD3062',
+                'product_category_id' => 1,
+                'product_group_id' => 10132,
+                'name' => 'Диск тормозной [RENAULT KANGOO II, MERCEDES CITAN 12->]',
+                'full_name' => 'Диск тормозной, HI-Q, SD3062',
+                'description' => 'RENAULT KANGOO II, MERCEDES CITAN 12->',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-25 16:54:38',
+                'updated_at' => '2024-07-25 16:54:38',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1945,
+                'article' => '2170-08127310-10',
+                'akey' => '21700812731010',
+                'brand' => 'LADA',
+                'bkey' => 'LADA',
+                'pkey' => 'LADA21700812731010',
+                'product_category_id' => 1,
+                'product_group_id' => 10894,
+                'name' => 'Датчик давления фреона',
+                'full_name' => 'Датчик давления фреона, LADA, 2170-08127310-10',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-25 16:58:10',
+                'updated_at' => '2024-07-25 16:58:10',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1946,
+                'article' => '1112105-005',
+                'akey' => '1112105005',
+                'brand' => 'RAVENOL',
+                'bkey' => 'RAVENOL',
+                'pkey' => 'RAVENOL1112105005',
+                'product_category_id' => 1,
+                'product_group_id' => 50001,
+                'name' => 'Масло моторное [MB229.3,RN0700, RN0710, VW502.00, VW505.00, 5L]',
+                'full_name' => 'Масло моторное [MB229.3,RN0700, RN0710, VW502.00, VW505.00, 5L], RAVENOL, 1112105-005',
+                'description' => 'MB229.3,RN0700, RN0710, VW502.00, VW505.00, 5L',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-26 07:17:41',
+                'updated_at' => '2024-07-26 07:21:10',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1947,
+                'article' => '1112105-001',
+                'akey' => '1112105001',
+                'brand' => 'RAVENOL',
+                'bkey' => 'RAVENOL',
+                'pkey' => 'RAVENOL1112105001',
+                'product_category_id' => 1,
+                'product_group_id' => 10000,
+                'name' => 'Масло моторное [MB229.3,RN0700, RN0710, VW502.00, VW505.00, 1L]',
+                'full_name' => 'Масло моторное [MB229.3,RN0700, RN0710, VW502.00, VW505.00, 1L], RAVENOL, 1112105-001',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-26 07:20:11',
+                'updated_at' => '2024-07-26 07:20:11',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1948,
+                'article' => 'SP1182',
+                'akey' => 'SP1182',
+                'brand' => 'HI-Q',
+                'bkey' => 'HIQ',
+                'pkey' => 'HIQSP1182',
+                'product_category_id' => 1,
+                'product_group_id' => 10130,
+                'name' => 'Комплект тормозных колодок [Диск]',
+                'full_name' => 'Комплект тормозных колодок [Диск], HI-Q, SP1182',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-26 07:34:55',
+                'updated_at' => '2024-07-26 07:34:55',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1949,
+                'article' => 'SD1056',
+                'akey' => 'SD1056',
+                'brand' => 'HI-Q',
+                'bkey' => 'HIQ',
+                'pkey' => 'HIQSD1056',
+                'product_category_id' => 1,
+                'product_group_id' => 10132,
+                'name' => 'Диск тормозной',
+                'full_name' => 'Диск тормозной, HI-Q, SD1056',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-26 07:38:58',
+                'updated_at' => '2024-07-26 07:38:58',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1950,
+                'article' => '49472012',
+                'akey' => '49472012',
+                'brand' => 'CORTECO',
+                'bkey' => 'CORTECO',
+                'pkey' => 'CORTECO49472012',
+                'product_category_id' => 1,
+                'product_group_id' => 13934,
+                'name' => 'Сальник клапана',
+                'full_name' => 'Сальник клапана, CORTECO, 49472012',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-26 09:44:59',
+                'updated_at' => '2024-07-26 09:44:59',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1951,
+                'article' => 'CL0474',
+                'akey' => 'CL0474',
+                'brand' => 'CTR',
+                'bkey' => 'CTR',
+                'pkey' => 'CTRCL0474',
+                'product_category_id' => 1,
+                'product_group_id' => 10677,
+                'name' => 'Тяга стабилизатора [MODUS, MICRA]',
+                'full_name' => 'Тяга стабилизатора [MODUS, MICRA], CTR, CL0474',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-26 15:36:36',
+                'updated_at' => '2024-07-26 15:44:51',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1952,
+                'article' => 'ST-DT48-016L-1',
+                'akey' => 'STDT48016L1',
+                'brand' => 'SAT',
+                'bkey' => 'SAT',
+                'pkey' => 'SATSTDT48016L1',
+                'product_category_id' => 1,
+                'product_group_id' => 10265,
+                'name' => 'Подкрылок колесной арки, передний [NISSAN MARCH, MICRA K12, правый]',
+                'full_name' => 'Подкрылок колесной арки, передний, SAT, ST-DT48-016L-1',
+                'description' => 'NISSAN MARCH, MICRA K12, правый',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-26 16:05:25',
+                'updated_at' => '2024-07-26 16:05:25',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1953,
+                'article' => 'ST-DT48-016L-2',
+                'akey' => 'STDT48016L2',
+                'brand' => 'SAT',
+                'bkey' => 'SAT',
+                'pkey' => 'SATSTDT48016L2',
+                'product_category_id' => 1,
+                'product_group_id' => 10265,
+                'name' => 'Подкрылок колесной арки, передний [NISSAN MARCH, MICRA K12, левый]',
+                'full_name' => 'Подкрылок колесной арки, передний, SAT, ST-DT48-016L-2',
+                'description' => 'NISSAN MARCH, MICRA K12, левый',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-26 16:06:22',
+                'updated_at' => '2024-07-26 16:06:22',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1954,
+                'article' => '0258005322',
+                'akey' => '0258005322',
+                'brand' => 'BOSCH',
+                'bkey' => 'BOSCH',
+                'pkey' => 'BOSCH0258005322',
+                'product_category_id' => 1,
+                'product_group_id' => 13514,
+                'name' => 'Датчик кислорода',
+                'full_name' => 'Датчик кислорода, BOSCH, 0258005322',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-26 16:57:04',
+                'updated_at' => '2024-07-26 18:16:17',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1955,
+                'article' => 'N90768301',
+                'akey' => 'N90768301',
+                'brand' => 'VAG',
+                'bkey' => 'VAG',
+                'pkey' => 'VAGN90768301',
+                'product_category_id' => 1,
+                'product_group_id' => 13937,
+                'name' => 'Крепеж. Хомут [Топливная система, VAG]',
+                'full_name' => 'Крепеж. Хомут, VAG, N90768301',
+                'description' => 'Топливная система, VAG',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-26 17:03:41',
+                'updated_at' => '2024-07-26 17:03:41',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1956,
+                'article' => 'WHT001455',
+                'akey' => 'WHT001455',
+                'brand' => 'VAG',
+                'bkey' => 'VAG',
+                'pkey' => 'VAGWHT001455',
+                'product_category_id' => 1,
+                'product_group_id' => 14420,
+                'name' => 'Крепеж. Болт [VW, крепление крышки топливного фильтра]',
+                'full_name' => 'Крепеж. Болт, VAG, WHT001455',
+                'description' => 'VW, крепление крышки топливного фильтра',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-26 17:05:30',
+                'updated_at' => '2024-07-26 17:05:30',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1957,
+                'article' => '535001210',
+                'akey' => '535001210',
+                'brand' => 'INA',
+                'bkey' => 'INA',
+                'pkey' => 'INA535001210',
+                'product_category_id' => 1,
+                'product_group_id' => 12339,
+                'name' => 'Генератор. Механизм свободного хода []',
+                'full_name' => 'Генератор. Механизм свободного хода, INA, 535001210',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-26 17:07:57',
+                'updated_at' => '2024-07-26 17:07:57',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1958,
+                'article' => '06K905601D',
+                'akey' => '06K905601D',
+                'brand' => 'VAG',
+                'bkey' => 'VAG',
+                'pkey' => 'VAG06K905601D',
+                'product_category_id' => 1,
+                'product_group_id' => 10251,
+                'name' => 'Свеча зажигания []',
+                'full_name' => 'Свеча зажигания, VAG, 06K905601D',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-26 17:49:55',
+                'updated_at' => '2024-07-26 17:49:55',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1959,
+                'article' => 'BH29036',
+                'akey' => 'BH29036',
+                'brand' => 'JIKIU',
+                'bkey' => 'JIKIU',
+                'pkey' => 'JIKIUBH29036',
+                'product_category_id' => 1,
+                'product_group_id' => 10672,
+                'name' => 'Сайлентблок рычага подвески',
+                'full_name' => 'Сайлентблок рычага подвески, JIKIU, BH29036',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-27 07:54:28',
+                'updated_at' => '2024-07-27 07:54:28',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1960,
+                'article' => 'BH29034',
+                'akey' => 'BH29034',
+                'brand' => 'JIKIU',
+                'bkey' => 'JIKIU',
+                'pkey' => 'JIKIUBH29034',
+                'product_category_id' => 1,
+                'product_group_id' => 10672,
+                'name' => 'Сайлентблок рычага подвески',
+                'full_name' => 'Сайлентблок рычага подвески, JIKIU, BH29034',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-27 08:08:36',
+                'updated_at' => '2024-07-27 08:08:36',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1961,
+                'article' => 'MP-1195',
+                'akey' => 'MP1195',
+                'brand' => 'MASUMA',
+                'bkey' => 'MASUMA',
+                'pkey' => 'MASUMAMP1195',
+                'product_category_id' => 1,
+                'product_group_id' => 10696,
+                'name' => 'Втулка стабилизатора',
+                'full_name' => 'Втулка стабилизатора, MASUMA, MP-1195',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-27 08:18:47',
+                'updated_at' => '2024-07-27 08:18:47',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1962,
+                'article' => 'LS25760',
+                'akey' => 'LS25760',
+                'brand' => 'JIKIU',
+                'bkey' => 'JIKIU',
+                'pkey' => 'JIKIULS25760',
+                'product_category_id' => 1,
+                'product_group_id' => 10677,
+                'name' => 'Тяга стабилизатора',
+                'full_name' => 'Тяга стабилизатора, JIKIU, LS25760',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-27 08:23:07',
+                'updated_at' => '2024-07-27 08:23:07',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1963,
+                'article' => 'HLV00322',
+                'akey' => 'HLV00322',
+                'brand' => 'MOTORHERZ',
+                'bkey' => 'MOTORHERZ',
+                'pkey' => 'MOTORHERZHLV00322',
+                'product_category_id' => 1,
+                'product_group_id' => 13939,
+                'name' => 'Рулевая рейка. Втулка',
+                'full_name' => 'Рулевая рейка. Втулка, MOTORHERZ, HLV00322',
+                'description' => '',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-27 08:36:27',
+                'updated_at' => '2024-07-27 08:36:27',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1964,
+                'article' => 'V23410',
+                'akey' => 'V23410',
+                'brand' => 'COBRA TUNING',
+                'bkey' => 'COBRATUNING',
+                'pkey' => 'COBRATUNINGV23410',
+                'product_category_id' => 1,
+                'product_group_id' => 13543,
+                'name' => 'Аэродефлектор [VW Jetta VI Sd 2010 / Sagitar 2012]',
+                'full_name' => 'Аэродефлектор [VW Jetta VI Sd 2010 / Sagitar 2012], COBRA TUNING, V23410',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-27 08:53:16',
+                'updated_at' => '2024-07-27 08:53:58',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1965,
+                'article' => '868323Z000',
+                'akey' => '868323Z000',
+                'brand' => 'HYUNDAI',
+                'bkey' => 'HYUNDAI',
+                'pkey' => 'HYUNDAI868323Z000',
+                'product_category_id' => 1,
+                'product_group_id' => 10842,
+                'name' => 'Брызговик [право, перед]',
+                'full_name' => 'Брызговик, HYUNDAI, 868323Z000',
+                'description' => 'право, перед',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-27 16:52:59',
+                'updated_at' => '2024-07-27 16:52:59',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1966,
+                'article' => '3397118911',
+                'akey' => '3397118911',
+                'brand' => 'BOSCH',
+                'bkey' => 'BOSCH',
+                'pkey' => 'BOSCH3397118911',
+                'product_category_id' => 1,
+                'product_group_id' => 10233,
+                'name' => 'Щетки стеклоочистителя',
+                'full_name' => 'Щетки стеклоочистителя, BOSCH, 3397118911',
+                'description' => 'к-тб HYUNDAI I40, 650, 400, бескаркасные',
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-27 17:00:56',
+                'updated_at' => '2024-07-27 17:00:56',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1967,
+                'article' => '983513Z000',
+                'akey' => '983513Z000',
+                'brand' => 'HYUNDAI',
+                'bkey' => 'HYUNDAI',
+                'pkey' => 'HYUNDAI983513Z000',
+                'product_category_id' => 1,
+                'product_group_id' => 10233,
+                'name' => 'Накладка щетки стеклоочистителя [650mm]',
+                'full_name' => 'Накладка щетки стеклоочистителя [650mm], HYUNDAI, 983513Z000',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-27 17:23:24',
+                'updated_at' => '2024-07-28 06:58:37',
+                'deleted_at' => NULL,
+                'product_price_group_id' => NULL,
+            ),
+            
+            array (
+                'id' => 1968,
+                'article' => '983613Z000',
+                'akey' => '983613Z000',
+                'brand' => 'HYUNDAI',
+                'bkey' => 'HYUNDAI',
+                'pkey' => 'HYUNDAI983613Z000',
+                'product_category_id' => 1,
+                'product_group_id' => 10233,
+                'name' => 'Накладка щетки стеклоочистителя [400mm]',
+                'full_name' => 'Накладка щетки стеклоочистителя [400mm], HYUNDAI, 983613Z000',
+                'description' => NULL,
+                'parameters' => NULL,
+                'weight' => NULL,
+                'created_at' => '2024-07-27 17:23:48',
+                'updated_at' => '2024-07-28 06:59:09',
                 'deleted_at' => NULL,
                 'product_price_group_id' => NULL,
             ),

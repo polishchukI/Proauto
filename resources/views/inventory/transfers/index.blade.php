@@ -1,33 +1,40 @@
-@extends('inventory.layouts.app', ['page' => 'Transfers', 'pageSlug' => 'transfers', 'section' => 'transactions', 'search' => 'transfers'])
+@extends('inventory.layouts.app', ['page' => __('inventory.transfers'), 'pageSlug' => 'transfers', 'section' => 'transactions', 'search' => 'transfers'])
 
 @section('content')
-    @include('inventory.alerts.success')
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card ">
-                <div class="card-header">
+@include('inventory.alerts.success')
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
                 <div class="row">
-                        <div class="col-8">
-                            <h4 class="card-title">Transfers</h4>
+                    <div class="col-8">
+                        {{ $transfers->links() }}
+                    </div>
+                    <div class="col-2">
+                        <form method="get" action="/transfers" autocomplete="off">
+                            <input type="text" name="search" placeholder="{{ __('inventory.search') }}" value="{{ request('search') }}" class="form-control-sm" />
+                                <button class="btn btn-simple btn-sm btn-selector" type="submit"><i class="fa fa-search"></i></button>
+                            </form>
                         </div>
-                        <div class="col-4 text-right">
-                            <a href="{{ route('transfer.create') }}" class="btn btn-sm btn-simple">
-                                Register Transfer
-                            </a>
+                        <div class="col-2 text-right">
+                            <a href="{{ route('transfers.create') }}" class="btn btn-sm btn-simple btn-success"><i class="fas fa-plus"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
                     <table class="table">
                         <thead class=" text-primary">
-                            <th>Date</th>
-                            <th>Title</th>
-                            <th>Sender Method</th>
-                            <th>Receiver Method</th>
-                            <th>Reference</th>
-                            <th>Amount Sent</th>
-                            <th>Amount Received</th>
-                            <th></th>
+                            <th><i class="fas fa-flag-checkered"></i></th>
+                            <th>{{ __('inventory.user') }}</th>
+                            <th>{{ __('inventory.date') }}</th>
+                            <th>{{ __('inventory.title') }}</th>
+                            <th>{{ __('inventory.sender_method') }}</th>
+                            <th>{{ __('inventory.receiver_method') }}</th>
+                            <th>{{ __('inventory.reference_doc') }}</th>
+                            <th>{{ __('inventory.amount_sent') }}</th>
+                            <th>{{ __('inventory.amount_recieved') }}</th>
+                            <th><i class="fas fa-print"></i></th>
+                            <th>{{ __('inventory.delete') }}</th>
                         </thead>
                         <tbody>
                             @foreach ($transfers as $transfer)
@@ -39,11 +46,16 @@
                                     <td>{{ $transfer->reference }}</td>
                                     <td>${{ $transfer->sended_amount }}</td>
                                     <td>${{ $transfer->received_amount }}</td>
-                                    <td class="td-actions text-right">
-                                        <form action="{{ route('transfer.destroy', $transfer) }}" method="post" class="d-inline">
+                                    <td>
+                                        <a href="{{ route('transfers.print', $sale) }}" class="btn btn-sm btn-simple btn-print" data-toggle="tooltip" data-placement="bottom" title="{{ __('inventory.print') }}" target="_blank">
+                                            <i class="fas fa-print"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <form action="{{ route('transfers.destroy', $transfer) }}" method="post" class="d-inline">
                                             @csrf
                                             @method('delete')
-                                            <button type="button" class="btn btn-simple btn-sm" data-toggle="tooltip" data-placement="bottom" title="{{ __('inventory.delete') }}" onclick="confirm('Are you sure you want to delete this transfer? There will be no record left.') ? this.parentElement.submit() : ''">
+                                            <button type="button" class="btn btn-simple btn-sm btn-delete" data-toggle="tooltip" data-placement="bottom" title="{{ __('inventory.delete') }}" onclick="confirm('Are you sure you want to delete this transfer? There will be no record left.') ? this.parentElement.submit() : ''">
                                                 <i class="fas fa-times"></i>
                                             </button>
                                         </form>

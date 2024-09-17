@@ -23,6 +23,7 @@ use App\Models\Product\ProductPrice;
 use App\Models\Product\ProductGroup;
 use App\Models\Product\ProductStock;
 use App\Models\Product\ProductAdminCart;
+use App\Models\Inventory\InventorySetting;
 
 use Picqer\Barcode\BarcodeGeneratorHTML;
 
@@ -76,10 +77,10 @@ class ClientOrdersController extends Controller
             }
         }
 		
-		$created_at					= Carbon::now();
-		$dateprefix					= $created_at->format('Y m d');
-		$code_6						= sprintf("%06s",(string)$request->clientLive);
-		$timeStamp					= Functions::GenerateTimestamp();
+		$created_at						= Carbon::now();
+		$dateprefix						= $created_at->format('Y m d');
+		$code_6							= sprintf("%06s",(string)$request->clientLive);
+		$timeStamp						= Functions::GenerateTimestamp();
 		$requesteddata['barcode']		= "" . $dateprefix . " " . $timeStamp . " " . $code_6 ."";
 
 		$client_order = $client_order->create($requesteddata);
@@ -98,7 +99,7 @@ class ClientOrdersController extends Controller
 			}
 		}
         
-        return redirect()->route('client_orders.show', ['client_order' => $client_order->id])->withStatus('ClientOrder registered successfully, you can start registering products and transactions.');
+        return redirect()->route('client_orders.show', ['client_order' => $client_order->id])->withStatus('Документ "Заказ покупателя" успешно зарегистрирован');
     }
 	
 	public function show(ClientOrder $client_order)
@@ -173,7 +174,7 @@ class ClientOrdersController extends Controller
 		$client_order					= ClientOrder::findOrFail($client_order_id);
 		$product						= Product::findOrFail($product_id);
 		$warehouse_id					= $client_order->warehouse_id;
-		$stock							= AddProductController::get_product_stocks($product_id);
+		$stock							= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 		$currency						= $client_order->currency;
 		$price							= ($price !=0) ? $price : AddProductController::get_product_price($product_id, 'out', $currency);
 		$total_amount					= $price * $quantity;
@@ -253,7 +254,7 @@ class ClientOrdersController extends Controller
 		$client_order						= ClientOrder::findOrFail($client_order_id);
 		$product						= Product::findOrFail($product_id);
 		$warehouse_id					= $client_order->warehouse_id;
-		$stock							= AddProductController::get_product_stocks($product_id);
+		$stock							= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 		$currency						= $client_order->currency;
 		$price							= ($price !=0) ? $price : AddProductController::get_product_price($product_id, 'in', $currency);
 		$total_amount					= $price * $quantity;
@@ -373,7 +374,8 @@ class ClientOrdersController extends Controller
 	
 	public function client_order_delete_product(Request $request)
     {
-		if (!$request->ajax()) {
+		if (!$request->ajax())
+		{
 			abort('404');
 		};
 
@@ -435,11 +437,11 @@ class ClientOrdersController extends Controller
         switch($request->all()['type'])
 		{
             case 'income':
-                $request->merge(['title' => 'Payment Received from ClientOrder id: ' . $request->get('client_order_id')]);
+                $request->merge(['title' => 'Оплата полученая по документу "Заказ покупателя" №: ' . $request->get('client_order_id')]);
                 break;
 
             case 'expense':
-                $request->merge(['title' => 'Client Order Return Payment id: ' . $request->all('client_order_id')]);
+                $request->merge(['title' => 'Возврат оплаты по документу "Заказ покупателя" №: ' . $request->all('client_order_id')]);
 
                 if($request->get('amount') > 0)
 				{
@@ -456,7 +458,7 @@ class ClientOrdersController extends Controller
 
         return redirect()
             ->route('client_orders.show', compact('client_order'))
-            ->withStatus('Successfully registered transaction.');
+            ->withStatus('Документ "Оплата" создан');
     }
 
     public function edittransaction(ClientOrder $client_order, Transaction $transaction)
@@ -470,11 +472,11 @@ class ClientOrdersController extends Controller
     {
         switch($request->get('type')) {
             case 'income':
-                $request->merge(['title' => 'Payment Received from ClientOrder id: '. $request->get('client_order_id')]);
+                $request->merge(['title' => 'Оплата полученая по документу "Заказ покупателя" № '. $request->get('client_order_id')]);
                 break;
 
             case 'expense':
-                $request->merge(['title' => 'ClientOrder Return Payment id: '. $request->get('client_order_id')]);
+                $request->merge(['title' => 'Возврат оплаты по документу "Заказ покупателя" № '. $request->get('client_order_id')]);
 
                 if($request->get('amount') > 0) {
                     $request->merge(['amount' => (float) $request->get('amount') * (-1)]);
@@ -485,14 +487,14 @@ class ClientOrdersController extends Controller
 
         return redirect()
             ->route('client_orders.show', compact('client_order'))
-            ->withStatus('Successfully modified transaction.');
+            ->withStatus('Документ "Оплата" обновлен');
     }
 
     public function destroytransaction(ClientOrder $client_order, Transaction $transaction)
     {
         $transaction->delete();
 
-        return back()->withStatus('Transaction deleted successfully.');
+        return back()->withStatus('Документ "Оплата" удален');
     }
 
 	public function print(ClientOrder $client_order)
@@ -509,6 +511,13 @@ class ClientOrdersController extends Controller
 				$client_order["subtotal"] = $products->sum('total');
                 $client_order["tax"] = 0;
                 $client_order["total_amount"] = $client_order["subtotal"]+$client_order["tax"];
+
+				$inventorySettings = InventorySetting::where('id','=', '1')->first()->toArray();
+				foreach ($inventorySettings as $key=>$value)
+				{
+					if ($key === 'id') { continue; }
+					$client_order[$key] = $value;
+				}
 		
 		$client =  Client::where('id','=', $client_order->client_id)->first()->toArray();
 		
@@ -581,5 +590,12 @@ class ClientOrdersController extends Controller
 		return $docHeaderValues;
 	}
 
-}
+	public function correction(Request $request, ClientOrder $client_order)
+    {
+        $client_order_id = $request->client_order_id;
+        
+        $client_order = ClientOrder::where('id','=',$client_order_id)->first();
 
+		return view('inventory.sales.modal_create', compact('client_order'));
+    }
+}

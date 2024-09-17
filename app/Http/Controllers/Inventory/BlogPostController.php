@@ -21,16 +21,15 @@ class BlogPostController extends Controller
 	public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 25;
-
         if (!empty($keyword))
 		{
             $blog_posts = Post::where('title', 'LIKE', "%$keyword%")
-                ->latest()->paginate($perPage);
+                ->paginate(25)
+                ->withQueryString();    
         }
 		else
 		{
-            $blog_posts = Post::latest()->paginate($perPage);
+            $blog_posts = Post::latest()->paginate(25);
         }
         
         return view('inventory.blog_posts.index', compact('blog_posts'));

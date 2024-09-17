@@ -17,22 +17,14 @@
 								@csrf
 									<div class="form-row">
 										<div class="form-group col-md-12">
-											<label for="profile-lastname">{{ __('account.lastname') }}</label>
-											@if(isset($client["lastname"]))
-											<input type="text" class="form-control" id="lastname" name="lastname" value="{{ $client["lastname"] }}" placeholder="{{ __('account.lastname') }}">
-											@else
-											<input type="text" class="form-control" id="lastname" name="lastname" placeholder="{{ __('account.lastname') }}">
-											@endif
+											<label for="profile-lastname">{{ __('account.lastname') }}</label>											
+											<input type="text" class="form-control" id="lastname" name="lastname" @if(isset($client["lastname"])) value="{{ $client["lastname"] }}" @endif placeholder="{{ __('account.lastname') }}">											
 										</div>
 									</div>
 									<div class="form-row">
 										<div class="form-group col-md-6">
 											<label for="profile-firstname">{{ __('account.firstname') }}</label>
-											@if(isset($client["firstname"]))
-											<input type="text" class="form-control" id="firstname" name="firstname" value="{{$client["firstname"]}}" placeholder="{{ __('account.firstname') }}">
-											@else
-											<input type="text" class="form-control" id="firstname" name="firstname" value="" placeholder="{{ __('account.firstname') }}">
-											@endif
+											<input type="text" class="form-control" id="firstname" name="firstname" @if(isset($client["firstname"])) value="{{$client["firstname"]}}" @endif placeholder="{{ __('account.firstname') }}">
 										</div>
 										<div class="form-group col-md-6">
 											<label for="profile-secondname">{{ __('account.secondname') }}</label>
@@ -42,19 +34,11 @@
 									<div class="form-row">
 										<div class="form-group col-md-6">
 											<label for="profile-email">{{ __('account.emailaddress') }}</label>
-											@if(isset($client["email"]))
-											<input type="email" class="form-control" id="email" name="email" value="{{$client["email"]}}" placeholder="{{ __('account.emailaddress') }}">
-											@else
-											<input type="email" class="form-control" id="email" name="email" value="" placeholder="{{ __('account.emailaddress') }}">
-											@endif
+											<input type="email" class="form-control" id="email" name="email" @if(isset($client["email"])) value="{{$client["email"]}}" @endif placeholder="{{ __('account.emailaddress') }}">
 										</div>
 										<div class="form-group col-md-6">
 											<label for="profile-phone">{{ __('account.phonenumber') }}</label>
-											@if(isset($client["phone"]))
-											<input type="text" class="form-control" id="phone" name="phone" value="{{$client["phone"]}}"  placeholder="{{ __('account.phonenumber') }}">
-											@else
-											<input type="text" class="form-control" id="phone" name="phone" value=""  placeholder="{{ __('account.phonenumber') }}">
-											@endif
+											<input type="text" class="form-control" id="phone" name="phone" @if(isset($client["phone"])) value="{{$client["phone"]}}" @endif placeholder="{{ __('account.phonenumber') }}">
 										</div>
 									</div>
 									<div class="form-row">

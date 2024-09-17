@@ -13,7 +13,7 @@
                     </div>
                     <div class="col-2"><input type="hidden" id="sale_id" name="sale_id" value="{{ $sale->id }}"></div>
                     <div class="col-4 text-right">
-                        <a href="{{ route('sales.show', ['sale' => $sale]) }}" class="btn btn-simple btn-sm text-success"><i class="fas fa-arrow-left"></i></a>
+                        <a href="{{ route('sales.show', ['sale' => $sale]) }}" class="btn btn-simple btn-sm btn-back"><i class="fas fa-arrow-left"></i></a>
                     </div>
                 </div>
             </div>

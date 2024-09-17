@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 
 class ProductPriceGroupsTableSeeder extends Seeder
@@ -17,7 +19,7 @@ class ProductPriceGroupsTableSeeder extends Seeder
         \DB::table('product_price_groups')->delete();
         
         \DB::table('product_price_groups')->insert(array (
-            0 => 
+            
             array (
                 'id' => 1,
                 'name' => 'Тест',

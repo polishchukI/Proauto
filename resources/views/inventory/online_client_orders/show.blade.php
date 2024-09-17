@@ -124,6 +124,7 @@
                 <table class="table">
                     <thead>
                         <th>№</th>
+                        <th>{{ __('inventory.provider') }}</th>
                         <th>{{ __('inventory.article') }}</th>
                         <th>{{ __('inventory.brand') }}</th>
                         <th>{{ __('inventory.product') }}</th>
@@ -134,26 +135,28 @@
                     </thead>
                     <tbody>
                         @foreach ($online_client_order->products as $product_ordered)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $product_ordered->article }}</td>
-                                <td>{{ $product_ordered->brand }}</td>							
-                                <td>
-                                    @if($product_ordered->product)
-                                    <a href="{{ route('products.show', $product_ordered->product->id) }}" data-toggle="tooltip" title="Product info" target="_blank">
-                                        {{ $product_ordered->product->full_name }}
-                                    </a>
-                                    @else
-                                    <button type="button" class="btn btn-success btn-sm btn-simple" onclick="online_client_orders_product_create('{{$online_client_order->id}}','{{ $product_ordered->id }}')">
-                                        <span><i class="fas fa-plus"></i></span>
-                                    </button>
-                                    {{ $product_ordered->name }}
-                                    @endif
-                                </td>
-                                <td>{{ number_format($product_ordered->quantity ?? 0, 2) }}</td>
-                                <td>{{ number_format($product_ordered->price ?? 0, 2)  }}</td>
-                                <td>{{ number_format($product_ordered->quantity * $product_ordered->price ?? 0, 2) }}</td>
-                            </tr>
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $product_ordered->provider }}</td>
+                            <td>{{ $product_ordered->article }}</td>
+                            
+                            <td>{{ $product_ordered->brand }}</td>
+                            <td>
+                                @if($product_ordered->product)
+                                <a href="{{ route('products.show', $product_ordered->product->id) }}" data-toggle="tooltip" title="{{ __('inventory.product_info') }}" target="_blank">
+                                    {{ $product_ordered->product->full_name }}
+                                </a>
+                                @else
+                                <button type="button" class="btn btn-success btn-sm btn-simple" onclick="online_client_orders_product_create('{{$online_client_order->id}}','{{ $product_ordered->id }}')">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                {{ $product_ordered->name }}
+                                @endif
+                            </td>
+                            <td>{{ number_format($product_ordered->quantity ?? 0, 2) }}</td>
+                            <td>{{ number_format($product_ordered->price ?? 0, 2)  }}</td>
+                            <td>{{ number_format($product_ordered->quantity * $product_ordered->price ?? 0, 2) }}</td>
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>

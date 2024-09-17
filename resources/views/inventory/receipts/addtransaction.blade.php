@@ -19,6 +19,31 @@
                     <input type="hidden" name="user_id" value="{{ Auth::id() }}">
                     <h6 class="heading-small text-muted mb-4">{{__('inventory.transaction_information')}}</h6>
                     <div class="pl-lg-4">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-amount">{{__('inventory.provider')}}</label>
+                                    <div class="row mt-2">
+                                        <div class="col-12"><span class="text-info">{{ $receipt->provider->name }}</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-amount">{{__('inventory.settlements')}}</label>
+                                    <div class="row mt-2">
+                                        @if($receipt->provider->settlements->sum('total_amount') > 0)
+                                        <div class="col-9"><span class="text-success">{{ __('inventory.balance_positive') }}</span></div><div class="col-3"><span class="text-success">{{ $receipt->provider->settlements->sum('total_amount') }}</span></div>
+                                        @elseif($receipt->provider->settlements->sum('total_amount') < 0)
+                                        <div class="col-9"><span class="text-danger">{{ __('inventory.balance_negative') }}</span></div><div class="col-3"><span class="text-danger">{{ $receipt->provider->settlements->sum('total_amount') }}</span></div>
+                                        @else
+                                        <div class="col-12"><span class="text-info">{{ __('inventory.balance_no_debt') }}</span></div>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
                         <div class="form-group{{ $errors->has('type') ? ' has-danger' : '' }}">
                         <label class="form-control-label" for="input-method">{{__('inventory.transaction_type')}}</label>
                             <select name="type" id="input-method" class="form-control form-control-alternative{{ $errors->has('type') ? ' is-invalid' : '' }}" required>
@@ -53,9 +78,9 @@
                         <div class="form-group{{ $errors->has('amount') ? ' has-danger' : '' }}">
                             <label class="form-control-label" for="input-amount">{{__('inventory.total_amount')}}</label>
                             @if($receipt->id)
-                            <input type="number" step=".01" name="amount" id="input-amount" class="form-control form-control-alternative" placeholder="Amount" value="{{ $receipt->total_amount }}" required>
+                            <input type="number" step=".01" name="amount" id="input-amount" class="form-control form-control-alternative" value="{{ $receipt->total_amount }}" required>
                             @else
-                            <input type="number" step=".01" name="amount" id="input-amount" class="form-control form-control-alternative" placeholder="Amount" value="{{ old('amount') }}" required>
+                            <input type="number" step=".01" name="amount" id="input-amount" class="form-control form-control-alternative" value="{{ old('amount') }}" required>
                             @endif
                             @include('inventory.alerts.feedback', ['field' => 'amount'])
 
@@ -65,9 +90,9 @@
                                 <div class="form-group{{ $errors->has('reference') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-reference">{{__('inventory.reference_doc')}}</label>
                                     @if($receipt->id)
-                                    <input type="text" name="reference" id="input-reference" class="form-control form-control-alternative{{ $errors->has('reference') ? ' is-invalid' : '' }}" placeholder="Reference" value="{{__('inventory.receipt')}} № {{ $receipt->id }}">
+                                    <input type="text" name="reference" id="input-reference" class="form-control form-control-alternative{{ $errors->has('reference') ? ' is-invalid' : '' }}" value="{{__('inventory.receipt')}} № {{ $receipt->id }}">
                                     @else
-                                    <input type="text" name="reference" id="input-reference" class="form-control form-control-alternative{{ $errors->has('reference') ? ' is-invalid' : '' }}" placeholder="Reference" value="{{ old('reference') }}">
+                                    <input type="text" name="reference" id="input-reference" class="form-control form-control-alternative{{ $errors->has('reference') ? ' is-invalid' : '' }}" value="{{ old('reference') }}">
                                     @endif
                                 @include('inventory.alerts.feedback', ['field' => 'reference'])
                                 </div>

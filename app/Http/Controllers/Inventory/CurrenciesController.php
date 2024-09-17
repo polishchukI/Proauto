@@ -66,7 +66,6 @@ class CurrenciesController extends Controller
 			'symbol' => 'required',
 			'format' => 'required',
 			'exchange_rate' => 'required',
-			'active' => 'required'
 		]);
         $requestData = $request->all();
         

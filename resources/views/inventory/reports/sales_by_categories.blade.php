@@ -38,10 +38,10 @@
             <table class="table">
                 <thead>
                     <th>№</th>
-                    <th>Group ID</th>
-                    <th>Group name</th>
-                    <th>Sold quantity</th>
-                    <th>Sold total amount</th>
+                    <th>{{ __('inventory.id') }}</th>
+                    <th>{{ __('inventory.group_name') }}</th>
+                    <th>{{ __('inventory.sold_quantity') }}</th>
+                    <th>{{ __('inventory.sold_total') }}</th>
                 </thead>
                 <tbody name="section"></tbody>
             </table>
@@ -71,7 +71,6 @@ function sales_by_categories_show()
 				html += '<tr>';
 				html += '<td>'+data[i].count+'</td>';
 				html += '<td>'+data[i].id+'</td>';
-				html += '<td>'+data[i].name+'</td>';
                 html += `<td><a href="/product_groups/`+data[i].id+`" target="_blank">`+data[i].name+`</a></td>`;
 				html += '<td>'+data[i].products_quantity+'</td>';
 				html += '<td>'+data[i].products_total_amount+'</td>';

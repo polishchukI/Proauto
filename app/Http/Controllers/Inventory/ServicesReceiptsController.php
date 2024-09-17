@@ -44,7 +44,14 @@ class ServicesReceiptsController extends Controller
 
     public function store(Request $request, ServicesReceipt $services_receipt)
     {
-		$requestData = $request->all();		
+		$requestData				=  $request->all();
+
+		$existent = ServicesReceipt::where('provider_id', $request->get('provider_id'))->where('finalized_at', null)->get();
+
+		if($existent->count())
+		{
+			return back()->withError('Существует не проведеный документ "Приобретение услуг" для данного поставщика. <a href="'.route('services_receipts.show', $existent->first()).'">Нажмите для перехода</a>');
+		}
 		
 		$created_at					= Carbon::now();
 		$dateprefix					= $created_at->format('Y m d');
@@ -54,7 +61,7 @@ class ServicesReceiptsController extends Controller
 		
 		$services_receipt = $services_receipt->create($requestData);
 		
-		return redirect()->route('services_receipts.show', $services_receipt)->withStatus('Services Receipt registered successfully, you can start adding the services belonging to it.');
+		return redirect()->route('services_receipts.show', $services_receipt)->withStatus('Документ "Приобретение услуг" зарегистрирован');
     }
 
     public function show(ServicesReceipt $services_receipt)
@@ -72,7 +79,7 @@ class ServicesReceiptsController extends Controller
     {
 		ServicesReceiptItem::where('services_receipt_id','=',$services_receipt->id)->delete();
         $services_receipt->delete();
-        return redirect()->route('services_receipts.index')->withStatus('ServicesReceipt successfully removed.');
+        return redirect()->route('services_receipts.index')->withStatus('Документ "Приобретение услуг" удален');
     }
 
 
@@ -314,7 +321,7 @@ class ServicesReceiptsController extends Controller
 								'user_id'		=> $request->user_id]);
 								
 
-        return redirect()->route('services_receipts.show', compact('services_receipt'))->withStatus('Successfully registered transaction.');
+        return redirect()->route('services_receipts.show', compact('services_receipt'))->withStatus('Документ "Оплата" зарегистрирован');
     }
 
     public function update(Request $request, $id)

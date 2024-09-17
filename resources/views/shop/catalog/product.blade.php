@@ -105,7 +105,7 @@
 										@endforeach										
 										<div class="product__prices-stock">
 											<div class="product__prices">
-												<div class="product__price product__price--current">{{Session::get('currency_symbol')}} <span>{{$PriceArray["price_formated"]}}</span></div>
+												<div class="product__price product__price--current">{{ Session::get('currency_symbol') }} <span>{{ $PriceArray["price_formated"] }}</span></div>
 											</div>
 											@if(array_key_exists('code',$PriceArray) && $PriceArray["code"]=="MY")
 											<div class="status-badge status-badge--style--success product__stock status-badge--has-text">
@@ -119,7 +119,7 @@
 										<div class="product__meta">
 											<table>
 												<tbody>
-													<tr><img class="ProductBrand" src="{{$MainPartArray["logo_src"]}}" alt="{{$MainPartArray["brand"]}}"></tr>
+													<tr><img class="ProductBrand" src="{{ $MainPartArray["logo_src"] }}" alt="{{ $MainPartArray["brand"] }}"></tr>
 													<tr><th>{{ __('shop.article') }}</th><td><a href="{{$MainPartArray["search_url"]}}">{{$MainPartArray["article"]}}</a></td></tr>
 													<tr><th>{{ __('shop.brand') }}</th><td><strong>{{$MainPartArray["brand"]}}</strong></td></tr>
 													<tr><th>{{ __('shop.name') }}</th><td>{{$MainPartArray["name"]}}</td></tr>
@@ -192,25 +192,31 @@
 							</div>
 							<div class="product__tabs product-tabs product-tabs--layout--full">
 								<ul class="product-tabs__list">
-									<li class="product-tabs__item product-tabs__item--active"><a href="#product-tab-brand-description">{{ __('shop.brand_description') }}</a></li>
+									<li class="product-tabs__item product-tabs__item--active"><a href="#product-tab-description">{{ __('shop.tab_description') }}</a></li>
+									@if(count($MainPartArray["properties"])>0)
+									<li class="product-tabs__item"><a href="#product-tab-specification">{{ __('shop.tab_specification') }}</a></li>
+									@endif
 									@if(array_key_exists("applicability_brand",$MainPartArray))
 									<li class="product-tabs__item"><a href="#product-tab-applicability">{{ __('shop.tab_applicability') }}</a></li>
 									@endif
-										<li class="product-tabs__item"><a href="#product-tab-reviews">{{ __('shop.tab_reviews') }}<span class="product-tabs__item-counter">{{$MainPartArray["reviewscount"] ?? 0}}</span></a></li>
+									<li class="product-tabs__item"><a href="#product-tab-reviews">{{ __('shop.tab_reviews') }}<span class="product-tabs__item-counter">{{ $MainPartArray["reviewscount"] ?? 0 }}</span></a></li>
 									@if($MainPartArray["prices_count"]>0)
-										<li class="product-tabs__item"><a href="#product-tab-Prices">{{ __('shop.tab_prices') }}<span class="product-tabs__item-counter">{{count($MainPartArray["prices"]) ?? 0}}</span></a></li>
+									<li class="product-tabs__item"><a href="#product-tab-prices">{{ __('shop.tab_prices') }}<span class="product-tabs__item-counter">{{ count($MainPartArray["prices"]) ?? 0 }}</span></a></li>
 									@endif
 									@if(array_key_exists("analogs",$MainPartArray))
 									<li class="product-tabs__item"><a href="#product-tab-analogs">{{ __('shop.tab_analogs') }}</a></li>
 									@endif
+									@if(count($MainPartArray["oemnumbers"])>0)
+									<li class="product-tabs__item"><a href="#product-tab-oemnumbers">{{ __('shop.tab_oemnumbers') }}</a></li>
+									@endif
 								</ul>
 								<div class="product-tabs__content max_height">
-									<div class="product-tabs__pane product-tabs__pane--active" id="product-tab-brand-description">
+									{{-- <div class="product-tabs__pane product-tabs__pane--active" id="product-tab-brand-description">
 										<div class="row">
 											<div class="col-12">
 											@if($MainPartArray["brand_description"] != "null")																						
 												<div class="typography">											
-													{!!$MainPartArray["brand_description"]!!}
+													{!! $MainPartArray["brand_description"] !!}
 												</div>
 												@else
 												<div class="form-group">
@@ -219,7 +225,27 @@
 												@endif
 											</div>
 										</div>
+									</div> --}}
+									<!-- initial -->
+									<div class="product-tabs__pane product-tabs__pane--active" id="product-tab-description">
+										<div class="typography"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum, diam non iaculis finibus, ipsum arcu sollicitudin dolor, ut cursus sapien sem sed purus. Donec vitae fringilla tortor, sed fermentum nunc. Suspendisse sodales turpis dolor, at rutrum dolor tristique id. Quisque pellentesque ullamcorper felis, eget gravida mi elementum a. Maecenas consectetur volutpat ante, sit amet molestie urna luctus in. Nulla eget dolor semper urna malesuada dictum. Duis eleifend pellentesque dui et finibus. Pellentesque dapibus dignissim augue. Etiam odio est, sodales ac aliquam id, iaculis eget lacus. Aenean porta, ante vitae suscipit pulvinar, purus dui interdum tellus, sed dapibus mi mauris vitae tellus.</p><h4>Etiam lacus lacus mollis in mattis</h4><p>Praesent mattis eget augue ac elementum. Maecenas vel ante ut enim mollis accumsan. Vestibulum vel eros at mi suscipit feugiat. Sed tortor purus, vulputate et eros a, rhoncus laoreet orci. Proin sapien neque, commodo at porta in, vehicula eu elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur porta vulputate augue, at sollicitudin nisl molestie eget.</p><p>Nunc sollicitudin, nunc id accumsan semper, libero nunc aliquet nulla, nec pretium ipsum risus ac neque. Morbi eu facilisis purus. Quisque mi tortor, cursus in nulla ut, laoreet commodo quam. Pellentesque et ornare sapien. In ac est tempus urna tincidunt finibus. Integer erat ipsum, tristique ac lobortis sit amet, dapibus sit amet purus. Nam sed lorem nisi. Vestibulum ultrices tincidunt turpis, sit amet fringilla odio scelerisque non.</p></div>
 									</div>
+									<!-- specification -->
+									@if(count($MainPartArray["properties"])>0)
+									<div class="product-tabs__pane" id="product-tab-specification">
+										<div class="scroll_block">
+											<div class="spec">											
+												<div class="spec__section">
+													@foreach ($MainPartArray["properties"] as $Property)
+													<div class="spec__row"><div class="spec__name">{{ $Property["name"] }}</div><div class="spec__value">{{ $Property["value"] }}</div></div>
+													@endforeach
+													<div class="spec__disclaimer">{{ __('shop.tab_specification_disclaimer') }}</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									@endif
+									<!-- initial_end -->
 									<div class="product-tabs__pane" id="product-tab-applicability">
 										<ul class="widget-categories__list widget-categories__list--root" data-collapse="" data-collapse-opened-class="widget-categories__item--open">
 											@if(array_key_exists("applicability_brand",$MainPartArray))
@@ -337,7 +363,7 @@
 										</div>
 									</div>
 									</div>
-									<div class="product-tabs__pane" id="product-tab-Prices">
+									<div class="product-tabs__pane" id="product-tab-prices">
 										<div class="scroll_block">
 											<table class="analogs-table">
 												<thead>
@@ -383,7 +409,7 @@
 													<td class="analogs-table__column analogs-table__column">
 														<span>{{ $PriceArray["available"] }}</span>
 													</td>
-													<td class="analogs-table__column analogs-table__column"> {{Session::get('currency_symbol')}} {{$PriceArray["price_formated"]}}</td>
+													<td class="analogs-table__column analogs-table__column"> {{ Session::get('currency_symbol') }} {{$PriceArray["price_formated"]}}</td>
 													<td class="analogs-table__column analogs-table__column">
 														<div class="input-number">
 															<input class="form-control input-number__input" type="number" min="1" value="1" max="{{$PriceArray["available"]}}">
@@ -409,25 +435,84 @@
 											<table class="analogs-table">
 												<thead>
 													<tr>
-														<th class="analogs-table__column analogs-table__column--article">{{ __('shop.article') }}</th>
+														<th class="analogs-table__column analogs-table__column--name">{{ __('shop.name') }}</th>
+														<th class="analogs-table__column analogs-table__column--rating">{{ __('shop.rating') }}</th>
 														<th class="analogs-table__column analogs-table__column--vendor">{{ __('shop.brand') }}</th>
-														<th class="analogs-table__column analogs-table__column--country">{{ __('shop.country') }}</th>
-														<th class="analogs-table__column analogs-table__column--type">{{ __('shop.artkind') }}</th>
+														<th class="analogs-table__column analogs-table__column--price">{{ __('shop.price') }}</th>
+													</tr>
+												</thead>
+												<tbody>
+													@foreach ($MainPartArray["analogs"] as $analog)
+													<tr>
+														<td class="analogs-table__column analogs-table__column--name">
+															{{ $analog["name"] ?? "" }}<br>
+															<div class="analogs-table__sku" data-title="SKU"><a href="{{ route('product.page', ['brand' => $analog["brand"], 'number' => $analog["akey"]]) }}" class="analogs-table__product-sku">{{$analog["article"]}}</a></div>
+														</td>
+														<td class="analogs-table__column analogs-table__column--rating">
+															<div class="analogs-table__rating">
+																<div class="analogs-table__rating-stars">
+																	<div class="rating">
+																		<div class="rating__body">
+																			@for($i=1; $i<=$analog['rating']; $i++)
+																			<div class="rating__star rating__star--active"></div>
+																			@endfor
+																			@for($i=1; $i<=$analog['rating_left']; $i++)
+																			<div class="rating__star"></div>
+																			@endfor
+																		</div>
+																	</div>
+																</div>
+																<div class="analogs-table__rating-label">{{ $analog['reviewscount'] }} {{ __('shop.reviews') }}</div>
+															</div>
+														</td>
+														<td class="analogs-table__column analogs-table__column--vendor" data-title="Vendor">{{ $analog["brand"] }}<div class="analogs-table__country">(Germany)</div></td>
+														<td class="analogs-table__column analogs-table__column--price">{{ Session::get('currency_symbol') }} {{ number_format($analog["min_price"], 2) }}</td>
+													</tr>
+													@endforeach
+												</tbody>
+											</table>
+										</div>
+									</div>
+									@endif
+									@if(count($MainPartArray["oemnumbers"])>0)
+									<div class="product-tabs__pane" id="product-tab-oemnumbers">
+										<div class="scroll_block">
+											<table class="analogs-table">
+												<thead>
+													<tr>
+														<th class="analogs-table__column analogs-table__column--name">{{ __('shop.name') }}</th>
+														<th class="analogs-table__column analogs-table__column--rating">{{ __('shop.rating') }}</th>
+														<th class="analogs-table__column analogs-table__column--vendor">{{ __('shop.brand') }}</th>
+														<th class="analogs-table__column analogs-table__column--price">{{ __('shop.price') }}</th>												
 													</tr>
 												</thead>
 
 												<tbody>
-												@foreach ($MainPartArray["analogs"] as $analog)
+												@foreach ($MainPartArray["oemnumbers"] as $item)
 												<tr>
-													<td class="analogs-table__column analogs-table__column--sku"><a href="{{ route('product.page', ['brand' => $analog["brand"], 'number' => $analog["akey"]]) }}" class="analogs-table__product-sku">{{$analog["article"]}}</a></td>
-													<td class="analogs-table__column analogs-table__column--vendor" data-title="Vendor">{{$analog["brand"]}}</td>
-													<td class="analogs-table__column analogs-table__column--country" data-title="Country">{{$analog["country"] ?? ""}}</td>
-													<td class="analogs-table__column analogs-table__column--type" data-title="Type">
-														@if(isset($Number["kind"]))
-															@if ($Number["kind"] == supplier)<div class="artkind_analog">{{ __('shop.artkind_analog') }}</div>@endif
-															@if ($Number["kind"] == manufacturer)<div class="artkind_original">{{ __('shop.artkind_original') }}</div>@endif
-														@endif
+													<td class="analogs-table__column analogs-table__column--name">
+														{{ $item["name"] ?? "" }}<br>
+														<div class="analogs-table__sku" data-title="SKU"><a href="{{ route('product.page', ['brand' => $item["brand"], 'number' => $item["article"]]) }}" class="analogs-table__product-sku">{{$item["article"]}}</a></div>
 													</td>
+													<td class="analogs-table__column analogs-table__column--rating">
+														<div class="analogs-table__rating">
+															<div class="analogs-table__rating-stars">
+																<div class="rating">
+																	<div class="rating__body">
+																		@for($i=1; $i<=$item['rating']; $i++)
+																		<div class="rating__star rating__star--active"></div>
+																		@endfor
+																		@for($i=1; $i<=$item['rating_left']; $i++)
+																		<div class="rating__star"></div>
+																		@endfor
+																	</div>
+																</div>
+															</div>
+															<div class="analogs-table__rating-label">{{ $item['reviewscount'] }} {{ __('shop.reviews') }}</div>
+														</div>
+													</td>
+													<td class="analogs-table__column analogs-table__column--vendor" data-title="Vendor">{{ $item["brand"] }}<div class="analogs-table__country">(Germany)</div></td>
+													<td class="analogs-table__column analogs-table__column--price">{{ Session::get('currency_symbol') }} {{ number_format($item["min_price"], 2) }}</td>
 												</tr>
 												@endforeach
 												</tbody>

@@ -136,12 +136,11 @@ function product_stocks_report_show()
 		headers: {'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')},
 		beforeSend: function ()
 		{
-			$('#report_loader').removeClass('hidden');
-			$('[name = "section"]').html('');
-			$('[name = "sectionTotal"]').html('');
+			$('#report_loader').removeClass('hidden');			
 		},
 		success:function(response)
 		{
+			$('[name = "section"]').html('');
 			var html = "";
 			for(var i = 0; i < response.stocks_table.length; i++)
 			{
@@ -157,6 +156,7 @@ function product_stocks_report_show()
 			}
 			$('[name="section"]').append(html);
             //////////footer
+			$('[name = "sectionTotal"]').html('');
 			var html = "";
 				html += '<tr>';
 				html += '<td></td>';

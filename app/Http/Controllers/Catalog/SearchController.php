@@ -74,20 +74,23 @@ class SearchController extends Controller
 			return view('shop.errors.noparts', compact('ResultArray','posts'));
 		}
 
+		
 		$ArticlesRequest = NewTecdocController::SearchNumber($SEARCH);
+		
 		foreach ($ArticlesRequest as $ArticlesArray)
 		{
+			// dd(compact('ArticlesArray','ArticlesRequest'));
 			$bkey = Functions::SingleKey($ArticlesArray["brand"], true);
 			$akey = Functions::SingleKey($ArticlesArray["article"]);
 			$partsNoPArray[$bkey . $akey] = [
 					"pkey" => $bkey . $akey,
 					"bkey" => $bkey,
 					"akey" => $akey,
-					"aid" => $ArticlesArray["aid"],
-					"kind" => $ArticlesArray["kind"],
+					"aid" => $ArticlesArray["aid"] ?? "",
+					"kind" => $ArticlesArray["kind"] ?? "",
 					"article" => $ArticlesArray["article"],
 					"brand" => $ArticlesArray["brand"],
-					"td_name" => $ArticlesArray["td_name"],
+					"td_name" => $ArticlesArray["name"],
 					"name" => $ArticlesArray["name"],
 					"img_src" => "/images/logomedia/" . $bkey . ".webp",
 					"prices_count" => 0,
@@ -99,8 +102,10 @@ class SearchController extends Controller
 					"img_count" => "",
 					"logo_src" => "",
 					"uaid" => ""];
-			$arPAIDs_noP[] = $ArticlesArray["aid"];
+			// $arPAIDs_noP[] = $ArticlesArray["aid"];
 		}
+
+		// dd(compact('partsNoPArray','ArticlesRequest'));
 		
 		/////////////////////////WS
 		$WSWS = Provider::where('cache','=', "1")->where('hasprice','=', "Webservice")->where('active','=', "1")->get();
@@ -614,6 +619,7 @@ class SearchController extends Controller
 			OpenGraph::setDescription('Каталог запчастей - поиск по номеру ' . $SEARCH . '');
 			SEOMeta::setKeywords($SEO);
 			
+			// dd(compact('Numbers'));
 			return view('shop.catalog.search', compact('ResultArray', 'Numbers', 'total', 'perPage','page'));
 		}
 		else

@@ -382,7 +382,6 @@
   'inventory_settings' => 
   array (
     'slogan' => 'Мы будем рады Вашим предложениям, чтоб стать еще лучше!',
-    'name' => 'ProautoShop',
     'phone' => '+7 949 741-87-37',
     'phone2' => '+38 (071) 741-87-37',
     'email' => 'proauto.shop@outlook.com',
@@ -400,7 +399,6 @@
     'instagram' => 'https://www.instagram.com',
     'vk' => 'https://vk.com/proautoservice2020',
     'telegram' => 'https://t.me/proauto_ch',
-    'terms_of_delivery' => 'Стоимость запчастей может меняться с момента проценки до заказа. Поставщик при оформлении заказа обязан дополнительно уведомить покупателя. Благодарим за понимание.',
   ),
   'logging' => 
   array (

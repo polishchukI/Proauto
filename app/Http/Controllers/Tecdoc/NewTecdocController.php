@@ -9,10 +9,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Catalog\CatalogManufacturer;
+use App\Models\Catalog\CatalogArticleCross;
 use App\Models\Catalog\CatalogArticleAttribute;
 use App\Models\Catalog\CatalogArticleImage;
 use App\Models\Catalog\CatalogArticleLink;
 use App\Models\Catalog\CatalogArticleLi;
+use App\Models\Catalog\CatalogArticleRn;
 use App\Models\Catalog\CatalogArticleOe;
 use App\Models\Catalog\CatalogArticle;
 use App\Models\Catalog\CatalogAxle;
@@ -434,7 +436,7 @@ class NewTecdocController extends Controller
                 ORDER BY suppliers.description, article_links.datasupplierarticlenumber");
                     break;
             case 'commercial':
-                return DB::connection($this->connection)->select("SELECT
+                return DB::connection('catalog')->select("SELECT
 					al.datasupplierarticlenumber article,
 					s.description brand,
 					prd.description product_name
@@ -450,7 +452,7 @@ class NewTecdocController extends Controller
                     ORDER BY s.description, al.datasupplierarticlenumber");
                 break;
             case 'motorbike':
-                return DB::connection($this->connection)->select("SELECT
+                return DB::connection('catalog')->select("SELECT
 					al.datasupplierarticlenumber article,
 					s.description brand,
 					prd.description product_name
@@ -466,7 +468,7 @@ class NewTecdocController extends Controller
                     ORDER BY s.description, al.datasupplierarticlenumber");
                 break;
             case 'engine':
-                return DB::connection($this->connection)->select("SELECT
+                return DB::connection('catalog')->select("SELECT
 					pds.engineid,
 					al.datasupplierarticlenumber article,
 					prd.description product_name,
@@ -483,7 +485,7 @@ class NewTecdocController extends Controller
                     ORDER BY s.description, al.datasupplierarticlenumber");
                 break;
             case 'axle':
-                return DB::connection($this->connection)->select("SELECT
+                return DB::connection('catalog')->select("SELECT
 					pds.axleid,
 					al.datasupplierarticlenumber article,
 					prd.description product_name,
@@ -524,23 +526,43 @@ class NewTecdocController extends Controller
 	//3.1 Оригинальные номера
 	public static function getOemNumbers($number, $brand_id)
     {
-        return DB::connection($this->connection)->select("
-            SELECT DISTINCT
-			a.OENbr
-			FROM
-				article_oe a 
-            WHERE
-				a.datasupplierarticlenumber='" . $number . "'
-				AND a.manufacturerId='" . $brand_id . "'
-            ORDER BY
-				a.OENbr
-        ");
+        // return DB::connection('catalog')->select("
+        //     SELECT DISTINCT
+		// 	a.OENbr
+		// 	FROM
+		// 		article_oe a 
+        //     WHERE
+		// 		a.datasupplierarticlenumber='" . $number . "'
+		// 		AND a.manufacturerId='" . $brand_id . "'
+        //     ORDER BY
+		// 		a.OENbr
+        // ");
+
+        try
+        {
+            $query = CatalogArticleOe::select('manufacturers.description as brand','article_oe.OENbr as article')
+                    ->join('manufacturers', 'manufacturers.id', '=', 'article_oe.manufacturerId')
+                    ->where('article_oe.datasupplierarticlenumber','=', $number)
+                    ->where('article_oe.supplierid','=', $brand_id)
+                    ->distinct()
+                    ->get();
+
+        if($query)
+        {
+            $DBResult = $query->toArray();
+        }
+		}
+		catch(\Exception $e)
+		{
+			$DBResult = [];
+		}
+        return $DBResult;
     }
 
     //3.2 Статус изделия
     public static function getArticleStatus($number, $brand_id)
     {
-        return DB::connection($this->connection)->select("SELECT
+        return DB::connection('catalog')->select("SELECT
 			NormalizedDescription,
 			ArticleStateDisplayValue
 			FROM
@@ -552,24 +574,36 @@ class NewTecdocController extends Controller
     }
 
     //3.3 Характеристики изделия
-    public static function getArticleAttributes($number, $brand_id)
-    {
-        return DB::connection($this->connection)->select("SELECT
-			attributeinformationtype,
-			displaytitle,
-			displayvalue
-			FROM
-				article_attributes
-			WHERE
-				datasupplierarticlenumber='" . $number . "'
-			AND
-			supplierId='" . $brand_id . "'");
-    }
+    static public function getArticleAttributes($number, $brand_id)
+	{
+        $DBResult = [];
+        try
+        {
+            $query = CatalogArticleAttribute::select('article_attributes.description as name','article_attributes.displayvalue as value','article_attributes.displaytitle')
+                ->leftjoin('article_oe', function ($join) {$join->on('article_oe.supplierid', '=', 'article_attributes.supplierid')->on('article_oe.datasupplierarticlenumber', '=', 'article_attributes.datasupplierarticlenumber');})
+                ->where('article_oe.OENbr','=', $number)
+                ->where('article_oe.manufacturerId','=', $brand_id)
+                // ->groupBy('article_attributes.displaytitle')
+                ->orderBy('article_attributes.displaytitle', 'ASC')
+                ->distinct()
+                ->get();
+
+        if($query)
+        {
+            $DBResult = $query->toArray();
+        }
+		}
+		catch(\Exception $e)
+		{
+			$DBResult = [];
+		}
+        return $DBResult;
+	}
 
     //3.4 Файлы изделия
     public static function getArticleFiles($number, $brand_id)
     {
-        return DB::connection($this->connection)->select("SELECT
+        return DB::connection('catalog')->select("SELECT
 			Description,
 			PictureName
 			FROM article_images
@@ -582,7 +616,7 @@ class NewTecdocController extends Controller
 	public static function getArticleVehicles($number, $brand_id)
     {
         $result = [];
-        $rows = DB::connection($this->connection)->select("SELECT
+        $rows = DB::connection('catalog')->select("SELECT
 			linkageTypeId,
 			linkageId
 			FROM article_li
@@ -593,7 +627,7 @@ class NewTecdocController extends Controller
             switch ($row)
 			{
                 case 'PassengerCar':
-                    $result[$row['linkageTypeId']][] = DB::connection($this->connection)
+                    $result[$row['linkageTypeId']][] = DB::connection('catalog')
 						->select("SELECT DISTINCT
 						p.id,
 						mm.description make,
@@ -606,7 +640,7 @@ class NewTecdocController extends Controller
                         WHERE p.id=" . $row['linkageTypeId']);
                     break;
                 case 'CatalogCommercialVehicle':
-                    $result[$row['linkageTypeId']][] = DB::connection($this->connection)
+                    $result[$row['linkageTypeId']][] = DB::connection('catalog')
 						->select("SELECT DISTINCT
 						p.id,
 						mm.description make,
@@ -619,7 +653,7 @@ class NewTecdocController extends Controller
                         WHERE p.id=" . $row['linkageTypeId']);
                     break;
                 case 'Motorbike':
-                    $result[$row['linkageTypeId']][] = DB::connection($this->connection)
+                    $result[$row['linkageTypeId']][] = DB::connection('catalog')
 						->select("SELECT DISTINCT
 						p.id,
 						mm.description make,
@@ -632,7 +666,7 @@ class NewTecdocController extends Controller
                         WHERE p.id=" . $row['linkageTypeId']);
                     break;
                 case 'engine':
-                    $result[$row['linkageTypeId']][] = DB::connection($this->connection)
+                    $result[$row['linkageTypeId']][] = DB::connection('catalog')
 						->select("SELECT DISTINCT
 						p.id,
 						m.description make,
@@ -644,7 +678,7 @@ class NewTecdocController extends Controller
                         WHERE p.id=" . $row['linkageTypeId']);
                     break;
                 case 'CatalogAxle':
-                    $result[$row['linkageTypeId']][] = DB::connection($this->connection)
+                    $result[$row['linkageTypeId']][] = DB::connection('catalog')
 						->select("SELECT DISTINCT
 						p.id,
 						mm.description make,
@@ -662,22 +696,41 @@ class NewTecdocController extends Controller
     }
 
     //3.6 Замены изделия
-    public static function getArticleReplace($number, $brand_id)
+    public static function getArticleReplace($number, $brand_id, $brand = "")
     {
-        return DB::connection($this->connection)->select("SELECT
-			s.description supplier,
-			a.replacenbr number
-			FROM article_rn a 
-            JOIN suppliers s ON s.id=a.replacesupplierid
-            WHERE a.datasupplierarticlenumber='" . $number . "'
-			AND a.supplierid='" . $brand_id . "'
-        ");
+		$DBResult = [];
+        try
+        {
+            $query = CatalogArticleRn::select('article_rn.datasupplierarticlenumber AS article',
+                'suppliers.description AS brand',
+                'article_rn.supplierid AS brand_id',
+                'article_rn.replacenbr AS replace_article',
+                'replace_suppliers.description AS replace_brand',
+                'article_rn.replacedupplierid AS replace_brand_id')
+                ->join('suppliers AS replace_suppliers', 'replace_suppliers.id', '=', 'article_rn.replacedupplierid')
+                ->join('suppliers', 'suppliers.id', '=', 'article_rn.supplierid')
+                ->where('article_rn.datasupplierarticlenumber','=', $number)
+                ->where('article_rn.supplierid','=', $brand_id)
+                ->orWhere('suppliers.description','=', $brand)
+                ->distinct()
+                ->get();
+
+        if($query)
+        {
+            $DBResult = $query->toArray();
+        }
+		}
+		catch(\Exception $e)
+		{
+			$DBResult = [];
+		}
+        return $DBResult;
     }
 
     //3.7 Аналоги-заменители
     public static function getArticleCross($number, $brand_id)
     {
-        return DB::connection($this->connection)->select("SELECT DISTINCT
+        return DB::connection('catalog')->select("SELECT DISTINCT
 			s.description,
 			c.PartsDataSupplierArticleNumber
 			FROM article_oe a
@@ -692,7 +745,7 @@ class NewTecdocController extends Controller
     //3.8 Комплектующие (части) изделия
     public static function getArticleParts($number, $brand_id)
     {
-        return DB::connection($this->connection)->select("SELECT DISTINCT
+        return DB::connection('catalog')->select("SELECT DISTINCT
 			description Brand,
 			Quantity,
 			PartsDataSupplierArticleNumber
@@ -704,32 +757,82 @@ class NewTecdocController extends Controller
     }
 
     /*additional*/
-	public static function SearchNumber($Number)
+	public static function SearchNumber($number)
 	{
-		$resDB = [];
+		$DBResult = [];
+        try
+        {
+            $query = CatalogArticleCross::select('article_cross.PartsDataSupplierArticleNumber AS article', 'suppliers.description AS brand',
+                'articles.NormalizedDescription AS name', 'suppliers.id AS supplier_id')
+                ->leftjoin('manufacturers','article_cross.manufacturerId','=','manufacturers.id')
+                ->leftjoin('suppliers','article_cross.SupplierId','=','suppliers.id')
+                ->join('articles', function ($join) {$join->on('articles.DataSupplierArticleNumber', '=', 'article_cross.PartsDataSupplierArticleNumber')->on('articles.supplierId', '=', 'article_cross.SupplierId');})
+                ->where('OENbr','=', $number)
+                ->orWhere('article_cross.PartsDataSupplierArticleNumber','=', $number)
+                ->orderBy('article_cross.PartsDataSupplierArticleNumber', 'asc')
+                ->distinct()
+                ->get();
 
-		return $resDB;
+        if($query)
+        {
+            $DBResult = $query->toArray();
+        }
+		}
+		catch(\Exception $e)
+		{
+			$DBResult = [];
+		}
+        return $DBResult;
 	}
 	
     public static function getBrandByCode($code)
 	{
-        $DBResult = [];
-        $query = CatalogManufacturer::where('matchcode','=', $code)->first();
-        if($query)
+        try
         {
-            $DBResult = $query->toArray();
-            $DBResult['part_type'] = "manufacturer";
-        }
-        else
-        {
-            $query = CatalogSupplier::where('matchcode','=', $code)->first();
+            $query = CatalogManufacturer::where('matchcode','=', $code)->first();
             if($query)
             {
                 $DBResult = $query->toArray();
-                $DBResult['part_type'] = "supplier";
+                $DBResult['part_type'] = "manufacturer";
             }
-           
+            else
+            {
+                $query = CatalogSupplier::where('matchcode','=', $code)->first();
+                if($query)
+                {
+                    $DBResult = $query->toArray();
+                    $DBResult['part_type'] = "supplier";
+                }
+               
+            }
+
+        if($query)
+        {
+            $DBResult = $query->toArray();
         }
+		}
+		catch(\Exception $e)
+		{
+			$DBResult = [];
+		}
+        return $DBResult;
+	}
+
+    public static function getSupplierByCode($supplier)
+	{
+        $DBResult = [];
+        try
+        {
+            $query = CatalogSupplier::where('matchcode','=', $supplier)->first();
+            if($query)
+            {
+                $DBResult = $query->toArray();
+            }
+		}
+		catch(\Exception $e)
+		{
+			$DBResult = [];
+		}
         return $DBResult;
 	}
     
@@ -754,4 +857,6 @@ class NewTecdocController extends Controller
 
 		return $DBArray;
 	}
+
+    
 }

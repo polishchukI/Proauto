@@ -1,0 +1,1 @@
+<td scope="col" class="text-center price_in">{{ number_format($priceIn ?? 0, 2) }}</td>

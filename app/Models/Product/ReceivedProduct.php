@@ -14,7 +14,7 @@ class ReceivedProduct extends Model
 
     public function receipt()
     {
-        return $this->belongsTo('App\MOdels\Inventory\Receipt');
+        return $this->belongsTo('App\Models\Inventory\Receipt');
     }
 
     public function product()

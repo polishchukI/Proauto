@@ -1,4 +1,4 @@
-@extends('inventory.layouts.app', ['page' => 'New Salary Payment', 'pageSlug' => 'salary_payments', 'section' => 'documents', 'search' => 'salary_payments'])
+@extends('inventory.layouts.app', ['page' => __('inventory.new_salary_payment'), 'pageSlug' => 'salary_payments', 'section' => 'documents', 'search' => 'salary_payments'])
 
 @section('content')
 @include('inventory.alerts.error')

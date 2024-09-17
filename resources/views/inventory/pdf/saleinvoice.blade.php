@@ -86,19 +86,19 @@
 					<table class="table">
 						<tbody>
 							<tr>
-								<td style="width: 50%;"><b>{{ __('inventory_doc_print.organization_name') }}</b> {{ config('inventory_settings.name') }}<br /></td>
+								<td style="width: 50%;"><b>{{ __('inventory_doc_print.organisation_name') }}</b> {{$sale["organisation_name"]}}<br /></td>
 								<td style="width: 50%;"><b>{{ __('inventory_doc_print.client') }}</b> {{$client["name"]}}<br /></td>
 							</tr>
 							<tr>
-								<td style="width: 50%;"><b>{{ __('inventory_doc_print.organization_phone') }}</b> {{ config('inventory_settings.phone') }}<br /></td>
+								<td style="width: 50%;"><b>{{ __('inventory_doc_print.organisation_phone') }}</b> {{$sale["organisation_phone"]}}<br /></td>
 								<td style="width: 50%;"><b>{{ __('inventory_doc_print.date') }}</b> {{date('j F, Y', strtotime($sale["created_at"]))}}<br /></td>
 							</tr>
 							<tr>
-								<td style="width: 50%;"><b>{{ __('inventory_doc_print.organization_phone') }}</b> {{ config('inventory_settings.phone2') }}<br /></td>
+								<td style="width: 50%;"><b>{{ __('inventory_doc_print.organisation_phone') }}</b> {{$sale["organisation_phone2"]}}<br /></td>
 								<td style="width: 50%;"><b>{{ __('inventory_doc_print.currency') }}</b> {{$sale["currency"]}}<br /></td>
 							</tr>
 							<tr>
-								<td style="width: 50%;"><b>{{ __('inventory_doc_print.organization_email') }}</b> {{ config('inventory_settings.email') }}<br /></td>
+								<td style="width: 50%;"><b>{{ __('inventory_doc_print.organisation_email') }}</b> {{$sale["organisation_email"]}}<br /></td>
 								<td style="width: 50%;"><b>{{ __('inventory_doc_print.sale') }}</b> № {{$sale["id"]}}<br /></td>
 							</tr>
 						</tbody>

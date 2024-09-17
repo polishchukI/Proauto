@@ -219,13 +219,13 @@
                                                 <tr>
                                                     <th class="text-center">#</th>
                                                     <th>{{ __('inventory_dashboard.client') }}</th>
-                                                    <th>{{ __('inventory_dashboard.client_order_doc_id') }}</th>
+                                                    <th>{{ __('inventory_dashboard.document_num') }}</th>
                                                     <th>{{ __('inventory_dashboard.quantity') }}</th>
                                                     <th>{{ __('inventory_dashboard.to_sale') }}</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            @foreach ($unfinished_client_orders as $order)
+                                           {{-- @foreach ($unfinished_client_orders as $order)
                                                 <tr>
                                                     <td class="text-center">
                                                         <div class="photo">
@@ -242,7 +242,6 @@
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        {{--<a href="{{ route('client_orders.show', $order->doc_id) }}" data-toggle="tooltip" data-placement="bottom" title="{{ __('inventory_dashboard.more_details') }}">--}}
                                                         <a href="{{ route('client_orders.show', $order->id) }}" data-toggle="tooltip" data-placement="bottom" title="{{ __('inventory_dashboard.more_details') }}">
                                                             {{ __('inventory_dashboard.client_order') }} {{ $order->doc_id }} {{ __('inventory_dashboard.from_date') }} {{ date('d-m-y', strtotime($order->created_at)) }}
                                                         </a>
@@ -254,7 +253,7 @@
                                                         </button>
                                                     </td>
                                                 </tr>
-                                                @endforeach
+                                                @endforeach --}}
                                             </tbody>
                                         </table>
                                     </div>
@@ -279,35 +278,31 @@
                                             <thead class="text-primary">
                                                 <tr>
                                                     <th class="text-center">#</th>
+                                                    <th>{{ __('inventory_dashboard.document_num') }}</th>
                                                     <th>{{ __('inventory_dashboard.client') }}</th>
-                                                    <th>{{ __('inventory_dashboard.client_order_doc_id') }}</th>
-                                                    <th>{{ __('inventory_dashboard.quantity') }}</th>
                                                     <th>{{ __('inventory_dashboard.to_sale') }}</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                             @foreach ($unfinished_client_orders as $order)
                                                 <tr>
-                                                    <td class="text-center">
-                                                        <div class="photo">
-                                                            @if($order->client->avatar)
-                                                            <img src="{{ $order->client->avatar }}" alt="photo">
-                                                            @else
-                                                            <img src="../images/avatars/clients/no_avatar.jpg" alt="photo">
-                                                            @endif
-                                                        </div>
+                                                    <td>
+                                                        @if (!$order->finalized_at)
+                                                        <span class="text-danger"><i class="far fa-minus-square"></i></span>
+                                                        @else
+                                                        <span class="text-success"><i class="far fa-check-square"></i></span>
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        <a href="{{ route('client_orders.show', $order->id) }}" data-toggle="tooltip" data-placement="bottom" title="{{ __('inventory_dashboard.more_details') }}">
+                                                            {{ __('inventory_dashboard.client_order') }} {{ $order->id }} {{ __('inventory_dashboard.from_date') }} {{ date('d-m-y', strtotime($order->created_at)) }}
+                                                        </a>
                                                     </td>
                                                     <td>
                                                         <a href="{{ route('clients.show', $order->client) }}" data-toggle="tooltip" data-placement="bottom" title="{{ __('inventory_dashboard.more_details') }}">
                                                             {{ $order->client->name }}
                                                         </a>
                                                     </td>
-                                                    <td>
-                                                        <a href="{{ route('client_orders.show', $order->id) }}" data-toggle="tooltip" data-placement="bottom" title="{{ __('inventory_dashboard.more_details') }}">
-                                                            {{ __('inventory_dashboard.client_order') }} #{{ $order->id }} {{ __('inventory_dashboard.from_date') }} {{ date('d-m-y', strtotime($order->created_at)) }}
-                                                        </a>
-                                                    </td>
-                                                    <td>{{ $order->quantity }}</td>
                                                     <td>
                                                         <button onclick="client_order_sale('{{$order->id}}');" class="btn btn-sm btn-simple btn-sale" data-toggle="tooltip" data-placement="bottom" title="Sale">
                                                             <i class="fas fa-file-invoice"></i>
@@ -340,10 +335,9 @@
                                         <table class="table">
                                             <thead>
                                                 <tr>
+                                                    <th class="text-center">#</th>
                                                     <th>{{ __('inventory_dashboard.document_num') }}</th>
                                                     <th>{{ __('inventory_dashboard.client') }}</th>
-                                                    <th>{{ __('inventory_dashboard.products') }}</th>
-                                                    <th>{{ __('inventory_dashboard.paid_out') }}</th>
                                                     <th>{{ __('inventory_dashboard.total') }}</th>
                                                 </tr>
                                             </thead>
@@ -351,13 +345,18 @@
                                                 @foreach ($unfinishedsales as $sale)
                                                     <tr>
                                                         <td>
+                                                            @if (!$sale->finalized_at)
+                                                            <span class="text-danger"><i class="far fa-minus-square"></i></span>
+                                                            @else
+                                                            <span class="text-success"><i class="far fa-check-square"></i></span>
+                                                            @endif
+                                                        </td>
+                                                        <td>
                                                             <a href="{{ route('sales.show', ['sale' => $sale]) }}"data-toggle="tooltip" data-placement="bottom" title="View Sale">
                                                                 {{ __('inventory_dashboard.sale') }} {{ $sale->id }} {{ __('inventory_dashboard.from_date') }} {{ date('d-m-y', strtotime($sale->created_at)) }}
                                                             </a>
                                                         </td>
                                                         <td>{{ $sale->client->name }}</td>
-                                                        <td>{{ $sale->products->count() }}</td>
-                                                        <td>{{ $sale->transactions->sum('amount') }} {{$sale->currency }}</td>
                                                         <td>{{ $sale->products->sum('total_amount') }} {{$sale->currency }}</td>
                                                     </tr>
                                                 @endforeach
@@ -549,7 +548,7 @@
                                                     <a href="{{ route('transactions.create', ['type' => 'payment']) }}" class="dropdown-item">{{ __('inventory_dashboard.payment') }}</a>
                                                     <a href="{{ route('transactions.create', ['type' => 'income']) }}" class="dropdown-item">{{ __('inventory_dashboard.income') }}</a>
                                                     <a href="{{ route('transactions.create', ['type' => 'expense']) }}" class="dropdown-item">{{ __('inventory_dashboard.expense') }}</a>
-                                                    <a href="{{ route('transfer.create') }}" class="dropdown-item">{{ __('inventory_dashboard.transfer') }}</a>
+                                                    <a href="{{ route('transfers.create') }}" class="dropdown-item">{{ __('inventory_dashboard.transfer') }}</a>
                                                 </div>
                                             </div>
                                         </div>

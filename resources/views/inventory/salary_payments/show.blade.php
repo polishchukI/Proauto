@@ -20,12 +20,10 @@
                     <div class="col-6">
                         <div class="row text-right">
                             <!--finalize-->
-                            <div class="col-1">
-                                
+                            <div class="col-1">                                
                                 <button type="button" class="btn btn-simple btn-sm btn-success @if($salary_payment->finalized_at) disabled @endif" onclick="confirm('ATTENTION: At the end of this salary_payment you will not be able to load more employees in it.') ? window.location.replace('{{ route('salary_payments.finalize', $salary_payment) }}') : ''">
                                     <i class="fas fa-handshake"></i>
-                                </button>
-                               
+                                </button>                               
                             </div>
                             <!--pay-->
                             <div class="col-1">
@@ -70,18 +68,9 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-3">{{ __('inventory.user') }}</div>
-                                <div class="col-md-9">{{ $salary_payment->user->name }}</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3">{{ __('inventory.employees') }} / {{ __('inventory.salary') }}</div>
-                                <div class="col-md-9">{{ $salary_payment->employees->count() }} / {{ $salary_payment->employees->sum('salary') }}</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3">{{ __('inventory.total_cost') }}</div>
-                                <div class="col-md-9">{{ $salary_payment->employees->sum('salary') }} ({{ $salary_payment->currency }})</div>
-                            </div>
+                            <div class="row text-info"><div class="col-md-3">{{ __('inventory.user') }}</div><div class="col-md-9">{{ $salary_payment->user->name }}</div></div>
+                            <div class="row text-info"><div class="col-md-3">{{ __('inventory.employees') }} / {{ __('inventory.salary') }}</div><div class="col-md-9">{{ $salary_payment->employees->count() }} / {{ $salary_payment->employees->sum('salary') }}</div></div>
+                            <div class="row text-info"><div class="col-md-3">{{ __('inventory.total_cost') }}</div><div class="col-md-9">{{ $salary_payment->employees->sum('salary') }} ({{ $salary_payment->currency }})</div></div>
                         </div>
                         <div class="col-md-6">
                             @if($salary_payment->reference_type == "to_provider_order")
@@ -114,10 +103,10 @@
                     <div class="col-6">
                         <div class="row text-right">
                             <div class="col-1">
-                                <a class="btn btn-simple btn-sm btn-delete @if($salary_payment->finalized_at) disabled @endif" href="{{ route('salary_payments.employees.clear', $salary_payment) }}" data-toggle="tooltip" title="{{ __('inventory.clear_table') }}"><i class="fas fa-times"></i></a>
+                                <a class="btn btn-simple btn-sm btn-selector @if($salary_payment->finalized_at) disabled @endif" href="{{ route('salary_payments.employees.selector', $salary_payment) }}" data-toggle="tooltip" title="Product selector"><i class="fas fa-list-ul"></i></a>
                             </div>
                             <div class="col-1">
-                                <a class="btn btn-simple btn-sm btn-selector @if($salary_payment->finalized_at) disabled @endif" href="{{ route('salary_payments.employees.selector', $salary_payment) }}" data-toggle="tooltip" title="Product selector"><i class="fas fa-list-ul"></i></a>
+                                <a class="btn btn-simple btn-sm btn-delete @if($salary_payment->finalized_at) disabled @endif" href="{{ route('salary_payments.employees.clear', $salary_payment) }}" data-toggle="tooltip" title="{{ __('inventory.clear_table') }}"><i class="fas fa-times"></i></a>
                             </div>
                         </div>
                     </div>

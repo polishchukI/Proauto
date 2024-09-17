@@ -8,6 +8,7 @@
                 <th scope="col" style="width: 40%;">{{ __('inventory.product') }}</th>
                 <th scope="col" style="width: 5%;">{{ __('inventory.stock') }}</th>
                 <th scope="col" style="width: 5%;">{{ __('inventory.quantity') }}</th>
+                <th scope="col" style="width: 5%;">{{ __('inventory.price_in') }}</th>
                 <th scope="col" style="width: 10%;">{{ __('inventory.price') }}</th>
                 <th scope="col" style="width: 10%;">{{ __('inventory.total') }}</th>
             </thead>
@@ -19,6 +20,12 @@
                     <td scope="col" class="name">{{ $item->product->name }}</td>
                     <td scope="col" class="stock">{{ number_format($item->product->stocks()->sum('quantity') ?? 0, 2) }}</td>
                     <td scope="col" class="quantity">{{ number_format($item->quantity ?? 0, 2) }}</td>
+                    <x-price-in
+                        price-type="in"
+                        :product-id="$item->product_id"
+                        :currency="$admincart->currency"
+                        :date="$admincart->created_at"
+                    />
                     <td scope="col" class="price">{{ number_format($item->price ?? 0, 2) }}</td>
                     <td scope="col" class="total_amount">{{ number_format($item->total_amount ?? 0, 2) }}</td>
                 </tr>

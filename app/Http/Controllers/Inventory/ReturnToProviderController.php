@@ -22,6 +22,7 @@ use App\Models\Product\ReceivedProduct;
 use App\Models\Product\ProductPrice;
 use App\Models\Product\ProductStock;
 use App\Models\Product\ProductReturnToProvider;
+use App\Models\Inventory\InventorySetting;
 
 use Picqer\Barcode\BarcodeGeneratorHTML;
 
@@ -72,6 +73,13 @@ class ReturnToProviderController extends Controller
         $return_to_provider["subtotal"]				= $products->sum('total');
 		$return_to_provider["tax"]					= 0;
 		$return_to_provider["total_amount"]			= $return_to_provider["subtotal"]+$return_to_provider["tax"];
+
+		$inventorySettings = InventorySetting::where('id','=', '1')->first()->toArray();
+		foreach ($inventorySettings as $key=>$value)
+		{
+			if ($key === 'id') { continue; }
+			$return_to_provider[$key] = $value;
+		}
 		
 		$generator = new BarcodeGeneratorHTML();
         $barcode = $generator->getBarcode((string)$return_to_provider->barcode, $generator::TYPE_CODE_128, 1, 25);
@@ -111,7 +119,7 @@ class ReturnToProviderController extends Controller
 		
 		$product						= Product::findOrFail($product_id);
 		$warehouse_id					= $return_to_provider->warehouse_id;
-		$stock							= AddProductController::get_product_stocks($product_id);
+		$stock							= AddProductController::get_product_stocks($product_id, auth()->user()->default_warehouse_id);
 		$currency						= $return_to_provider->currency;
 		
 		$base_price				  		= ReceivedProduct::where('product_id', $product_id)->where('receipt_id', $return_to_provider->reference_id)->first()->price;
@@ -282,10 +290,16 @@ class ReturnToProviderController extends Controller
 								'finalized_at'			=> $finalized_at,
 								'doc_type'				=> "return_to_provider"]);
         }
+
 		$total_amount = ProductReturnToProvider::where('return_to_provider_id','=', $return_to_provider->id)->sum('total_amount');		
 		
 		//проводим начисление задолженности
-		Settlement::Insert(['doc_type' => "return_to_provider",'doc_id' => $return_to_provider->id,'client_id' => $return_to_provider->client_id,'total_amount' => $total_amount,'currency' => $return_to_provider->currency,'user_id' => $return_to_provider->user_id]);
+		Settlement::Insert(['doc_type'					=> "return_to_provider",
+								'doc_id'				=> $return_to_provider->id,
+								'provider_id'			=> $return_to_provider->provider_id,
+								'total_amount'			=> (-1) * $total_amount,
+								'currency'				=> $return_to_provider->currency,
+								'user_id'				=> $return_to_provider->user_id]);
 		
 		$return_to_provider->total_amount = $total_amount;
 		$return_to_provider->finalized_at = $finalized_at;
@@ -298,7 +312,7 @@ class ReturnToProviderController extends Controller
     {
         $payment_methods = PaymentMethod::all();
 
-        return view('inventory.returns_from_the_client.addtransaction', compact('return_to_provider', 'payment_methods'));
+        return view('inventory.returns_to_provider.addtransaction', compact('return_to_provider', 'payment_methods'));
     }
 
     public function storetransaction(Request $request, ReturnToProvider $return_to_provider, Transaction $transaction)
@@ -306,11 +320,11 @@ class ReturnToProviderController extends Controller
         switch($request->all()['type'])
 		{
             case 'income':
-                $request->merge(['title' => 'Возврат оплаты по возврату поставщику №: ' . $request->get('return_to_provider_id')]);
+                $request->merge(['title' => 'Поступление денежных средств по возврату поставщику №: ' . $request->get('return_to_provider_id')]);
                 break;
 
             case 'expense':
-                $request->merge(['title' => 'Возврат оплаты по расходной накладной: ' . $request->get('return_to_provider_id')]);
+                $request->merge(['title' => 'Расход денежных средств по расходной накладной: ' . $request->get('return_to_provider_id')]);
 
                 if($request->get('amount') > 0)
 				{
@@ -319,18 +333,18 @@ class ReturnToProviderController extends Controller
                 break;
         }
 
-        $transaction->create($request->all());
+        $transaction = $transaction->create($request->all());
 
 		//перетераем платеж, чтоб он не задублировался
-		Settlement::where('doc_type','=', "expense")->where('doc_id','=', $transaction->id)->delete();
+		Settlement::where('doc_type','=', "income")->where('doc_id','=', $transaction->id)->delete();
+
 		//проводим платеж
-		Settlement::Insert(['doc_type' => "expense",
-								'doc_id' => $transaction->id,
-								'client_id' => $return_to_provider->client_id,
-								'total_amount' => $request->amount,
-								'currency' => $return_to_provider->currency,
-								'user_id' => $return_to_provider->user_id,
-								'reference' => "/admin/returns_to_provider/" . $return_to_provider->id . "/show"]);
+		Settlement::Insert(['doc_type'					=> "income",
+								'doc_id'				=> $transaction->id,
+								'provider_id'			=> $return_to_provider->provider_id,
+								'total_amount'			=> $request->amount,
+								'currency'				=> $return_to_provider->currency,
+								'user_id'				=> $return_to_provider->user_id]);
 
         return redirect()->route('returns_to_provider.show', compact('return_to_provider'))->withStatus('Successfully registered transaction.');
     }

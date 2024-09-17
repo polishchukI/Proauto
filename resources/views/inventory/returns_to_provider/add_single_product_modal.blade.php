@@ -46,8 +46,8 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button id="return_to_provider-single-product-add" type="button" class="btn btn-sm btn-simple">{{ __('modal.add') }}</button>
-				<button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">{{ __('modal.close') }}</button>
+				<button id="return_to_provider-single-product-add" type="button" class="btn btn-sm btn-simple btn-success">{{ __('modal.add') }}</button>
+				<button type="button" class="btn btn-sm btn-simple btn-selector" data-dismiss="modal">{{ __('modal.close') }}</button>
 			</div>
 		</div>
 	</div>

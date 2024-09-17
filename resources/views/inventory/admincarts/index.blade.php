@@ -10,7 +10,13 @@
 					<div class="col-8">
 						{{ $admincarts->links() }}
 					</div>
-					<div class="col-4 text-right">
+					<div class="col-2">
+						<form method="get" action="/admincarts" autocomplete="off">
+							<input type="text" name="search" placeholder="{{ __('inventory.search') }}" value="{{ request('search') }}" class="form-control-sm" />
+							<button class="btn btn-simple btn-sm btn-selector" type="submit"><i class="fa fa-search"></i></button>
+						</form>
+					</div>
+					<div class="col-2 text-right">
 						<a href="{{ route('admincarts.create') }}" class="btn btn-sm btn-simple btn-success"><i class="fas fa-plus"></i></a>
 					</div>
 				</div>

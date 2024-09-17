@@ -27,10 +27,23 @@ use App\Http\Controllers\Catalog\CatalogController;
 
 class ClientController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $clients = Client::all();
+		$keyword = $request->get('search');
+        if (!empty($keyword))
+		{
+            $clients = Client::select('clients.*')
+					->where('clients.name', 'LIKE', "%$keyword%")
+					->orwhere('clients.comment', 'LIKE', "%$keyword%")
+					->paginate(25)
+					->withQueryString();
+        }
+		else
+		{
+			$clients = Client::paginate(25);
+        }
 
+        
         return view('inventory.clients.index', compact('clients'));
     }
 
@@ -41,19 +54,17 @@ class ClientController extends Controller
 
     public function store(ClientRequest $request, Client $client)
     {
-        $requestData = $request->all();
-		
-		$requestData['product_discount'] = $request->product_discount ?? 0;
-		$requestData['service_discount'] = $request->service_discount ?? 0;
-		
-		$requestData['name'] = $request->lastname." ".$request->firstname." ".$request->secondname;
-		$requestData['notified_at'] = Carbon::now();
-		
-        $client = $client->create($requestData);
+        $requestData						= $request->all();
+		$requestData['product_discount']	= $request->product_discount ?? 0;
+		$requestData['service_discount']	= $request->service_discount ?? 0;
+		$requestData['name']				= $request->lastname." ".$request->firstname." ".$request->secondname;
+		$requestData['created_at']			= Carbon::now();
+		$requestData['notified_at']			= Carbon::now();
+		// dd(compact('requestData'));
+
+        $client								= $client->create($requestData);
         
-        return redirect()
-            ->route('clients.edit', ['client' => $client->id])
-            ->withStatus('Product registered successfully, you can start edit prperies.');
+        return redirect()->route('clients.edit', ['client' => $client->id])->withStatus('Данные клиента успешно зарегистрированы!');
     }
 
     public function show(Client $client)
@@ -64,29 +75,25 @@ class ClientController extends Controller
     public function edit(Client $client)
     {
 		$colors = $this->getColors();
-		// $cataloggroups = ['passenger','commercial','motorbike'];
 		$cataloggroups = CatalogGroup::where('isactive','=','True')->get();
-		// $cataloggroups = ['passenger','commercial','motorbike','engine','axle'];
 		
         return view('inventory.clients.edit', compact('client','colors','cataloggroups'));
     }
 
     public function update(ClientRequest $request, Client $client)
     {
-		$requestData = $request->all();
-		
-		$requestData['name'] = $request->lastname." ".$request->firstname." ".$request->secondname;
-		
-        $client = $client->update($requestData);
+		$requestData			= $request->all();
+		$requestData['name']	= $request->lastname." ".$request->firstname." ".$request->secondname;
+        $client					= $client->update($requestData);
 
-        return redirect()->route('clients.index')->withStatus('Successfully modified client.');
+        return redirect()->route('clients.index')->withStatus('Данные клиента успешно обновлены!');
     }
 
     public function destroy(Client $client)
     {
         $client->delete();
 
-        return redirect()->route('clients.index')->withStatus('Client successfully removed.');
+        return redirect()->route('clients.index')->withStatus('Данные клиента успешно удалены!');
     }
 
     public function client_auto_service_parts(ClientAuto $clientauto)
@@ -122,18 +129,27 @@ class ClientController extends Controller
 
 		$clientphone = $clientphone->create($requestData);
 
+		if(strlen($clientphone->phone) == 12)
+		{
+			$phoneRespose = substr($clientphone->phone, 0, 2).' ('.substr($clientphone->phone, 2, 3).') '.substr($clientphone->phone, 5, 3).' '.substr($clientphone->phone, 8, 2).' '.substr($clientphone->phone, 10, 2);
+		}
+		elseif(strlen($clientphone->phone) == 13)
+		{
+			$phoneRespose = substr($clientphone->phone, 0, 3).' ('.substr($clientphone->phone, 3, 3).') '.substr($clientphone->phone, 6, 3).' '.substr($clientphone->phone, 9, 2).' '.substr($clientphone->phone, 11, 2);
+		}
+		// dd(compact('phoneRespose'));
 		return response()->json([
 			'status'  => 1 , 
 			'message' => ['Телефон добавлен', 'success'],
 			'info'    => [
-				'client_id'			=> $requestData['client_id'],
+				'client_id'			=> $clientphone->client_id,
 				'phone_id'			=> $clientphone->id,
-				'phone'				=> $requestData['phone'],
-				'telegram'			=> $requestData['telegram'],
-				'viber'				=> $requestData['viber'],
-				'whatsapp'			=> $requestData['whatsapp'],
-				'default'			=> $requestData['default'],
-				'comment'			=> $requestData['comment'],
+				'phone'				=> $phoneRespose,
+				'telegram'			=> $clientphone->telegram,
+				'viber'				=> $clientphone['viber'],
+				'whatsapp'			=> $clientphone['whatsapp'],
+				'default'			=> $clientphone['default'],
+				'comment'			=> $clientphone['comment'],
 			],
 		]);
     }
@@ -168,18 +184,28 @@ class ClientController extends Controller
 				'updated_at'	=> Carbon::now(),
 			]);
 
+			$item = ClientPhone::where('client_id','=',$client_id)->where('id','=',$phone_id)->get()->first();
+			if(strlen($item->phone) == 12)
+			{
+				$phoneRespose = substr($item->phone, 0, 2).' ('.substr($item->phone, 2, 3).') '.substr($item->phone, 5, 3).' '.substr($item->phone, 8, 2).' '.substr($item->phone, 10, 2);
+			}
+			elseif(strlen($item->phone) == 13)
+			{
+				$phoneRespose = substr($item->phone, 0, 3).' ('.substr($item->phone, 3, 3).') '.substr($item->phone, 6, 3).' '.substr($item->phone, 9, 2).' '.substr($item->phone, 11, 2);
+			}
+
 			if ($item) {
 				return response()->json([
 					'status'  => 1 , 
 					'message' => ['Обновлен', 'success'],
 					'info'    => [
-							'phone_id'    	=> $phone_id,
-							'phone'			=> $request->phone,
-							'telegram'		=> $request->telegram ?? intval(0),
-							'viber'			=> $request->viber ?? intval(0),
-							'whatsapp'		=> $request->whatsapp ?? intval(0),
-							'default'		=> $request->default ?? intval(0),
-							'comment'		=> $request->comment ?? "",
+							'phone_id'    	=> $item->id,
+							'phone'			=> $phoneRespose,
+							'telegram'		=> $item->telegram ?? intval(0),
+							'viber'			=> $item->viber ?? intval(0),
+							'whatsapp'		=> $item->whatsapp ?? intval(0),
+							'default'		=> $item->default ?? intval(0),
+							'comment'		=> $item->comment ?? "",
 					],
 				]);
 			}
@@ -271,7 +297,7 @@ class ClientController extends Controller
 		$requestData['name']			= $request->city . ', ' . $request->street . ', ' . $request->address . ' / ' . $request->apartment ;
 		$requestData['created_at']		= Carbon::now();
 			
-		$clientaddress = $clientaddress->create($requestData);
+		$clientaddress					= $clientaddress->create($requestData);
 
 		return response()->json([
 			'status'  => 1 , 
@@ -411,11 +437,11 @@ class ClientController extends Controller
 		$ManufacturerData = [];
 		foreach ($ManufacturerRequest as $ManufacturerItem)
 		{
-			$ManufacturerData["manufacturer_id"] = $ManufacturerItem["manufacturer_id"];
-			$ManufacturerData["manufacturer_name"] = $ManufacturerItem["manufacturer_name"];
-			$ManufacturerData["brand"] = Str::lower($ManufacturerItem["manufacturer_name"]);
+			$ManufacturerData["manufacturer_id"]		= $ManufacturerItem["manufacturer_id"];
+			$ManufacturerData["manufacturer_name"]		= $ManufacturerItem["manufacturer_name"];
+			$ManufacturerData["brand"]					= Str::lower($ManufacturerItem["manufacturer_name"]);
 		}
-		$manufacturer = $ManufacturerData["manufacturer_name"];
+		$manufacturer									= $ManufacturerData["manufacturer_name"];
 		//////////////////////////////////////////////
 
 		$ModelRequest = NewTecdocController::getModelById($group, $model_id);
@@ -423,10 +449,10 @@ class ClientController extends Controller
 		$ModelData = [];
 		foreach ($ModelRequest as $ModelItem)
 		{
-			$ModelData["model_id"] = $ModelItem["model_id"];
-			$ModelData["constructioninterval"] = $ModelItem["constructioninterval"];
-			$ModelData["model_name"] = $ModelItem["name"];
-			$ModelData["model_url"] = FunctionsController::GetURLNameByModelID($ManufacturerData["brand"], $ModelItem["model_id"]);
+			$ModelData["model_id"]					= $ModelItem["model_id"];
+			$ModelData["constructioninterval"]		= $ModelItem["constructioninterval"];
+			$ModelData["model_name"]				= $ModelItem["name"];
+			$ModelData["model_url"]					= FunctionsController::GetURLNameByModelID($ManufacturerData["brand"], $ModelItem["model_id"]);
 		}
 		////////////////////////////////////////////////
 		$ModificationRequest = NewTecdocController::getModificationById($group, $modification_id);
@@ -435,14 +461,14 @@ class ClientController extends Controller
 		foreach($ModificationRequest as $item)
 		{
 
-			$mod_id = $item['modification_id'];
-			$ModificationData = [];
-			$ModificationData["modification_id"] = $mod_id;
+			$mod_id									= $item['modification_id'];
+			$ModificationData						= [];
+			$ModificationData["modification_id"]	= $mod_id;
 			foreach($ModificationRequest as $item)
 			{
-				if($item['modification_id'] == $mod_id)
+				if($item['modification_id']						== $mod_id)
 				{
-					$ModificationData[$item['attributetype']] = $item['displayvalue'];
+					$ModificationData[$item['attributetype']]	= $item['displayvalue'];
 				}
 			}
 		}

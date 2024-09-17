@@ -4,21 +4,28 @@
 @include('inventory.alerts.success')
 @include('inventory.alerts.error')
 <div class="row">
-	<div class="col-md-12">
-		<div class="card ">
+	<div class="col-12">
+		<div class="card">
 			<div class="card-header">
 				<div class="row">
-					<div class="col-8">
-						<h4 class="card-title">{{__('inventory.providers')}}</h4>
+					<div class="col-6">
+						{{ $providers->links() }}
 					</div>
-					<div class="col-4 text-right">
+					<div class="col-3"></div>
+					<div class="col-2">
+						<form method="get" action="/providers" autocomplete="off">
+							<input type="text" name="search" placeholder="{{ __('inventory.search') }}" value="{{ request('search') }}" class="form-control-sm" />
+							<button class="btn btn-simple btn-sm btn-selector" type="submit"><i class="fa fa-search"></i></button>
+						</form>
+					</div>
+					<div class="col-1 text-right">
 						<a href="{{ route('providers.create') }}" class="btn btn-sm btn-simple btn-success"><i class="fas fa-plus"></i></a>
 					</div>
 				</div>
 			</div>
 			<div class="card-body">
 				<div class="">
-					<table class="table tablesorter" id="dataTable" width="100%" cellspacing="0">
+					<table class="table" width="100%" cellspacing="0">
 						<thead class=" text-primary">
 							<th scope="col">{{__('inventory.provider_name')}}</th>
 							<th scope="col">{{__('inventory.provider_code')}}</th>
@@ -27,8 +34,8 @@
 							<th scope="col">{{__('inventory.import_price')}}</th>                                
 							<th scope="col">{{__('inventory.delete_prices')}}</th>
 							<th scope="col">{{__('inventory.balance')}}</th>
-							<th scope="col"></th>
-							<th scope="col"></th>
+                            <th scope="col"><i class="fas fa-edit"></i></th>
+                            <th scope="col"><i class="fas fa-times"></i></th>
 						</thead>
 						<tbody>
 							@foreach ($providers as $provider)
@@ -39,10 +46,18 @@
 										</a>
 									</td>
 									<td>{{ $provider->provider_code }}</td>
-									<td>{{ $provider->hasprice }}</td>
-									<td>{{ $provider->supplierprices->count() }}</td>
 									<td>
-									@if($provider->hasprice =="Price")
+										@if($provider->hasprice =="Price")
+										<i class="fas fa-scroll" title="{{ __('inventory.delete_prices') }}" ></i>
+										@elseif($provider->hasprice =="Webservice")
+										<i class="fas fa-signal"></i>
+										@else
+										@endif
+									</td>
+									<td>{{ $provider->supplierprices->count() }}</td>
+									
+									<td>
+										@if($provider->hasprice =="Price")
 										<button class="btn btn-simple btn-sm btn-selector" title="Import Price" OnClick="import_price('{{$provider->provider_code}}')">
 											<i class="fas fa-file-import"></i>
 										</button>

@@ -8,13 +8,15 @@
             <div class="card ">
                 <div class="card-header">
                     <div class="row">
-                        <div class="col-8">
-                            <nav class="d-flex justify-content-end" aria-label="...">
-                                {{ $blog_posts->links() }}
-                            </nav>
-                        </div>
-                        <div class="col-4 text-right">
-                            <a href="{{ route('blog_posts.create') }}"  class="btn btn-sm btn-simple btn-success"><i class="fas fa-plus"></i></a>
+                        <div class="col-8">{{ $blog_posts->links() }}</div>
+                        <div class="col-2">
+						<form method="get" action="/blog_posts" autocomplete="off">
+							<input type="text" name="search" placeholder="{{ __('inventory.search') }}" value="{{ request('search') }}" class="form-control-sm" />
+							<button class="btn btn-simple btn-sm btn-selector" type="submit"><i class="fa fa-search"></i></button>
+						</form>
+					</div>
+					<div class="col-2 text-right">
+                            <a href="{{ route('blog_posts.create') }}" class="btn btn-sm btn-simple btn-success"><i class="fas fa-plus"></i></a>
                         </div>
                     </div>
                 </div>

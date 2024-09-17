@@ -235,10 +235,7 @@ document.addEventListener("DOMContentLoaded", () =>
                             html += `<tr>`;
                             html += `<td>`+data[i].article+`</td>`;
                             html += `<td>`+data[i].brand+`</td>`;
-                            html += `<td>`;
-                            html +=`<a href="/products/`+data[i].id+`" target="_blank" class="btn btn-link text-info" data-toggle="tooltip" data-placement="bottom" title="{{ __('inventory.edit') }}">`;
-                            html += data[i].name;
-                            html += `</a></td>`;
+                            html += `<td><a href="/products/`+data[i].id+`" target="_blank">`+data[i].name+`</a></td>`;
                             html += `<td>`+data[i].stock+`</td>`;
                             html += `<td>`+data[i].price+`</td>`;
                             html += `<td><button type="button" class="btn btn-simple btn-sm btn-selector" id="`+data[i].id+`" OnClick="to_provider_order_add_product('`+{{$to_provider_order->id}}+`','`+data[i].id+`')"><i class="fas fa-check-double"></i></button></td>`;

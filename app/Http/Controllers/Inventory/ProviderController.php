@@ -16,9 +16,21 @@ use App\Http\Controllers\Controller;
 
 class ProviderController extends Controller
 {
-    public function index(Provider $model)
+	public function index(Request $request)
     {
-        $providers = Provider::paginate(25);
+		$keyword = $request->get('search');
+        if (!empty($keyword))
+		{
+            $providers = Provider::where('name', 'LIKE', "%$keyword%")
+				->orwhere('description', 'LIKE', "%$keyword%")
+				->orwhere('provider_code', 'LIKE', "%$keyword%")
+				->paginate(25)
+				->withQueryString();
+        }
+		else
+		{
+			$providers = Provider::paginate(25);
+        }        
 
         return view('inventory.providers.index', compact('providers'));
     }
@@ -36,13 +48,13 @@ class ProviderController extends Controller
 		{
 			return redirect()
 				->route('providers.edit', ['provider' => $provider->id])
-				->withStatus('Product registered successfully.');
+				->withStatus('Поставщик создан');
 		}
 		else
 		{
 			return redirect()
 				->route('providers.index')
-				->withStatus('Successfully Registered Vendor.');
+				->withStatus('Поставщик создан');
 		}
     }
 
@@ -73,7 +85,7 @@ class ProviderController extends Controller
 
         return redirect()
             ->route('providers.index')
-            ->withStatus('Provider updated successfully.');
+            ->withStatus('Поставщик успешно создан');
     }
 
     public function destroy(Provider $provider)
@@ -82,7 +94,7 @@ class ProviderController extends Controller
 
         return redirect()
             ->route('providers.index')
-            ->withStatus('Provider removed successfully.');
+            ->withStatus('Поставщик успешно удален');
     }
 	//price section
 	public function upload_price(Request $request)
@@ -142,7 +154,7 @@ class ProviderController extends Controller
 				ProviderPriceColumn::updateOrCreate(["provider_id" => $provider_id,"field_number" => $field_number], ["field_type"=>$fields_type[$id]]);
 			}
 		}
-		return back()->with('flash_message', 'Price settings updated!');
+		return back()->with('flash_message', 'Настройки прайса обновлены!');
 	}
 	
 	public function get_price_files()

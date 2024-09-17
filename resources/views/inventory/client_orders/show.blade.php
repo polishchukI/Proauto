@@ -38,9 +38,22 @@
                             </div>
                             <!--sale-->
                             <div class="col-1">
-                                <a href="#" onclick="client_order_sale('{{$client_order->id}}');" class="btn btn-simple btn-sm @if(!$client_order->finalized_at) disabled @endif" data-toggle="tooltip" data-placement="bottom" title="Sale">
+                                <a href="#" onclick="client_order_sale('{{$client_order->id}}');" class="btn btn-simple btn-sm @if(!$client_order->finalized_at) disabled @endif" data-toggle="tooltip" data-placement="bottom" title="{{ __('inventory.sale') }}">
                                     <i class="fas fa-file-invoice"></i>
                                 </a>
+                            </div>
+                            <!-- correction -->
+                            <div class="col-1">
+                                <form method="post" action="{{ route('client_order_corrections.store') }}">
+                                    @csrf
+                                    <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                                    <input type="hidden" name="client_id" value="{{ $client_order->client_id }}">
+                                    <input type="hidden" name="warehouse_id" value="{{ auth()->user()->default_warehouse_id }}">
+                                    <input type="hidden" name="currency" value="{{ auth()->user()->default_currency }}">
+                                    <input type="hidden" name="reference_id" value="{{ $client_order->id }}">
+                                    <input type="hidden" name="reference_type" value="client_order">
+                                    <button type="submit" title="{{ __('inventory.client_order_correction') }}" class="btn btn-simple btn-sm btn-sale @if(!$client_order->finalized_at) disabled @endif"><i class="fas fa-exchange-alt"></i></button>
+                                </form>
                             </div>
                             <!--print-->
                             <div class="col-1">
@@ -58,7 +71,6 @@
                                 </form>
                             </div>
                             <!--index-->
-                            <div class="col-1"></div>
                             <div class="col-1"></div>
                             <div class="col-1"></div>
                             <div class="col-1"></div>

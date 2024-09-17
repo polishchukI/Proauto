@@ -165,7 +165,7 @@
                             <table class="table">
                                 <thead>
                                     <th>{{ __('inventory.provider') }}</th>
-                                    <th>{{ __('inventory.stock') }}</th>
+                                    <th>{{ __('inventory.warehouse') }}</th>
                                     <th>{{ __('inventory.available') }}</th>
                                     <th>{{ __('inventory.provider_days') }}</th>
                                     <th>{{ __('inventory.income_price') }}</th>

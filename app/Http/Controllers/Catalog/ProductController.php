@@ -43,11 +43,13 @@ class ProductController extends Controller
 			"article" => Str::upper($number),
 			"akey" => $akey,
 			"brand" => Str::upper($brand),
+			"brand_id" => "",
 			"bkey" => $bkey,
 			"pkey" => $pkey,
-			"brand_description" => "",
 			"name" => "",
+			"kind" => "",
 			"prices_count" => 0,
+			"oemnumbers" => [],
 			"images" => [],
 			"properties" => [],
 			"flag_media" => '/images/flags/worldwide.png',
@@ -57,26 +59,32 @@ class ProductController extends Controller
 			"reviewscount" => 0,
 			"reviews" => []];
         
-		$brandByName = NewTecdocController::getBrandByCode($request['brand']);
-		// dd($brandByName);
+		$brandByName = NewTecdocController::getBrandByCode($MainPartArray['brand']);
+
 		if(array_key_exists('id', $brandByName))
 		{
-			$brand_id			= $brandByName['id'];
-			$part_type			= $brandByName['part_type'];
-			$CatalogPartInfo	= NewTecdocController::getPartData($part_type, $brand_id, $number);
+			$MainPartArray['brand_id']			= $brandByName['id'];
+			$MainPartArray['kind']				= 'manufacturer';
+			$CatalogPartInfo					= NewTecdocController::getPartData($MainPartArray['kind'], $number, $MainPartArray['brand_id']);
 		}
 
-		$MainPartArray["kind"] = $part_type ?? "";
+		$supplierByName = NewTecdocController::getSupplierByCode($MainPartArray['brand']);
+		
+		if(array_key_exists('id', $supplierByName))
+		{
+			$MainPartArray['brand_id']			= $supplierByName['id'];
+			$MainPartArray['kind']				= 'supplier';
+			$CatalogPartInfo					= NewTecdocController::getPartData($MainPartArray['kind'], $number, $MainPartArray['brand_id']);
+		}
 
 		if (isset($CatalogPartInfo["aid"]))
 		{
 			$MainPartArray["aid"]			= $CatalogPartInfo["aid"];
 			$MainPartArray["td_name"]		= $CatalogPartInfo["td_name"];
-			// $MainPartArray["name"]			= $CatalogPartInfo["td_name"];
 			$MainPartArray["kind"]			= $CatalogPartInfo["kind"];
 			$MainPartArray["pkey"]			= $MainPartArray["bkey"] . $MainPartArray["akey"];
 		}
-		
+		// dd(compact('MainPartArray'));
 		/////////////////////////WS
 		$WSWS = Provider::where('cache','=', "1")->where('hasprice','=', "Webservice")->where('active','=', "1")->get();
 		if ($WSWS)
@@ -123,16 +131,13 @@ class ProductController extends Controller
 		{
 			$MainPartArray["images"][] = "/images/no_image.webp";
 		}
-		// dd($MainPartArray["images"]);
-
+		
 		$BrandDescription = [];
 		$query = Brand::where('bkey','=', $bkey)->first();
 		if($query)
 		{
 			$BrandDescription = $query->toArray();
 		}
-
-		$MainPartArray["brand_description"] = isset($BrandDescription["brand_text"]) ? $BrandDescription["brand_text"] : "null";
 		
 		if(isset($MainPartArray["pkey"]))
 		{
@@ -180,28 +185,6 @@ class ProductController extends Controller
 			{
 				$CountryInfo = Functions::GetBrandDescription($MainPartArray["brand"]);
 			}
-			// if($MainPartArray["aid"]>0)
-			// {
-			// 	if($MainPartArray["kind"] == 3)
-			// 	{
-			// 		$arTYPE = ["1","2","4"];
-			// 	}
-			// 	else
-			// 	{
-			// 		$arTYPE = ["3","4"];
-			// 	}
-				
-			// 	$analogs = NewTecdocController::LookupProductAnalog($MainPartArray["aid"],$arTYPE);
-			// 	foreach ($analogs as $item)
-			// 	{
-			// 		$MainPartArray["analogs"][] = [
-			// 				"search_url"		=> Functions::GetSearchURL($item["brand"], Functions::SingleKey($item["article"])),
-			// 				"type"				=> $item["type"],
-			// 				"article"			=> $item["article"],
-			// 				"brand"				=> $item["brand"]];
-			// 	}
-			// }
-
 		}
 		
 		$pkey_uid_array			= ProductCross::where('pkey','=',$MainPartArray['pkey'])->get();
@@ -214,83 +197,93 @@ class ProductController extends Controller
 				$crossesArray			= ProductCross::where('uid','=',$uid)->get();
 				foreach($crossesArray as $resultItem)
 				{
+					$rate = ProductRating::where('pkey',$resultItem["pkey"])->avg('rating');
+					
 					$MainPartArray["analogs"][$resultItem["pkey"]] = [
-										"pkey"			=> $resultItem["pkey"],
-										"bkey"			=> $resultItem["bkey"],
-										"brand"			=> $resultItem["brand"],
-										"akey"			=> $resultItem["akey"],
-										"article"		=> $resultItem["article"],
-										"link_side"		=> $resultItem["side"],
-										"code"			=> $resultItem["code"],
-										// "name"			=> $resultItem["name"] ?? ""
+										"pkey"				=> $resultItem["pkey"],
+										"bkey"				=> $resultItem["bkey"],
+										"brand"				=> $resultItem["brand"],
+										"akey"				=> $resultItem["akey"],
+										"article"			=> $resultItem["article"],
+										"link_side"			=> $resultItem["side"],
+										"code"				=> $resultItem["code"],
+										"name"				=> $resultItem["name"] ?? "",
+										"rating"			=> $rate ? $rate : intval(0),
+										"rating_left"		=> $rate ? (5 - $rate) : intval(5),
+										"reviewscount"		=> $rate ? (ProductRating::where('pkey',$resultItem["pkey"])->count('client_id')) : intval(0),
+										"min_price"			=> ProviderPrice::where('pkey', '=', $resultItem["pkey"])->min('price')
 									];
 				}
 				
 			}
 			
 		}
-			
-		if(array_key_exists('aid',$MainPartArray))
-		{
-			if($MainPartArray["aid"]>0)
-			{
-				$Properties = NewTecdocController::GetProperties($MainPartArray["aid"]);
-				foreach ($Properties as $Prop)
-				{
-					$MainPartArray["properties"][] = ["name"=>$Prop["name"],"value"=>$Prop["value"]];
-				}
-			}
-			if($MainPartArray["aid"]>0)
-			{
-				$TagsIDs = NewTecdocController::GetTags($MainPartArray["aid"]);
-				foreach ($TagsIDs as $TagsID)
-				{
-					$TagsTexts = NewTecdocController::GetTextByID($TagsID["LGS_STR_ID"]);
-					foreach ($TagsTexts as $Tag)
-					{
-						$MainPartArray["tags"][] = ["text"=>$Tag["text"]];
-					}
-				}
-			}
-			if($MainPartArray["aid"]>0)
-			{
-				$ApplicabilityBrandsArray = NewTecdocController::GetAppBrands($MainPartArray["aid"]);
-				foreach ($ApplicabilityBrandsArray as $AppBrand)
-				{
-					$MainPartArray["APPLICABILITY_BRAND"][] = ["MFA_BRAND"=>$AppBrand["MFA_BRAND"],"MFA_MFC_CODE"=>$AppBrand["MFA_MFC_CODE"]];
-				}
-			}
 		
-			if(array_key_exists('APPLICABILITY_BRAND',$MainPartArray))
-			{
-				foreach ($MainPartArray["APPLICABILITY_BRAND"] as $code)
-				{
-					$Applicability = NewTecdocController::GetApplicability($MainPartArray["aid"],$code["MFA_MFC_CODE"]);
-					foreach ($Applicability as $App)
-					{
-						$MODURL = Functions::GetURLNameByModID($App["MFA_BRAND"], $App["MOD_ID"]);
-						$URL = Functions::GenerateURL(["brand" => $App["MFA_BRAND"], "MOD_FURL" => $MODURL, "TYP_ID" => $App["TYP_ID"], "ENGINE" => $App["ENG_CODE"], "TYPE_NAME" => $App["TYP_CDS_TEXT"]]);
-						$START = Functions::DateFormat($App["TYP_PCON_START"], 'to', 'year');
-						$END = Functions::DateFormat($App["TYP_PCON_END"], 'to', 'year');
-						$START = substr($START, 2, 2);
-						if (0 < intval($END))
-						{
-							$END = substr($END, 2, 2);
-						}
-						else
-						{
-							$END = ' - ';
-						}
-						$MainPartArray["APPLICABILITY"][$code["MFA_BRAND"]][] = ["TYP_ID"=>$App["TYP_ID"],"MOD_ID"=>$App["MOD_ID"],"MFA_BRAND"=>$App["MFA_BRAND"],
-											"MOD_CDS_TEXT"=>$App["MOD_CDS_TEXT"],"TYP_CDS_TEXT"=>$App["TYP_CDS_TEXT"],"START"=>$START,
-											"END"=>$END,"TYP_CCM"=>$App["TYP_CCM"],"TYP_KW_FROM"=>$App["TYP_KW_FROM"],
-											"TYP_HP_FROM"=>$App["TYP_HP_FROM"],"TYP_CYLINDERS"=>$App["TYP_CYLINDERS"],"ENG_CODE"=>$App["ENG_CODE"],
-											"TYP_FUEL_DES_TEXT"=>$App["TYP_FUEL_DES_TEXT"],"TYP_BODY_DES_TEXT"=>$App["TYP_BODY_DES_TEXT"],
-											"URL"=>$URL];
-					}
-				}
-			}
+		$MainPartArray['replace'][] = NewTecdocController::getArticleReplace($number, $MainPartArray['brand_id'], $brand = "");
+		
+		$Properties = NewTecdocController::getArticleAttributes($number, $MainPartArray['brand_id']);
+		
+		foreach ($Properties as $item)
+		{
+			$MainPartArray["properties"][] = ["name" => $item["name"],"value" => $item["value"]];
 		}
+
+		$oemNumbers = NewTecdocController::getOemNumbers($number, $MainPartArray['brand_id']);
+
+		foreach ($oemNumbers as $item)
+		{
+			$akey			= Functions::SingleKey($item["article"]);
+			$bkey			= Functions::SingleKey($item["brand"],true);
+			$pkey			= Functions::SingleKey($item["brand"],true) . Functions::SingleKey($item["article"]);
+
+			$rate = ProductRating::where('pkey',$pkey)->avg('rating');
+
+			$MainPartArray["oemnumbers"][] = [
+							"brand"				=> $item["brand"],
+							"bkey"				=> $bkey,
+							"article"			=> $item["article"],
+							"akey"				=> $akey,
+							"pkey"				=> $pkey,
+							"rating"			=> $rate ? $rate : intval(0),
+							"rating_left"		=> $rate ? (5 - $rate) : intval(5),
+							"reviewscount"		=> $rate ? (ProductRating::where('pkey',$pkey)->count('client_id')) : intval(0),
+							"min_price"			=> ProviderPrice::where('pkey', '=', $pkey)->min('price')
+						];
+		}
+
+		// dd(compact('MainPartArray'));
+
+		
+		// 	if(array_key_exists('APPLICABILITY_BRAND',$MainPartArray))
+		// 	{
+		// 		foreach ($MainPartArray["APPLICABILITY_BRAND"] as $code)
+		// 		{
+		// 			$Applicability = NewTecdocController::GetApplicability($MainPartArray["aid"],$code["MFA_MFC_CODE"]);
+		// 			foreach ($Applicability as $App)
+		// 			{
+		// 				$MODURL = Functions::GetURLNameByModID($App["MFA_BRAND"], $App["MOD_ID"]);
+		// 				$URL = Functions::GenerateURL(["brand" => $App["MFA_BRAND"], "MOD_FURL" => $MODURL, "TYP_ID" => $App["TYP_ID"], "ENGINE" => $App["ENG_CODE"], "TYPE_NAME" => $App["TYP_CDS_TEXT"]]);
+		// 				$START = Functions::DateFormat($App["TYP_PCON_START"], 'to', 'year');
+		// 				$END = Functions::DateFormat($App["TYP_PCON_END"], 'to', 'year');
+		// 				$START = substr($START, 2, 2);
+		// 				if (0 < intval($END))
+		// 				{
+		// 					$END = substr($END, 2, 2);
+		// 				}
+		// 				else
+		// 				{
+		// 					$END = ' - ';
+		// 				}
+		// 				$MainPartArray["APPLICABILITY"][$code["MFA_BRAND"]][] = ["TYP_ID"=>$App["TYP_ID"],"MOD_ID"=>$App["MOD_ID"],"MFA_BRAND"=>$App["MFA_BRAND"],
+		// 									"MOD_CDS_TEXT"=>$App["MOD_CDS_TEXT"],"TYP_CDS_TEXT"=>$App["TYP_CDS_TEXT"],"START"=>$START,
+		// 									"END"=>$END,"TYP_CCM"=>$App["TYP_CCM"],"TYP_KW_FROM"=>$App["TYP_KW_FROM"],
+		// 									"TYP_HP_FROM"=>$App["TYP_HP_FROM"],"TYP_CYLINDERS"=>$App["TYP_CYLINDERS"],"ENG_CODE"=>$App["ENG_CODE"],
+		// 									"TYP_FUEL_DES_TEXT"=>$App["TYP_FUEL_DES_TEXT"],"TYP_BODY_DES_TEXT"=>$App["TYP_BODY_DES_TEXT"],
+		// 									"URL"=>$URL];
+		// 			}
+		// 		}
+		// 	}
+		// }
 
 		if(empty($MainPartArray["name"]))
 		{
@@ -298,7 +291,7 @@ class ProductController extends Controller
 		}
 		
 		//star rating
-		$rate = ProductRating::where('pkey',$MainPartArray["pkey"])->avg('rating');
+		$rate								= ProductRating::where('pkey',$MainPartArray["pkey"])->avg('rating');
 		$MainPartArray["rating"]			= $rate ? $rate : intval(0);
 		$MainPartArray["rating_left"]		= $rate ? (5 - $rate) : intval(5);
 		$MainPartArray["reviewscount"]		= $rate ? (ProductRating::where('pkey',$MainPartArray["pkey"])->count('client_id')) : intval(0);
@@ -309,7 +302,9 @@ class ProductController extends Controller
 						DB::raw('(5 - product_ratings.rating) as rating_left'),
 						'product_ratings.review as review',
 						'product_ratings.created_at as date','clients.firstname as firstname','clients.lastname as lastname','clients.avatar as avatar')
-				->leftjoin('clients', 'clients.id', '=', 'product_ratings.client_id')->get();
+				->leftjoin('clients', 'clients.id', '=', 'product_ratings.client_id')
+				->get();
+
 		if($reviews_sql)
 		{
 			$MainPartArray["reviews"] = $reviews_sql->toArray();
@@ -331,20 +326,20 @@ class ProductController extends Controller
 				'pkey'			=> 'required',
 				'review-stars'	=> 'required',
 				]);		
-		$rate					= new ProductRating;
-		$min_price				= ProviderPrice::where('pkey','=', $request["pkey"])->orderBy('price', 'asc')->first();
-		$rate->pkey				= $request["pkey"];
-		$rate->article			= $request["article"];
-		$rate->akey				= $request["akey"];
-		$rate->brand			= $request["brand"];
-		$rate->bkey				= $request["bkey"];
-		$rate->name				= $request["name"];
-		$rate->currency			= $min_price->currency ?? "RUB";
-		$rate->price			= $min_price->price ?? 0;
-		$rate->review			= $request["review-text"];
-        $rate->rating			= $request["review-stars"];
-        $rate->client_id		= (int)$request->user('clients')->id;
-        $rate->email			= $request->user('clients')->email;
+		$rate								= new ProductRating;
+		$min_price							= ProviderPrice::where('pkey','=', $request["pkey"])->orderBy('price', 'asc')->first();
+		$rate->pkey							= $request["pkey"];
+		$rate->article						= $request["article"];
+		$rate->akey							= $request["akey"];
+		$rate->brand						= $request["brand"];
+		$rate->bkey							= $request["bkey"];
+		$rate->name							= $request["name"];
+		$rate->currency						= $min_price->currency ?? "RUB";
+		$rate->price						= $min_price->price ?? 0;
+		$rate->review						= $request["review-text"];
+        $rate->rating						= $request["review-stars"];
+        $rate->client_id					= (int)$request->user('clients')->id;
+        $rate->email						= $request->user('clients')->email;
 		$rate->save();
 
 		return redirect()->back();

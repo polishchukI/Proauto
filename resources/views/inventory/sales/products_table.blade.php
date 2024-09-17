@@ -8,7 +8,9 @@
                 <th scope="col" style="width: 46%;">{{ __('inventory.product') }}</th>
                 <th scope="col" class="text-center" style="width: 5%;">{{ __('inventory.stock') }}</th>
                 <th scope="col" class="text-center" style="width: 5%;">{{ __('inventory.quantity') }}</th>
+                <th scope="col" class="text-center" style="width: 6%;">{{ __('inventory.price_in') }}</th>
                 <th scope="col" class="text-center" style="width: 6%;">{{ __('inventory.price') }}</th>
+                
                 <th scope="col" class="text-center" style="width: 6%;">{{ __('inventory.total') }}</th>
                 <th scope="col" class="text-center" style="width: 6%;">{{ __('inventory.discount') }}</th>
                 <th scope="col" class="text-center" style="width: 6%;">{{ __('inventory.total_amount') }}</th>
@@ -23,6 +25,12 @@
                     </td>
                     <td scope="col" class="text-center stock">{{ number_format($item->product->stocks()->sum('quantity') ?? 0, 2) }}</td>
                     <td scope="col" class="text-center quantity">{{ number_format($item->quantity ?? 0, 2) }}</td>
+                    <x-price-in
+                        price-type="in"
+                        :product-id="$item->product_id"
+                        :currency="$sale->currency"
+                        :date="$sale->created_at"
+                    />
                     <td scope="col" class="text-center price">{{ number_format($item->price ?? 0, 2) }}</td>
                     <td scope="col" class="text-center total">{{ number_format($item->total ?? 0, 2) }}</td>
                     <td scope="col" class="text-center discount">{{ number_format($item->discount ?? 0, 2)}}</td>
